@@ -1,510 +1,257 @@
-@extends('layouts.main')
-
+@extends('layouts.main') 
 @section('content')
+
 <div class="container">
-   <div class="row">
-<!-- 	<div class="col-md-2"></div>
- -->  <div class="col-md card">
+	<div class="row">
+		<div class="col-md card">
 
-        	<div class="card-header">
-        		<p>Taarifa Binafsi za mtuha namba 7</p>
-        	</div>
+			<div class="card-header">
+				<p>Taarifa Binafsi za mtuha namba 7</p>
+			</div>
 
-        	<div class="card-body">
+			<div class="card-body">
 
-        		<form action="{{ ('register7/store') }}" method="post">
-        			{{csrf_field()}}
+				<form action="{{ ('register7/store') }}" method="post">
+					{{csrf_field()}}
 
-        			<div class="form-group">
+					<div class="form-group">
 
-        				<div class="row col-md-12">
+						<div class="row col-md-12">
 
-        					<div class="col-md-3">
+							<div class="col-md-4">
+								<div class="row">
+									<div class="col-md-7">
+										<label>Jina la mtoto</label>
+										<input type="text" name="infant_name" id="infant_name" class="form-control">
+									</div>
 
-        						<label>Tarehe</label>
+									<div class="col-md-5">
+										<label>Namba ya mtoto</label>
+										<input type="text" class="form-control" name="inftant_regno">
+									</div>
 
-        						<input type="date" class="form-control" id="date" name="date">
+								</div>
 
-        					</div>
-
-        					<div class="col-md-3">
-
-        						<label>Namba ya utambulisho</label>
-
-        						<input type="text" class="form-control" id="date" name="date">
-
-        					</div>
-
-        					<div class="col-md-1">
-
-        						<label>Mwaka</label>
-
-        						<input type="text" class="form-control" id="year" name="year">
-
-        					</div>
-
-        					<div class="col-md-3">
-
-        						<label>Namba ya usajili vizazi(BR)</label>
-
-        						<input type="number" class="form-control" id="age" name="age" min="0">
-
-        					</div>
-
-        					<div class="col-md-2">
-
-        						<label>Jina la mtaa</label>
-
-        						<input type="text" class="form-control" id="street" name="street">
-
-        					</div>
-
-        				</div>
-        				<hr>
-
-        				<div class="row col-md-12">
-
-        						<div class="col-md-5 card">
-        							
-        							<div class="card-header">Taarifa za mtoto</div>
-
-        							<div class="card-body">
-
-        								<div class="row">
-        									<div class="col-md-4"><label>Jina la kwanza</label></div>
-        									<div class="col-md-8"><input type="text" name="fname" class="form-control"></div>
-        								</div>
-
-			        					<br>
-        								<div class="row">
-        									<div class="col-md-4"><label>Jina la pili</label></div>
-        									<div class="col-md-8"><input type="text" name="mname" class="form-control"></div>
-        								</div>
-
-			        					<br>
-        								<div class="row">
-        									<div class="col-md-4"><label>Jina la ukoo</label></div>
-        									<div class="col-md-8"><input type="text" name="sname" class="form-control"></div>
-        								</div>
-
-			        					<br>
-
-        								<div class="row">
-        									<div class="col-md-5"><label>Tarehe ya kuzaliwa</label></div>
-        									<div class="col-md-7"><input type="date" name="date" class="form-control"></div>
-        								</div>
-
-			        					<br>
-
-        								<div class="row">
-        									<div class="col-md-5"><label>Jinsia</label></div>
-
-        									<div class="col-md-7">
-
-											  <select name="card"  class="form-control">
+								<br>
+								<div class="row card col-md-12">
+									<div class="card-header">Vitamin A</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6"><label>Umri wa mtoto</label>
+												<select name="child_age_vitamin_A" class="form-control">
 							                    <option value="" hidden=""></option>
-							                    <option value="mume">Mume</option>
-							                    <option value="mke">Mke</option>
+							                    <option value="Miezi 6">Miezi 6</option>
+							                    <option value="Mwaka 1">Mwaka 1</option>
+							                    <option value="Miaka 1.5">Mwaka 1.5</option>
+							                    <option value="Miaka 2">Mwaka 2</option>
+							                    <option value="Miaka 2.5">Mwaka 2.5</option>
+							                    <option value="Miaka 3">Mwaka 3</option>
+							                    <option value="Miaka 3.5">Mwaka 3.5</option>
+							                    <option value="Miaka 4">Mwaka 4</option>
+							                    <option value="Miaka 4.5">Mwaka 4.5</option>
+							                    <option value="Miaka 5">Mwaka 5</option>
 							                </select>
 
-						            </div>
-
-						            </div>
-
-        							</div>
-        						</div>
-
-        						<div class="col-md-4 card">
-        							
-        							<div class="card-header">Taarifa za mama</div>
-
-        							<div class="card-body">
-
-        								<div class="row">
-        									<div class="col-md-6"><label>Jina la kwanza</label></div>
-        									<div class="col-md-6"><input type="text" name="fname" class="form-control"></div>
-        								</div>
-
-			        					<br>
-        								<div class="row">
-        									<div class="col-md-6"><label>Jina la pili</label></div>
-        									<div class="col-md-6"><input type="text" name="mname" class="form-control"></div>
-        								</div>
-
-			        					<br>
-        								<div class="row">
-        									<div class="col-md-6"><label>Jina la ukoo</label></div>
-        									<div class="col-md-6"><input type="text" name="sname" class="form-control"></div>
-        								</div>
-
-			        					<br>
-
-        								<div class="row">
-        									<div class="col-md-6"><label>Hali ya VVU</label></div>
-        									<div class="col-md-6">
-        										
-										    <select name="card" class="form-control">
-						                    <option value="" hidden=""></option>
-						                    <option value="positive">Positive</option>
-						                    <option value="negative">Negative</option>
-						                    </select>
-
-        									</div>
-        								</div>
-
-			        					<br>
-
-        								<div class="row">
-        									<div class="col-md-10"><label>Ana kinga ya pepopunda?TT2+</label></div>
-        									<div class="col-md-2">
-
-										    <select name="card" class="form-control">
-						                    <option value="" hidden=""></option>
-						                    <option value="ndio">Ndio</option>
-						                    <option value="hapana">Hapana</option>
-						                    </select>
-
-						                </div>
-
-        								</div>
-
-        							</div>
-        						</div>
-
-        						<div class="col-md-3 card">
-        							<div class="card-header">Albendazole</div>
-
-        							<div class="card-body">
-        								
-
-        								<div class="row">
-        									<div class="col-md-4"><label>Miezi</label></div>
-
-        									<div class="col-md-4">
-
-											  <select name="card"  class="form-control">
-							                    <option value="" hidden=""></option>
-							                    <option value="mume">Mume</option>
-							                    <option value="mke">Mke</option>
-							                </select>
-
-						                    </div>
-        									<div class="col-md-4">
-
-											  <select name="card"  class="form-control">
-							                    <option value="" hidden=""></option>
-							                    <option value="ndio">Ndio</option>
-							                    <option value="hapana">Hapana</option>
-							                </select>
-
-						                    </div>
-
-						            </div>
-						            <br>
-						            <hr>
-        								<div class="row">
-        									<div class="col-md-6"><label>HEID no</label></div>
-
-        									<div class="col-md-6">
-
-											  <select name="card"  class="form-control">
-							                    <option value="" hidden=""></option>
-							                    <option value="mume">Mume</option>
-							                    <option value="mke">Mke</option>
-							                </select>
-
-						                    </div>
-						                </div>
-
-						                <br>
-
-        								<div class="row">
-        									<div class="col-md-8"><label>Hati punguzo chandarua</label></div>
-
-        									<div class="col-md-4">
-
-											  <select name="card"  class="form-control">
-							                    <option value="" hidden=""></option>
-							                    <option value="ndio">ndio</option>
-							                    <option value="hapana">hapana</option>
-							                </select>
-
-						                    </div>
-						                </div>
-
-        							</div>
-        						</div>
-
-        				</div>
-        				<hr>
-
-        				<div class="row col-md-12">
-        					
-        					<div class="col-md-6 card">
-        						
-        						<div class="card-header">Tarehe ya chanjo</div>
-
-        						<div class="card-body">
-
-        								<div class="row">
-        									<div class="col-md-4"><label>BCG</label></div>
-        									<div class="col-md-8"><input type="text" name="bcg" class="form-control"></div>
-        								</div>
-        								<br>
-
-        								<div class="row">
-        									<div class="col-md-4"><label>OPVO</label></div>
-        									<div class="col-md-8"><input type="text" name="bcg" class="form-control"></div>
-        								</div>
-
-        								<br>
-
-        								<div class="row">
-        									<div class="col-md-2"><label>PENTA</label></div>
-
-        									<div class="col-md-2">
-
-											  <select name="card"  class="form-control">
-							                    <option value="" hidden=""></option>
-							                    <option value="1">1</option>
-							                    <option value="2">2</option>
-							                    <option value="3">3</option>
-							                </select>
-
-						                    </div>
-        									<div class="col-md-2">Tarehe</div>
-        									<div class="col-md-6"><input type="date" name="date" class="form-control"></div>
-						            </div>
-						            <br>
-        								<div class="row">
-        									<div class="col-md-2"><label>POLIO</label></div>
-
-        									<div class="col-md-2">
-
-											  <select name="card"  class="form-control">
-							                    <option value="" hidden=""></option>
-							                    <option value="1">1</option>
-							                    <option value="2">2</option>
-							                    <option value="3">3</option>
-							                </select>
-
-						                    </div>
-        									<div class="col-md-2">Tarehe</div>
-        									<div class="col-md-6"><input type="date" name="date" class="form-control"></div>
-						            </div>
-
-						            <br>
-        								<div class="row">
-        									<div class="col-md-3"><label>Pneumococcal (PCV13)</label></div>
-
-        									<div class="col-md-1">
-
-											  <select name="card"  class="form-control">
-							                    <option value="" hidden=""></option>
-							                    <option value="1">1</option>
-							                    <option value="2">2</option>
-							                    <option value="3">3</option>
-							                </select>
-
-						                    </div>
-        									<div class="col-md-2">Tarehe</div>
-        									<div class="col-md-6"><input type="date" name="date" class="form-control"></div>
-						            </div>
-
-						            <br>
-        								<div class="row">
-        									<div class="col-md-2"><label>ROTA</label></div>
-
-        									<div class="col-md-2">
-
-											  <select name="card"  class="form-control">
-							                    <option value="" hidden=""></option>
-							                    <option value="1">1</option>
-							                    <option value="2">2</option>
-							                    <option value="3">3</option>
-							                </select>
-
-						                    </div>
-        									<div class="col-md-2">Tarehe</div>
-        									<div class="col-md-6"><input type="date" name="date" class="form-control"></div>
-						            </div>
-
-						            <br>
-        								<div class="row">
-        									<div class="col-md-2"><label>SURUA</label></div>
-
-        									<div class="col-md-2">
-
-											  <select name="card"  class="form-control">
-							                    <option value="" hidden=""></option>
-							                    <option value="1">1</option>
-							                    <option value="2">2</option>
-							                    <option value="3">3</option>
-							                </select>
-
-						                    </div>
-        									<div class="col-md-2">Tarehe</div>
-        									<div class="col-md-6"><input type="date" name="date" class="form-control"></div>
-						            </div>
-        						</div>
-        					</div>
-        					
-        					<div class="col-md-4 card">
-        						
-        						<div class="card-header">Ukuaji wa mtoto</div>
-        						<div class="card-body">
-
-        								<div class="row">
-        									<div class="col-md-2"><label>Miezi</label></div>
-
-        									<div class="col-md-2">
-
-											  <select name="card"  class="form-control">
-							                    <option value="" hidden=""></option>
-							                    <option value="9">9</option>
-							                    <option value="18">18</option>
-							                    <option value="36">36</option>
-							                    <option value="48">48</option>
-							                </select>
-
-						                    </div>
-        									<div class="col-md-5">Uzito/Umri</div>
-        									<div class="col-md-3"><input type="text" name="date" class="form-control"></div>
-        									<div class="col-md-4"></div><div class="col-md-5">Uzito/Urefu</div>
-        									<div class="col-md-3"><input type="text" name="date" class="form-control"></div>
-        									<div class="col-md-4"></div><div class="col-md-5">Urefu/Umri</div>
-        									<div class="col-md-3"><input type="text" name="date" class="form-control"></div>
-						            </div>
-						            <hr>
-
-						            <p><b>Ulishaji wa mtoto</b></p>
-
-        								<div class="row">
-        									<div class="col-md-8"><label>Maziwa ya mama</label></div>
-        									<div class="col-md-4">
-
-										    <select name="card" class="form-control">
-						                    <option value="" hidden=""></option>
-						                    <option value="ndio">Ndio</option>
-						                    <option value="hapana">Hapana</option>
-						                    </select>
-
-						                </div>
-
-        								</div>
-
-        								<br>
-        								<div class="row">
-        									<div class="col-md-8"><label>Maziwa mbadala</label></div>
-        									<div class="col-md-4">
-
-										    <select name="card" class="form-control">
-						                    <option value="" hidden=""></option>
-						                    <option value="ndio">Ndio</option>
-						                    <option value="hapana">Hapana</option>
-						                    </select>
-
-						                </div>
-
-        								</div>
-        								<hr>
-        								<p><b>Rufaa</b></p>
-
-        								<div class="row">
-        									<div class="col-md-7"><label>Kituo alikotoka</label></div>
-        									<div class="col-md-5"><input type="text" name="hcenter" class="form-control"></div>
-        								</div>
-        								<br>
-        								<div class="row">
-        									<div class="col-md-7"><label>Kituo alikopelekwa</label></div>
-        									<div class="col-md-5"><input type="text" name="dcenter" class="form-control"></div>
-        								</div>
-        								<br>
-        								<div class="row">
-        									<div class="col-md-7"><label>Sababu ya rufaa</label></div>
-        									<div class="col-md-5"><input type="text" name="reason" class="form-control"></div>
-        								</div>
-        								<br>
-        						</div>
-        					</div>
-
-        					<div class="col-md-2 card">
-        						
-        						<div class="card-header">Vitamin A</div>
-
-        						<div class="card-body">
-
-        								<div class="row">
-        									<div class="col-md-6"><label>Miezi 6</label></div>
-
-        									<div class="col-md-6">
-
-											  <select name="card"  class="form-control">
-							                    <option value="" hidden=""></option>
-							                    <option value="1">1</option>
-							                    <option value="2">2</option>
-							                    <option value="3">3</option>
-							                </select>
-						            </div>
-						        </div>
-        								<div class="row">
-        									<div class="col-md-6"><label>Chini ya mwaka</label></div>
-
-        									<div class="col-md-6">
-
-											  <select name="card"  class="form-control">
-							                    <option value="" hidden=""></option>
-							                    <option value="1">1</option>
-							                    <option value="2">2</option>
-							                    <option value="3">3</option>
-							                </select>
-						            </div>
-						        </div>
-						        <br>
-        								<div class="row">
-        									<div class="col-md-6"><label>Mwaka 1-5</label></div>
-
-        									<div class="col-md-6">
-
-											  <select name="card"  class="form-control">
-							                    <option value="" hidden=""></option>
-							                    <option value="1">1</option>
-							                    <option value="2">2</option>
-							                    <option value="3">3</option>
-							                </select>
-						            </div>
-						        </div>
-        								<hr>
-        								<p><b>Maoni</b></p>
-        								<div class="row">
-        									<textarea name="maoni" class="form-control" minlength="4" cols="30" rows="9" placeholder="Andika hapa maoni yako">
-        										
-        									</textarea>
-						            </div>
-						            <br 
-
-        								<div>
-        									<input type="submit" name="submit" class="form-control btn btn-primary">
-						            </div>
-						        </div>
-						        <br>
-
-        						</div>
-
-        					</div>
-        				</div>
-
-        			</div>
-
-        		</form>
-
-        	</div>
-
-        </div>
-
-    </div>
-
+											</div>
+											<div class="col-md-6">
+												<label for="amepata_vitaminA">Amepata vitamin A</label>
+												<select name="amepata_vitaminA" id="amepata_vitaminA" class="form-control">
+													<option value="" hidden=""></option>
+													<option value="ndio">Ndio</option>
+													<option value="hapana">Hapana</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<br>
+
+								<div class="row card col-md-12">
+									<div class="card-header">Ukuaji wa mtoto</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6">
+												<label for="child_weight">Uzito wa mtoto</label>
+												<input type="number" name="child_weight" id="child_weight" class="form-control">
+											</div>
+
+											<div class="col-md-6">
+												<label for="child_heigh">Urefu wa mtoto</label>
+												<input type="number" name="child_heigh" id="child_heigh" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<br>
+
+								<div class="row card col-md-12">
+									<div class="card-header">Mebendazole / Albendazole <small>Kila miezi 6</small></div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6">
+												<label for="child_age">Umri wa mtoto</label>
+												<select name="age_mebendazole" id="age_mebendazole" class="form-control">
+													<option value="" hidden=""></option>
+													<option value="Miezi 12">Miezi 12</option>
+													<option value="Miezi 18">Miezi 18</option>
+													<option value="Miezi 18">Miezi 24</option>
+													<option value="Miezi 18">Miezi 30</option>
+												</select>
+											</div>
+											<div class="col-md-6">
+												<label for="amepata_mebendazole">Amepata dawa</label>
+												<select name="amepata_mebendazole" id="amepata_mebendazole" class="form-control">
+													<option value="" hidden=""></option>
+													<option value="Ndio">Ndio</option>
+													<option value="Hapana">Hapana</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="col-md-5">
+								<div class="row card col-md-12">
+									<div class="card-header">Chanjo za mtoto</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-5"><label>Namba ya PENTA</label>
+												<select name="penta_number" class="form-control">
+													<option value="" hidden=""></option>
+													<option value="PENTA 1">PENTA 1</option>
+													<option value="PENTA 2">PENTA 2</option>
+													<option value="PENTA 3">PENTA 3</option>
+												</select>
+											</div>
+
+											<div class="col-md-7">
+												<label for="penta_date">Tarehe ya chanjo ya  PENTA</label>
+												<input type="date" name="penta_date" id="penta_date" class="form-control">
+											</div>
+										</div>
+
+										<br>
+
+										<div class="row">
+											<div class="col-md-5"><label>Namba ya Polio</label>
+												<select name="Polio_number" class="form-control">
+													<option value="" hidden=""></option>
+													<option value="Polio 1">Polio 1</option>
+													<option value="Polio 2">Polio 2</option>
+													<option value="Polio 3">Polio 3</option>
+												</select>
+											</div>
+
+											<div class="col-md-7">
+												<label for="Polio_date">Tarehe ya chanjo ya Polio</label>
+												<input type="date" name="Polio_date" id="Polio_date" class="form-control">
+											</div>
+										</div>
+
+
+										<br>
+
+										<div class="row">
+											<div class="col-md-5"><label>Namba ya PCV13</label>
+												<select name="PCV13_number" class="form-control">
+													<option value="" hidden=""></option>
+													<option value="PCV13 1">PCV13 1</option>
+													<option value="PCV13 2">PCV13 2</option>
+													<option value="PCV13 3">PCV13 3</option>
+												</select>
+											</div>
+
+											<div class="col-md-7">
+												<label for="PCV13_date">Tarehe ya chanjo ya PCV13</label>
+												<input type="date" name="PCV13_date" id="PCV13_date" class="form-control">
+											</div>
+										</div>
+
+										<br>
+
+										<div class="row">
+											<div class="col-md-5"><label>Namba ya Rota</label>
+												<select name="Rota_number" class="form-control">
+													<option value="" hidden=""></option>
+													<option value="Rota 1">Rota 1</option>
+													<option value="Rota 2">Rota 2</option>
+												</select>
+											</div>
+
+											<div class="col-md-7">
+												<label for="Rota_date">Tarehe ya chanjo ya Rota</label>
+												<input type="date" name="Rota_date" id="Rota_date" class="form-control">
+											</div>
+										</div>
+
+										<br>
+
+										<div class="row">
+											<div class="col-md-5"><label>Namba ya Surua</label>
+												<select name="Surua_number" class="form-control">
+													<option value="" hidden=""></option>
+													<option value="Surua 1">Surua 1</option>
+													<option value="Surua 2">Surua 2</option>
+												</select>
+											</div>
+
+											<div class="col-md-7">
+												<label for="Surua_date">Tarehe ya chanjo ya Surua</label>
+												<input type="date" name="Surua_date" id="Surua_date" class="form-control">
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							{{-- rufaa --}}
+							<div class="col-md-3">
+								<div class="col-md-12 card row">
+									<div class="card-header">Rufaa</div>
+									<div class="col-md-12">
+										<label for="home_center">Kituo alikotoka</label>
+										<input type="text" name="home_center" id="home_center" class="form-control">
+									</div>
+
+									<br>
+
+									<div class="col-md-12">
+										<label for="deatin_center">Kituo alikopelekwa</label>
+										<input type="text" name="deatin_center" id="deatin_center" class="form-control">
+									</div>
+
+									<br>
+
+									<div class="col-md-12">
+										<label for="referal_reason">Sababu ya rufaa</label>
+										<textarea name="referal_reason" id="referal_reason" cols="30" rows="5" class="form-control"></textarea>
+
+									</div>
+
+
+									<br>
+
+									<div class="col-md-12">
+										<label for="maelezo_mengine">Maelezo mengine / Maoni</label>
+										<textarea name="maelezo_mengine" id="maelezo_mengine" cols="30" rows="3" class="form-control"></textarea>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</form>
+
+			</div>
+
+		</div>
+	</div>
 </div>
-
-</div
 @endsection
