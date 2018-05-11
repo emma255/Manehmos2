@@ -1,0 +1,9 @@
+ git add ./resources/views/admin/adminHome.blade.php 
+ 
+  git add ./resources/views/admin/main.blade.php 
+  
+ git add ./resources/views/admin/head.blade.php 
+   
+ git commit -m "add admin home panel"
+
+git push -u origin master
