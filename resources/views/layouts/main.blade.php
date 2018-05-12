@@ -19,7 +19,7 @@
 
                           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item" href="{{ url('maternal/register') }}">{{ __('MAMA') }}</a>
-                            <a class="dropdown-item" href="{{ url('husband/register') }}">{{ __('BABA') }}</a>
+                            <!-- <a class="dropdown-item" href="{{ url('husband/register') }}">{{ __('BABA') }}</a> -->
                             <a class="dropdown-item" href="{{ url('child/register') }}">{{ __('MTOTO') }}</a>
                           </div>
                         </div>
