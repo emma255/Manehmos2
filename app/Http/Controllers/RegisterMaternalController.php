@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class RegisterMaternalController extends Controller
 {
-    protected function store(){
-        return view('registration.husband_register');
+    protected function store()
+    {
+        return view('registers.register6');
     }
 }
