@@ -12,7 +12,7 @@
 
             <div class="card-body">
 
-                <form action="{{ ('postnatal/store') }}" method="post">
+                <form action="{{ ('store') }}" method="post">
                     {{csrf_field()}}
 
                     <div class="form-group">
@@ -23,7 +23,7 @@
 
                                 <div class="row">
                                     <div class="col-md-7">
-                                        <label>JIna la mtoto</label>
+                                        <label>Jina la mtoto</label>
                                         <input type="text" name="infant_name" id="infant_name" class="form-control">
                                     </div>
 
