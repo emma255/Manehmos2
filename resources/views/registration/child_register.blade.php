@@ -68,25 +68,22 @@
 										</select>
 									</div>
 
-									<div class="col-md-4">
-										<label>Uzito (Gram)</label>
-										<input type="number" class="form-control" name="child_weight" placeholder="uzito" min="0">
+									<div class="col-md-8">
+										<label for="child_place">Mahali anapoishi mtoto</label>
+										<input type="text" name="child_place" id="child_place" class="form-control">
 									</div>
-									<div class="col-md-4">
-										<label for="heid_no">Namba ya HEID</label>
-										<input type="text" name="heid_no" id="heid_no" class="form-control">
-									</div>
+
+
 								</div>
 
 								<br>
 
 								<div class="row">
-									<div class="col-md-6">
-										<label for="child_place">Mahali anapoishi mtoto</label>
-										<input type="text" name="child_place" id="child_place" class="form-control">
+									<div class="col-md-4">
+										<label for="heid_no">Namba ya HEID</label>
+										<input type="text" name="heid_no" id="heid_no" class="form-control">
 									</div>
-
-									<div class="col-md-6">
+									<div class="col-md-8">
 										<label>Jina la mama</label>
 										<input type="text" class="form-control" name="mother_name" placeholder="Jina la mama wa mtoto">
 									</div>
