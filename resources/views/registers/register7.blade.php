@@ -19,17 +19,11 @@
 						<div class="row col-md-12">
 
 							<div class="col-md-4">
-								<div class="row">
-									<div class="col-md-7">
+								<div class="row card col-md-12">
+									<div class="col-md-12 card-body">
 										<label>Jina la mtoto</label>
 										<input type="text" name="infant_name" id="infant_name" class="form-control">
 									</div>
-
-									<div class="col-md-5">
-										<label>Namba ya mtoto</label>
-										<input type="text" class="form-control" name="inftant_regno">
-									</div>
-
 								</div>
 
 								<br>
@@ -54,7 +48,7 @@
 
 											</div>
 											<div class="col-md-6">
-												<label for="amepata_vitaminA">Amepata vitamin A</label>
+												<label for="amepata_vitaminA">Amepata</label>
 												<select name="amepata_vitaminA" id="amepata_vitaminA" class="form-control">
 													<option value="" hidden=""></option>
 													<option value="ndio">Ndio</option>
@@ -211,7 +205,14 @@
 
 							{{-- rufaa --}}
 							<div class="col-md-3">
-								<div class="col-md-12 card row">
+								<div class="row card">
+									<div class="col-md-12 card-body">
+										<label>Namba ya mtoto</label>
+										<input type="text" class="form-control" name="inftant_regno">
+									</div>
+								</div>
+								<br>
+								<div class="card row">
 									<div class="card-header">Rufaa</div>
 									<div class="col-md-12">
 										<label for="home_center">Kituo alikotoka</label>
@@ -229,7 +230,7 @@
 
 									<div class="col-md-12">
 										<label for="referal_reason">Sababu ya rufaa</label>
-										<textarea name="referal_reason" id="referal_reason" cols="30" rows="5" class="form-control"></textarea>
+										<textarea name="referal_reason" id="referal_reason" cols="30" rows="2" class="form-control"></textarea>
 
 									</div>
 
@@ -238,7 +239,7 @@
 
 									<div class="col-md-12">
 										<label for="maelezo_mengine">Maelezo mengine / Maoni</label>
-										<textarea name="maelezo_mengine" id="maelezo_mengine" cols="30" rows="3" class="form-control"></textarea>
+										<textarea name="maelezo_mengine" id="maelezo_mengine" cols="30" rows="2" class="form-control"></textarea>
 
 									</div>
 								</div>
