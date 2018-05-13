@@ -16,8 +16,10 @@ class CreateRegister7sTable extends Migration
         Schema::create('register7s', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->foreign('Jina_la_mtoto')->references('jina_la_mtoto')->on('register_children');
-            $table->foreign('namba_ya_usajili')->references('namba_ya_mtoto')->on('register_children');
+            $table->string('jina_la_mtoto');
+            $table->string('namba_ya_usajili');
+            // $table->foreign('Jina_la_mtoto')->references('jina_la_mtoto')->on('register_children');
+            // $table->foreign('namba_ya_usajili')->references('namba_ya_mtoto')->on('register_children');
             $table->string('vitamin_A_umri');
             $table->string('amepata_vitamin_A');
             $table->float('uzito_mtoto');

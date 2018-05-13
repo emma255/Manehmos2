@@ -16,7 +16,7 @@ class CreateRegisterMaternalsTable extends Migration
         Schema::create('register_maternals', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->date('Tarehe_ya_kuandikishwa');
+            $table->date('tarehe_ya_kuandikishwa');
             $table->string('namba_ya_usajili');
             $table->string('jina_la_mama');
             $table->date('tarehe_ya_kuzaliwa');
@@ -31,7 +31,7 @@ class CreateRegisterMaternalsTable extends Migration
             $table->integer('watoto_walio_hai');
             $table->integer('mimba_zilizoharibika');
             $table->string('kifo_cha_mtoto_wiki_1');
-            $table->integer('umri_mtoto_wa mwisho');
+            $table->integer('umri_mtoto_wa_mwisho');
         });
     }
 

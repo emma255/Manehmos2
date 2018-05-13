@@ -19,24 +19,24 @@
 								<div class="row">
 									<div class="col-md-6">
 										<label>Tarehe</label>
-										<input type="date" name="register_date" class="form-control">
+										<input type="date" name="Tarehe_ya_kuandikishwa" class="form-control">
 									</div>
 
 									<div class="col-md-6">
 										<label>Namba ya usajili</label>
-										<input type="number" name="regno" class="form-control" placeholder="Namba" min="1">
+										<input type="number" name="namba_ya_usajili" class="form-control" placeholder="Namba" min="1">
 									</div>
 								</div>
 								<br>
 								<div class="row">
 									<div class="col-md-7">
 										<label>Jina la mama mjamzito</label>
-										<input type="text" class="form-control" placeholder="Andika jina kamili ">
+										<input type="text" class="form-control" placeholder="Andika jina kamili" name="jina_la_mama">
 									</div>
 
 									<div class="col-md-5">
 										<label>tarehe ya kuzaliwa</label>
-										<input type="date" class="form-control" placeholder="Andika jina la kwanza">
+										<input type="date" class="form-control" placeholder="Andika jina la kwanza" name="tarehe_ya_kuzaliwa">
 									</div>
 								</div>
 
@@ -44,7 +44,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<label>Shinikizo la damu (BP)</label>
-										<select name="maternal_bp" class="form-control">
+										<select name="BP" class="form-control">
 								<option value="" hidden=""></option>
 								<option value="Ndio">Ndio</option>
 								<option value="Hapana">Hapana</option>
@@ -53,7 +53,7 @@
 
 									<div class="col-md-6">
 										<label>Kujifungua kwa CS</label>
-										<select name="cs" class="form-control">
+										<select name="kujifungua_kwa_cs" class="form-control">
 								<option value="" hidden=""></option>
 								<option value="Ndio">Ndio</option>
 								<option value="Hapana">Hapana</option>
@@ -66,11 +66,11 @@
 								<div class="row">
 									<div class="col-md-5">
 										<label>Urefu wa mama (CM)</label>
-										<input type="number" name="maternal_height" class="form-control" placeholder="Urefu" min="1">
+										<input type="number" name="urefu" class="form-control" placeholder="Urefu" min="1">
 									</div>
 									<div class="col-md-7">
 										<labe>Jina la mume / mwenzi</label>
-											<input type="text" name="partner_name" class="form-control" placeholder="Jina la mume au mwenzi">
+											<input type="text" name="jina_la_mume" class="form-control" placeholder="Jina la mume au mwenzi">
 									</div>
 								</div>
 
@@ -88,12 +88,12 @@
 								<div class="row">
 									<div class="col-md-6">
 										<label>Kijiji / Mtaa / Kitongoji</label>
-										<input type="text" class="form-control" placeholder="Andika mahali anapoishi">
+										<input type="text" class="form-control" placeholder="Andika mahali anapoishi" name="mtaa">
 									</div>
 
 									<div class="col-md-6">
 										<label>JIna la mwenyekiti</label>
-										<input type="text" class="form-control" placeholder="mwenyekiti wa mahali">
+										<input type="text" class="form-control" placeholder="mwenyekiti wa mahali" name="jina_la_mwenyekiti">
 									</div>
 								</div>
 
@@ -109,11 +109,11 @@
 										<div class="row">
 											<div class="col-sm-3"><label>Mimba ya ngapi</label></div>
 
-											<div class="col-sm-3"><input type="number" min="1" class="form-control" name="preg_times" placeholder=""></div>
+											<div class="col-sm-3"><input type="number" min="1" class="form-control" name="mimba_ngapi" placeholder=""></div>
 
 											<div class="col-md-3"><label>Amezaa mara ngapi</label></div>
 
-											<div class="col-md-3"><input type="number" min="0" class="form-control" name="deliver_times" placeholder=""></div>
+											<div class="col-md-3"><input type="number" min="0" class="form-control" name="amezaa_mara_ngapi" placeholder=""></div>
 										</div>
 
 										<br>
@@ -121,11 +121,11 @@
 										<div class="row">
 											<div class="col-md-3"><label>Watoto walio hai</label></div>
 
-											<div class="col-md-3"><input type="number" min="0" class="form-control" name="children_alive" placeholder=""></div>
+											<div class="col-md-3"><input type="number" min="0" class="form-control" name="watoto_walio_hai" placeholder=""></div>
 
 											<div class="col-md-3"><label>Mimba zilizoharibika</label></div>
 
-											<div class="col-md-3"><input type="number" min="0" class="form-control" name="address" placeholder=""></div>
+											<div class="col-md-3"><input type="number" min="0" class="form-control" name="mimba_zilizoharibika" placeholder=""></div>
 										</div>
 
 										<br>
@@ -133,7 +133,7 @@
 										<div class="row">
 											<div class="col-md-3">Kifo cha mtoto katika wiki moja</div>
 											<div class="col-md-3">
-												<select name="child_death_at_1" class="form-control">
+												<select name="kifo_cha_mtoto_wiki_1" class="form-control">
 										<option value="" hidden=""></option>
 										<option value="Ndio">Ndio</option>
 										<option value="Hapana">Hapana</option>
@@ -141,7 +141,7 @@
 											</div>
 
 											<div class="col-md-3">Umri wa mtoto wa mwisho</div>
-											<div class="col-md-3"><input type="number" min="0" class="form-control" placeholder="Miezi"> </div>
+											<div class="col-md-3"><input type="number" min="0" class="form-control" placeholder="Miezi" name="umri_mtoto_wa_mwisho"> </div>
 										</div>
 									</div>
 								</div>

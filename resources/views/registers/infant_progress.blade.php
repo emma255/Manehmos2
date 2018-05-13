@@ -24,12 +24,12 @@
                                 <div class="row">
                                     <div class="col-md-7">
                                         <label>Jina la mtoto</label>
-                                        <input type="text" name="infant_name" id="infant_name" class="form-control">
+                                        <input type="text" name="jina_la_mtoto" id="jina_la_mtoto" class="form-control">
                                     </div>
 
                                     <div class="col-md-5">
                                         <label>Namba ya mtoto</label>
-                                        <input type="text" class="form-control" name="inftant_regno">
+                                        <input type="text" class="form-control" name="namba_ya_usajili">
                                     </div>
 
                                 </div>
@@ -39,7 +39,7 @@
                                 <div class="row">
                                     <div class="col-md-7">
                                         <label>Mahudhurio</label>
-                                        <select name="infant_attendance" class="form-control">
+                                        <select name="hudhurio" class="form-control">
                                             <option value="" hidden=""></option>
                                             <option value="Hudhurio la kwanza">Hudhurio 1 (Ndani ya masaa 24)</option>
                                             <option value="Hudhurio la pili">Hudhurio 2 (Ndani ya siku 7)</option>
@@ -50,7 +50,7 @@
 
                                     <div class="col-md-5">
                                         <label>Tarehe</label>
-                                        <input type="date" class="form-control" name="intant_attend_date">
+                                        <input type="date" class="form-control" name="tarehe">
                                     </div>
 
                                 </div>
@@ -60,17 +60,17 @@
                                 <div class="row">
                                     <div class="col-md-3">
                                         <label>Joto (&deg;C)</label>
-                                        <input type="number" class="form-control" name="mother_name" min="0">
+                                        <input type="number" class="form-control" name="joto" min="0">
                                     </div>
 
                                     <div class="col-md-4">
-                                        <label for="infant_weight">Uzito (Gram)</label>
-                                        <input type="number" name="infant_weight" id="infant_weight" class="form-control" min="0">
+                                        <label for="uzito">Uzito (Gram)</label>
+                                        <input type="number" name="uzito" id="uzito" class="form-control" min="0">
                                     </div>
 
                                     <div class="col-md-5">
                                         <label>Wekundu wa damu</label>
-                                        <select name="infant_HB" class="form-control">
+                                        <select name="wekundu_wa_damu" class="form-control">
                                             <option value="" hidden=""></option>
                                             <option value="Ndio">Wekundu umepungua</option>
                                             <option value="Hapana">Kawaida</option>
@@ -85,7 +85,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Lishe ya mtoto</label>
-                                        <select name="infant_nutrition" class="form-control">
+                                        <select name="lishe" class="form-control">
                                             <option value="" hidden=""></option>
                                             <option value="EBF">Maziwa ya mama pekee (EBF)</option>
                                             <option value="RF">Maziwa mbadala (RF)</option>
@@ -108,7 +108,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Macho yanatoa uchafu</label>
-                                        <select name="uchafu_machoni" class="form-control">
+                                        <select name="macho_yanatoa_uchafu" class="form-control">
                                             <option value="" hidden=""></option>
                                             <option value="Ndio">Ndio</option>
                                             <option value="Hapana">Hapana</option>
@@ -117,7 +117,7 @@
 
                                     <div class="col-md-6">
                                         <label>Mdomo una utando mweupe</label>
-                                        <select name="utando_mdomoni" class="form-control">
+                                        <select name="utando_mweupe_mdomoni" class="form-control">
                                             <option value="" hidden=""></option>
                                             <option value="Ndio">Ndio</option>
                                             <option value="Hapana">Hapana</option>
@@ -130,7 +130,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Ngozi ina vipele vyenye usaha</label>
-                                        <select name="ngozi_vipele" class="form-control">
+                                        <select name="ngozi_ina_vipele_vyenye_usaha" class="form-control">
                                             <option value="" hidden=""></option>
                                             <option value="Ndio">Ndio</option>
                                             <option value="Hapana">Hapana</option>
@@ -139,7 +139,7 @@
 
                                     <div class="col-md-6">
                                         <label>Ngozi imebadilika kuwa njano</label>
-                                        <select name="ngozi_imebadilika" class="form-control">
+                                        <select name="ngozi_njano" class="form-control">
                                             <option value="" hidden=""></option>
                                             <option value="Ndio">Ndio</option>
                                             <option value="Hapana">Hapana</option>
@@ -184,7 +184,7 @@
 
                                         <div class="row">
                                             <div class="col-md-6"><label>Kinatoa harufu</label>
-                                                <select name="harufu_kitovu" class="form-control">
+                                                <select name="kitovu_kinatoa_harufu" class="form-control">
                                                     <option value="" hidden=""></option>
                                                     <option value="Ndio">Ndio</option>
                                                     <option value="Hapana">Hapana</option>
@@ -192,7 +192,7 @@
                                             </div>
 
                                             <div class="col-md-6"><label>Kinatoa usaha</label>
-                                                <select name="usaha_kitovu" class="form-control">
+                                                <select name="kitovu_kinatoa_usaha" class="form-control">
                                                     <option value="" hidden=""></option>
                                                     <option value="Ndio">Ndio</option>
                                                     <option value="Hapana">Hapana</option>
@@ -214,12 +214,12 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Tarehe aliyopata BCG</label>
-                                                <input type="date" name="bcg_date" id="bcg_date" class="form-control">
+                                                <input type="date" name="tarehe_BCG" id="tarehe_BCG" class="form-control">
                                             </div>
 
                                             <div class="col-md-6">
                                                 <label>Tarehe aliyopata OPVO</label>
-                                                <input type="date" name="opvo_date" id="opvo_date" class="form-control">
+                                                <input type="date" name="tarehe_OPVO" id="tarehe_OPVO" class="form-control">
                                             </div>
                                             <div class="col-md-5">
 
@@ -232,13 +232,13 @@
 
                                 <div class="col-md-12 row">
                                     <div class="col-md-6">
-                                        <label for="return_date">Tarehe ya kurudi</label>
-                                        <input type="date" name="return_date" id="return_date" class="form-control">
+                                        <label for="tarehe_ya_kurudi">Tarehe ya kurudi</label>
+                                        <input type="date" name="tarehe_ya_kurudi" id="tarehe_ya_kurudi" class="form-control">
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label for="other_problems">Matatizo mengine</label>
-                                        <textarea name="other_problems" id="other_problems" rows="5" class="form-control"></textarea>
+                                        <label for="matatizo_mengine">Matatizo mengine</label>
+                                        <textarea name="matatizo_mengine" id="matatizo_mengine" rows="5" class="form-control"></textarea>
                                     </div>
                                 </div>
                             </div>

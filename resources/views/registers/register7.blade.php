@@ -22,7 +22,7 @@
 								<div class="row card col-md-12">
 									<div class="col-md-12 card-body">
 										<label>Jina la mtoto</label>
-										<input type="text" name="infant_name" id="infant_name" class="form-control">
+										<input type="text" name="jina_la_mtoto" id="infant_name" class="form-control">
 									</div>
 								</div>
 
@@ -32,7 +32,7 @@
 									<div class="card-body">
 										<div class="row">
 											<div class="col-md-6"><label>Umri wa mtoto</label>
-												<select name="child_age_vitamin_A" class="form-control">
+												<select name="vitamin_A_umri" class="form-control">
 							                    <option value="" hidden=""></option>
 							                    <option value="Miezi 6">Miezi 6</option>
 							                    <option value="Mwaka 1">Mwaka 1</option>
@@ -49,7 +49,7 @@
 											</div>
 											<div class="col-md-6">
 												<label for="amepata_vitaminA">Amepata</label>
-												<select name="amepata_vitaminA" id="amepata_vitaminA" class="form-control">
+												<select name="amepata_vitamin_A" id="amepata_vitaminA" class="form-control">
 													<option value="" hidden=""></option>
 													<option value="ndio">Ndio</option>
 													<option value="hapana">Hapana</option>
@@ -67,12 +67,12 @@
 										<div class="row">
 											<div class="col-md-6">
 												<label for="child_weight">Uzito wa mtoto</label>
-												<input type="number" name="child_weight" id="child_weight" class="form-control">
+												<input type="number" name="uzito_mtoto" id="child_weight" class="form-control">
 											</div>
 
 											<div class="col-md-6">
 												<label for="child_heigh">Urefu wa mtoto</label>
-												<input type="number" name="child_heigh" id="child_heigh" class="form-control">
+												<input type="number" name="urefu_mtoto" id="child_heigh" class="form-control">
 											</div>
 										</div>
 									</div>
@@ -86,7 +86,7 @@
 										<div class="row">
 											<div class="col-md-6">
 												<label for="child_age">Umri wa mtoto</label>
-												<select name="age_mebendazole" id="age_mebendazole" class="form-control">
+												<select name="mebendazole_albendazole_umri" id="age_mebendazole" class="form-control">
 													<option value="" hidden=""></option>
 													<option value="Miezi 12">Miezi 12</option>
 													<option value="Miezi 18">Miezi 18</option>
@@ -96,7 +96,7 @@
 											</div>
 											<div class="col-md-6">
 												<label for="amepata_mebendazole">Amepata dawa</label>
-												<select name="amepata_mebendazole" id="amepata_mebendazole" class="form-control">
+												<select name="amepata_mebendazole_albendazole" id="amepata_mebendazole" class="form-control">
 													<option value="" hidden=""></option>
 													<option value="Ndio">Ndio</option>
 													<option value="Hapana">Hapana</option>
@@ -114,7 +114,7 @@
 									<div class="card-body">
 										<div class="row">
 											<div class="col-md-5"><label>Namba ya PENTA</label>
-												<select name="penta_number" class="form-control">
+												<select name="PENTA" class="form-control">
 													<option value="" hidden=""></option>
 													<option value="PENTA 1">PENTA 1</option>
 													<option value="PENTA 2">PENTA 2</option>
@@ -124,7 +124,7 @@
 
 											<div class="col-md-7">
 												<label for="penta_date">Tarehe ya chanjo ya  PENTA</label>
-												<input type="date" name="penta_date" id="penta_date" class="form-control">
+												<input type="date" name="penta_tarehe" id="penta_date" class="form-control">
 											</div>
 										</div>
 
@@ -132,7 +132,7 @@
 
 										<div class="row">
 											<div class="col-md-5"><label>Namba ya Polio</label>
-												<select name="Polio_number" class="form-control">
+												<select name="Polio" class="form-control">
 													<option value="" hidden=""></option>
 													<option value="Polio 1">Polio 1</option>
 													<option value="Polio 2">Polio 2</option>
@@ -142,7 +142,7 @@
 
 											<div class="col-md-7">
 												<label for="Polio_date">Tarehe ya chanjo ya Polio</label>
-												<input type="date" name="Polio_date" id="Polio_date" class="form-control">
+												<input type="date" name="Polio_tarehe" id="Polio_date" class="form-control">
 											</div>
 										</div>
 
@@ -151,7 +151,7 @@
 
 										<div class="row">
 											<div class="col-md-5"><label>Namba ya PCV13</label>
-												<select name="PCV13_number" class="form-control">
+												<select name="PCV13" class="form-control">
 													<option value="" hidden=""></option>
 													<option value="PCV13 1">PCV13 1</option>
 													<option value="PCV13 2">PCV13 2</option>
@@ -161,7 +161,7 @@
 
 											<div class="col-md-7">
 												<label for="PCV13_date">Tarehe ya chanjo ya PCV13</label>
-												<input type="date" name="PCV13_date" id="PCV13_date" class="form-control">
+												<input type="date" name="PCV13_tarehe" id="PCV13_date" class="form-control">
 											</div>
 										</div>
 
@@ -169,7 +169,7 @@
 
 										<div class="row">
 											<div class="col-md-5"><label>Namba ya Rota</label>
-												<select name="Rota_number" class="form-control">
+												<select name="Rota" class="form-control">
 													<option value="" hidden=""></option>
 													<option value="Rota 1">Rota 1</option>
 													<option value="Rota 2">Rota 2</option>
@@ -178,7 +178,7 @@
 
 											<div class="col-md-7">
 												<label for="Rota_date">Tarehe ya chanjo ya Rota</label>
-												<input type="date" name="Rota_date" id="Rota_date" class="form-control">
+												<input type="date" name="Rota_tarehe" id="Rota_date" class="form-control">
 											</div>
 										</div>
 
@@ -186,7 +186,7 @@
 
 										<div class="row">
 											<div class="col-md-5"><label>Namba ya Surua</label>
-												<select name="Surua_number" class="form-control">
+												<select name="Surua" class="form-control">
 													<option value="" hidden=""></option>
 													<option value="Surua 1">Surua 1</option>
 													<option value="Surua 2">Surua 2</option>
@@ -195,7 +195,7 @@
 
 											<div class="col-md-7">
 												<label for="Surua_date">Tarehe ya chanjo ya Surua</label>
-												<input type="date" name="Surua_date" id="Surua_date" class="form-control">
+												<input type="date" name="Surua_tarehe" id="Surua_date" class="form-control">
 											</div>
 										</div>
 									</div>
@@ -208,7 +208,7 @@
 								<div class="row card">
 									<div class="col-md-12 card-body">
 										<label>Namba ya mtoto</label>
-										<input type="text" class="form-control" name="inftant_regno">
+										<input type="text" class="form-control" name="namba_ya_usajili">
 									</div>
 								</div>
 								<br>
@@ -216,21 +216,21 @@
 									<div class="card-header">Rufaa</div>
 									<div class="col-md-12">
 										<label for="home_center">Kituo alikotoka</label>
-										<input type="text" name="home_center" id="home_center" class="form-control">
+										<input type="text" name="rufaa_alikotoka" id="rufaa_alikotoka" class="form-control">
 									</div>
 
 									<br>
 
 									<div class="col-md-12">
 										<label for="deatin_center">Kituo alikopelekwa</label>
-										<input type="text" name="deatin_center" id="deatin_center" class="form-control">
+										<input type="text" name="rufaa_alikopelekwa" id="rufaa_alikopelekwa" class="form-control">
 									</div>
 
 									<br>
 
 									<div class="col-md-12">
 										<label for="referal_reason">Sababu ya rufaa</label>
-										<textarea name="referal_reason" id="referal_reason" cols="30" rows="2" class="form-control"></textarea>
+										<textarea name="rufaa_sababu" id="rufaa_sababu" cols="30" rows="2" class="form-control"></textarea>
 
 									</div>
 
@@ -239,7 +239,7 @@
 
 									<div class="col-md-12">
 										<label for="maelezo_mengine">Maelezo mengine / Maoni</label>
-										<textarea name="maelezo_mengine" id="maelezo_mengine" cols="30" rows="2" class="form-control"></textarea>
+										<textarea name="Maoni_o_maelezo_mengine" id="Maoni_o_maelezo_mengine" cols="30" rows="2" class="form-control"></textarea>
 
 									</div>
 								</div>

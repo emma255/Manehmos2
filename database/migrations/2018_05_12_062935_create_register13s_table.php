@@ -16,8 +16,10 @@ class CreateRegister13sTable extends Migration
         Schema::create('register13s', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->foreign('Namba_ya_kadi')->references('namba_ya_kadi_RCH4')->on('postnatals');
-            $table->foreign('Jina_la_mama')->references('jina_la_mama')->on('postnatals');
+            $table->string('Namba_ya_kadi');
+            $table->string('Jina_la_mama');
+            // $table->foreign('Namba_ya_kadi')->references('namba_ya_kadi_RCH4')->on('postnatals');
+            // $table->foreign('Jina_la_mama')->references('jina_la_mama')->on('postnatals');
             $table->string('hudhurio');
             $table->date('tarehe_ya_hudhurio');
             $table->string('mama_BP');

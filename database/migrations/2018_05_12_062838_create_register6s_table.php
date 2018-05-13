@@ -16,8 +16,10 @@ class CreateRegister6sTable extends Migration
         Schema::create('register6s', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->foreign('jina_la_mama')->references('jina_la_mama')->on('register_maternals');
-            $table->foreign('namba_ya_usajili')->references('namba_ya_usajili')->on('register_maternals');
+            $table->string('jina_la_mama');
+            $table->string('namba_ya_usajili');
+            // $table->foreign('jina_la_mama')->references('jina_la_mama')->on('register_maternals');
+            // $table->foreign('namba_ya_usajili')->references('namba_ya_usajili')->on('register_maternals');
             $table->string('matokeo_stds_mume');
             $table->string('mume_ametibiwa');
             $table->string('matokeo_stds_mke');
@@ -32,15 +34,15 @@ class CreateRegister6sTable extends Migration
             $table->string('mume_tayari_ana_VVU');
             $table->string('mume_tarehe_ya_unasihi');
             $table->string('mume_amepima_VVU');
-            $table->string('mume_amepima_VVU');
             $table->string('mume_tarehe_ya_kipimo');
+            $table->string('mume_kipimo1_VVU');
             $table->string('mume_unasihi_baada_ya_kipimo_1');
             $table->string('mume_kipimo_2_VVU');
             $table->string('mke_tayari_ana_VVU');
             $table->string('mke_tarehe_ya_unasihi');
             $table->string('mke_amepima_VVU');
-            $table->string('mke_amepima_VVU');
             $table->string('mke_tarehe_ya_kipimo');
+            $table->string('mke_kipimo1_VVU');
             $table->string('mke_unasihi_baada_ya_kipimo_1');
             $table->string('mke_kipimo_2_VVU');
             $table->string('hana_matatizo');
@@ -59,7 +61,6 @@ class CreateRegister6sTable extends Migration
             $table->string('mrdt_o_bs');
             $table->string('llin');
             $table->string('ipt');
-            $table->date('tarehe_ya_ipt');
             $table->date('tarehe_ya_ipt');
             $table->string('maoni');
             $table->date('tarehe_rufaa');
