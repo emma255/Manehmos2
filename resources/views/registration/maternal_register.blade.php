@@ -8,7 +8,7 @@
 					<p>Taarifa Binafsi za mama mjamzito</p>
 				</div>
 				<div class="card-body">
-					<form action="{{ ('store') }}" method="post">
+					<form action="/maternal/store" method="post">
 
 						{{csrf_field()}}
 
@@ -19,7 +19,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<label>Tarehe</label>
-										<input type="date" name="Tarehe_ya_kuandikishwa" class="form-control">
+										<input type="date" name="tarehe_ya_kuandikishwa" class="form-control">
 									</div>
 
 									<div class="col-md-6">

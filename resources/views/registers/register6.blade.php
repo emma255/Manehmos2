@@ -12,7 +12,7 @@
 
 			<div class="card-body">
 
-				<form action="{{ ('register6/store') }}" method="post">
+				<form action="/register6/store" method="post">
 					{{csrf_field()}}
 
 					<div class="form-group">
@@ -272,7 +272,7 @@
 										<div class="row">
 											<div class="col-md-9"><label>Kutoongezeka uzito</label></div>
 											<div class="col-md-3">
-												<input type="checkbox" class "form-control" value="ndio" name "kutoongezeka_uzito">
+												<input type="checkbox" class "form-control" value="ndio" name="kutoongezeka_uzito">
 											</div>
 										</div>
 
@@ -542,7 +542,7 @@
 
 									<div class="col-md-3">
 										<label>Tarehe</label>
-										<input type="date" id="referal_date" name="referal_date" class="form-control">
+										<input type="date" id="tarehe_rufaa" name="tarehe_rufaa" class="form-control">
 									</div>
 
 									<div class="col-md-3">

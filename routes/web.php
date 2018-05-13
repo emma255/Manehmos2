@@ -11,49 +11,27 @@
 |
  */
 
-Route::get('index', function () {
-    return view('index');
-});
+Route::get('index', 'HomeController@index');
 
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('child/register', function () {
-    return view('registration.child_register');
-});
+Route::get('child/register', 'RegisterChildController@create');
 
-Route::get('maternal/register', function () {
-    return view('registration.maternal_register');
-});
+Route::get('maternal/register', 'RegisterMaternalController@create');
 
-Route::get('husband/register', function () {
-    return view('registration.husband_register');
-});
+Route::get('postnatal', 'PostnatalController@create');
 
-Route::get('postnatal', function () {
-    return view('registers.postnatal');
-});
+Route::get('infant', 'InfantController@create');
 
-Route::get('infant', function () {
-    return view('registers.infant_progress');
-});
+Route::get('register6', 'Register6Controller@create');
 
-Route::get('register6', function () {
-    return view('registers.register6');
-});
+Route::get('register7', 'Register7Controller@create');
 
-Route::get('register7', function () {
-    return view('registers.register7');
-});
+Route::get('register13', 'Register13Controller@create');
 
-Route::get('register13', function () {
-    return view('registers.register13');
-});
-
-Route::get('admin/home', function () {
-    return view('admin.adminHome');
-});
+Route::get('admin/home', 'AdminHomeController@create');
 
 //posts
 Route::post('maternal/store', 'RegisterMaternalController@store');

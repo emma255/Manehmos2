@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class RegisterMaternal extends Model
 {
-    //
+    protected $guarded = [];
 }

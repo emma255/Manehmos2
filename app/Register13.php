@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class infant extends Model
+class register13 extends Model
 {
-    //
+    protected $guarded = [];
 }

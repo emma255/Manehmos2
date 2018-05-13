@@ -11,7 +11,7 @@
 
 			<div class="card-body">
 
-				<form action="{{ ('register7/store') }}" method="post">
+				<form action="/register7/store" method="post">
 					{{csrf_field()}}
 
 					<div class="form-group">

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\infant;
+use App\Infant;
 use Illuminate\Http\Request;
 
 class InfantController extends Controller
@@ -12,6 +12,11 @@ class InfantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
@@ -24,7 +29,7 @@ class InfantController extends Controller
      */
     public function create()
     {
-        //
+        return view('registers.infant_progress');
     }
 
     /**
@@ -35,6 +40,55 @@ class InfantController extends Controller
      */
     public function store()
     {
+        $this->validate(request(), [
+            'jina_la_mtoto',
+            'namba_ya_usajili',
+            'hudhurio',
+            'tarehe',
+            'joto',
+            'uzito',
+            'lishe',
+            'macho_yanatoa_uchafu',
+            'ngozi_ina_vipele_vyenye_usaha',
+            'wekundu_wa_damu',
+            'kuchezacheza_mtoto',
+            'utando_mweupe_mdomoni',
+            'ngozi_njano',
+            'kitovu_kimepona',
+            'kitovu_chekundu',
+            'kitovu_kinatoa_harufu',
+            'kitovu_kinatoa_usaha',
+            'tarehe_BCG',
+            'tarehe_OPVO',
+            'matatizo_mengine',
+            'tarehe_ya_kurudi',
+
+        ]);
+
+        Infant::create(request([
+            'jina_la_mtoto',
+            'namba_ya_usajili',
+            'hudhurio',
+            'tarehe',
+            'joto',
+            'uzito',
+            'lishe',
+            'macho_yanatoa_uchafu',
+            'ngozi_ina_vipele_vyenye_usaha',
+            'wekundu_wa_damu',
+            'kuchezacheza_mtoto',
+            'utando_mweupe_mdomoni',
+            'ngozi_njano',
+            'kitovu_kimepona',
+            'kitovu_chekundu',
+            'kitovu_kinatoa_harufu',
+            'kitovu_kinatoa_usaha',
+            'tarehe_BCG',
+            'tarehe_OPVO',
+            'matatizo_mengine',
+            'tarehe_ya_kurudi',
+        ]));
+
         return view('home');
     }
 

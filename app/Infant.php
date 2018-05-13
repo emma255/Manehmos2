@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mituha extends Model
+class infant extends Model
 {
-    //
+    protected $guarded = [];
 }

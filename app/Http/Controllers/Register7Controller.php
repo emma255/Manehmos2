@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\register7;
+use App\Register7;
 use Illuminate\Http\Request;
 
 class Register7Controller extends Controller
@@ -12,6 +12,11 @@ class Register7Controller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
@@ -24,7 +29,7 @@ class Register7Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('registers.register7');
     }
 
     /**
@@ -35,6 +40,56 @@ class Register7Controller extends Controller
      */
     public function store()
     {
+        $this->validate(request(), [
+            'jina_la_mtoto',
+            'namba_ya_usajili',
+            'vitamin_A_umri',
+            'amepata_vitamin_A',
+            'uzito_mtoto',
+            'urefu_mtoto',
+            'mebendazole_albendazole_umri',
+            'amepata_mebendazole_albendazole',
+            'PENTA',
+            'penta_tarehe',
+            'Polio',
+            'Polio_tarehe',
+            'PCV13',
+            'PCV13_tarehe',
+            'Rota',
+            'Rota_tarehe',
+            'Surua',
+            'Surua_tarehe',
+            'rufaa_alikotoka',
+            'rufaa_alikopelekwa',
+            'rufaa_sababu',
+            'Maoni_o_maelezo_mengine',
+        ]);
+
+        Register7::create(request([
+            'jina_la_mtoto',
+            'namba_ya_usajili',
+            'vitamin_A_umri',
+            'amepata_vitamin_A',
+            'uzito_mtoto',
+            'urefu_mtoto',
+            'mebendazole_albendazole_umri',
+            'amepata_mebendazole_albendazole',
+            'PENTA',
+            'penta_tarehe',
+            'Polio',
+            'Polio_tarehe',
+            'PCV13',
+            'PCV13_tarehe',
+            'Rota',
+            'Rota_tarehe',
+            'Surua',
+            'Surua_tarehe',
+            'rufaa_alikotoka',
+            'rufaa_alikopelekwa',
+            'rufaa_sababu',
+            'Maoni_o_maelezo_mengine',
+        ]));
+
         return view('home');
     }
 

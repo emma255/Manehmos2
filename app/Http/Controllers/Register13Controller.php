@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\register13;
+use App\Register13;
 use Illuminate\Http\Request;
 
 class Register13Controller extends Controller
@@ -12,6 +12,11 @@ class Register13Controller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
@@ -24,7 +29,7 @@ class Register13Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('registers.register13');
     }
 
     /**
@@ -35,6 +40,57 @@ class Register13Controller extends Controller
      */
     public function store()
     {
+        $this->validate(request(), [
+            'Namba_ya_kadi',
+            'Jina_la_mama',
+            'hudhurio',
+            'tarehe_ya_hudhurio',
+            'mama_BP',
+            'mama_HB',
+            'matiti',
+            'tumbo_la_uzazi',
+            'lochia',
+            'hali_ya_msamba',
+            'fistula',
+            'akili_timamu',
+            'aina_ya_dawa_nyongeza',
+            'idadi_ya_dawa_nyongeza',
+            'idadi_ya_dawa_vitaminA',
+            'chanjo_ya_TT',
+            'family_plan_usahuri_umetolewa',
+            'family_plan_amepatiwa_kielelezo',
+            'amepatiwa_family_plan_wakati_wa_ppc',
+            'rufaa_kupata_family_plan',
+            'rufaa_alikopelekwa',
+            'rufaa_alikotoka',
+            'rufaa_sababu_o_maoni',
+        ]);
+
+        Register13::create(request([
+            'Namba_ya_kadi',
+            'Jina_la_mama',
+            'hudhurio',
+            'tarehe_ya_hudhurio',
+            'mama_BP',
+            'mama_HB',
+            'matiti',
+            'tumbo_la_uzazi',
+            'lochia',
+            'hali_ya_msamba',
+            'fistula',
+            'akili_timamu',
+            'aina_ya_dawa_nyongeza',
+            'idadi_ya_dawa_nyongeza',
+            'idadi_ya_dawa_vitaminA',
+            'chanjo_ya_TT',
+            'family_plan_usahuri_umetolewa',
+            'family_plan_amepatiwa_kielelezo',
+            'amepatiwa_family_plan_wakati_wa_ppc',
+            'rufaa_kupata_family_plan',
+            'rufaa_alikopelekwa',
+            'rufaa_alikotoka',
+            'rufaa_sababu_o_maoni',
+        ]));
         return view('home');
     }
 

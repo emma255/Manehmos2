@@ -89,7 +89,7 @@
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="/imgs/emma.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">{{Auth::user()->name}}</span>
+              <span class="hidden-xs">emmanuel</span>
             </a>
               <ul class="dropdown-menu">
                 <!-- Menu Body -->
@@ -120,7 +120,7 @@
             <img src="/imgs/emma.jpg" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
-            <p>{{Auth::user()->name}}</p>
+            <p>emmanuel</p>
             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
           </div>
         </div>

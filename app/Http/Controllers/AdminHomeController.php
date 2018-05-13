@@ -4,13 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class admin extends Controller
+class AdminHomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
@@ -23,7 +28,7 @@ class admin extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.adminHome');
     }
 
     /**

@@ -12,6 +12,11 @@ class RegisterChildController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
@@ -24,7 +29,7 @@ class RegisterChildController extends Controller
      */
     public function create()
     {
-        //
+        return view('registration.child_register');
     }
 
     /**
@@ -35,6 +40,28 @@ class RegisterChildController extends Controller
      */
     public function store()
     {
+        $this->validate(request(), [
+            'tarehe_ya_kuandikishwa',
+            'namba_ya_usajili_RITA',
+            'jina_la_mtoto',
+            'namba_ya_mtoto',
+            'jinsia',
+            'namba_ya_HEID',
+            'jina_la_mama',
+            'mahali_anapoishi_mtoto',
+        ]);
+
+        RegisterChild::create(request([
+            'tarehe_ya_kuandikishwa',
+            'namba_ya_usajili_RITA',
+            'jina_la_mtoto',
+            'namba_ya_mtoto',
+            'jinsia',
+            'namba_ya_HEID',
+            'jina_la_mama',
+            'mahali_anapoishi_mtoto',
+        ]));
+
         return view('registers.infant_progress');
     }
 
