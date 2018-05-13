@@ -45,6 +45,7 @@
 											<option value="Siku 3-7">Siku 3-7</option>
 											<option value="Siku 8-28">Siku 8-28</option>
 											<option value="Siku 29-42">Siku 29-42</option>
+											<option value="mengineyo">mengineyo</option>
 				                        </select>
 									</div>
 
@@ -67,10 +68,10 @@
 											<div class="dropdown-menu form-control">
 												<div>
 													<div class="row">
-														<div class="col-sm-6"><label>&nbsp;BP(mmHG)</label></div>
+														<div class="col-sm-5"><label>&nbsp;BP(mmHG)</label></div>
 
-														<div class="col-sm-6">
-															<input type="number" class="form-control" id="bp" name="bp" placeholder="BP" min="0">
+														<div class="col-sm-7">
+															<input type="text" class="form-control" id="bp" name="bp" placeholder="BP" min="0">
 														</div>
 													</div>
 													<br>
@@ -123,16 +124,24 @@
 									</div>
 								</div>
 								<br>
+
+							</div>
+							<!--end left division-->
+							<div class="col-sm-1"></div>
+
+
+
+							<!--right division-->
+							<div class="col-sm-6">
 								<div class="row">
 									<div class="col-sm-6">
-
 										<div>
 											<label>Hali ya msamba</label>
 											<select name="msamba" class="form-control">
-						                    <option value="" hidden=""></option>
-						                    <option value="Mshono umeunga">Mshono umeunga</option>
-						                    <option value="Mshono umeachia">Mshono umeachia</option>
-						                </select>
+												<option value="" hidden=""></option>
+												<option value="Mshono umeunga">Mshono umeunga</option>
+												<option value="Mshono umeachia">Mshono umeachia</option>
+						                	</select>
 										</div>
 									</div>
 
@@ -200,7 +209,7 @@
 														</div>
 													</div>
 													<div class="row">
-														<div class="col-sm-6"><label>&nbsp;Aina ya dawa</label></div>
+														<div class="col-sm-6"><label>&nbsp;Idadi ya dawa</label></div>
 
 														<div class="col-sm-6">
 															<input type="number" class="form-control" id="idadi_vitamin_A" name="idadi_vitamin_A" placeholder="Idadi" min="0">
@@ -211,14 +220,9 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<!--end left division-->
-							<div class="col-sm-1"></div>
 
+								<br>
 
-
-							<!--right division-->
-							<div class="col-sm-6">
 								<div class="row">
 									<div class="col-sm-4">
 										<label>Chanjo ya TT</label>
@@ -241,19 +245,19 @@
 											<div class="dropdown-menu form-control">
 												<div class="row">
 													<div class="col-sm-8"><label>&nbsp;Ushauri umetolewa</label></div>
-													<div class="col-sm-4"><input type="checkbox"></div>
+													<div class="col-sm-4"><input type="checkbox" name="ushauri_umetolewa" value="ndio"></div>
 												</div>
 												<div class="row">
 													<div class="col-sm-8"><label>&nbsp;Amepatiwa kielelezo</label></div>
-													<div class="col-sm-4"><input type="checkbox"></div>
+													<div class="col-sm-4"><input type="checkbox" name="amepatiwa_kielelezo" value="ndio"></div>
 												</div>
 												<div class="row">
 													<div class="col-sm-8"><label>&nbsp;Amepatiwanjia ya uzazi wa mpango wakati wa PPC</label></div>
-													<div class="col-sm-4"><input type="checkbox"></div>
+													<div class="col-sm-4"><input type="checkbox" name="plan_ppc" value="ndio"></div>
 												</div>
 												<div class="row">
 													<div class="col-sm-8"><label>&nbsp;Amepata rufaa kupata njia ya uzazi wa mpango</label></div>
-													<div class="col-sm-4"><input type="checkbox"></div>
+													<div class="col-sm-4"><input type="checkbox" name="plan_rufaa" value="ndio"></div>
 												</div>
 											</div>
 										</div>
@@ -262,164 +266,6 @@
 
 								<br>
 
-								<div class="row">
-									<div class="col-sm-5">
-										<label>Hudhurio la mtoto</label>
-										<select name="hudhurio_mtoto" class="form-control">
-											<option value="" hidden=""></option>
-											<option value="Masaa 48">Masaa 48</option>
-											<option value="Siku 3-7">Siku 3-7</option>
-											<option value="Siku 8-28">Siku 8-28</option>
-											<option value="Siku 29-42">Siku 29-42</option>
-				                        </select>
-									</div>
-
-
-									<div class="col-sm-7">
-										<label>Tarehe ya hudhurio</label>
-										<input type="date" name="mtoto_date" class="form-control">
-									</div>
-								</div>
-
-
-								<br>
-
-								<div class="row">
-									<div class="col-sm-8">
-										<label>Vipimo/Huduma kwa mtoto</label>
-										<div class="dropdown show dropdown-toggle-primary form-control">
-											<a class="dropdown-toggle" role="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					                        {{ __('') }}
-					                      </a>
-
-											<div class="dropdown-menu form-control">
-												<div>
-													<div class="row">
-														<div class="col-sm-6"><label>&nbsp;Joto</label></div>
-
-														<div class="col-sm-5">
-															<input type="number" class="form-control" id="temperature" name="temperature" placeholder="Joto" min="0">
-														</div>
-													</div>
-													<br>
-													<div class="row">
-														<div class="col-sm-6"><label>&nbsp;Chanjo</label></div>
-
-														<div class="col-sm-5">
-															<input type="text" class="form-control" name="child_vacc" placeholder="Chanjo">
-														</div>
-													</div>
-													<br>
-													<div class="row">
-														<div class="col-sm-6"><label>&nbsp;Uzito (g/Kg)</label></div>
-
-														<div class="col-sm-5">
-															<input type="number" class="form-control" name="child_weight" placeholder="Uzito" min="0">
-														</div>
-													</div>
-													<br>
-													<div class="row">
-														<div class="col-sm-6"><label>&nbsp;HB (g/dl au %)</label></div>
-
-														<div class="col-sm-5">
-															<input type="number" class="form-control" name="child_hb" placeholder="HB" min="0">
-														</div>
-													</div>
-													<br>
-													<div class="row">
-														<div class="col-sm-6"><label>&nbsp;KMC</label></div>
-
-														<div class="col-sm-5">
-															<input type="number" class="form-control" name="child_kmc" placeholder="KMC" min="0">
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-
-
-									<div class="col-sm-4">
-										<label>ARV Prophlaxis</label>
-
-										<div class="dropdown show dropdown-toggle-primary form-control">
-											<a class="dropdown-toggle" role="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					                        {{ __('') }}
-					                      </a>
-
-											<div class="dropdown-menu form-control">
-												<div>
-													<div class="row">
-														<div class="col-sm-3"><label>&nbsp;ARV</label></div>
-
-														<div class="col-sm-8">
-															<input type="text" class="form-control" name="arv" placeholder="Aina">
-														</div>
-													</div>
-													<br>
-													<div class="row">
-														<div class="col-sm-3"><label>&nbsp;Muda</label></div>
-
-														<div class="col-sm-8">
-															<input type="text" class="form-control" name="time" placeholder="Muda">
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<br>
-
-								<div class="row">
-									<div class="col-sm-8">
-										<label>Uambukizo wa mtoto</label>
-										<div class="dropdown show dropdown-toggle-primary form-control">
-											<a class="dropdown-toggle" role="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					                        {{ __('') }}
-					                      </a>
-
-											<div class="dropdown-menu form-control">
-												<div class="row">
-													<div class="col-sm-4"><label>&nbsp;Kitovu</label></div>
-													<div class="col-sm-8"><input type="checkbox"></div>
-												</div>
-												<div class="row">
-													<div class="col-sm-4"><label>&nbsp;Ngozi</label></div>
-													<div class="col-sm-8"><input type="checkbox"></div>
-												</div>
-												<div class="row">
-													<div class="col-sm-4"><label>&nbsp;Mdomo</label></div>
-													<div class="col-sm-8"><input type="checkbox"></div>
-												</div>
-												<div class="row">
-													<div class="col-sm-4"><label>&nbsp;Macho</label></div>
-													<div class="col-sm-8"><input type="checkbox"></div>
-												</div>
-												<div class="row">
-													<div class="col-sm-4"><label>&nbsp;Jaundice</label></div>
-													<div class="col-sm-8"><input type="checkbox"></div>
-												</div>
-												<div class="row">
-													<div class="col-sm-7"><label>&nbsp;Uambukizo mkali</label></div>
-													<div class="col-sm-4"><input type="checkbox"></div>
-												</div>
-											</div>
-										</div>
-									</div>
-
-
-									<div class="col-sm-4">
-										<label>Ulishaji wa mtoto</label>
-										<select name="hudhurio_mtoto" class="form-control">
-											<option value="" hidden=""></option>
-											<option value="EBF">EBF</option>
-											<option value="RF">RF</option>
-											<option value="MF">MF</option>
-				                        </select>
-									</div>
-								</div>
-								<br>
 								<div class="row">
 									<div class="col-sm-2"><label>Rufaa</label></div>
 									<div class="col-sm-10">

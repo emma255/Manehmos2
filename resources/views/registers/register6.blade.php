@@ -238,69 +238,69 @@
 											<div class="col-md-9"><label>Hana matatizo</label>
 											</div>
 											<div class="col-md-3">
-												<input type="checkbox" class "form-control" value="Hana matatizo" name="no_problem">
+												<input type="checkbox" class "form-control" value="ndio" name="no_problem">
 											</div>
 										</div>
 
 										<div class="row">
 											<div class="col-md-9"><label>Kuharibika mimba mfululizo</label></div>
 											<div class="col-md-3">
-												<input type="checkbox" class "form-control" value="kuharibika mimba mfululizo, mara mbili kuendelea" name="miscarriage">
+												<input type="checkbox" class "form-control" value="ndio" name="miscarriage">
 											</div>
 										</div>
 
 										<div class="row">
 											<div class="col-md-9"><label>Anaemia</label></div>
 											<div class="col-md-3">
-												<input type="checkbox" class "form-control" value="Anaemia" name="anaemia">
+												<input type="checkbox" class "form-control" value="ndio" name="anaemia">
 											</div>
 										</div>
 
 										<div class="row">
 											<div class="col-md-9"><label>Protenuria</label></div>
-											<div class="col-md-3"><input type="checkbox" class "form-control" value="Protenuria" name="protenuria">
+											<div class="col-md-3"><input type="checkbox" class "form-control" value="ndio" name="protenuria">
 											</div>
 										</div>
 
 										<div class="row">
 											<div class="col-md-9"><label>Shinikizo la juu la damu</label></div>
 											<div class="col-md-3">
-												<input type="checkbox" class "form-control" value="High blood pressure (BP)" name="high_bp">
+												<input type="checkbox" class "form-control" value="ndio" name="high_bp">
 											</div>
 										</div>
 
 										<div class="row">
 											<div class="col-md-9"><label>Kutoongezeka uzito</label></div>
 											<div class="col-md-3">
-												<input type="checkbox" class "form-control" value="Kutoongezeka uzito" name "kutorefuka">
+												<input type="checkbox" class "form-control" value="ndio" name "kutorefuka">
 											</div>
 										</div>
 
 										<div class="row">
 											<div class="col-md-9"><label>Damu ukeni</label></div>
 											<div class="col-md-3">
-												<input type="checkbox" class "form-control" value="Damu ukeni" name="Damu ukeni">
+												<input type="checkbox" class "form-control" value="ndio" name="Damu ukeni">
 											</div>
 										</div>
 
 										<div class="row">
 											<div class="col-md-9"><label>Mlalo mbaya wa mtoto</label></div>
-											<div class="col-md-3"><input type="checkbox" class "form-control" value="Mlalo mbaya wa mtoto" name="mlalo_mbaya">
+											<div class="col-md-3"><input type="checkbox" class "form-control" value="ndio" name="mlalo_mbaya">
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-md-9"><label>Mimba ya nne kuendelea</label></div>
-											<div class="col-md-3"><input type="checkbox" class "form-control" value="Mimba ya nne kuendelea" name="mimba_4+">
+											<div class="col-md-3"><input type="checkbox" class "form-control" value="ndio" name="mimba_4+">
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-md-9"><label>Kuzaa kwa operesheni</label></div>
-											<div class="col-md-3"><input type="checkbox" class "form-control" value="Kuzaa kwa operesheni" name="c_s">
+											<div class="col-md-3"><input type="checkbox" class "form-control" value="ndio" name="c_s">
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-md-9"><label>Vacuum extraction</label></div>
-											<div class="col-md-3"><input type="checkbox" class "form-control" value="Vacuum extraction" name="ve">
+											<div class="col-md-3"><input type="checkbox" class "form-control" value="ndio" name="ve">
 											</div>
 										</div>
 									</div>
@@ -518,20 +518,8 @@
 								<br>
 
 								<div class="row col-md-12">
-									<div class="col-md-5">
-										<label>Ushauri ulishaji wa mtoto</label>
-										<select name="ulishaji_mtoto" class="form-control">
-											<option value="" hidden=""></option>
-											<option value="Ndio">Ndio</option>
-											<option value="Hapana">Hapana</option>
-										</select>
-									</div>
-
-									<div class="col-md-7">
-										<label>Maoni</label>
-										<textarea name="Maoni" palceholder="Andika maoni hapa" class="form-control" rows="7" minlength="4"></textarea>
-									</div>
-
+									<label>Maoni</label>
+									<textarea name="Maoni" placeholder="Andika maoni hapa" class="form-control" rows="7" minlength="4"></textarea>
 								</div>
 
 							</div>

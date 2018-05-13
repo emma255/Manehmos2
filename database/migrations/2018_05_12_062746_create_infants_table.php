@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateInfantsTable extends Migration
 {
@@ -16,6 +16,27 @@ class CreateInfantsTable extends Migration
         Schema::create('infants', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->foreign('Jina_la_mtoto')->references('jina_la_mtoto')->on('register_children');
+            $table->foreign('namba')->references('namba_ya_mtoto')->on('register_children');
+            $table->string('hudhurio');
+            $table->date('Tarehe');
+            $table->float('joto');
+            $table->float('uzito');
+            $table->string('Lishe');
+            $table->string('macho_yanatoa_uchafu');
+            $table->string('ngozi_ina_vipele_vyenye_usaha');
+            $table->string('wekundu_wa_damu');
+            $table->string('kuchezacheza_mtoto');
+            $table->string('utando_mweupe_mdomoni');
+            $table->string('ngozi_njano');
+            $table->string('kitovu_kimepona');
+            $table->string('kitovu_chekundu');
+            $table->string('kitovu_kinatoa_harufu');
+            $table->string('kitovu_kinatoa_usaha');
+            $table->date('tarehe_BCG');
+            $table->date('tarehe_OPVO');
+            $table->string('matatizo_mengine');
+            $table->date('tarehe_ya_kurudi');
         });
     }
 
