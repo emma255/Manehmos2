@@ -33,11 +33,11 @@ class CreateRegister13sTable extends Migration
             $table->string('aina_ya_dawa_nyongeza');
             $table->integer('idadi_ya_dawa_nyongeza');
             $table->integer('idadi_ya_dawa_vitaminA');
-            $table->string('chanjo_ya_TT');
-            $table->string('family_plan_usahuri_umetolewa');
-            $table->string('family_plan_amepatiwa_kielelezo');
-            $table->string('amepatiwa_family_plan_wakati_wa_ppc');
-            $table->string('rufaa_kupata_family_plan');
+            $table->string('chanjo_ya_TT')->nullable();
+            $table->string('family_plan_usahuri_umetolewa')->default('hapana');
+            $table->string('family_plan_amepatiwa_kielelezo')->default('hapana');
+            $table->string('amepatiwa_family_plan_wakati_wa_ppc')->default('hapana');
+            $table->string('rufaa_kupata_family_plan')->default('hapana');
             $table->string('rufaa_alikopelekwa');
             $table->string('rufaa_alikotoka');
             $table->string('rufaa_sababu_o_maoni');

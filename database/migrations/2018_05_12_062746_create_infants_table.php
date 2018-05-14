@@ -35,8 +35,8 @@ class CreateInfantsTable extends Migration
             $table->string('kitovu_chekundu');
             $table->string('kitovu_kinatoa_harufu');
             $table->string('kitovu_kinatoa_usaha');
-            $table->date('tarehe_BCG');
-            $table->date('tarehe_OPVO');
+            $table->date('tarehe_BCG')->nullable();
+            $table->date('tarehe_OPVO')->nullable();
             $table->string('matatizo_mengine');
             $table->date('tarehe_ya_kurudi');
         });

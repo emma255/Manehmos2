@@ -175,58 +175,63 @@
 										</div>
 									</div>
 								</div>
-
 								<br>
 
 								<div class="col-md-12 card">
+
 									<div class="card-header">Kipimo cha kaswende</div>
+
 									<div class="card-body">
+
 										<div class="row">
-											<div class="col-md-2"><label>Kipimo</labe><label>Mume</labe></div>
+											<div class="row">
+												<div class="col-md-2"><label>Kipimo</labe><label>Mume</labe></div>
 
-														<div class="col-md-5">
-															<label>Matokeo</label>
-												<select name="kaswende_mume" class="form-control">
-																<option value="" hidden=""></option>
-																<option value="Positive">Positive</option>
-																<option value="Negative">Negative</option>
-															</select>
+													<div class="col-md-5">
+														<label>Matokeo</label>
+													<select name="kaswende_mume" class="form-control">
+															<option value="" hidden=""></option>
+															<option value="Positive">Positive</option>
+															<option value="Negative">Negative</option>
+														</select>
+												</div>
+
+												<div class="col-md-5">
+													<label>Ametibiwa</label>
+													<select name="mume_ametibiwa_kaswende" class="form-control">
+															<option value="" hidden=""></option>
+															<option value="ndio">Ndio</option>
+															<option value="hapana">Hapana</option>
+														</select>
+												</div>
 											</div>
 
-											<div class="col-md-5">
-												<label>Ametibiwa</label>
-												<select name="mume_ametibiwa_kaswende" class="form-control">
-																<option value="" hidden=""></option>
-																<option value="ndio">Ndio</option>
-																<option value="hapana">Hapana</option>
-															</select>
-											</div>
-										</div>
-										<br>
-										<div class="row">
-											<div class="col-md-2"><label>Kipimo</labe><label>Mke</labe></div>
+											<br>
 
-														<div class="col-md-5">
-															<label>Matokeo</label>
-												<select name="kaswende_mke" class="form-control">
-																<option value="" hidden=""></option>
-																<option value="Positive">Positive</option>
-																<option value="Negative">Negative</option>
-															</select>
-											</div>
+											<div class="row">
+												<div class="col-md-2"><label>Kipimo</labe><label>Mke</labe></div>
 
-											<div class="col-md-5">
-												<label>Ametibiwa</label>
-												<select name="mke_ametibiwa_kaswende" class="form-control">
-																<option value="" hidden=""></option>
-																<option value="ndio">Ndio</option>
-																<option value="hapana">Hapana</option>
-															</select>
+													<div class="col-md-5">
+														<label>Matokeo</label>
+													<select name="kaswende_mke" class="form-control">
+															<option value="" hidden=""></option>
+															<option value="Positive">Positive</option>
+															<option value="Negative">Negative</option>
+														</select>
+												</div>
+
+												<div class="col-md-5">
+													<label>Ametibiwa</label>
+													<select name="mke_ametibiwa_kaswende" class="form-control">
+															<option value="" hidden=""></option>
+															<option value="ndio">Ndio</option>
+															<option value="hapana">Hapana</option>
+														</select>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-
 							</div>
 
 							<div class="col-md-4">
@@ -356,14 +361,14 @@
 											<tr>
 												<td>Tayari ana VVU</td>
 												<td>
-													<select name="mume_tayari_ana_VVU" class="form-control col-md-10">
+													<select name="mume_tayari_ana_VVU" class="form-control col-md-11">
 													<option value="" hidden=""></option>
 													<option value="Ndio">Ndio</option>
 													<option value="Hapana">Hapana</option>
 												</select>
 												</td>
 												<td>
-													<select name="mke_tayari_ana_VVU" class="form-control col-md-10">
+													<select name="mke_tayari_ana_VVU" class="form-control col-md-11">
 													<option value="" hidden=""></option>
 													<option value="Ndio">Ndio</option>
 													<option value="Hapana">Hapana</option>
@@ -374,24 +379,24 @@
 											<tr>
 												<td>Tarehe ya unasihi</td>
 												<td>
-													<input type="date" class="form-control col-md-10" name="mume_tarehe_ya_unasihi">
+													<input type="date" class="form-control col-md-11" name="mume_tarehe_ya_unasihi">
 												</td>
 												<td>
-													<input type="date" class="form-control col-md-10" name="mke_tarehe_ya_unasihi">
+													<input type="date" class="form-control col-md-11" name="mke_tarehe_ya_unasihi">
 												</td>
 											</tr>
 
 											<tr>
 												<td>Amepima VVU</td>
 												<td>
-													<select name="mume_amepima_VVU" class="form-control col-md-10">
+													<select name="mume_amepima_VVU" class="form-control col-md-11">
 													<option value="" hidden=""></option>
 													<option value="Ndio">Ndio</option>
 													<option value="Hapana">Hapana</option>
 												</select>
 												</td>
 												<td>
-													<select name="mke_amepima_VVU" class="form-control col-md-10">
+													<select name="mke_amepima_VVU" class="form-control col-md-11">
 													<option value="" hidden=""></option>
 													<option value="Ndio">Ndio</option>
 													<option value="Hapana">Hapana</option>`
@@ -402,24 +407,24 @@
 											<tr>
 												<td>Tarehe ya kipimo</td>
 												<td>
-													<input type="date" name="mume_tarehe_ya_kipimo" class="form-control col-md-10">
+													<input type="date" name="mume_tarehe_ya_kipimo" class="form-control col-md-11">
 												</td>
 												<td>
-													<input type="date" name="mke_tarehe_ya_kipimo" class="form-control col-md-10">
+													<input type="date" name="mke_tarehe_ya_kipimo" class="form-control col-md-11">
 												</td>
 											</tr>
 
 											<tr>
-												<td>Kipimo 1 VVU</td>
+												<td>Matokeo ya kipimo</td>
 												<td>
-													<select name="mume_kipimo1_VVU" class="form-control col-md-10">
+													<select name="mume_kipimo1_VVU" class="form-control col-md-11">
 													<option value="" hidden=""></option>
 													<option value="Positive">Positive</option>
 													<option value="Negative">Negative</option>
 												</select>
 												</td>
 												<td>
-													<select name="mke_kipimo1_VVU" class="form-control col-md-10">
+													<select name="mke_kipimo1_VVU" class="form-control col-md-11">
 													<option value="" hidden=""></option>
 													<option value="Positive">Positive</option>
 													<option value="Negative">Negative</option>
@@ -430,35 +435,17 @@
 											<tr>
 												<td>Unasihi baada ya kupima</td>
 												<td>
-													<select name="mume_unasihi_baada_ya_kipimo_1" class="form-control col-md-10">
+													<select name="mume_unasihi_baada_ya_kipimo_1" class="form-control col-md-11">
 													<option value="" hidden=""></option>
 													<option value="Ndio">Ndio</option>
 													<option value="Hapana">Hapana</option>
 												</select>
 												</td>
 												<td>
-													<select name="mke_unasihi_baada_ya_kipimo_1" class="form-control col-md-10">
+													<select name="mke_unasihi_baada_ya_kipimo_1" class="form-control col-md-11">
 													<option value="" hidden=""></option>
 													<option value="Ndio">Ndio</option>
 													<option value="Hapana">Hapana</option>
-												</select>
-												</td>
-											</tr>
-
-											<tr>
-												<td>Kipimo 2 VVU</td>
-												<td>
-													<select name="mume_kipimo_2_VVU" class="form-control col-md-10">
-													<option value="" hidden=""></option>
-													<option value="Positive">Positive</option>
-													<option value="Negative">Negative</option>
-												</select>
-												</td>
-												<td>
-													<select name="mke_kipimo_2_VVU" class="form-control col-md-10">
-													<option value="" hidden=""></option>
-													<option value="Positive">Positive</option>
-													<option value="Negative">Negative</option>
 												</select>
 												</td>
 											</tr>
@@ -516,7 +503,7 @@
 
 								<div class="row col-md-12">
 									<label>Maoni</label>
-									<textarea name="maoni" placeholder="Andika maoni hapa" class="form-control" rows="7" minlength="4"></textarea>
+									<textarea name="maoni" placeholder="Andika maoni hapa" class="form-control" rows="5" minlength="4"></textarea>
 								</div>
 
 							</div>

@@ -17,11 +17,11 @@ class CreateRegisterChildrenTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('tarehe_ya_kuandikishwa');
-            $table->string('namba_ya_usajili_RITA');
+            $table->string('namba_ya_usajili_RITA')->default('hajasajiliwa RITA');
             $table->string('jina_la_mtoto');
             $table->string('namba_ya_mtoto');
             $table->string('jinsia');
-            $table->string('namba_ya_HEID');
+            $table->string('namba_ya_HEID')->default('Mama hana maambukizi ya VVU');
             $table->string('jina_la_mama');
             $table->string('mahali_anapoishi_mtoto');
         });
