@@ -394,10 +394,7 @@
 													<select name="mke_amepima_VVU" class="form-control col-md-10">
 													<option value="" hidden=""></option>
 													<option value="Ndio">Ndio</option>
-													<option value="Hapana">Hapana</option>
-													<option value="Hapana">Hapana</option>
-													<option value="Hapana">Hapana</option>
-													<option value="Hapana">Hapana</option>
+													<option value="Hapana">Hapana</option>`
 												</select>
 												</td>
 											</tr>
