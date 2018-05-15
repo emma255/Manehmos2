@@ -18,13 +18,13 @@
 							<div class="col-md-5">
 								<div class="row">
 									<div class="col-md-6">
-										<label>Tarehe</label>
+										<label>Tarehe ya kuandikishwa</label>
 										<input type="date" name="tarehe_ya_kuandikishwa" class="form-control">
 									</div>
 
 									<div class="col-md-6">
-										<label>Namba ya usajili</label>
-										<input type="number" name="namba_ya_usajili" class="form-control" placeholder="Namba" min="1">
+										<label>tarehe ya kuzaliwa</label>
+										<input type="date" class="form-control" placeholder="Andika jina la kwanza" name="tarehe_ya_kuzaliwa">
 									</div>
 								</div>
 								<br>
@@ -35,8 +35,8 @@
 									</div>
 
 									<div class="col-md-5">
-										<label>tarehe ya kuzaliwa</label>
-										<input type="date" class="form-control" placeholder="Andika jina la kwanza" name="tarehe_ya_kuzaliwa">
+										<label>Namba ya usajili</label>
+										<input type="number" name="namba_ya_usajili" class="form-control" placeholder="Namba" min="1">
 									</div>
 								</div>
 
@@ -125,7 +125,7 @@
 
 											<div class="col-md-3"><label>Mimba zilizoharibika</label></div>
 
-											<div class="col-md-3"><input type="number" min="0" class="form-control" name="mimba_zilizoharibika" placeholder=""></div>
+											<div class="col-md-3"><input type="number" min="0" class="form-control" name="mimba_zilizoharibika" onkeydown="calculateDifference()"></div>
 										</div>
 
 										<br>

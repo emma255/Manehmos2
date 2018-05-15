@@ -5,7 +5,7 @@
         <nav class="navbar navbar-expand navbar-light bg-light col-sm>
    
                 <div class="navbar navbar-collapse p-3 mb-2 bg-light" align="center">
-                    <div class="col-md-3"></div>
+                    <div class="col-md-3"><p>{{Auth::user()->center}}</p></div>
                     <ul class="navbar-nav mr-auto col-sm">
 
                         <a class="navbar nav-link" href="{{ url('/') }}">

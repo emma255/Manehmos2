@@ -33,6 +33,8 @@ Route::get('register13', 'Register13Controller@create')->middleware('auth');
 
 Route::get('admin/home', 'AdminHomeController@create')->middleware('auth');
 
+Route::get('registrationForm', 'RegistrationFormController@create')->middleware('guest');
+
 //posts
 Route::post('maternal/store', 'RegisterMaternalController@store')->middleware('auth');
 

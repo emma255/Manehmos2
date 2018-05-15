@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('js/manehmos.js') }}" rel="javascript">
     <!-- <link href="{{ asset('css/fontawesome-all.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('imgs/icon5.png') }}" rel="shortcut icon" type="image/x-icon">
 </head>
