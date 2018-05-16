@@ -2,7 +2,7 @@
 <body>
     <div class="" align="center">
         <div class="p-3 mb-8 bg-secondary text-white"><h3>MATERNAL AND NEWBORN HEALTH MONITORING SYSTEM (Manehmos)</h3></div>
-        <nav class="navbar navbar-expand navbar-light bg-light col-sm>
+        <nav class="navbar navbar-expand navbar-light bg-info col-sm>
    
                 <div class="navbar navbar-collapse p-3 mb-2 bg-light" align="center">
                     <div class="col-md-3"><p>{{Auth::user()->center}}</p></div>
