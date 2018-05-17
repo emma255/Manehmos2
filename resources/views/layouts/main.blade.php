@@ -49,8 +49,8 @@
                           </a>
 
                           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="{{ url('') }}">{{ __('MAMA') }}</a>
-                            <a class="dropdown-item" href="{{ url('') }}">{{ __('MTOTO') }}</a>
+                            <a class="dropdown-item" href="{{ url('') }}">{{ __('ANDAA RIPOTI') }}</a>
+                            <a class="dropdown-item" href="{{ url('') }}">{{ __('ANGALIA RIPOTI') }}</a>
                           </div>
                         </div>
 

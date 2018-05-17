@@ -7,7 +7,7 @@
   <div class="hold-transition skin-blue sidebar-mini col-md-12">
     <header class="main-header">
       <!-- Logo -->
-      <a href="#" class="logo">
+      <a href="/admin/home" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
@@ -150,7 +150,7 @@
           </a>
             <ul class="treeview-menu">
               <li><a href="{{ route('register') }}"><i class="fa fa-user-plus"></i> Create account</a></li>
-              <li><a href="#"><i class="fa fa-user-md"></i> View accounts</a></li>
+              <li><a href="/showUsers"><i class="fa fa-user-md"></i> View accounts</a></li>
             </ul>
           </li>
 
@@ -165,7 +165,7 @@
             </span>
           </a>
             <ul class="treeview-menu">
-              <li><a href="#"><i class="fa fa-circle-o"></i> Add tasks</a></li>
+              <li><a href="/task/create"><i class="fa fa-circle-o"></i> Add tasks</a></li>
               <li><a href="#"><i class="fa fa-circle-o"></i> View tasks</a></li>
             </ul>
           </li>
@@ -188,10 +188,9 @@
       <!-- /.sidebar -->
     </aside>
 
-
-    <main class="py-4">
+   <div class="content-wrapper">
       @yield('content')
-    </main>
+    </div>
   </div>
 
 

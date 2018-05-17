@@ -15,11 +15,15 @@ Route::get('index', 'HomeController@index')->middleware('auth');
 
 Auth::routes();
 
+Route::resource('Admin', 'AdminHomeController');
+
 Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::get('child/register', 'RegisterChildController@create')->middleware('auth');
 
 Route::get('maternal/register', 'RegisterMaternalController@create')->middleware('auth');
+
+Route::get('showUsers', 'AdminHomeController@users')->middleware('auth');
 
 Route::get('postnatal', 'PostnatalController@create')->middleware('auth');
 
@@ -32,6 +36,8 @@ Route::get('register7', 'Register7Controller@create')->middleware('auth');
 Route::get('register13', 'Register13Controller@create')->middleware('auth');
 
 Route::get('admin/home', 'AdminHomeController@create')->middleware('auth');
+
+Route::get('task/create', 'TasksController@create')->middleware('auth');
 
 Route::get('registrationForm', 'RegistrationFormController@create')->middleware('guest');
 
@@ -49,3 +55,5 @@ Route::post('register7/store', 'Register7Controller@store')->middleware('auth');
 Route::post('register13/store', 'Register13Controller@store')->middleware('auth');
 
 Route::post('child/store', 'RegisterChildController@store')->middleware('auth');
+
+Route::post('task/store', 'TasksController@store')->middleware('auth');
