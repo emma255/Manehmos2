@@ -56,10 +56,10 @@
             <li class="dropdown tasks-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
-              <span class="label label-danger">9</span>
+              <span class="label label-danger"><?= $taskstotal=App\Tasks::count(); ?></span>
             </a>
               <ul class="dropdown-menu">
-                <li class="header">You have 9 tasks</li>
+                <li class="header">You have <?= $taskstotal=App\Tasks::count(); ?> tasks</li>
                 <li>
                   <!-- inner menu: contains the actual data -->
                   <ul class="menu">
@@ -81,7 +81,7 @@
                   </ul>
                 </li>
                 <li class="footer">
-                  <a href="#">View all tasks</a>
+                  <a href="/showTasks">View all tasks</a>
                 </li>
               </ul>
             </li>
@@ -166,7 +166,7 @@
           </a>
             <ul class="treeview-menu">
               <li><a href="/task/create"><i class="fa fa-circle-o"></i> Add tasks</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> View tasks</a></li>
+              <li><a href="/showTasks"><i class="fa fa-circle-o"></i> View tasks</a></li>
             </ul>
           </li>
 

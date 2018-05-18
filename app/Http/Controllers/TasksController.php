@@ -12,6 +12,12 @@ class TasksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     public function index()
     {
         //
@@ -36,8 +42,19 @@ class TasksController extends Controller
     public function store()
     {
         $this->validate(request(), [
+            'task_name',
+            'participant',
+            'comments',
+            'start_date',
+            'end_date',
+        ]);
 
-        ]);}
+        Tasks::create(request([
+            'task_name', 'participant', 'comments', 'start_date', 'end_date',
+        ]));
+
+        return redirect('admin/home');
+    }
 
     /**
      * Display the specified resource.
@@ -47,7 +64,8 @@ class TasksController extends Controller
      */
     public function show(Tasks $tasks)
     {
-        //
+        $tasks = Tasks::all();
+        return view('admin.showTasks', compact('tasks'));
     }
 
     /**
@@ -79,8 +97,11 @@ class TasksController extends Controller
      * @param  \App\Tasks  $tasks
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tasks $tasks)
+    public function destroy($id)
     {
-        //
+
+        Tasks::where('id', $id)->delete();
+
+        return redirect()->back();
     }
 }

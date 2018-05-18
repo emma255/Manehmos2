@@ -17,6 +17,8 @@ Auth::routes();
 
 Route::resource('Admin', 'AdminHomeController');
 
+Route::resource('AdminTasks', 'TasksController');
+
 Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::get('child/register', 'RegisterChildController@create')->middleware('auth');
@@ -24,6 +26,8 @@ Route::get('child/register', 'RegisterChildController@create')->middleware('auth
 Route::get('maternal/register', 'RegisterMaternalController@create')->middleware('auth');
 
 Route::get('showUsers', 'AdminHomeController@users')->middleware('auth');
+
+Route::get('showTasks', 'TasksController@show')->middleware('auth');
 
 Route::get('postnatal', 'PostnatalController@create')->middleware('auth');
 
@@ -35,11 +39,15 @@ Route::get('register7', 'Register7Controller@create')->middleware('auth');
 
 Route::get('register13', 'Register13Controller@create')->middleware('auth');
 
-Route::get('admin/home', 'AdminHomeController@create')->middleware('auth');
+Route::get('admin/home', 'AdminHomeController@index')->middleware('auth');
 
 Route::get('task/create', 'TasksController@create')->middleware('auth');
 
 Route::get('registrationForm', 'RegistrationFormController@create')->middleware('guest');
+
+Route::get('pdf', 'PDFController@index');
+
+Route::get('pdf/export', 'PDFController@export');
 
 //posts
 Route::post('maternal/store', 'RegisterMaternalController@store')->middleware('auth');

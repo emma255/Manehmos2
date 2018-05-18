@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Tasks;
 use Illuminate\Http\Request;
 
 class AdminHomeController extends Controller
@@ -19,8 +20,8 @@ class AdminHomeController extends Controller
 
     public function index()
     {
-        //
-    }
+                 return view('admin.adminHome');
+  }
 
     public function users()
     {
@@ -39,7 +40,7 @@ class AdminHomeController extends Controller
      */
     public function create()
     {
-        return view('admin.adminHome');
+
     }
 
     /**
@@ -98,6 +99,6 @@ class AdminHomeController extends Controller
 
         User::where('id', $id)->delete();
 
-        return redirect('/admin/home');
+        return redirect()->back();
     }
 }
