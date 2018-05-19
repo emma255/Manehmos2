@@ -45,9 +45,30 @@ Route::get('task/create', 'TasksController@create')->middleware('auth');
 
 Route::get('registrationForm', 'RegistrationFormController@create')->middleware('guest');
 
+// start reports routes
 Route::get('pdf', 'PDFController@index');
 
 Route::get('pdf/export', 'PDFController@export');
+
+Route::get('reportHome', 'ReportsController@index');
+
+Route::get('postnatal', 'ReportsController@postnatalShow');
+
+Route::get('postnatal/print', 'ReportsController@postnatalPrint');
+
+Route::get('mtoto', 'ReportsController@mtotoShow');
+
+Route::get('mtoto/print', 'ReportsController@mtotoPrint');
+
+Route::get('IVDactivities', 'ReportsController@IVDactivitiesShow');
+
+Route::get('IVDactivities/print', 'ReportsController@IVDactivitiesPrint');
+
+Route::get('antenatal', 'ReportsController@antenatalShow');
+
+Route::get('antenatal/print', 'ReportsController@antenatalPrint');
+
+// end reports routes
 
 //posts
 Route::post('maternal/store', 'RegisterMaternalController@store')->middleware('auth');

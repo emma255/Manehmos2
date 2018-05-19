@@ -43,18 +43,13 @@
                         </div>
 
 
-                        <div class="dropdown show">
-                          <a class="dropdown-toggle-primary navbar nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="navbar nav-link" href="{{ url('/reportHome') }}">
                             {{ __('RIPOTI') }}
-                          </a>
+                        </a>
+            
+                        
 
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="{{ url('') }}">{{ __('ANDAA RIPOTI') }}</a>
-                            <a class="dropdown-item" href="{{ url('') }}">{{ __('ANGALIA RIPOTI') }}</a>
-                          </div>
-                        </div>
-
-                           <a class="navbar nav-link" href="{{ url('/') }}">
+                        <a class="navbar nav-link" href="{{ url('/') }}">
                             {{ __('MSAADA') }}
                         </a>
             
