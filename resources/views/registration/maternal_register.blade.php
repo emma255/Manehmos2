@@ -150,7 +150,7 @@
 							</div>
 
 							<div class="col-md-5"></div>
-							<div class="col-md-2"><input type="submit" class="form-control btn-primary " name="save_mat"> </div>
+							<div class="col-md-2"><input type="submit" class="form-control btn-primary " name="save_mat" value="hifadhi"> </div>
 							<div class="col-md-5"></div>
 
 						</div>

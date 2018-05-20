@@ -9,7 +9,7 @@
 				</div>
 
 				<div class="card-body">
-					<form action="/child/store" method="post">
+					<form action="/reportRequest" method="post">
 
 						{{csrf_field()}}
 

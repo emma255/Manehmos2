@@ -7,6 +7,13 @@ use PDF;
 class ReportsController extends Controller
 {
 
+    public function testcase()
+    {
+        return view(request('reportType'), compact(request()));
+
+    }
+
+    // home
     public function index()
     {
         return view('reports.reportHome');
@@ -29,7 +36,9 @@ class ReportsController extends Controller
     // ripoti ya mama na mtoto baada ya kujifungua
     public function postnatalShow()
     {
-        return view('reports.postnatal');
+        $date = date(DATE_RFC2822);
+
+        return view('reports.postnatal', compact('date'));
     }
 
     public function postnatalPrint()

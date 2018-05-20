@@ -50,9 +50,11 @@ Route::get('pdf', 'PDFController@index');
 
 Route::get('pdf/export', 'PDFController@export');
 
+Route::post('report/request', 'ReportsController@testcase');
+
 Route::get('reportHome', 'ReportsController@index');
 
-Route::get('postnatal', 'ReportsController@postnatalShow');
+Route::get('postnatal/report', 'ReportsController@postnatalShow');
 
 Route::get('postnatal/print', 'ReportsController@postnatalPrint');
 

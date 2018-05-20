@@ -17,11 +17,11 @@
       <nav class="navbar navbar-static-top">
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-
+          <span class="sr-only">Toggle navigation</span>
+        </a>
         <div class="navbar-custom-menu">
           <l class="nav navbar-nav">
+            <li class="header content-header">sjdkjndksnjk</li>
             <!-- Messages: style can be found in dropdown.less-->
             <li class="dropdown messages-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -59,15 +59,18 @@
               <span class="label label-danger"><?= $taskstotal=App\Tasks::count(); ?></span>
             </a>
               <ul class="dropdown-menu">
-                <li class="header">You have <?= $taskstotal=App\Tasks::count(); ?> tasks</li>
+                <li class="header">You have
+                  <?= $taskstotal; ?> tasks</li>
                 <li>
                   <!-- inner menu: contains the actual data -->
                   <ul class="menu">
+                    <!-- Task item -->
+                    @foreach( $tasks = App\Tasks::take(3)->get() as $task)
+
                     <li>
-                      <!-- Task item -->
                       <a href="#">
                         <h3>
-                          Design some buttons
+                          {{$task->task_name}}
                           <small class="pull-right">20%</small>
                         </h3>
                         <div class="progress xs">
@@ -77,6 +80,8 @@
                         </div>
                       </a>
                     </li>
+
+                    @endforeach
                     <!-- end task item -->
                   </ul>
                 </li>
@@ -188,7 +193,7 @@
       <!-- /.sidebar -->
     </aside>
 
-   <div class="content-wrapper">
+    <div class="content-wrapper">
       @yield('content')
     </div>
   </div>
