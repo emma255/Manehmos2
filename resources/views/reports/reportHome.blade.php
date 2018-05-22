@@ -38,11 +38,6 @@
                         <label for="year">Mwaka</label>
                         <input type="number" name="year" id="year" class="form-control" max="20100" min="1900" required>
                     </div>
-
-                    <div class="col-md-4">
-                        <label for="date">Mwaka</label>
-                        <input type="date" name="date" id="date" class="form-control" required>
-                    </div>
                     <div class="col-md-4">
                         <label for=""></label>
                         <input type="submit" value="Andaa ripoti" class="form-control btn btn-secondary">
