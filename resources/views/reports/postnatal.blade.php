@@ -35,7 +35,6 @@
                 <td>Waliohudhuria ndani ya saa 48</td>
                 <td>
                     <?= $yearRecord=App\Register13::whereYear('tarehe_ya_hudhurio',request('year'))->get();
-                    $mothly=$yearRecord->whereMonth('tarehe_ya_hudhurio')==$request('month');
                     ?>
                 </td>
                 <td> 4</td>

@@ -72,7 +72,12 @@
 
                                     <div class="col-md-6">
                                         <label>Kada ya aliyemzalisha</label>
-                                        <input type="text" name="kada_ya_aliyemzalisha" class="form-control">
+                                        <select name="kada_ya_aliyemzalisha" class="form-control">
+                                                <option value="" hidden=""></option>
+                                                <option value="Mhudumu wa afya">Mhudumu wa afya</option>
+                                                <option value=">Mkunga wa jadi (TBA)">Mkunga wa jadi (TBA)</option>
+                                                <option value="Wengineo">Wengineo</option>
+                                            </select>
                                     </div>
                                 </div>
 
