@@ -56,9 +56,9 @@
                                         <input type="date" name="tarehe_ya_kuzaliwa" class="form-control">
                                     </div>
 
-                                    <div class="col-md-6">
-                                        <label>Amejifungua mara ngapi (Para)</label>
-                                        <input type="number" name="amejifungua_mara_ngapi" class="form-control" min="0">
+                                    <div class="col-md-2">
+                                        <label>Para</label>
+                                        <input type="number" name="para" class="form-control" min="0">
                                     </div>
                                 </div>
 
@@ -75,7 +75,7 @@
                                         <select name="kada_ya_aliyemzalisha" class="form-control">
                                                 <option value="" hidden=""></option>
                                                 <option value="Mhudumu wa afya">Mhudumu wa afya</option>
-                                                <option value=">Mkunga wa jadi (TBA)">Mkunga wa jadi (TBA)</option>
+                                                <option value="Mkunga wa jadi (TBA)">Mkunga wa jadi (TBA)</option>
                                                 <option value="Wengineo">Wengineo</option>
                                             </select>
                                     </div>
