@@ -9,7 +9,7 @@
 				</div>
 
 				<div class="card-body">
-					<form action="/reportRequest" method="post">
+					<form action="/child/store" method="post">
 
 						{{csrf_field()}}
 
@@ -93,7 +93,7 @@
 							<!-- end right division -->
 
 							<div class="col-md-5"></div>
-							<div class="col-md-2"><input type="submit" class="form-control btn-primary" name="subBtn"> </div>
+							<div class="col-md-2"><input type="submit" class="form-control btn-primary" name="subBtn" value="Hifadhi"> </div>
 							<div class="col-md-5"></div>
 
 						</div>
