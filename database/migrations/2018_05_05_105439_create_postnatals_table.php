@@ -22,13 +22,14 @@ class CreatePostnatalsTable extends Migration
             $table->string('mtaa');
             $table->date('tarehe_ya_kuzaliwa');
             $table->integer('para');
-            $table->date('tarehe_ya_kujifugua');
+            $table->date('tarehe_ya_kujifungua');
             $table->string('kada_ya_aliyemzalisha');
             $table->string('mahali_alipojifungulia');
             $table->string('hali_ya_mama');
             $table->string('hali_ya_mtoto');
             $table->string('unyonyeshaji_ndani_ya_saa_1');
             $table->string('Hali_ya_VVU_kwenye_kadi');
+            $table->string('amepima_postnatal', '6');
             $table->string('kipimo_vvu_wakati_wa_postnatal');
         });
     }

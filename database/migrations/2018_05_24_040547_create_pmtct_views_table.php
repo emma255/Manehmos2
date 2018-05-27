@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-class CreateFamilyPlansTable extends Migration
+class CreatePmtctViewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +13,10 @@ class CreateFamilyPlansTable extends Migration
      */
     public function up()
     {
-
-        DB::statement('CREATE view family_plan as
+        DB::statement('CREATE view pmtct as
         select register13s.Namba_ya_kadi, DATEDIFF(postnatals.tarehe_ya_kujifungua,postnatals.tarehe_ya_kuzaliwa) as umri,
-        register13s.family_plan_usahuri_umetolewa, register13s.family_plan_amepatiwa_kielelezo,
-        register13s.amepatiwa_family_plan_wakati_wa_ppc, register13s.rufaa_kupata_family_plan
+        postnatals.Hali_ya_VVU_kwenye_kadi, postnatals.kipimo_vvu_wakati_wa_postnatal, postnatals.amepima_postnatal, postnatals.lishe_ya_mtoto
         from postnatals INNER JOIN register13s ON register13s.Namba_ya_kadi=postnatals.namba_ya_kadi_RCH4;');
-
     }
 
     /**
@@ -28,6 +26,6 @@ class CreateFamilyPlansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('family_plans');
+        DB::statement('drop view if exists pmtct;');
     }
 }

@@ -24,7 +24,6 @@ class CreateInfantsTable extends Migration
             $table->date('tarehe');
             $table->float('joto');
             $table->float('uzito');
-            $table->string('lishe');
             $table->string('macho_yanatoa_uchafu');
             $table->string('ngozi_ina_vipele_vyenye_usaha');
             $table->string('wekundu_wa_damu');

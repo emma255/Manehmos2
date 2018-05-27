@@ -48,7 +48,7 @@ class PostnatalController extends Controller
             'mtaa',
             'tarehe_ya_kuzaliwa',
             'para',
-            'tarehe_ya_kujifugua',
+            'tarehe_ya_kujifungua',
             'kada_ya_aliyemzalisha',
             'mahali_alipojifungulia',
             'hali_ya_mama',
@@ -56,6 +56,8 @@ class PostnatalController extends Controller
             'unyonyeshaji_ndani_ya_saa_1',
             'Hali_ya_VVU_kwenye_kadi',
             'kipimo_vvu_wakati_wa_postnatal',
+            'amepima_postnatal',
+            'lishe_ya_mtoto',
 
         ]);
 
@@ -66,7 +68,7 @@ class PostnatalController extends Controller
             'mtaa',
             'tarehe_ya_kuzaliwa',
             'para',
-            'tarehe_ya_kujifugua',
+            'tarehe_ya_kujifungua',
             'kada_ya_aliyemzalisha',
             'mahali_alipojifungulia',
             'hali_ya_mama',
@@ -74,6 +76,8 @@ class PostnatalController extends Controller
             'unyonyeshaji_ndani_ya_saa_1',
             'Hali_ya_VVU_kwenye_kadi',
             'kipimo_vvu_wakati_wa_postnatal',
+            'amepima_postnatal',
+            'lishe_ya_mtoto',
         ]));
 
         return view('registers.register13');
