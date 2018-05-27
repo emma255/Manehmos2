@@ -51,7 +51,7 @@
 
 
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-5">
                                         <label>Tarehe ya kuzaliwa</label>
                                         <input type="date" name="tarehe_ya_kuzaliwa" class="form-control">
                                     </div>
@@ -60,24 +60,39 @@
                                         <label>Para</label>
                                         <input type="number" name="para" class="form-control" min="0">
                                     </div>
+                                    <div class="col-md-5">
+                                        <label for="lishe">Lishe ya mtoto</label>
+                                        <select name="lishe_ya_mtoto" class="form-control">
+                                            <option value="" hidden=""></option>
+                                            <option value="EBF">Maziwa ya mama (EBF)</option>
+                                            <option value="RF">Maziwa mbadala (RF)</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <br>
 
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <label>Tarehe ya kujifungua</label>
-                                        <input type="date" name="tarehe_ya_kujifugua" class="form-control">
+                                        <input type="date" name="tarehe_ya_kujifungua" class="form-control">
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-5">
                                         <label>Kada ya aliyemzalisha</label>
                                         <select name="kada_ya_aliyemzalisha" class="form-control">
-                                                <option value="" hidden=""></option>
-                                                <option value="Mhudumu wa afya">Mhudumu wa afya</option>
-                                                <option value="Mkunga wa jadi (TBA)">Mkunga wa jadi (TBA)</option>
-                                                <option value="Wengineo">Wengineo</option>
-                                            </select>
+                                            <option value="" hidden=""></option>
+                                            <option value="Mhudumu wa afya">Mhudumu wa afya</option>
+                                            <option value="Mkunga wa jadi (TBA)">Mkunga wa jadi (TBA)</option>
+                                            <option value="Wengineo">Wengineo</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Amepima VVU</label>
+                                        <select name="amepima_postnatal" class="form-control">
+                                            <option value="Ndio">Ndio</option>
+                                            <option value="Hapana">Hapana</option>
+                                        </select>
                                     </div>
                                 </div>
 
