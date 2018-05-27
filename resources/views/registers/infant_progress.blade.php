@@ -37,77 +37,65 @@
                                 <br>
 
                                 <div class="row">
-                                    <div class="col-md-7">
+                                    <div class="col-md-5">
                                         <label>Mahudhurio</label>
                                         <select name="hudhurio" class="form-control">
                                             <option value="" hidden=""></option>
-                                            <option value="Hudhurio la kwanza">Hudhurio 1 (Ndani ya masaa 24)</option>
-                                            <option value="Hudhurio la pili">Hudhurio 2 (Ndani ya siku 7)</option>
-                                            <option value="Hudhurio la tatu">Hudhurio 3 (Ndani ya siku 28)</option>
-                                            <option value="Hudhurio la nne">Hudhurio 4 (Ndani ya siku 42)</option>
+                                            <option value="Ndani ya masaa 24">Ndani ya masaa 24</option>
+                                            <option value="Ndani ya siku 3-7">Ndani ya siku 3-7</option>
+                                            <option value="Ndani ya siku 28">Ndani ya siku 28</option>
+                                            <option value="Ndani ya siku 42">Ndani ya siku 42</option>
                                         </select>
                                     </div>
 
-                                    <div class="col-md-5">
+                                    <div class="col-md-4">
                                         <label>Tarehe</label>
                                         <input type="date" class="form-control" name="tarehe">
                                     </div>
 
+                                    <div class="col-md-3">
+                                        <label>Joto (&deg;C)</label>
+                                        <input type="number" class="form-control" name="joto" min="0">
+                                    </div>
                                 </div>
 
                                 <br>
 
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <label>Joto (&deg;C)</label>
-                                        <input type="number" class="form-control" name="joto" min="0">
-                                    </div>
-
-                                    <div class="col-md-4">
                                         <label for="uzito">Uzito (Gram)</label>
                                         <input type="number" name="uzito" id="uzito" class="form-control" min="0">
                                     </div>
-
                                     <div class="col-md-5">
-                                        <label>Wekundu wa damu</label>
-                                        <select name="wekundu_wa_damu" class="form-control">
+                                        <label>Utando mweupe mdomoni</label>
+                                        <select name="utando_mweupe_mdomoni" class="form-control">
                                             <option value="" hidden=""></option>
-                                            <option value="Ndio">Wekundu umepungua</option>
-                                            <option value="Hapana">Kawaida</option>
+                                            <option value="Ndio">Ndio</option>
+                                            <option value="Hapana">Hapana</option>
                                         </select>
                                     </div>
-
-                                </div>
-
-                                <br>
-
-
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Lishe ya mtoto</label>
-                                        <select name="lishe" class="form-control">
-                                            <option value="" hidden=""></option>
-                                            <option value="EBF">Maziwa ya mama pekee (EBF)</option>
-                                            <option value="RF">Maziwa mbadala (RF)</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label>Kuchezacheza kwa mtoto</label>
+                                    <div class="col-md-4">
+                                        <label>Kuchezacheza mtoto</label>
                                         <select name="kuchezacheza_mtoto" class="form-control">
                                             <option value="" hidden=""></option>
                                             <option value="Kawaida">Kawaida</option>
-                                            <option value="Kidogo kuliko Kawaida">Kidogo kuliko Kawaida</option>
+                                            <option value="Kidogo kuliko Kawaida">Kidogo</option>
                                         </select>
                                     </div>
+                                </div>
+
+                                <br>
+
+
+                                <div class="row">
 
                                 </div>
 
                                 <br>
 
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <label>Macho yanatoa uchafu</label>
+                                    <div class="col-md-4">
+                                        <label>Uchafu machoni</label>
                                         <select name="macho_yanatoa_uchafu" class="form-control">
                                             <option value="" hidden=""></option>
                                             <option value="Ndio">Ndio</option>
@@ -115,9 +103,18 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-6">
-                                        <label>Mdomo una utando mweupe</label>
-                                        <select name="utando_mweupe_mdomoni" class="form-control">
+                                    <div class="col-md-4">
+                                        <label>Wekundu wa damu</label>
+                                        <select name="wekundu_wa_damu" class="form-control">
+                                            <option value="" hidden=""></option>
+                                            <option value="Ndio">Umepungua</option>
+                                            <option value="Hapana">Kawaida</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label>Vipele vyenye usaha</label>
+                                        <select name="ngozi_ina_vipele_vyenye_usaha" class="form-control">
                                             <option value="" hidden=""></option>
                                             <option value="Ndio">Ndio</option>
                                             <option value="Hapana">Hapana</option>
@@ -129,21 +126,16 @@
 
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>Ngozi ina vipele vyenye usaha</label>
-                                        <select name="ngozi_ina_vipele_vyenye_usaha" class="form-control">
-                                            <option value="" hidden=""></option>
-                                            <option value="Ndio">Ndio</option>
-                                            <option value="Hapana">Hapana</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-6">
                                         <label>Ngozi imebadilika kuwa njano</label>
                                         <select name="ngozi_njano" class="form-control">
                                             <option value="" hidden=""></option>
                                             <option value="Ndio">Ndio</option>
                                             <option value="Hapana">Hapana</option>
                                         </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="matatizo_mengine">Matatizo mengine</label>
+                                        <textarea name="matatizo_mengine" id="matatizo_mengine" rows="1" class="form-control"></textarea>
                                     </div>
                                 </div>
 
@@ -235,11 +227,6 @@
                                         <label for="tarehe_ya_kurudi">Tarehe ya kurudi</label>
                                         <input type="date" name="tarehe_ya_kurudi" id="tarehe_ya_kurudi" class="form-control">
                                     </div>
-
-                                    <div class="col-md-6">
-                                        <label for="matatizo_mengine">Matatizo mengine</label>
-                                        <textarea name="matatizo_mengine" id="matatizo_mengine" rows="5" class="form-control"></textarea>
-                                    </div>
                                 </div>
                             </div>
 
@@ -251,7 +238,7 @@
 
             <div class="row">
                 <div class="col-md-5"></div>
-                <div class="col-md-2"><input type="Submit" name="submit" class="btn btn-primary form-control"></div>
+                <div class="col-md-2"><input type="Submit" name="submit" class="btn btn-primary form-control" value="Hifadhi"></div>
                 <div class="col-md-5"></div>
             </div>
             </form>
