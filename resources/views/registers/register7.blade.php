@@ -216,7 +216,7 @@
 									<div class="card-header">Rufaa</div>
 									<div class="col-md-12">
 										<label for="home_center">Kituo alikotoka</label>
-										<input type="text" name="rufaa_alikotoka" id="rufaa_alikotoka" class="form-control">
+										<input type="text" name="rufaa_alikotoka" value="{{Auth::user()->center}}" id="rufaa_alikotoka" class="form-control">
 									</div>
 
 									<br>

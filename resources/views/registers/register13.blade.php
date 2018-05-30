@@ -285,7 +285,7 @@
 												<div class="row">
 													<div class="col-sm-4"><label>&nbsp;Alikotoka</label></div>
 													<div class="col-sm-7">
-														<input type="text" name="rufaa_alikotoka" placeholder="Alikotoka" class="form-control">
+														<input type="text" name="rufaa_alikotoka" value="{{Auth::user()->center}}" placeholder="Alikotoka" class="form-control">
 													</div>
 												</div>
 											</div>

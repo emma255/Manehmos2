@@ -41,10 +41,10 @@
                                         <label>Mahudhurio</label>
                                         <select name="hudhurio" class="form-control">
                                             <option value="" hidden=""></option>
-                                            <option value="Ndani ya masaa 24">Ndani ya masaa 24</option>
-                                            <option value="Ndani ya siku 3-7">Ndani ya siku 3-7</option>
-                                            <option value="Ndani ya siku 28">Ndani ya siku 28</option>
-                                            <option value="Ndani ya siku 42">Ndani ya siku 42</option>
+											<option value="Masaa 48">Ndani ya Masaa 48</option>
+											<option value="Siku 3-7">Ndani ya Siku 3-7</option>
+											<option value="Siku 8-28">Ndani ya Siku 8-28</option>
+											<option value="Siku 29-42">Ndani ya Siku 29-42</option>
                                         </select>
                                     </div>
 
@@ -147,7 +147,26 @@
 
                             <!--right division-->
                             <div class="col-md-5">
-
+                                <div class="col-md-12 row">
+                                    <div class="col-md-3">
+                                        <label for="hb">HB (g/dl)</label>
+                                        <input type="number" name="hb" id="hb" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="lishe">Lishe</label>
+                                        <select name="lishe" class="form-control">
+                                            <option value="" hidden=""></option>
+                                            <option value="EBF">EBF</option>
+                                            <option value="RF">RF</option>
+                                            <option value="MF">MF</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <label for="tarehe_ya_kurudi">Tarehe ya kurudi</label>
+                                        <input type="date" name="tarehe_ya_kurudi" id="tarehe_ya_kurudi" class="form-control">
+                                    </div>
+                                </div>
+                                <br>
                                 <div class="card col-md-12">
                                     <div class="card-header">KITOVU</div>
                                     <div class="card-body">
@@ -217,15 +236,6 @@
 
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <br>
-
-                                <div class="col-md-12 row">
-                                    <div class="col-md-6">
-                                        <label for="tarehe_ya_kurudi">Tarehe ya kurudi</label>
-                                        <input type="date" name="tarehe_ya_kurudi" id="tarehe_ya_kurudi" class="form-control">
                                     </div>
                                 </div>
                             </div>

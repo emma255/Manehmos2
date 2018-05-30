@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <body>
     <h3>TAARIFA YA MWEZI MTOTO NA MAMA BAADA YA KUJIFUNGUA</h3>
     <div>
@@ -54,9 +53,9 @@
             <tr>
                 <td>2</td>
                 <td>Waliomaliza mahudhurio yote</td>
-                <td>Win 95+</td>
-                <td>5.5</td>
-                <td>A</td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>3</td>
@@ -193,30 +192,30 @@
             <tr>
                 <td>11</td>
                 <td><b>MTOTO</b></td>
-                <td><b>ME</b></td>
-                <td><b>KE</b></td>
+                <td><b>Wavulana</b></td>
+                <td><b>Wasichana</b></td>
                 <td><b>Jumla</b></td>
             </tr>
             <tr>
                 <td>11 a</td>
                 <td>Idadi ya watoto waliohudhuria ndani ya saa 48</td>
-                <td><?= $RF20 = App\Mtoto_view::where([['hudhurio', 'Hudhurio la kwanza'], ['jinsia', 'Mvulana']])->count();?></td>
-                <td><?= $RFover = App\Mtoto_view::where([['hudhurio', 'Hudhurio la kwanza'], ['jinsia', 'Msichana']])->count();?></td>
-                <td><?= $RF20 + $RFover ?></td>
+                <td><?= $t4820 = App\Mtoto_view::where([['hudhurio', 'Ndani ya masaa 24'], ['jinsia', 'Mvulana']])->count();?></td>
+                <td><?= $t48over = App\Mtoto_view::where([['hudhurio', 'Ndani ya masaa 24'], ['jinsia', 'Msichana']])->count();?></td>
+                <td><?= $t4820 + $t48over ?></td>
             </tr>
             <tr>
                 <td>11 b</td>
                 <td>Idadi ya watoto waliohudhuria kati ya siku ya 3-7</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?= $t3_720 = App\Mtoto_view::where([['hudhurio', 'Ndani ya siku 3-7'], ['jinsia', 'Mvulana']])->count();?></td>
+                <td><?= $t3_7over = App\Mtoto_view::where([['hudhurio', 'Ndani ya siku 3-7'], ['jinsia', 'Msichana']])->count();?></td>
+                <td><?= $t3_720 + $t3_7over ?></td>
             </tr>
             <tr>
                 <td></td>
                 <td><b>Jumla waliohudhuria ndani ya siku 7</b></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?= $t1 = $t3_720 + $t4820 ?></td>
+                <td><?= $t2 = $t48over + $t3_7over ?></td>
+                <td><?= $t1 + $t2?></td>
             </tr>
             <tr>
                 <td>11 c</td>
@@ -225,8 +224,169 @@
                 <td></td>
                 <td></td>
             </tr>
+
         </tbody>
     </table>
+<br>
+    <table border="1">
+        <tbody>
+        <tr>
+            <th>Namba</th>
+            <th>Maelezo</th>
+            <th>Wavulana</th>
+            <th>Wasichana</th>
+            <th>Jumla</th>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td><b>HUDUMA KWA MTOTO</b></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>12 a</td>
+            <td>Idadi ya watoto waliopewa BCG</td>
+            <td><?= $bcg20 = App\Mtoto_huduma::where([['tarehe_BCG', '!=', 'null'], ['jinsia', 'Mvulana']])->count();?></td>
+            <td><?= $bcgover = App\Mtoto_huduma::where([['tarehe_BCG', '!=','null'], ['jinsia', 'Msichana']])->count();?></td>
+            <td><?= $bcg20 + $bcgover ?></td>
+        </tr>
+        <tr>
+            <td>12 b</td>
+            <td>Idadi ya watoto waliopewa opv 0</td>
+            <td><?= $opv20 = App\Mtoto_huduma::where([['tarehe_OPVO', '!=', 'null'], ['jinsia', 'Mvulana']])->count();?></td>
+            <td><?= $opvover = App\Mtoto_huduma::where([['tarehe_OPVO', '!=','null'], ['jinsia', 'Msichana']])->count();?></td>
+            <td><?= $opv20 + $opvover ?></td>
+        </tr>
+        <tr>
+            <td>12 c</td>
+            <td>Idadi ya watoto waliozaliwa na uzito wa <2.5 kg wakapatiwa KMC</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>12 d</td>
+            <td>Idadi ya watoto waliozaliwa nyumbani chini ya <2.5 kg</td>
+                <td><?= $kgv20 = App\Mtoto_huduma::where([['uzito', '<', '2500'],['mahali_alipozaliwa', 'Nyumbani'], ['jinsia', 'Mvulana']])->count();?></td>
+                <td><?= $kgvover = App\Mtoto_huduma::where([['uzito', '<','2500'],['mahali_alipozaliwa', 'Nyumbani'], ['jinsia', 'Msichana']])->count();?></td>
+                <td><?= $kgv20 + $kgvover ?></td>
+        </tr>
+        <tr>
+            <td>12 e</td>
+            <td>Idadi ya watoto waliozaliwa nyumbani walioanzishiwa huduma ya <br> kangaroo (KMC)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>12 f</td>
+            <td>Idadi ya wenye upungufu mkubwa wa damu (Hb <10 g/dl)</td>
+                <td><?= $hb20 = App\Mtoto_huduma::where([['hb', '<', '10'], ['jinsia', 'Mvulana']])->count();?></td>
+                <td><?= $hbover = App\Mtoto_huduma::where([['hb', '<','10'], ['jinsia', 'Msichana']])->count();?></td>
+                <td><?= $hb20 + $hbover ?></td>
+        </tr>
+        
+        <tr>
+            <td>13</td>
+            <td><b>UAMBUKIZO WA MTOTO</b></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>13 a</td>
+            <td>Idadi ya watoto wenye uambukizo mkali (septicaemia)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>13 b</td>
+            <td>Idadi ya watoto wenye uambukizo kwenye kitovu</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>13 c</td>
+            <td>Idadi ya watoto wenye uambukizo kwenye ngozi</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>13 d</td>
+            <td>Idadi ya watoto wenye jaundice (ngozi njano)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>Vifo vya watoto waliozaliwa nyumbani  (perinatal); neonatal</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Waliopewa dawa ya ARV</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <td>16</td>
+            <td><b>ULISHAJI WA MTOTO</b></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>16 a</td>
+            <td>Watoto wachanga wanaonyonya maziwa ya mama pekee (EBF)</td>
+            <td><?= $cebf20 = App\Mtoto_lishe::where([['lishe', 'EBF'], ['jinsia', 'Mvulana']])->count();?></td>
+            <td><?= $cebfover = App\Mtoto_lishe::where([['lishe','EBF'], ['jinsia', 'Msichana']])->count();?></td>
+            <td><?= $cebf20 + $cebfover ?></td>
+        </tr>
+        <tr>
+            <td>16 b</td>
+            <td>Watoto wachanga wanaonyonyeshwa maziwa mbadala (RF)</td>
+            <td><?= $crf20 = App\Mtoto_lishe::where([['lishe', 'RF'], ['jinsia', 'Mvulana']])->count();?></td>
+            <td><?= $crfover = App\Mtoto_lishe::where([['lishe','RF'], ['jinsia', 'Msichana']])->count();?></td>
+            <td><?= $crf20 + $crfover ?></td>
+        </tr>
+        <tr>
+            <td>16 c</td>
+            <td>Watoto wachanga wanaonyonyeshwa maziwa ya mama na <br> kupatiwa chakula kingine (MF)</td>
+            <td><?= $cmf20 = App\Mtoto_lishe::where([['lishe', 'MF'], ['jinsia', 'Mvulana']])->count();?></td>
+            <td><?= $cmfover = App\Mtoto_lishe::where([['lishe','MF'], ['jinsia', 'Msichana']])->count();?></td>
+            <td><?= $cmf20 + $cmfover ?></td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <div>
+        <label for="jina_la_mtayarishaji">Mtayarishaji wa Ripoti</label> <u>{{Auth::user()->name}}</u>  <label for="cheo">Cheo</label>.......................................... 
+    </div>
+    <br>
+    <div>
+        <label for="sahihi">Sahihi</label>............................................... <label for="tarehe">Tarehe</label> <input type="date" name="tarehe">
+    </div>
+    <br>
+    <div>
+        <label for="immepita">Imepitiwa na</label>...................,.........................,............................
+    </div>
+    <br>
+    <div>
+        <label for="phone_no">Namba ya simu ya kituo</label>.......................................................
+    </div>
+    <br>
+    <div>
+        <label for="imepokelewa">Imepokelewa wilayani tarehe</label> <input type="date" name="imepokelewa_tarehe">
+    </div>
     <a href='/postnatal/print'>Print</a>
 </body>
 

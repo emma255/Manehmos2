@@ -13,7 +13,7 @@ class CreateAlipojifunguaViewsTable extends Migration
     public function up()
     {
         DB::statement('CREATE view alipojifungua as
-        select register13s.Namba_ya_kadi, DATEDIFF(postnatals.tarehe_ya_kujifungua,postnatals.tarehe_ya_kuzaliwa) as umri,
+        select register13s.tarehe_ya_hudhurio, register13s.Namba_ya_kadi, DATEDIFF(postnatals.tarehe_ya_kujifungua,postnatals.tarehe_ya_kuzaliwa) as umri,
          postnatals.mahali_alipojifungulia, postnatals.kada_ya_aliyemzalisha
         from postnatals INNER JOIN register13s ON register13s.Namba_ya_kadi=postnatals.namba_ya_kadi_RCH4;');
 

@@ -24,11 +24,13 @@ class CreateInfantsTable extends Migration
             $table->date('tarehe');
             $table->float('joto');
             $table->float('uzito');
+            $table->float('hb');
             $table->string('macho_yanatoa_uchafu');
             $table->string('ngozi_ina_vipele_vyenye_usaha');
             $table->string('wekundu_wa_damu');
             $table->string('kuchezacheza_mtoto');
             $table->string('utando_mweupe_mdomoni');
+            $table->string('lishe');
             $table->string('ngozi_njano');
             $table->string('kitovu_kimepona');
             $table->string('kitovu_chekundu');
