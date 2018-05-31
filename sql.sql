@@ -34,8 +34,8 @@ as
 
 CREATE VIEW mtoto_huduma
  as 
-        select infants.tarehe, register_children.namba_ya_mtoto, infants.tarehe_BCG, infants.tarehe_OPVO, infants.uzito, postnatals.mahali_alipojifungulia as mahali_alipozaliwa,
-        register_children.jinsia, infants.hb
+        select infants.tarehe, register_children.namba_ya_mtoto, infants.tarehe_BCG, infants.tarehe_OPVO, infants.uzito, 
+        postnatals.mahali_alipojifungulia as mahali_alipozaliwa, register_children.jinsia, infants.hb, infants.kmc
         from register_children INNER JOIN infants ON register_children.namba_ya_mtoto=infants.namba_ya_usajili INNER JOIN
         postnatals ON postnatals.jina_la_mama = register_children.jina_la_mama;
 
@@ -44,6 +44,11 @@ CREATE VIEW mtoto_lishe
 as
         select infants.tarehe, register_children.namba_ya_mtoto, infants.lishe, register_children.jinsia
         from register_children INNER JOIN infants ON register_children.namba_ya_mtoto=infants.namba_ya_usajili;
+
+CREATE VIEW mtoto_uambukizo AS 
+        select infants.tarehe, register_children.namba_ya_mtoto, infants.maambukizi_kitovu, infants.uambukizo_mkali, infants.maambukizi_ngozini,
+        register_children.jinsia, postnatals.mahali_alipojifungulia as mahali_alipozaliwa, postnatals.hali_ya_mtoto from register_children INNER JOIN infants ON register_children.namba_ya_mtoto=infants.namba_ya_usajili INNER JOIN
+        postnatals ON postnatals.jina_la_mama = register_children.jina_la_mama;
 
 
 
@@ -54,15 +59,15 @@ Carbon\Carbon::parse('october')->month
 
 
 App\Mtoto_view::where([['hudhurio', 'Ndani ya siku 3-7']])->join ->count()
--- protected $table = 'mtoto_lishe';
+-- protected $table = 'mtoto_uambukizo';
 
 
 
 
 
 -- {
---         DB::statement
--- ('CREATE VIEW mtoto_lishe as
-select register_children.namba_ya_mtoto, infants.lishe, register_children.jinsia
-        from register_children INNER JOIN infants ON register_children.namba_ya_mtoto=infants.namba_ya_usajili;');
+--         DB::statement('CREATE VIEW mtoto_uambukizo AS 
+        select infants.tarehe, register_children.namba_ya_mtoto, infants.maambukizi_kitovu, infants.uambukizo_mkali, infants.maambukizi_ngozini,
+        register_children.jinsia, postnatals.mahali_alipojifungulia as mahali_alipozaliwa, postnatals.hali_ya_mtoto from register_children INNER JOIN infants ON register_children.namba_ya_mtoto=infants.namba_ya_usajili INNER JOIN
+        postnatals ON postnatals.jina_la_mama = register_children.jina_la_mama;');
 --     }
