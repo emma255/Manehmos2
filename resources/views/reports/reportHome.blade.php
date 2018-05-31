@@ -20,18 +20,18 @@
                     <div class="col-md-4">
                         <label for="month">Mwezi</label>
                         <select class="form-control" name="month" required>
-                        <option value="january">january</option>
-                        <option value="february">february</option>
-                        <option value="march">march</option>
-                        <option value="april">April</option>
-                        <option value="may">may</option>
-                        <option value="june">june</option>
-                        <option value="july">july</option>
-                        <option value="august">august</option>
-                        <option value="september">september</option>
-                        <option value="october">october</option>
-                        <option value="november">november</option>
-                        <option value="december">december</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
                     </select>
                     </div>
                     <div class="col-md-4">
