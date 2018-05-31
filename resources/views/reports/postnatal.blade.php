@@ -387,7 +387,10 @@
     <div>
         <label for="imepokelewa">Imepokelewa wilayani tarehe</label> <input type="date" name="imepokelewa_tarehe">
     </div>
+     
     <a href='/postnatal/print'>Print</a>
+
+    <button onClick="window.print()">Print this page</button>
 </body>
 
 </html>
