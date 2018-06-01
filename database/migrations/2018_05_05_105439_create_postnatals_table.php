@@ -20,6 +20,7 @@ class CreatePostnatalsTable extends Migration
             $table->string('namba_ya_kadi_RCH4');
             $table->string('jina_la_mama');
             $table->string('mtaa');
+            $table->string('lishe_ya_mtoto');
             $table->date('tarehe_ya_kuzaliwa');
             $table->integer('para');
             $table->date('tarehe_ya_kujifungua');
