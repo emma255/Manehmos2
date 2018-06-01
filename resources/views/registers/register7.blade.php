@@ -251,7 +251,7 @@
 
 						<div class="row col-md-12">
 							<div class="col-md-5"></div>
-							<div class="col-md-2"><input type="submit" class="form-control btn-primary" name="save6"></div>
+							<div class="col-md-2"><input type="submit" class="form-control btn-primary" name="save6" value="Hifadhi"></div>
 							<div class="col-md-5"></div>
 						</div>
 					</div>

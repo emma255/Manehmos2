@@ -119,7 +119,7 @@
                                                     <option value="Hapana">Hapana</option>
                                                 </select>
                                             </div>
-                                            
+
                                             <div class="col-md-6">
                                                 <label for="uambukizo_mkali">Uambukizo mkali</label>
                                                 <select name="uambukizo_mkali" class="form-control">
@@ -186,23 +186,17 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <!--end right division-->
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5"></div>
+                            <div class="col-md-2"><input type="Submit" name="submit" class="btn btn-primary form-control" value="Hifadhi"></div>
+                            <div class="col-md-5"></div>
                         </div>
                     </div>
-                        <!--end right division-->
-                <div class="row">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-2"><input type="Submit" name="submit" class="btn btn-primary form-control" value="Hifadhi"></div>
-                    <div class="col-md-5"></div>
-                </div>
+                </form>
             </div>
-
-            </form>
         </div>
-
-
     </div>
-
 </div>
-
 @endsection

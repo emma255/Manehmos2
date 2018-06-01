@@ -303,27 +303,18 @@
 									</div>
 								</div>
 							</div>
-
+							<!--end right division-->
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-sm-5"></div>
+							<div class="col-sm-2"><input type="Submit" name="submit" class="btn btn-primary form-control" value="Hifadhi"></div>
+							<div class="col-sm-5"></div>
 						</div>
 					</div>
-					<!--end right division-->
-
+				</form>
 			</div>
-
-			<div class="row">
-				<div class="col-sm-5"></div>
-				<div class="col-sm-2"><input type="Submit" name="submit" class="btn btn-primary form-control"></div>
-				<div class="col-sm-5"></div>
-			</div>
-			</form>
-			<br>
-
 		</div>
-
-
 	</div>
-
 </div>
-
-</div
 @endsection

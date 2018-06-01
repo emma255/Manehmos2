@@ -2,8 +2,6 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <!-- 	<div class="col-md-2"></div>
- -->
         <div class="col-md card">
 
             <div class="card-header">
@@ -108,21 +106,21 @@
                                     <div class="col-md-6">
                                         <label>Mahali alipojifungulia</label>
                                         <select name="mahali_alipojifungulia" class="form-control">
-                                                <option value="" hidden=""></option>
-                                                <option value="Nyumbani">Nyumbani</option>
-                                                <option value="Hospitali">Hospitali</option>
-                                                <option value="Njiani">Njiani</option>
-                                            </select>
+                                            <option value="" hidden=""></option>
+                                            <option value="Nyumbani">Nyumbani</option>
+                                            <option value="Hospitali">Hospitali</option>
+                                            <option value="Njiani">Njiani</option>
+                                        </select>
                                     </div>
 
 
                                     <div class="col-md-6">
                                         <label>Hali ya mama</label>
                                         <select name="hali_ya_mama" class="form-control">
-                                                <option value="" hidden=""></option>
-                                                <option value="Hai">Hai</option>
-                                                <option value="Amefariki">Amefariki</option>
-                                            </select>
+                                            <option value="" hidden=""></option>
+                                            <option value="Hai">Hai</option>
+                                            <option value="Amefariki">Amefariki</option>
+                                        </select>
                                     </div>
 
                                 </div>
@@ -131,10 +129,10 @@
                                     <div class="col-md-5">
                                         <label>Hali ya mtoto</label>
                                         <select name="hali_ya_mtoto" class="form-control">
-                                                <option value="" hidden=""></option>
-                                                <option value="Hai">Hai</option>
-                                                <option value="Amefariki">Amefariki</option>
-                                            </select>
+                                            <option value="" hidden=""></option>
+                                            <option value="Hai">Hai</option>
+                                            <option value="Amefariki">Amefariki</option>
+                                        </select>
                                     </div>
                                     <div class="col-md-7">
                                         <label>Unyonyeshaji ndani ya saa moja</label>
@@ -177,27 +175,18 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <!--end right division-->
+                        </div>
+                        <div class="row col-md-12">
+                            <div class="col-md-5">
+                            </div>
+                            <div class="col-md-2"><input type="Submit" name="submit" class="btn btn-primary form-control" value="Hifadhi"></div>
+                            <div class="col-md-5"></div>
                         </div>
                     </div>
-                    <!--end right division-->
-
+                </form>
             </div>
-
-            <div class="row">
-                <div class="col-md-5"></div>
-                <div class="col-md-2"><input type="Submit" name="submit" class="btn btn-primary form-control"></div>
-                <div class="col-md-5"></div>
-            </div>
-            </form>
-            <br>
-
         </div>
-
-
     </div>
-
 </div>
-
-</div
 @endsection
