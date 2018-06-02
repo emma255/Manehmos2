@@ -43,6 +43,10 @@ Route::get('admin/home', 'AdminHomeController@index')->middleware('auth');
 
 Route::get('task/create', 'TasksController@create')->middleware('auth');
 
+Route::get('maternal/progress', 'ProgressController@showMaternal')->middleware('auth');
+
+Route::get('child/progress', 'ProgressController@showChild')->middleware('auth');
+
 Route::get('registrationForm', 'RegistrationFormController@create')->middleware('guest');
 
 // start reports routes
@@ -54,19 +58,9 @@ Route::post('report/request', 'ReportsController@testcase');
 
 Route::get('reportHome', 'ReportsController@index');
 
-Route::get('postnatal/report', 'ReportsController@postnatalShow');
-
-Route::get('postnatal/print', 'ReportsController@postnatalPrint');
-
-Route::get('mtoto', 'ReportsController@mtotoShow');
-
 Route::get('mtoto/print', 'ReportsController@mtotoPrint');
 
-Route::get('IVDactivities', 'ReportsController@IVDactivitiesShow');
-
 Route::get('IVDactivities/print', 'ReportsController@IVDactivitiesPrint');
-
-Route::get('antenatal', 'ReportsController@antenatalShow');
 
 Route::get('antenatal/print', 'ReportsController@antenatalPrint');
 
@@ -88,3 +82,5 @@ Route::post('register13/store', 'Register13Controller@store')->middleware('auth'
 Route::post('child/store', 'RegisterChildController@store')->middleware('auth');
 
 Route::post('task/store', 'TasksController@store')->middleware('auth');
+
+Route::post('postnatal/print', 'ReportsController@postnatalPrint');

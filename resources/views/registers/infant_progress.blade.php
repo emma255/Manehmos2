@@ -17,7 +17,7 @@
 
                     <div class="form-group">
                         <!--first row-->
-                        <div class="row">
+                        <div class="row form-group">
                             <!--left division-->
                             <div class="col-md-6">
 
@@ -45,6 +45,7 @@
 											<option value="Siku 3-7">Siku 3-7</option>
 											<option value="Siku 8-28">Siku 8-28</option>
 											<option value="Siku 29-42">Siku 29-42</option>
+											<option value="hudhurio la mwezi">Mwezi</option>
                                         </select>
                                     </div>
 
@@ -107,10 +108,10 @@
 
                             <!--right division-->
                             <div class="col-md-5">
-                                <div class="card">
+                                <div class="card form-group">
                                     <div class="card-header">MAAMBUKIZI KWA MTOTO</div>
                                     <div class="card-body">
-                                        <div class="row">
+                                        <div class="row form-group">
                                             <div class="col-md-6">
                                                 <label>Uambukizo ngozini</label>
                                                 <select name="maambukizi_ngozini" class="form-control">
@@ -129,8 +130,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <br>
-                                        <div class="row">
+                                        <div class="row form-group">
                                             <div class="col-md-6">
                                                 <label>Uambukizi machoni</label>
                                                 <select name="maambukizi_machoni" class="form-control">
@@ -148,8 +148,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <br>
-                                        <div class="row">
+                                        <div class="row form-group">
                                             <div class="col-md-6">
                                                 <label for="maambukizi_kitovu">Maambukizi kitovuni</label>
                                                 <select name="maambukizi_kitovu" class="form-control">
@@ -165,7 +164,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <br>
                                 <div class="card col-md-12">
                                     <div class="card-header">CHANJO</div>
                                     <div class="card-body">

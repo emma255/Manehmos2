@@ -31,7 +31,7 @@ create view mtoto
 as
         select infants.tarehe, register_children.jina_la_mtoto, register_children.namba_ya_mtoto, register_children.jinsia, infants.hudhurio
         from register_children INNER JOIN infants ON register_children.namba_ya_mtoto=infants.namba_ya_usajili;
-
+*
 CREATE VIEW mtoto_huduma
  as 
         select infants.tarehe, register_children.namba_ya_mtoto, infants.tarehe_BCG, infants.tarehe_OPVO, infants.uzito, 
@@ -53,10 +53,20 @@ CREATE VIEW mtoto_uambukizo AS
 
 
 
+SELECT COUNT(*) as total
+    FROM eaters
+    WHERE eaters.id IN (
+        SELECT eaters.id as hungry_people FROM eaters, food
+            WHERE food.food_id = eaters.food_id GROUP BY eaters.id HAVING COUNT(*) >= 3
+    );
+
+
+
+
 
 
 Carbon\Carbon::parse('october')->month
-
+date("F", mktime(0, 0, 0, request('month'), 10));
 
 App\Mtoto_view::where([['hudhurio', 'Ndani ya siku 3-7']])->join ->count()
 -- protected $table = 'mtoto_uambukizo';

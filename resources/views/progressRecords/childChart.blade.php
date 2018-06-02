@@ -8,7 +8,8 @@
     function drawChart() {
       var data = google.visualization.arrayToDataTable
         ([
-          ['mwezi', 'Kilo'], [0, 3.5], [1, 4.5], [2, 5.0],
+          ['mwezi', 'Kilo'],
+           [0, 3.5], [1, 4.5], [2, 5.0],
           // [3, 5.5], [4, 6], [5, 6.5], [6, 7], [7, 7.5],
           // [8, 8], [10, 8.5], [11, 9], [9, 9.5],
           // [12, 10], [13, 10.5], [14, 11], [15, 11.5],
@@ -35,9 +36,9 @@
           actions: ['dragToZoom', 'rightClickToReset'],
         },
         chartArea: {
-          left: 40,
+          left: 80,
           top: 100,
-          width: '100%',
+          width: '70%',
           height: '50%',
         },
         vAxis: {
@@ -50,6 +51,7 @@
           },
         },
         hAxis: {
+          title: 'mwezi',
 
           min: 0,
           max: 30,
