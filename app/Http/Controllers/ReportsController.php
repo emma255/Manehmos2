@@ -20,12 +20,6 @@ class ReportsController extends Controller
     }
 
     // ripoti ufuatliaji wa mtoto
-
-    public function mtotoShow()
-    {
-        return view('reports.ufuatiliaji_mtoto');
-    }
-
     public function mtotoPrint()
     {
 
@@ -34,39 +28,22 @@ class ReportsController extends Controller
     }
 
     // ripoti ya mama na mtoto baada ya kujifungua
-    public function postnatalShow()
-    {
-        $date = date(DATE_RFC2822);
-
-        return view('reports.postnatal', compact('date'));
-    }
-
     public function postnatalPrint()
     {
+        $values = request();
 
-        $pdf = PDF::loadview('reports.postnatal');
+        $pdf = PDF::loadview('templates.postnatal', compact('values'));
         return $pdf->download('postnatalShow.pdf');
     }
 
     // report on IVD activities
-    public function IVDactivitiesShow()
-    {
-        return view('reports.IVD_activities');
-    }
-
     public function IVDactivitiesPrint()
     {
-
         $pdf = PDF::loadview('reports.IVD_activities');
         return $pdf->download('IVD_activities.pdf');
     }
 
     // taarifa ya mwezi toka kliniki (ANC)
-    public function antenatalShow()
-    {
-        return view('reports.antenatal');
-    }
-
     public function antenatalPrint()
     {
 
