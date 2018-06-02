@@ -24,9 +24,17 @@
                           </div>
                         </div>
 
-                        <a class="navbar nav-link" href="{{ url('/') }}">
+                        <div class="dropdown show">
+                          <a class="dropdown-toggle-primary navbar nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ __('TAFUTA REKODI') }}
-                        </a>
+                          </a>
+
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{{ url('maternal/progress') }}">{{ __('MAMA') }}</a>
+                            <!-- <a class="dropdown-item" href="{{ url('husband/register') }}">{{ __('BABA') }}</a> -->
+                            <a class="dropdown-item" href="{{ url('child/progress') }}">{{ __('MTOTO') }}</a>
+                          </div>
+                        </div>
 
                         <div class="dropdown show">
                           <a class="dropdown-toggle-primary navbar nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
