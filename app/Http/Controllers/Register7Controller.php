@@ -41,12 +41,9 @@ class Register7Controller extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'jina_la_mtoto',
             'namba_ya_usajili',
             'vitamin_A_umri',
             'amepata_vitamin_A',
-            'uzito_mtoto',
-            'urefu_mtoto',
             'mebendazole_albendazole_umri',
             'amepata_mebendazole_albendazole',
             'PENTA',
@@ -59,19 +56,12 @@ class Register7Controller extends Controller
             'Rota_tarehe',
             'Surua',
             'Surua_tarehe',
-            'rufaa_alikotoka',
-            'rufaa_alikopelekwa',
-            'rufaa_sababu',
-            'Maoni_o_maelezo_mengine',
         ]);
 
         Register7::create(request([
-            'jina_la_mtoto',
             'namba_ya_usajili',
             'vitamin_A_umri',
             'amepata_vitamin_A',
-            'uzito_mtoto',
-            'urefu_mtoto',
             'mebendazole_albendazole_umri',
             'amepata_mebendazole_albendazole',
             'PENTA',
@@ -84,10 +74,6 @@ class Register7Controller extends Controller
             'Rota_tarehe',
             'Surua',
             'Surua_tarehe',
-            'rufaa_alikotoka',
-            'rufaa_alikopelekwa',
-            'rufaa_sababu',
-            'Maoni_o_maelezo_mengine',
         ]));
 
         return view('home');

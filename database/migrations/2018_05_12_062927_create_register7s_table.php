@@ -16,14 +16,11 @@ class CreateRegister7sTable extends Migration
         Schema::create('register7s', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('jina_la_mtoto');
             $table->string('namba_ya_usajili');
             // $table->foreign('Jina_la_mtoto')->references('jina_la_mtoto')->on('register_children');
             // $table->foreign('namba_ya_usajili')->references('namba_ya_mtoto')->on('register_children');
             $table->string('vitamin_A_umri')->nullable();
             $table->string('amepata_vitamin_A')->nullable();
-            $table->float('uzito_mtoto');
-            $table->float('urefu_mtoto');
             $table->string('mebendazole_albendazole_umri')->nullable();
             $table->string('amepata_mebendazole_albendazole')->nullable();
             $table->string('PENTA')->nullable();
@@ -36,10 +33,6 @@ class CreateRegister7sTable extends Migration
             $table->date('Rota_tarehe')->nullable();
             $table->string('Surua')->nullable();
             $table->date('Surua_tarehe')->nullable();
-            $table->string('rufaa_alikotoka');
-            $table->string('rufaa_alikopelekwa');
-            $table->string('rufaa_sababu');
-            $table->string('Maoni_o_maelezo_mengine');
         });
     }
 
