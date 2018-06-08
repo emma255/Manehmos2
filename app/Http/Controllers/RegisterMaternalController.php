@@ -78,6 +78,8 @@ class RegisterMaternalController extends Controller
             'umri_mtoto_wa_mwisho',
         ]));
 
+        session()->flash('flash_message', 'Taarifa za usajili za mama mjamzito zimeshahifadhiwa!');
+
         return view('registers.register6');
     }
 

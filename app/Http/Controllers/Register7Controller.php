@@ -75,8 +75,9 @@ class Register7Controller extends Controller
             'Surua',
             'Surua_tarehe',
         ]));
+            session()->flash('flash_message', 'Taarifa za mtuha namba 7 zimeshahifadhiwa!');
 
-        return view('home');
+            return view('home');
     }
 
     /**

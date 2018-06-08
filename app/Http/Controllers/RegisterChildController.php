@@ -62,7 +62,8 @@ class RegisterChildController extends Controller
             'mahali_anapoishi_mtoto',
         ]));
 
-        session()->flash('flash_message', 'You have successfully registered a child!');
+        session()->flash('flash_message', 'Taarifa za usajili za mtoto zimeshahifadhiwa!');
+
         return view('registers.infant_progress');
     }
 

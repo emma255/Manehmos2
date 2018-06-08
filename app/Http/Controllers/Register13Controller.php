@@ -91,7 +91,10 @@ class Register13Controller extends Controller
             'rufaa_alikotoka',
             'rufaa_sababu_o_maoni',
         ]));
-        return view('home');
+
+            session()->flash('flash_message', 'Taarifa za mtuha namba 13 zimeshahifadhiwa!');
+
+            return view('home');
     }
 
     /**

@@ -150,7 +150,9 @@ class Register6Controller extends Controller
             'tarehe_ya_TT',
         ]));
 
-        return view('home');
+         session()->flash('flash_message', 'Taarifa za mtuha namba 6 zimeshahifadhiwa!');
+
+         return view('home');
     }
 
     /**

@@ -8,7 +8,7 @@
                     <div class="col-md-3"><p>{{Auth::user()->center}}</p></div>
                     <ul class="navbar-nav mr-auto col-sm">
 
-                        <a class="navbar nav-link" href="{{ url('/') }}">
+                        <a class="navbar nav-link" href="{{ url('homepage') }}">
                             {{ __('MWANZO') }}
                         </a>
 
@@ -57,7 +57,7 @@
             
                         
 
-                        <a class="navbar nav-link" href="{{ url('/') }}">
+                        <a class="navbar nav-link" href="{{ url('homepage') }}">
                             {{ __('MSAADA') }}
                         </a>
             
