@@ -81,6 +81,11 @@
         </nav>
 
         <main class="py-4">
+            @if (Session::has('flash_message'))
+
+            <div class="alert alert-success center-block">{{ Session::get('flash_message') }}</div>
+
+            @endif
             @yield('content')
         </main>
     </div>
