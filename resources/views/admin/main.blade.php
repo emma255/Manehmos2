@@ -9,9 +9,12 @@
       <!-- Logo -->
       <a href="/admin/home" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
+        <span class="logo-mini">
+          <b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Admin</b></span>
+        <span class="logo-lg">
+          <b>Admin</b>
+        </span>
       </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
@@ -21,43 +24,14 @@
         </a>
         <div class="navbar-custom-menu">
           <l class="nav navbar-nav">
-            <li class="header content-header">sjdkjndksnjk</li>
-            <!-- Messages: style can be found in dropdown.less-->
-            <li class="dropdown messages-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
-            </a>
-              <ul class="dropdown-menu">
-                <li class="header">You have 4 messages</li>
-                <li>
-                  <!-- inner menu: contains the actual data -->
-                  <ul class="menu">
-                    <li>
-                      <!-- start message -->
-                      <a href="#">
-                        <div class="pull-left">
-                          <img src="/imgs/emma.jpg" class="img-circle" alt="User Image">
-                        </div>
-                        <h4>
-                          Support Team
-                          <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                        </h4>
-                        <p>Why not buy a new awesome theme?</p>
-                      </a>
-                    </li>
-                    <!-- end message -->
-                  </ul>
-                </li>
-                <li class="footer"><a href="#">See All Messages</a></li>
-              </ul>
-            </li>
             <!-- Tasks: style can be found in dropdown.less -->
             <li class="dropdown tasks-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-flag-o"></i>
-              <span class="label label-danger"><?= $taskstotal=App\Tasks::count(); ?></span>
-            </a>
+                <i class="fa fa-flag-o"></i>
+                <span class="label label-danger">
+                  <?= $taskstotal=App\Tasks::count(); ?>
+                </span>
+              </a>
               <ul class="dropdown-menu">
                 <li class="header">You have
                   <?= $taskstotal; ?> tasks</li>
@@ -93,17 +67,17 @@
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="/imgs/emma.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">{{Auth::user()->name}}</span>
-            </a>
+                <img src="/imgs/emma.jpg" class="user-image" alt="User Image">
+                <span class="hidden-xs">{{Auth::user()->name}}</span>
+              </a>
               <ul class="dropdown-menu">
                 <!-- Menu Body -->
                 <li class="user-body">
 
                   <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                    </a>
+                    {{ __('Logout') }}
+                  </a>
 
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -126,7 +100,8 @@
           </div>
           <div class="pull-left info">
             <p>{{Auth::user()->name}}</p>
-            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            <a href="#">
+              <i class="fa fa-circle text-success"></i> Online</a>
           </div>
         </div>
         <!-- search form -->
@@ -134,9 +109,10 @@
           <div class="input-group">
             <input type="text" name="q" class="form-control" placeholder="Search user...">
             <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
           </div>
         </form>
         <!-- /.search form -->
@@ -147,15 +123,21 @@
           <!-- accounts -->
           <li class="treeview">
             <a href="#">
-            <i class="fa fa-user-o"></i>
-            <span>Accounts</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
+              <i class="fa fa-user-o"></i>
+              <span>Accounts</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
             <ul class="treeview-menu">
-              <li><a href="{{ route('register') }}"><i class="fa fa-user-plus"></i> Create account</a></li>
-              <li><a href="/showUsers"><i class="fa fa-user-md"></i> View accounts</a></li>
+              <li>
+                <a href="{{ route('register') }}">
+                  <i class="fa fa-user-plus"></i> Create account</a>
+              </li>
+              <li>
+                <a href="/showUsers">
+                  <i class="fa fa-user-md"></i> View accounts</a>
+              </li>
             </ul>
           </li>
 
@@ -163,31 +145,23 @@
           <!-- tasks -->
           <li class="treeview">
             <a href="#">
-            <i class="fa fa-tasks"></i>
-            <span>Tasks</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
+              <i class="fa fa-tasks"></i>
+              <span>Tasks</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
             <ul class="treeview-menu">
-              <li><a href="/task/create"><i class="fa fa-circle-o"></i> Add tasks</a></li>
-              <li><a href="/showTasks"><i class="fa fa-circle-o"></i> View tasks</a></li>
+              <li>
+                <a href="/task/create">
+                  <i class="fa fa-circle-o"></i> Add tasks</a>
+              </li>
+              <li>
+                <a href="/showTasks">
+                  <i class="fa fa-circle-o"></i> View tasks</a>
+              </li>
             </ul>
           </li>
-
-
-          <!-- mail box -->
-          <li>
-            <a href="#">
-            <i class="fa fa-envelope"></i> <span>Mailbox</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">12</small>
-              <small class="label pull-right bg-green">16</small>
-              <small class="label pull-right bg-red">5</small>
-            </span>
-          </a>
-          </li>
-          <li><a href="#"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
         </ul>
       </section>
       <!-- /.sidebar -->
