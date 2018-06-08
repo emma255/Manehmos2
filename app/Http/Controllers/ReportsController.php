@@ -34,6 +34,7 @@ class ReportsController extends Controller
 
         $pdf = PDF::loadview('templates.postnatal', compact('values'));
         return $pdf->download('postnatalShow.pdf');
+        
     }
 
     // report on IVD activities

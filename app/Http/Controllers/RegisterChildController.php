@@ -62,6 +62,7 @@ class RegisterChildController extends Controller
             'mahali_anapoishi_mtoto',
         ]));
 
+        session()->flash('flash_message', 'You have successfully registered a child!');
         return view('registers.infant_progress');
     }
 

@@ -21,6 +21,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        session()->flash('flash_message', 'Umefanikiwa kuingia kwenye manehmos. karibu!!');
+
         return view('home');
     }
 }

@@ -82,6 +82,8 @@ class InfantController extends Controller
             'matatizo_mengine',
             'tarehe_ya_kurudi',
         ]));
+        
+        session()->flash('flash_message', 'Taarifa za mtoto zimeshahifadhiwa');
 
         return view('home');
     }

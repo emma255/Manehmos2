@@ -79,6 +79,7 @@ class PostnatalController extends Controller
             'amepima_postnatal',
             'lishe_ya_mtoto',
         ]));
+        session()->flash('flash_message', 'rekodi ya uzazi imeshahifadhiwa');
 
         return view('registers.register13');
     }
