@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <p>If you already have an account, click
                         <a href="{{ route('login') }}">{{ __('here') }}</a> to login</p>
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="send/details">
                         @csrf
 
                         <div class="form-group row">
