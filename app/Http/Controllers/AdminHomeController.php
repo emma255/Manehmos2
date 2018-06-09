@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Hash;
 use App\Tasks;
 use App\User;
 use Illuminate\Http\Request;
@@ -93,9 +94,25 @@ class AdminHomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update($id)
     {
-        echo $request->password;
+        if (User::find($id) == null){
+            echo 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
+        }
+        else{
+
+        $this->validate(request(), [
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+            // echo Hash::make(request()->password);
+
+        User::where('id', $id) ->update(
+        ['password'=>Hash::make(request()->password),]
+        );
+
+        return redirect()->intended('/showUsers');
+    }
     }
 
     /**
