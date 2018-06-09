@@ -75,7 +75,15 @@ class AdminHomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id); // Redirect to state list if updating state wasn't existed 
+        
+        if ($user == null) { 
+
+        return redirect()->intended('showUsers');
+
+        }
+            
+        return view('admin.changePassword', ['user'=> $user]);
     }
 
     /**
@@ -85,9 +93,9 @@ class AdminHomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update()
     {
-        //
+        echo $request->password;
     }
 
     /**
