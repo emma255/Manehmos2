@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\SendDetails;
 
 class RegistrationFormController extends Controller
 {
@@ -32,53 +33,18 @@ class RegistrationFormController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function send(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'worker_id' => 'required|string|max:255',
+            'position' => 'required|string|max:21',
+            'email' => 'required|string|max:255', 
+            'center' => 'required|string|max:255', 
+            'district' => 'required|string|max:255', 
+            'phone_no'=> 'required', 
+            'password' => 'required|string|min:6',
+        ]);
+        \Mail::to('admin.register@mahehmos.co.tz')->send(new SendDetails($request));
     }
 }
