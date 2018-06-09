@@ -67,6 +67,10 @@ Route::get('antenatal/print', 'ReportsController@antenatalPrint');
 // end reports routes
 
 //posts
+Route::post('password/change', 'AdminHomeController@update')->middleware('auth');
+
+Route::post('send/details', 'RegistrationFormController@send')->middleware('guest');
+
 Route::post('maternal/store', 'RegisterMaternalController@store')->middleware('auth');
 
 Route::post('postnatal/store', 'PostnatalController@store')->middleware('auth');
