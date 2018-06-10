@@ -111,7 +111,7 @@ class AdminHomeController extends Controller
         ['password'=>Hash::make(request()->password),]
         );
 
-        return redirect()->intended('/showUsers');
+        return redirect('/showUsers');
     }
     }
 
@@ -123,8 +123,15 @@ class AdminHomeController extends Controller
      */
     public function destroy($id)
     {
+        if (User::find($id) == null){
+            echo 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
+        }
+        else{
 
-        User::where('id', $id)->delete();
+        User::where('id', $id) ->update(
+        ['status' => 'Deactivated',]
+        );
+    }
 
         return redirect()->back();
     }
