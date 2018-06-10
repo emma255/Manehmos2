@@ -12,11 +12,11 @@ class ProgressController extends Controller
      */
     public function showChild()
     {
-        return view('progressRecords.childChart');
+         return view('progressRecords.childChart');
     }
 
     public function showMaternal()
     {
-        return view('progressRecords.maternal');
+        return view('progressRecords.main');
     }
 }
