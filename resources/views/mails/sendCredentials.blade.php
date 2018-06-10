@@ -10,7 +10,10 @@
 
 <body>
     Karibu {{$request->name}},
-    <br> Username yako ni {{$request->name}} na password ni {{$request->password}}
+    <br> Username yako ni
+    <b>{{$request->name}}</b>
+    <br> password ni
+    <b>{{$request->password}}</b>
 </body>
 
 </html>
