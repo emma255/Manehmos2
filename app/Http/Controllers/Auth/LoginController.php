@@ -31,11 +31,15 @@ class LoginController extends Controller
     {
         if ($user->position == 'Doctor') {
             return redirect('/');
-        } elseif ($user->position == 'Clinical Attendant') {
+        }
+         elseif ($user->position == 'Clinical Attendant') {
             return redirect('/');
         }
-        if ($user->position == 'System Administrator') {
+        elseif ($user->position == 'System Administrator') {
             return redirect('admin/home');
+        }
+        else{
+            return redirect('/login');
         }
 
     }
