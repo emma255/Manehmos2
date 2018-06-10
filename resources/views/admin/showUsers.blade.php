@@ -1,4 +1,5 @@
-@extends('admin.main') @section('content')
+@extends('admin.main') 
+@section('content')
 
 
 <!-- Main content -->
@@ -18,8 +19,9 @@
               <tr>
                 <th>Name</th>
                 <th>Position</th>
-                <th>Pnone number</th>
+                <th>Phone number</th>
                 <th>Email</th>
+                <th>Status</th>
                 <th></th>
               </tr>
             </thead>
@@ -32,15 +34,17 @@
                 <td>{{$detail->position}}</td>
                 <td>{{$detail->phone_no}}</td>
                 <td>{{$detail->email}}</td>
+                <td>{{$detail->status}}</td>
                 <form class="row" method="POST" action="{{ route('Admin.destroy', ['id' => $detail->id]) }}" onsubmit="return confirm('Are you sure?')">
                   <input type="hidden" name="_method" value="DELETE">
-                  <input type="hidden" name="_token" value="{{ csrf_token() }}"> @if ($detail->name != Auth::user()->username)
-                  <td>
-                    <a href="{{ route('Admin.edit', ['id' => $detail->id]) }}" class="btn btn-warning col-sm-3 col-xs-5 btn-margin">
-                      Update </a>
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}"> @if ($detail->name != Auth::user()->username
+                  && $detail->status == 'active')
+                  <td class="col-md-1">
+                    <a href="{{ route('Admin.edit', ['id' => $detail->id]) }}" class="btn btn-warning col-sm-12 col-xs-5 btn-margin">
+                      Change password </a>
                   </td>
                   <td>
-                    <input type="submit" value="DELETE" class="btn btn-danger col-sm-offset-2">
+                    <input type="submit" value="Deactivate" class="btn btn-danger col-sm-offset-2">
                   </td>
                   @endif
                 </form>
