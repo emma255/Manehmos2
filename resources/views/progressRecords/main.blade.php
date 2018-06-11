@@ -19,21 +19,30 @@
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
 
-                        <!-- Notifications Menu -->
-                        <li class="dropdown notifications-menu">
-                            <!-- Menu toggle button -->
-                            <!-- User Account Menu -->
-                            <li class="dropdown user user-menu">
-                                <!-- Menu Toggle Button -->
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="hidden-xs">Alexander Pierce</span>
-                                </a>
-                            </li>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="/imgs/emma.jpg" class="user-image" alt="User Image">
+                <span class="hidden-xs">{{Auth::user()->name}}</span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- Menu Body -->
+                <li class="user-body">
+
+                  <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                  </form>
+                </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+      </nav>
+    </header>
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="main-sidebar">
 
