@@ -19,7 +19,7 @@
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
         <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <a href="/admin/home" class="sidebar-toggle" data-toggle="push-menu" role="button">
           <span class="sr-only">Toggle navigation</span>
         </a>
         <div class="navbar-custom-menu">
@@ -100,7 +100,7 @@
           </div>
           <div class="pull-left info">
             <p>{{Auth::user()->name}}</p>
-            <a href="#">
+            <a href="/admin/home">
               <i class="fa fa-circle text-success"></i> Online</a>
           </div>
         </div>
