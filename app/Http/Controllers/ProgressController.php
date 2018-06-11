@@ -10,9 +10,10 @@ class ProgressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
+
+    public function index()
     {
-        $this->middleware('experts');
+         return view('progressRecords.main');
     }
 
     public function showChild()
