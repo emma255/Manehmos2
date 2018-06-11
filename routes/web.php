@@ -43,6 +43,8 @@ Route::get('admin/home', 'AdminHomeController@index')->middleware('auth');
 
 Route::get('task/create', 'TasksController@create')->middleware('auth');
 
+Route::get('progress', 'ProgressController@index')->middleware('auth')->middleware('doctor');
+
 Route::get('maternal/progress', 'ProgressController@showMaternal')->middleware('auth');
 
 Route::get('child/progress', 'ProgressController@showChild')->middleware('auth');
