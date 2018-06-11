@@ -6,6 +6,10 @@ use PDF;
 
 class ReportsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('clinician');
+    }
 
     public function testcase()
     {
