@@ -52,6 +52,10 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'admin' => \App\Http\Middleware\AccessAdminHome::class,
+        'experts' => [
+            \App\Http\Middleware\AccessDoctorPart::class,
+            \App\Http\Middleware\AccesClinicianPart::class,
+         ],
         'doctor' => \App\Http\Middleware\AccessDoctorPart::class,
         'clinician' => \App\Http\Middleware\AccesClinicianPart::class,
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
