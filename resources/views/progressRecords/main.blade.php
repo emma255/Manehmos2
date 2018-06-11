@@ -19,30 +19,30 @@
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
 
-            <li class="dropdown user user-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="/imgs/emma.jpg" class="user-image" alt="User Image">
                 <span class="hidden-xs">{{Auth::user()->name}}</span>
               </a>
-              <ul class="dropdown-menu">
-                <!-- Menu Body -->
-                <li class="user-body">
+                            <ul class="dropdown-menu">
+                                <!-- Menu Body -->
+                                <li class="user-body">
 
-                  <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
                   </a>
 
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                  </form>
-                </li>
-              </ul>
-            </li>
-            </ul>
-        </div>
-      </nav>
-    </header>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="main-sidebar">
 
@@ -73,10 +73,10 @@
                         </a>
                         <ul class="treeview-menu">
                             <li>
-                                <a href="#">Maternal</a>
+                                <a href="/maternal/progress">Maternal</a>
                             </li>
                             <li>
-                                <a href="#">Child</a>
+                                <a href="/child/progress">Child</a>
                             </li>
                             <li>
                                 <a href="#">Mother</a>
