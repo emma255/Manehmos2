@@ -30,7 +30,7 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if ($user->position == 'Doctor') {
-            return redirect('/');
+            return redirect('/progress');
         }
          elseif ($user->position == 'Clinical Attendant') {
             return redirect('/');
