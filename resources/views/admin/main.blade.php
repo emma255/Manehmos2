@@ -168,6 +168,13 @@
     </aside>
 
     <div class="content-wrapper">
+      @if (Session::has('flash_message'))
+
+            <div class="alert alert-success text-capitalize text-center">
+                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>
+            {{ Session::get('flash_message') }} {{Session::forget('flash_message')}}</div>
+
+            @endif
       @yield('content')
     </div>
   </div>

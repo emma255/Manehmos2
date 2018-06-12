@@ -3,7 +3,7 @@
     <div class="" align="center">
         <div class="p-3 mb-8 bg-secondary text-white"><h3>MATERNAL AND NEWBORN HEALTH MONITORING SYSTEM (Manehmos)</h3></div>
         <nav class="navbar navbar-expand navbar-light text-white bg-info col-sm>
-   
+
                 <div class="navbar navbar-collapse p-3 mb-2 bg-light" align="center">
                     <div class="col-md-3"><p>{{Auth::user()->center}}</p></div>
                     <ul class="navbar-nav mr-auto col-sm">
@@ -54,17 +54,17 @@
                         <a class="navbar nav-link" href="{{ url('/reportHome') }}">
                             {{ __('RIPOTI') }}
                         </a>
-            
-                        
+
+
 
                         <a class="navbar nav-link" href="{{ url('homepage') }}">
                             {{ __('MSAADA') }}
                         </a>
-            
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    
+
                                 <div class="">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -85,7 +85,7 @@
 
             <div class="alert alert-success text-capitalize text-center">
             		 <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>
-            {{ Session::get('flash_message') }}</div>
+            {{ Session::get('flash_message') }} {{Session::forget('flash_message')}}</div>
 
             @endif
             @yield('content')

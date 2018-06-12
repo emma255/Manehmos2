@@ -35,18 +35,23 @@
                 <td>{{$detail->phone_no}}</td>
                 <td>{{$detail->email}}</td>
                 <td>{{$detail->status}}</td>
-                <form class="row" method="POST" action="{{ route('Admin.destroy', ['id' => $detail->id]) }}" onsubmit="return confirm('Are you sure?')">
+                <form class="row" method="POST" action="{{ route('Admin.destroy', ['id' => $detail->id]) }}" onsubmit="return confirm('Are you sure you want to deactivate?')">
                   <input type="hidden" name="_method" value="DELETE">
-                  <input type="hidden" name="_token" value="{{ csrf_token() }}"> @if ($detail->name != Auth::user()->username
-                  && $detail->status == 'active')
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}"> @if ($detail->name != Auth::user()->username)
                   <td class="col-md-1">
                     <a href="{{ route('Admin.edit', ['id' => $detail->id]) }}" class="btn btn-warning col-sm-12 col-xs-5 btn-margin">
                       Change password </a>
                   </td>
                   <td>
-                    <input type="submit" value="Deactivate" class="btn btn-danger col-sm-offset-2">
+                    @if($detail->status == 'Deactivated')
+                    <a href="{{ route('Admin.show', ['id' => $detail->id]) }}" class="btn btn-success col-sm-offset-2" onclick="return confirm('Are you sure you want to activate?')">Activate </a>                    @endif @if($detail->status == 'active')
+                    <input type="submit" value="Deactivate" class="btn btn-danger col-sm-offset-2"> @endif
+
                   </td>
                   @endif
+
+
+
                 </form>
               </tr>
             </tbody>

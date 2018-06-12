@@ -21,23 +21,39 @@
 								<div class="row">
 									<div class="col-md-6">
 										<label>Tarehe ya kuandikishwa</label>
-										<input type="date" class="form-control" name="tarehe_ya_kuandikishwa">
+										<input required type="date" name="tarehe_ya_kuandikishwa" class="form-control{{ $errors->has('tarehe_ya_kuandikishwa') ? ' is-invalid' : '' }}"
+										 name="tarehe_ya_kuandikishwa"> @if ($errors->has('tarehe_ya_kuandikishwa'))
+										<span class="invalid-feedback">
+											<strong>{{ $errors->first('tarehe_ya_kuandikishwa') }}</strong>
+										</span> @endif
 									</div>
 									<div class="col-md-6">
 										<label>Namba ya usajili wa vizazi</label>
-										<input type="number" class="form-control" name="namba_ya_usajili_RITA" min="0">
+										<input required type="number" name="namba_ya_usajili_RITA" min="0" class="form-control{{ $errors->has('namba_ya_usajili_RITA') ? ' is-invalid' : '' }}"
+										 name="namba_ya_usajili_RITA"> @if ($errors->has('namba_ya_usajili_RITA'))
+										<span class="invalid-feedback">
+											<strong>{{ $errors->first('namba_ya_usajili_RITA') }}</strong>
+										</span> @endif
 									</div>
 								</div>
 								<br>
 								<div class="row">
 									<div class="col-md-8">
 										<label>Jina la Mtoto</label>
-										<input type="text" class="form-control" name="jina_la_mtoto" placeholder="Andika majina matatu ya mtoto">
+										<input required type="text" name="jina_la_mtoto" placeholder="Andika majina matatu ya mtoto" class="form-control{{ $errors->has('jina_la_mtoto') ? ' is-invalid' : '' }}"
+										 name="jina_la_mtoto"> @if ($errors->has('jina_la_mtoto'))
+										<span class="invalid-feedback">
+											<strong>{{ $errors->first('jina_la_mtoto') }}</strong>
+										</span> @endif
 									</div>
 
 									<div class="col-md-4">
 										<label>Namba ya mtoto</label>
-										<input type="text" class="form-control" name="namba_ya_mtoto" placeholder="Namba">
+										<input required type="text" name="namba_ya_mtoto" placeholder="Namba" class="form-control{{ $errors->has('namba_ya_mtoto') ? ' is-invalid' : '' }}"
+										 name="namba_ya_mtoto"> @if ($errors->has('namba_ya_mtoto'))
+										<span class="invalid-feedback">
+											<strong>{{ $errors->first('namba_ya_mtoto') }}</strong>
+										</span> @endif
 									</div>
 								</div>
 
@@ -61,16 +77,23 @@
 								<div class="row">
 									<div class="col-md-4">
 										<label>Jinsia</label>
-										<select name="jinsia" class="form-control">
+										<select required name="jinsia" class="form-control{{ $errors->has('jinsia') ? ' is-invalid' : '' }}" name="jinsia"> 
 											<option value="" hidden=""></option>
 											<option value="Msichana">Msichana</option>
 											<option value="Mvulana">Mvulana</option>
-										</select>
+										</select>@if ($errors->has('jinsia'))
+										<span class="invalid-feedback">
+											<strong>{{ $errors->first('jinsia') }}</strong>
+										</span> @endif
 									</div>
 
 									<div class="col-md-8">
 										<label for="child_place">Mahali anapoishi mtoto</label>
-										<input type="text" name="mahali_anapoishi_mtoto" id="child_place" class="form-control">
+										<input required type="text" name="mahali_anapoishi_mtoto" id="child_place" class="form-control{{ $errors->has('mahali_anapoishi_mtoto') ? ' is-invalid' : '' }}"
+										 name="mahali_anapoishi_mtoto"> @if ($errors->has('mahali_anapoishi_mtoto'))
+										<span class="invalid-feedback">
+											<strong>{{ $errors->first('mahali_anapoishi_mtoto') }}</strong>
+										</span> @endif
 									</div>
 
 
@@ -81,11 +104,20 @@
 								<div class="row">
 									<div class="col-md-4">
 										<label for="heid_no">Namba ya HEID</label>
-										<input type="text" name="namba_ya_HEID" id="heid_no" class="form-control">
+										<input required type="text" name="namba_ya_HEID" id="heid_no" class="form-control{{ $errors->has('namba_ya_HEID') ? ' is-invalid' : '' }}"
+										 name="namba_ya_HEID"> @if ($errors->has('namba_ya_HEID'))
+										<span class="invalid-feedback">
+											<strong>{{ $errors->first('namba_ya_HEID') }}</strong>
+										</span> @endif
 									</div>
+
 									<div class="col-md-8">
 										<label>Jina la mama</label>
-										<input type="text" class="form-control" name="jina_la_mama" placeholder="Jina la mama wa mtoto">
+										<input required type="text" name="jina_la_mama" placeholder="Jina la mama wa mtoto" class="form-control{{ $errors->has('jina_la_mama') ? ' is-invalid' : '' }}"
+										 name="jina_la_mama"> @if ($errors->has('jina_la_mama'))
+										<span class="invalid-feedback">
+											<strong>{{ $errors->first('jina_la_mama') }}</strong>
+										</span> @endif
 									</div>
 								</div>
 

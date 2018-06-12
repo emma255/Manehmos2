@@ -1,4 +1,5 @@
-@extends('admin.main') @section('content')
+@extends('admin.main') 
+@section('content')
 <section class="content">
     {{-- form division starts here --}}
     <div class="content">

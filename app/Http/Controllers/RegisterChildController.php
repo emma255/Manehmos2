@@ -41,14 +41,14 @@ class RegisterChildController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'tarehe_ya_kuandikishwa',
-            'namba_ya_usajili_RITA',
-            'jina_la_mtoto',
-            'namba_ya_mtoto',
-            'jinsia',
-            'namba_ya_HEID',
-            'jina_la_mama',
-            'mahali_anapoishi_mtoto',
+            'tarehe_ya_kuandikishwa' => 'required |before: tomorrow',
+            'namba_ya_usajili_RITA' => 'required',
+            'jina_la_mtoto' => 'required',
+            'namba_ya_mtoto' => 'required',
+            'jinsia' => 'required|max:8|string',
+            'namba_ya_HEID' => 'required',
+            'jina_la_mama' => 'required',
+            'mahali_anapoishi_mtoto' => 'required',
         ]);
 
         RegisterChild::create(request([

@@ -42,16 +42,18 @@ class TasksController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'task_name',
-            'participant',
-            'comments',
-            'start_date',
-            'end_date',
+            'task_name' => 'required',
+            'participant' => 'required',
+            'comments' => 'required',
+            'start_date' => 'required |before:end_date',
+            'end_date' => 'required |after:start_date',
         ]);
 
         Tasks::create(request([
             'task_name', 'participant', 'comments', 'start_date', 'end_date',
         ]));
+        
+            session()->flash('flash_message', 'Task added successfully!!');
 
         return redirect('admin/home');
     }
@@ -101,6 +103,8 @@ class TasksController extends Controller
     {
 
         Tasks::where('id', $id)->delete();
+
+            session()->flash('flash_message', 'Task deleted successfully!!');
 
         return redirect()->back();
     }

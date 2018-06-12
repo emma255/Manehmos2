@@ -31,7 +31,10 @@
 									<div class="row">
 										<div class="col-md-12">
 											<label>Jina la mama</label>
-											<input type="text" class="form-control" name="jina_la_mama">
+											<input type="text" name="jina_la_mama" class="form-control{{ $errors->has('jina_la_mama') ? ' is-invalid' : '' }}" name="jina_la_mama">											@if ($errors->has('jina_la_mama'))
+											<span class="invalid-feedback">
+												<strong>{{ $errors->first('jina_la_mama') }}</strong>
+											</span> @endif
 										</div>
 									</div>
 								</div>
@@ -42,23 +45,29 @@
 										<div class="row">
 											<div class="col-md-6">
 												<label>Ana kadi?</label>
-												<select name="ana_kadi" class="form-control">
+												<select name="ana_kadi" class="form-control{{ $errors->has('ana_kadi') ? ' is-invalid' : '' }}" name="ana_kadi"> 
 													<option value="" hidden=""></option>
 													<option value="ndio">Ndio</option>
 													<option value="hapana">Hapana</option>
-												</select>
+												</select>@if ($errors->has('ana_kadi'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('ana_kadi') }}</strong>
+												</span> @endif
 											</div>
 
 											<div class="col-md-6">
 												<label>Aina ya TT</label>
-												<select name="TT" class="form-control">
+												<select name="TT" class="form-control{{ $errors->has('TT') ? ' is-invalid' : '' }}" name="TT"> 
 													<option value="" hidden=""></option>
 													<option value="TT1">TT1</option>
 													<option value="TT2">TT2</option>
 													<option value="TT2">TT3</option>
 													<option value="TT2">TT4</option>
 													<option value="TT2">TT5</option>
-												</select>
+												</select>@if ($errors->has('TT'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('TT') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 
@@ -67,7 +76,10 @@
 										<div class="row">
 											<div class="col-md-8">
 												<label>Tarehe ya chanjo</label>
-												<input type="date" name="tarehe_ya_TT" class="form-control">
+												<input type="date" name="tarehe_ya_TT" class="form-control{{ $errors->has('tarehe_ya_TT') ? ' is-invalid' : '' }}" name="tarehe_ya_TT">												@if ($errors->has('tarehe_ya_TT'))
+												<span class="invalid-feedback">
+											<strong>{{ $errors->first('tarehe_ya_TT') }}</strong>
+										</span> @endif
 											</div>
 										</div>
 									</div>
@@ -84,12 +96,18 @@
 										<div class="row">
 											<div class="col-md-6">
 												<label>Damu (HB) (g/dl)</label>
-												<input type="number" id="hb" name="damu_HB" class="form-control" min="0">
+												<input type="number" id="damu_HB" name="damu_HB" min="0" class="form-control{{ $errors->has('damu_HB') ? ' is-invalid' : '' }}"
+												 name="damu_HB"> @if ($errors->has('damu_HB'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('damu_HB') }}</strong>
+												</span> @endif
 											</div>
 
 											<div class="col-md-6">
 												<label>BP (mmHg)</label>
-												<input type="text" name="BP" class="form-control" min="0">
+												<input type="text" name="BP" min="0" class="form-control{{ $errors->has('BP') ? ' is-invalid' : '' }}" name="BP">												@if ($errors->has('BP'))<span class="invalid-feedback">
+													<strong>{{ $errors->first('BP') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 
@@ -97,11 +115,14 @@
 
 										<div class="row">
 											<div class="col-md-8"><label>Sukari kwenye mkojo</label>
-												<select name="sukari_kwenye_mkojo" class="form-control">
-												<option value="" hidden=""></option>
-												<option value="ndio">Ndio</option>
-												<option value="hapana">Hapana</option>
-											</select>
+												<select name="sukari_kwenye_mkojo" class="form-control{{ $errors->has('sukari_kwenye_mkojo') ? ' is-invalid' : '' }}" name="sukari_kwenye_mkojo"> 
+													<option value="" hidden=""></option>
+													<option value="ndio">Ndio</option>
+													<option value="hapana">Hapana</option>
+												</select>@if ($errors->has('sukari_kwenye_mkojo'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('sukari_kwenye_mkojo') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 									</div>
@@ -113,7 +134,11 @@
 								<div class="col-md-12">
 									<div class="col-md-12">
 										<label>Namba ya usajili</label>
-										<input type="text" class="form-control" name="namba_ya_usajili">
+										<input type="text" name="namba_ya_usajili" class="form-control{{ $errors->has('namba_ya_usajili') ? ' is-invalid' : '' }}"
+										 name="namba_ya_usajili"> @if ($errors->has('namba_ya_usajili'))
+										<span class="invalid-feedback">
+											<strong>{{ $errors->first('namba_ya_usajili') }}</strong>
+										</span> @endif
 									</div>
 
 								</div>
@@ -132,20 +157,26 @@
 
 													<div class="col-md-5">
 														<label>Matokeo</label>
-													<select name="matokeo_stds_mume" class="form-control">
-															<option value="" hidden=""></option>
-															<option value="Positive">Positive</option>
-															<option value="Negative">Negative</option>
-														</select>
+													<select name="matokeo_stds_mume" class="form-control{{ $errors->has('matokeo_stds_mume') ? ' is-invalid' : '' }}" name="matokeo_stds_mume">
+														<option value="" hidden=""></option>
+														<option value="Positive">Positive</option>
+														<option value="Negative">Negative</option>
+													</select>@if ($errors->has('matokeo_stds_mume'))
+													<span class="invalid-feedback">
+														<strong>{{ $errors->first('matokeo_stds_mume') }}</strong>
+													</span> @endif
 												</div>
 
 												<div class="col-md-5">
 													<label>Ametibiwa</label>
-													<select name="mume_ametibiwa" class="form-control">
-															<option value="" hidden=""></option>
-															<option value="ndio">Ndio</option>
-															<option value="hapana">Hapana</option>
-														</select>
+													<select name="mume_ametibiwa" class="form-control{{ $errors->has('mume_ametibiwa') ? ' is-invalid' : '' }}" name="mume_ametibiwa"> 
+														<option value="" hidden=""></option>
+														<option value="ndio">Ndio</option>
+														<option value="hapana">Hapana</option>
+													</select>@if ($errors->has('mume_ametibiwa'))
+													<span class="invalid-feedback">
+														<strong>{{ $errors->first('mume_ametibiwa') }}</strong>
+													</span> @endif
 												</div>
 											</div>
 
@@ -156,20 +187,26 @@
 
 													<div class="col-md-5">
 														<label>Matokeo</label>
-													<select name="matokeo_stds_mke" class="form-control">
-															<option value="" hidden=""></option>
-															<option value="Positive">Positive</option>
-															<option value="Negative">Negative</option>
-														</select>
+													<select name="matokeo_stds_mke" class="form-control{{ $errors->has('matokeo_stds_mke') ? ' is-invalid' : '' }}" name="matokeo_stds_mke"> 
+														<option value="" hidden=""></option>
+														<option value="Positive">Positive</option>
+														<option value="Negative">Negative</option>
+													</select>@if ($errors->has('matokeo_stds_mke'))
+													<span class="invalid-feedback">
+														<strong>{{ $errors->first('matokeo_stds_mke') }}</strong>
+													</span> @endif
 												</div>
 
 												<div class="col-md-5">
 													<label>Ametibiwa</label>
-													<select name="mke_ametibiwa" class="form-control">
-															<option value="" hidden=""></option>
-															<option value="ndio">Ndio</option>
-															<option value="hapana">Hapana</option>
-														</select>
+													<select name="mke_ametibiwa" class="form-control{{ $errors->has('mke_ametibiwa') ? ' is-invalid' : '' }}" name="mke_ametibiwa"> 
+														<option value="" hidden=""></option>
+														<option value="ndio">Ndio</option>
+														<option value="hapana">Hapana</option>
+													</select>@if ($errors->has('mke_ametibiwa'))
+													<span class="invalid-feedback">
+														<strong>{{ $errors->first('mke_ametibiwa') }}</strong>
+													</span> @endif
 												</div>
 											</div>
 										</div>
@@ -189,20 +226,27 @@
 
 													<div class="col-md-5">
 														<label>Matokeo</label>
-													<select name="kaswende_mume" class="form-control">
-															<option value="" hidden=""></option>
-															<option value="Positive">Positive</option>
-															<option value="Negative">Negative</option>
-														</select>
+													<select name="kaswende_mume" class="form-control{{ $errors->has('kaswende_mume') ? ' is-invalid' : '' }}" name="kaswende_mume"> 
+														<option value="" hidden=""></option>
+														<option value="Positive">Positive</option>
+														<option value="Negative">Negative</option>
+													</select>@if ($errors->has('kaswende_mume'))
+													<span class="invalid-feedback">
+														<strong>{{ $errors->first('kaswende_mume') }}</strong>
+													</span> @endif
 												</div>
 
 												<div class="col-md-5">
 													<label>Ametibiwa</label>
-													<select name="mume_ametibiwa_kaswende" class="form-control">
+													<select name="mume_ametibiwa_kaswende" class="form-control{{ $errors->has('mume_ametibiwa_kaswende') ? ' is-invalid' : '' }}"
+													 name="mume_ametibiwa_kaswende">
 															<option value="" hidden=""></option>
 															<option value="ndio">Ndio</option>
 															<option value="hapana">Hapana</option>
-														</select>
+														</select>@if ($errors->has('mume_ametibiwa_kaswende'))
+													<span class="invalid-feedback">
+															<strong>{{ $errors->first('mume_ametibiwa_kaswende') }}</strong>
+														</span> @endif
 												</div>
 											</div>
 
@@ -213,20 +257,27 @@
 
 													<div class="col-md-5">
 														<label>Matokeo</label>
-													<select name="kaswende_mke" class="form-control">
-															<option value="" hidden=""></option>
-															<option value="Positive">Positive</option>
-															<option value="Negative">Negative</option>
-														</select>
+													<select name="kaswende_mke" class="form-control{{ $errors->has('kaswende_mke') ? ' is-invalid' : '' }}" name="kaswende_mke"> 
+														<option value="" hidden=""></option>
+														<option value="Positive">Positive</option>
+														<option value="Negative">Negative</option>
+													</select>@if ($errors->has('kaswende_mke'))
+													<span class="invalid-feedback">
+														<strong>{{ $errors->first('kaswende_mke') }}</strong>
+													</span> @endif
 												</div>
 
 												<div class="col-md-5">
 													<label>Ametibiwa</label>
-													<select name="mke_ametibiwa_kaswende" class="form-control">
-															<option value="" hidden=""></option>
-															<option value="ndio">Ndio</option>
-															<option value="hapana">Hapana</option>
-														</select>
+													<select name="mke_ametibiwa_kaswende" class="form-control{{ $errors->has('mke_ametibiwa_kaswende') ? ' is-invalid' : '' }}"
+													 name="mke_ametibiwa_kaswende"> 
+														<option value="" hidden=""></option>
+														<option value="ndio">Ndio</option>
+														<option value="hapana">Hapana</option>
+													</select>@if ($errors->has('mke_ametibiwa_kaswende'))
+													<span class="invalid-feedback">
+														<strong>{{ $errors->first('mke_ametibiwa_kaswende') }}</strong>
+													</span> @endif
 												</div>
 											</div>
 										</div>
@@ -243,69 +294,113 @@
 											<div class="col-md-9"><label>Hana matatizo</label>
 											</div>
 											<div class="col-md-3">
-												<input type="checkbox" class "form-control" value="ndio" name="hana_matatizo">
+												<input type="checkbox" value="ndio" name="hana_matatizo" class="form-control{{ $errors->has('hana_matatizo') ? ' is-invalid' : '' }}"
+												 name="hana_matatizo"> @if ($errors->has('hana_matatizo'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('hana_matatizo') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 
 										<div class="row">
 											<div class="col-md-9"><label>Kuharibika mimba mfululizo</label></div>
 											<div class="col-md-3">
-												<input type="checkbox" class "form-control" value="ndio" name="kuharibika_mimba_mfululizo">
+												<input type="checkbox" value="ndio" name="kuharibika_mimba_mfululizo" class="form-control{{ $errors->has('kuharibika_mimba_mfululizo') ? ' is-invalid' : '' }}"
+												 name="kuharibika_mimba_mfululizo"> @if ($errors->has('kuharibika_mimba_mfululizo'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('kuharibika_mimba_mfululizo') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 
 										<div class="row">
 											<div class="col-md-9"><label>Anaemia</label></div>
 											<div class="col-md-3">
-												<input type="checkbox" class "form-control" value="ndio" name="Anaemia">
+												<input type="checkbox" value="ndio" name="Anaemia" class="form-control{{ $errors->has('Anaemia') ? ' is-invalid' : '' }}"
+												 name="Anaemia"> @if ($errors->has('Anaemia'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('Anaemia') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 
 										<div class="row">
 											<div class="col-md-9"><label>Protenuria</label></div>
-											<div class="col-md-3"><input type="checkbox" class "form-control" value="ndio" name="Protenuria">
+											<div class="col-md-3"><input type="checkbox" value="ndio" name="Protenuria" class="form-control{{ $errors->has('Protenuria') ? ' is-invalid' : '' }}"
+												 name="Protenuria"> @if ($errors->has('Protenuria'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('Protenuria') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 
 										<div class="row">
 											<div class="col-md-9"><label>Shinikizo la juu la damu</label></div>
 											<div class="col-md-3">
-												<input type="checkbox" class "form-control" value="ndio" name="high_BP">
+												<input type="checkbox" value="ndio" name="high_BP" class="form-control{{ $errors->has('high_BP') ? ' is-invalid' : '' }}"
+												 name="high_BP"> @if ($errors->has('high_BP'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('high_BP') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 
 										<div class="row">
 											<div class="col-md-9"><label>Kutoongezeka uzito</label></div>
 											<div class="col-md-3">
-												<input type="checkbox" class "form-control" value="ndio" name="kutoongezeka_uzito">
+												<input type="checkbox" value="ndio" name="kutoongezeka_uzito" class="form-control{{ $errors->has('kutoongezeka_uzito') ? ' is-invalid' : '' }}"
+												 name="kutoongezeka_uzito"> @if ($errors->has('kutoongezeka_uzito'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('kutoongezeka_uzito') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 
 										<div class="row">
 											<div class="col-md-9"><label>Damu ukeni</label></div>
 											<div class="col-md-3">
-												<input type="checkbox" class "form-control" value="ndio" name="damu_ukeni">
+												<input type="checkbox" value="ndio" name="damu_ukeni" class="form-control{{ $errors->has('damu_ukeni') ? ' is-invalid' : '' }}"
+												 name="damu_ukeni"> @if ($errors->has('damu_ukeni'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('damu_ukeni') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 
 										<div class="row">
 											<div class="col-md-9"><label>Mlalo mbaya wa mtoto</label></div>
-											<div class="col-md-3"><input type="checkbox" class "form-control" value="ndio" name="mlalo_mbaya_wa_mtoto">
+											<div class="col-md-3"><input type="checkbox" value="ndio" name="mlalo_mbaya_wa_mtoto" class="form-control{{ $errors->has('mlalo_mbaya_wa_mtoto') ? ' is-invalid' : '' }}"
+												 name="mlalo_mbaya_wa_mtoto"> @if ($errors->has('mlalo_mbaya_wa_mtoto'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('mlalo_mbaya_wa_mtoto') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-md-9"><label>Mimba ya nne kuendelea</label></div>
-											<div class="col-md-3"><input type="checkbox" class "form-control" value="ndio" name="mimba_ya_nne+">
+											<div class="col-md-3"><input type="checkbox" value="ndio" name="mimba_ya_nne+" class="form-control{{ $errors->has('mimba_ya_nne+') ? ' is-invalid' : '' }}"
+												 name="mimba_ya_nne+"> @if ($errors->has('mimba_ya_nne+'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('mimba_ya_nne+') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-md-9"><label>Kuzaa kwa operesheni</label></div>
-											<div class="col-md-3"><input type="checkbox" class "form-control" value="ndio" name="kuzaa_kwa_operesheni">
+											<div class="col-md-3"><input type="checkbox" value="ndio" name="kuzaa_kwa_operesheni" class="form-control{{ $errors->has('kuzaa_kwa_operesheni') ? ' is-invalid' : '' }}"
+												 name="kuzaa_kwa_operesheni"> @if ($errors->has('kuzaa_kwa_operesheni'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('kuzaa_kwa_operesheni') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-md-9"><label>Vacuum extraction</label></div>
-											<div class="col-md-3"><input type="checkbox" class "form-control" value="ndio" name="vacuum_extraction">
+											<div class="col-md-3"><input type="checkbox" value="ndio" name="vacuum_extraction" class="form-control{{ $errors->has('vacuum_extraction') ? ' is-invalid' : '' }}"
+												 name="vacuum_extraction"> @if ($errors->has('vacuum_extraction'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('vacuum_extraction') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 									</div>
@@ -320,16 +415,24 @@
 										<div class="row">
 											<div class="col-md-6">
 												<label>Idadi ya vidonge vya I, FA</label>
-												<input type="number" name="vidonge_vya_I_FA" class="form-control" min="0">
+												<input type="number" name="vidonge_vya_I_FA" min="0" class="form-control{{ $errors->has('vidonge_vya_I_FA') ? ' is-invalid' : '' }}"
+												 name="vidonge_vya_I_FA"> @if ($errors->has('vidonge_vya_I_FA'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('vidonge_vya_I_FA') }}</strong>
+												</span> @endif
 											</div>
 
 											<div class="col-md-6">
 												<label>Albendazole / Mebendazole</label>
-												<select name="albendazole_mebendazole" class="form-control">
+												<select name="albendazole_mebendazole" class="form-control{{ $errors->has('albendazole_mebendazole') ? ' is-invalid' : '' }}"
+												 name="albendazole_mebendazole"> 
 													<option value="" hidden=""></option>
 													<option value="Ndiyo">Ndiyo</option>
 													<option value="Hapana">Hapana</option>
-												</select>
+												</select>@if ($errors->has('albendazole_mebendazole'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('albendazole_mebendazole') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 									</div>
@@ -361,92 +464,134 @@
 											<tr>
 												<td>Tayari ana VVU</td>
 												<td>
-													<select name="mume_tayari_ana_VVU" class="form-control col-md-11">
+													<select name="mume_tayari_ana_VVU" class="form-control{{ $errors->has('mume_tayari_ana_VVU') ? ' is-invalid' : '' }}" name="mume_tayari_ana_VVU">
 													<option value="" hidden=""></option>
 													<option value="Ndio">Ndio</option>
 													<option value="Hapana">Hapana</option>
-												</select>
+												</select>@if ($errors->has('mume_tayari_ana_VVU'))
+													<span class="invalid-feedback">
+													<strong>{{ $errors->first('mume_tayari_ana_VVU') }}</strong>
+												</span> @endif
 												</td>
 												<td>
-													<select name="mke_tayari_ana_VVU" class="form-control col-md-11">
+													<select name="mke_tayari_ana_VVU" class="form-control{{ $errors->has('mke_tayari_ana_VVU') ? ' is-invalid' : '' }}" name="mke_tayari_ana_VVU">
 													<option value="" hidden=""></option>
 													<option value="Ndio">Ndio</option>
 													<option value="Hapana">Hapana</option>
-												</select>
+												</select>@if ($errors->has('mke_tayari_ana_VVU'))
+													<span class="invalid-feedback">
+													<strong>{{ $errors->first('mke_tayari_ana_VVU') }}</strong>
+												</span> @endif
 												</td>
 											</tr>
 
 											<tr>
 												<td>Tarehe ya unasihi</td>
 												<td>
-													<input type="date" class="form-control col-md-11" name="mume_tarehe_ya_unasihi">
+													<input type="date" class="form-control col-md-11" name="mume_tarehe_ya_unasihi" class="form-control{{ $errors->has('mume_tarehe_ya_unasihi') ? ' is-invalid' : '' }}"
+													 name="mume_tarehe_ya_unasihi"> @if ($errors->has('mume_tarehe_ya_unasihi'))
+													<span class="invalid-feedback">
+														<strong>{{ $errors->first('mume_tarehe_ya_unasihi') }}</strong>
+													</span> @endif
 												</td>
 												<td>
-													<input type="date" class="form-control col-md-11" name="mke_tarehe_ya_unasihi">
+													<input type="date" class="form-control col-md-11" name="mke_tarehe_ya_unasihi" class="form-control{{ $errors->has('mke_tarehe_ya_unasihi') ? ' is-invalid' : '' }}"
+													 name="mke_tarehe_ya_unasihi"> @if ($errors->has('mke_tarehe_ya_unasihi'))
+													<span class="invalid-feedback">
+														<strong>{{ $errors->first('mke_tarehe_ya_unasihi') }}</strong>
+													</span> @endif
 												</td>
 											</tr>
 
 											<tr>
 												<td>Amepima VVU</td>
 												<td>
-													<select name="mume_amepima_VVU" class="form-control col-md-11">
+													<select name="mume_amepima_VVU" class="form-control{{ $errors->has('mume_amepima_VVU') ? ' is-invalid' : '' }}" name="mume_amepima_VVU"> 
 													<option value="" hidden=""></option>
 													<option value="Ndio">Ndio</option>
 													<option value="Hapana">Hapana</option>
-												</select>
+												</select>@if ($errors->has('mume_amepima_VVU'))
+													<span class="invalid-feedback">
+													<strong>{{ $errors->first('mume_amepima_VVU') }}</strong>
+												</span> @endif
 												</td>
 												<td>
-													<select name="mke_amepima_VVU" class="form-control col-md-11">
+													<select name="mke_amepima_VVU" class="form-control{{ $errors->has('mke_amepima_VVU') ? ' is-invalid' : '' }}" name="mke_amepima_VVU"> 
 													<option value="" hidden=""></option>
 													<option value="Ndio">Ndio</option>
 													<option value="Hapana">Hapana</option>`
-												</select>
+												</select>@if ($errors->has('mke_amepima_VVU'))
+													<span class="invalid-feedback">
+													<strong>{{ $errors->first('mke_amepima_VVU') }}</strong>
+												</span> @endif
 												</td>
 											</tr>
 
 											<tr>
 												<td>Tarehe ya kipimo</td>
 												<td>
-													<input type="date" name="mume_tarehe_ya_kipimo" class="form-control col-md-11">
+													<input type="date" name="mume_tarehe_ya_kipimo" class="form-control{{ $errors->has('mume_tarehe_ya_kipimo') ? ' is-invalid' : '' }}"
+													 name="mume_tarehe_ya_kipimo"> @if ($errors->has('mume_tarehe_ya_kipimo'))
+													<span class="invalid-feedback">
+														<strong>{{ $errors->first('mume_tarehe_ya_kipimo') }}</strong>
+													</span> @endif
 												</td>
 												<td>
-													<input type="date" name="mke_tarehe_ya_kipimo" class="form-control col-md-11">
+													<input type="date" name="mke_tarehe_ya_kipimo" class="form-control{{ $errors->has('mke_tarehe_ya_kipimo') ? ' is-invalid' : '' }}"
+													 name="mke_tarehe_ya_kipimo"> @if ($errors->has('mke_tarehe_ya_kipimo'))
+													<span class="invalid-feedback">
+														<strong>{{ $errors->first('mke_tarehe_ya_kipimo') }}</strong>
+													</span> @endif
 												</td>
 											</tr>
 
 											<tr>
 												<td>Matokeo ya kipimo</td>
 												<td>
-													<select name="mume_kipimo1_VVU" class="form-control col-md-11">
+													<select name="mume_kipimo1_VVU" class="form-control{{ $errors->has('mume_kipimo1_VVU') ? ' is-invalid' : '' }}" name="mume_kipimo1_VVU"> 
 													<option value="" hidden=""></option>
 													<option value="Positive">Positive</option>
 													<option value="Negative">Negative</option>
-												</select>
+												</select>@if ($errors->has('mume_kipimo1_VVU'))
+													<span class="invalid-feedback">
+														<strong>{{ $errors->first('mume_kipimo1_VVU') }}</strong>
+													</span> @endif
 												</td>
 												<td>
-													<select name="mke_kipimo1_VVU" class="form-control col-md-11">
+													<select name="mke_kipimo1_VVU" class="form-control{{ $errors->has('mke_kipimo1_VVU') ? ' is-invalid' : '' }}" name="mke_kipimo1_VVU">
 													<option value="" hidden=""></option>
 													<option value="Positive">Positive</option>
 													<option value="Negative">Negative</option>
-												</select>
+												</select>@if ($errors->has('mke_kipimo1_VVU'))
+													<span class="invalid-feedback">
+														<strong>{{ $errors->first('mke_kipimo1_VVU') }}</strong>
+													</span> @endif
 												</td>
 											</tr>
 
 											<tr>
 												<td>Unasihi baada ya kupima</td>
 												<td>
-													<select name="mume_unasihi_baada_ya_kipimo_1" class="form-control col-md-11">
-													<option value="" hidden=""></option>
-													<option value="Ndio">Ndio</option>
-													<option value="Hapana">Hapana</option>
-												</select>
+													<select name="mume_unasihi_baada_ya_kipimo_1" class="form-control{{ $errors->has('mume_unasihi_baada_ya_kipimo_1') ? ' is-invalid' : '' }}"
+													 name="mume_unasihi_baada_ya_kipimo_1"> 
+														<option value="" hidden=""></option>
+														<option value="Ndio">Ndio</option>
+														<option value="Hapana">Hapana</option>
+													</select>@if ($errors->has('mume_unasihi_baada_ya_kipimo_1'))
+													<span class="invalid-feedback">
+															<strong>{{ $errors->first('mume_unasihi_baada_ya_kipimo_1') }}</strong>
+														</span> @endif
 												</td>
 												<td>
-													<select name="mke_unasihi_baada_ya_kipimo_1" class="form-control col-md-11">
-													<option value="" hidden=""></option>
-													<option value="Ndio">Ndio</option>
-													<option value="Hapana">Hapana</option>
-												</select>
+													<select name="mke_unasihi_baada_ya_kipimo_1" class="form-control{{ $errors->has('mke_unasihi_baada_ya_kipimo_1') ? ' is-invalid' : '' }}"
+													 name="mke_unasihi_baada_ya_kipimo_1"> 
+														<option value="" hidden=""></option>
+														<option value="Ndio">Ndio</option>
+														<option value="Hapana">Hapana</option>
+													</select>@if ($errors->has('mke_unasihi_baada_ya_kipimo_1'))
+													<span class="invalid-feedback">
+														<strong>{{ $errors->first('mke_unasihi_baada_ya_kipimo_1') }}</strong>
+													</span> @endif
 												</td>
 											</tr>
 										</table>
@@ -461,39 +606,51 @@
 										<div class="row">
 											<div class="col-md-6">
 												<label>Matokeo mRDT au BS</label>
-												<select name="mrdt_o_bs" class="form-control">
+												<select name="mrdt_o_bs" class="form-control{{ $errors->has('mrdt_o_bs') ? ' is-invalid' : '' }}" name="mrdt_o_bs"> 
 													<option value="" hidden=""></option>
 													<option value="Positive">Positive</option>
 													<option value="Negative">Negative</option>
-												</select>
+												</select>@if ($errors->has('mrdt_o_bs'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('mrdt_o_bs') }}</strong>
+												</span> @endif
 											</div>
 
 											<div class="col-md-6">
 												<label>Amepata LLIN</label>
-												<select name="llin" class="form-control">
+												<select name="llin" class="form-control{{ $errors->has('llin') ? ' is-invalid' : '' }}" name="llin">
 													<option value="" hidden=""></option>
 													<option value="Ndiyo">Ndiyo</option>
 													<option value="Hapana">Hapana</option>
-												</select>
+												</select>@if ($errors->has('llin'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('llin') }}</strong>
+												</span> @endif
 											</div>
 										</div>
 										<br>
 										<div class="row">
 											<div class="col-md-6">
 												<label>Aina ya IPT</label>
-												<select name="ipt" class="form-control">
+												<select name="ipt" class="form-control{{ $errors->has('ipt') ? ' is-invalid' : '' }}" name="ipt"> 
 													<option value="" hidden=""></option>
 													<option value="IPT-1">IPT-1</option>
 													<option value="IPT-2">IPT-2</option>
 													<option value="IPT-3">IPT-3</option>
 													<option value="IPT-4">IPT-4</option>
-												</select>
+												</select>@if ($errors->has('ipt'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('ipt') }}</strong>
+												</span> @endif
 
 											</div>
 
 											<div class="col-md-6">
 												<label>Tarehe ya IPT</label>
-												<input type="date" name="tarehe_ya_ipt" class="form-control">
+												<input type="date" name="tarehe_ya_ipt" class="form-control{{ $errors->has('tarehe_ya_ipt') ? ' is-invalid' : '' }}" name="tarehe_ya_ipt">												@if ($errors->has('tarehe_ya_ipt'))
+												<span class="invalid-feedback">
+											<strong>{{ $errors->first('tarehe_ya_ipt') }}</strong>
+										</span> @endif
 											</div>
 										</div>
 									</div>
@@ -503,7 +660,11 @@
 
 								<div class="row col-md-12">
 									<label>Maoni</label>
-									<textarea name="maoni" placeholder="Andika maoni hapa" class="form-control" rows="5" minlength="4"></textarea>
+									<textarea name="maoni" placeholder="Andika maoni hapa" rows="5" minlength="4" class="form-control{{ $errors->has('maoni') ? ' is-invalid' : '' }}"
+									 name="maoni"></textarea>@if ($errors->has('maoni'))
+									<span class="invalid-feedback">
+																			<strong>{{ $errors->first('maoni') }}</strong>
+																		</span> @endif
 								</div>
 
 							</div>
@@ -526,22 +687,38 @@
 
 									<div class="col-md-3">
 										<label>Tarehe</label>
-										<input type="date" id="tarehe_rufaa" name="tarehe_rufaa" class="form-control">
+										<input type="date" id="tarehe_rufaa" name="tarehe_rufaa" class="form-control{{ $errors->has('tarehe_rufaa') ? ' is-invalid' : '' }}"
+										 name="tarehe_rufaa"> @if ($errors->has('tarehe_rufaa'))
+										<span class="invalid-feedback">
+											<strong>{{ $errors->first('tarehe_rufaa') }}</strong>
+										</span> @endif
 									</div>
 
 									<div class="col-md-3">
 										<label>Kituo alikopelekwa</label>
-										<input type="text" id="rufaa_alikopelekwa" name="rufaa_alikopelekwa" class="form-control">
+										<input type="text" id="rufaa_alikopelekwa" name="rufaa_alikopelekwa" class="form-control{{ $errors->has('rufaa_alikopelekwa') ? ' is-invalid' : '' }}"
+										 name="rufaa_alikopelekwa"> @if ($errors->has('rufaa_alikopelekwa'))
+										<span class="invalid-feedback">
+											<strong>{{ $errors->first('rufaa_alikopelekwa') }}</strong>
+										</span> @endif
 									</div>
 
 									<div class="col-md-3">
 										<label>Kituo alikotokea</label>
-										<input type="text" id="rufaa_alipotoka" name="rufaa_alipotoka" class="form-control">
+										<input type="text" id="rufaa_alipotoka" name="rufaa_alipotoka" class="form-control{{ $errors->has('rufaa_alipotoka') ? ' is-invalid' : '' }}"
+										 name="rufaa_alipotoka"> @if ($errors->has('rufaa_alipotoka'))
+										<span class="invalid-feedback">
+											<strong>{{ $errors->first('rufaa_alipotoka') }}</strong>
+										</span> @endif
 									</div>
 
 									<div class="col-md-3">
 										<label>Sababu ya rufaa</label>
-										<textarea type="text" id="sababu_ya_rufaa" name="sababu_ya_rufaa" class="form-control" rows="1"></textarea>
+										<textarea type="text" id="sababu_ya_rufaa" name="sababu_ya_rufaa" rows="1" class="form-control{{ $errors->has('sababu_ya_rufaa') ? ' is-invalid' : '' }}"
+										 name="sababu_ya_rufaa"> </textarea>@if ($errors->has('sababu_ya_rufaa'))
+										<span class="invalid-feedback">
+											<strong>{{ $errors->first('sababu_ya_rufaa') }}</strong>
+										</span> @endif
 									</div>
 
 								</div>

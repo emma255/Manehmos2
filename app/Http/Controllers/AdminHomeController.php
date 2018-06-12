@@ -65,8 +65,23 @@ class AdminHomeController extends Controller
      */
     public function show($id)
     {
-        //
+
+        if (User::find($id) == null){
+                                    session()->flash('flash_message', 'Failed!!');
+
+            echo 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
+        }
+        else{
+
+        User::where('id', $id) ->update(
+        ['status' => 'active',]
+        );
     }
+            session()->flash('flash_message', 'User activated successfully!!');
+
+        return redirect()->back();
+    }  
+
 
     /**
      * Show the form for editing the specified resource.
@@ -79,11 +94,13 @@ class AdminHomeController extends Controller
         $user = User::find($id); // Redirect to state list if updating state wasn't existed 
         
         if ($user == null) { 
+        
+        session()->flash('flash_message', 'User not found, no password changed!!');
 
         return redirect()->intended('showUsers');
 
         }
-            
+
         return view('admin.changePassword', ['user'=> $user]);
     }
 
@@ -97,6 +114,8 @@ class AdminHomeController extends Controller
     public function update($id)
     {
         if (User::find($id) == null){
+                                    session()->flash('flash_message', 'Failed!!');
+
             echo 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
         }
         else{
@@ -110,6 +129,7 @@ class AdminHomeController extends Controller
         User::where('id', $id) ->update(
         ['password'=>Hash::make(request()->password),]
         );
+            session()->flash('flash_message', 'Password changed successfully!!');
 
         return redirect('/showUsers');
     }
@@ -124,6 +144,8 @@ class AdminHomeController extends Controller
     public function destroy($id)
     {
         if (User::find($id) == null){
+                        session()->flash('flash_message', 'Failed!!');
+
             echo 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
         }
         else{
@@ -132,7 +154,24 @@ class AdminHomeController extends Controller
         ['status' => 'Deactivated',]
         );
     }
+            session()->flash('flash_message', 'User deactivated successfully!!');
 
         return redirect()->back();
     }
+
+
+    // public function activate($id)
+    // {
+    //     if (User::find($id) == null){
+    //         echo 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
+    //     }
+    //     else{
+
+    //     User::where('id', $id) ->update(
+    //     ['status' => 'activate',]
+    //     );
+    // }
+
+    //     return redirect()->back();
+    // }
 }

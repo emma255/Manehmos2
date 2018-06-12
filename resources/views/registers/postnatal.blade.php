@@ -22,12 +22,20 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Tarehe ya kuandikishwa postnatal</label>
-                                        <input type="date" class="form-control" name="tarehe_ya_kuandikishwa">
+                                        <input required type="date" name="tarehe_ya_kuandikishwa" class="form-control{{ $errors->has('tarehe_ya_kuandikishwa') ? ' is-invalid' : '' }}"
+                                            name="tarehe_ya_kuandikishwa"> @if ($errors->has('tarehe_ya_kuandikishwa'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('tarehe_ya_kuandikishwa') }}</strong>
+                                        </span> @endif
                                     </div>
 
                                     <div class="col-md-6">
                                         <label>Namba ya kadi RCH-4</label>
-                                        <input type="text" class="form-control" name="namba_ya_kadi_RCH4">
+                                        <input required type="text" name="namba_ya_kadi_RCH4" class="form-control{{ $errors->has('namba_ya_kadi_RCH4') ? ' is-invalid' : '' }}"
+                                            name="namba_ya_kadi_RCH4"> @if ($errors->has('namba_ya_kadi_RCH4'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('namba_ya_kadi_RCH4') }}</strong>
+                                        </span> @endif
                                     </div>
                                 </div>
 
@@ -36,11 +44,17 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Jina la mama</label>
-                                        <input type="text" class="form-control" name="jina_la_mama">
+                                        <input required type="text" name="jina_la_mama" class="form-control{{ $errors->has('jina_la_mama') ? ' is-invalid' : '' }}">                                        @if ($errors->has('jina_la_mama'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('jina_la_mama') }}</strong>
+                                        </span> @endif
                                     </div>
                                     <div class="col-md-6">
                                         <label>Kitongoji au Mtaa</label>
-                                        <input type="text" class="form-control" name="mtaa">
+                                        <input required type="text" name="mtaa" class="form-control{{ $errors->has('mtaa') ? ' is-invalid' : '' }}" name="mtaa">                                        @if ($errors->has('mtaa'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('mtaa') }}</strong>
+                                        </span> @endif
                                     </div>
 
                                 </div>
@@ -51,20 +65,30 @@
                                 <div class="row">
                                     <div class="col-md-5">
                                         <label>Tarehe ya kuzaliwa</label>
-                                        <input type="date" name="tarehe_ya_kuzaliwa" class="form-control">
+                                        <input required type="date" name="tarehe_ya_kuzaliwa" class="form-control{{ $errors->has('tarehe_ya_kuzaliwa') ? ' is-invalid' : '' }}"
+                                            name="tarehe_ya_kuzaliwa"> @if ($errors->has('tarehe_ya_kuzaliwa'))
+                                        <span class="invalid-feedback">
+											<strong>{{ $errors->first('tarehe_ya_kuzaliwa') }}</strong>
+										</span> @endif
                                     </div>
 
                                     <div class="col-md-2">
                                         <label>Para</label>
-                                        <input type="number" name="para" class="form-control" min="0">
+                                        <input required type="number" name="para" min="0" class="form-control{{ $errors->has('para') ? ' is-invalid' : '' }}" name="para">                                        @if ($errors->has('para'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('para') }}</strong>
+                                        </span> @endif
                                     </div>
                                     <div class="col-md-5">
                                         <label for="lishe">Lishe ya mtoto</label>
-                                        <select name="lishe_ya_mtoto" class="form-control">
+                                        <select required name="lishe_ya_mtoto" class="form-control{{ $errors->has('lishe_ya_mtoto') ? ' is-invalid' : '' }}" name="lishe_ya_mtoto"> 
                                             <option value="" hidden=""></option>
                                             <option value="EBF">Maziwa ya mama (EBF)</option>
                                             <option value="RF">Maziwa mbadala (RF)</option>
-                                        </select>
+                                        </select>@if ($errors->has('lishe_ya_mtoto'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('lishe_ya_mtoto') }}</strong>
+                                        </span> @endif
                                     </div>
                                 </div>
 
@@ -73,24 +97,37 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <label>Tarehe ya kujifungua</label>
-                                        <input type="date" name="tarehe_ya_kujifungua" class="form-control">
+                                        <input required type="date" name="tarehe_ya_kujifungua" class="form-control{{ $errors->has('tarehe_ya_kujifungua') ? ' is-invalid' : '' }}"
+                                            name="tarehe_ya_kujifungua"> @if ($errors->has('tarehe_ya_kujifungua'))
+                                        <span class="invalid-feedback">
+											<strong>{{ $errors->first('tarehe_ya_kujifungua') }}</strong>
+										</span> @endif
                                     </div>
 
                                     <div class="col-md-5">
                                         <label>Kada ya aliyemzalisha</label>
-                                        <select name="kada_ya_aliyemzalisha" class="form-control">
+                                        <select required name="kada_ya_aliyemzalisha" class="form-control{{ $errors->has('kada_ya_aliyemzalisha') ? ' is-invalid' : '' }}"
+                                            name="kada_ya_aliyemzalisha"> 
                                             <option value="" hidden=""></option>
                                             <option value="Mhudumu wa afya">Mhudumu wa afya</option>
                                             <option value="Mkunga wa jadi (TBA)">Mkunga wa jadi (TBA)</option>
                                             <option value="Wengineo">Wengineo</option>
-                                        </select>
+                                        </select>@if ($errors->has('kada_ya_aliyemzalisha'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('kada_ya_aliyemzalisha') }}</strong>
+                                        </span> @endif
                                     </div>
                                     <div class="col-md-3">
                                         <label>Amepima VVU</label>
-                                        <select name="amepima_postnatal" class="form-control">
+                                        <select required name="amepima_postnatal" class="form-control{{ $errors->has('amepima_postnatal') ? ' is-invalid' : '' }}"
+                                            name="amepima_postnatal"> 
+                                            <option hidden></option>
                                             <option value="Ndio">Ndio</option>
                                             <option value="Hapana">Hapana</option>
-                                        </select>
+                                        </select>@if ($errors->has('amepima_postnatal'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('amepima_postnatal') }}</strong>
+                                        </span> @endif
                                     </div>
                                 </div>
 
@@ -105,22 +142,29 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Mahali alipojifungulia</label>
-                                        <select name="mahali_alipojifungulia" class="form-control">
+                                        <select required name="mahali_alipojifungulia" class="form-control{{ $errors->has('mahali_alipojifungulia') ? ' is-invalid' : '' }}"
+                                            name="mahali_alipojifungulia">
                                             <option value="" hidden=""></option>
                                             <option value="Nyumbani">Nyumbani</option>
                                             <option value="Hospitali">Hospitali</option>
                                             <option value="Njiani">Njiani</option>
-                                        </select>
+                                        </select>@if ($errors->has('mahali_alipojifungulia'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('mahali_alipojifungulia') }}</strong>
+                                        </span> @endif
                                     </div>
 
 
                                     <div class="col-md-6">
                                         <label>Hali ya mama</label>
-                                        <select name="hali_ya_mama" class="form-control">
+                                        <select required name="hali_ya_mama" class="form-control{{ $errors->has('hali_ya_mama') ? ' is-invalid' : '' }}" name="hali_ya_mama">
                                             <option value="" hidden=""></option>
                                             <option value="Hai">Hai</option>
                                             <option value="Amefariki">Amefariki</option>
-                                        </select>
+                                        </select>@if ($errors->has('hali_ya_mama'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('hali_ya_mama') }}</strong>
+                                        </span> @endif
                                     </div>
 
                                 </div>
@@ -128,19 +172,26 @@
                                 <div class="row">
                                     <div class="col-md-5">
                                         <label>Hali ya mtoto</label>
-                                        <select name="hali_ya_mtoto" class="form-control">
+                                        <select required name="hali_ya_mtoto" class="form-control{{ $errors->has('hali_ya_mtoto') ? ' is-invalid' : '' }}" name="hali_ya_mtoto"> 
                                             <option value="" hidden=""></option>
                                             <option value="Hai">Hai</option>
                                             <option value="Amefariki">Amefariki</option>
-                                        </select>
+                                        </select>@if ($errors->has('hali_ya_mtoto'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('hali_ya_mtoto') }}</strong>
+                                        </span> @endif
                                     </div>
                                     <div class="col-md-7">
                                         <label>Unyonyeshaji ndani ya saa moja</label>
-                                        <select name="unyonyeshaji_ndani_ya_saa_1" class="form-control">
+                                        <select required name="unyonyeshaji_ndani_ya_saa_1" class="form-control{{ $errors->has('unyonyeshaji_ndani_ya_saa_1') ? ' is-invalid' : '' }}"
+                                            name="unyonyeshaji_ndani_ya_saa_1">
                                             <option value="" hidden=""></option>
                                             <option value="Ndio">Ndio</option>
                                             <option value="Hapana">Hapana</option>
-                                        </select>
+                                        </select>@if ($errors->has('unyonyeshaji_ndani_ya_saa_1'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('unyonyeshaji_ndani_ya_saa_1') }}</strong>
+                                        </span> @endif
                                     </div>
                                 </div>
 
@@ -152,23 +203,31 @@
                                         <div class="row">
                                             <div class="col-md-7"><label>Hali ya VVU kama inavyoonekana kwenye kadi</label></div>
                                             <div class="col-md-5">
-                                                <select name="Hali_ya_VVU_kwenye_kadi" class="form-control">
+                                                <select required name="Hali_ya_VVU_kwenye_kadi" class="form-control{{ $errors->has('Hali_ya_VVU_kwenye_kadi') ? ' is-invalid' : '' }}"
+                                                    name="Hali_ya_VVU_kwenye_kadi"> 
                                                 <option value="" hidden=""></option>
                                                 <option value="Positive">Positive</option>
                                                 <option value="Negative">Negative</option>
                                                 <option value="Unknown">Unknown</option>
-                                            </select>
+                                            </select>@if ($errors->has('Hali_ya_VVU_kwenye_kadi'))
+                                                <span class="invalid-feedback">
+                                                <strong>{{ $errors->first('Hali_ya_VVU_kwenye_kadi') }}</strong>
+                                            </span> @endif
                                             </div>
                                         </div>
                                         <br>
                                         <div class="row">
                                             <div class="col-md-7"><label>Kipimo cha VVU wakati wa postnatal</label></div>
                                             <div class="col-md-5">
-                                                <select name="kipimo_vvu_wakati_wa_postnatal" class="form-control">
+                                                <select required name="kipimo_vvu_wakati_wa_postnatal" class="form-control{{ $errors->has('kipimo_vvu_wakati_wa_postnatal') ? ' is-invalid' : '' }}"
+                                                    name="kipimo_vvu_wakati_wa_postnatal"> 
                                                 <option value="" hidden=""></option>
                                                 <option value="Positive">Positive</option>
                                                 <option value="Negative">Negative</option>
-                                            </select>
+                                            </select>@if ($errors->has('kipimo_vvu_wakati_wa_postnatal'))
+                                                <span class="invalid-feedback">
+                                                <strong>{{ $errors->first('kipimo_vvu_wakati_wa_postnatal') }}</strong>
+                                            </span> @endif
                                             </div>
                                         </div>
 
@@ -180,7 +239,7 @@
                         <div class="row col-md-12">
                             <div class="col-md-5">
                             </div>
-                            <div class="col-md-2"><input type="Submit" name="submit" class="btn btn-primary form-control" value="Hifadhi"></div>
+                            <div class="col-md-2"><input required type="Submit" name="submit" class="btn btn-primary form-control" value="Hifadhi"></div>
                             <div class="col-md-5"></div>
                         </div>
                     </div>

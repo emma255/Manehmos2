@@ -41,22 +41,22 @@ class RegisterMaternalController extends Controller
     public function store(Request $request)
     {
         $this->validate(request(), [
-            'tarehe_ya_kuandikishwa',
-            'namba_ya_usajili',
-            'jina_la_mama',
-            'tarehe_ya_kuzaliwa',
-            'BP',
-            'kujifungua_kwa_cs',
-            'urefu',
-            'jina_la_mume',
-            'mtaa',
-            'jina_la_mwenyekiti',
-            'mimba_ngapi',
-            'amezaa_mara_ngapi',
-            'watoto_walio_hai',
-            'mimba_zilizoharibika',
-            'kifo_cha_mtoto_wiki_1',
-            'umri_mtoto_wa_mwisho',
+            'tarehe_ya_kuandikishwa' => 'required | before: tomorrow',
+            'namba_ya_usajili'=> 'required',
+            'jina_la_mama'=> 'required | string | max:255',
+            'tarehe_ya_kuzaliwa'=> 'required | before: tarehe_ya_kuandikishwa',
+            'BP'=> 'required',
+            'kujifungua_kwa_cs'=> 'required',
+            'urefu'=> 'required',
+            'jina_la_mume'=> 'required',
+            'mtaa'=> 'required',
+            'jina_la_mwenyekiti'=> 'required | string',
+            'mimba_ngapi'=> 'required',
+            'amezaa_mara_ngapi'=> 'required',
+            'watoto_walio_hai'=> 'required',
+            'mimba_zilizoharibika'=> 'required',
+            'kifo_cha_mtoto_wiki_1'=> 'required',
+            'umri_mtoto_wa_mwisho'=> 'required',
         ]);
 
         RegisterMaternal::create(request([
