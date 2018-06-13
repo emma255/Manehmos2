@@ -10,10 +10,10 @@
                 <div class="form-group col-md-9">
                     <label>Select report</label>
                     <select class="form-control" name="reportType">
-                    <option value="reports.antenatal">Taarifa ya mwezi toka kliniki (ANC)</option>
-                    <option value="reports.IVD_activities">Tanzania monthly health facility report on IVD activities</option>
-                    <option value="reports.postnatal">Taarifa ya mwezi mtoto na mama baada ya kujifungua</option>
-                    <option value="reports.ufuatiliaji_mtoto">Ripoti ya mwezi ya ufuatiliaji wa mtoto</option>
+                    <option value="antenatal">Taarifa ya mwezi toka kliniki (ANC)</option>
+                    <option value="ivd">Tanzania monthly health facility report on IVD activities</option>
+                    <option value="postnatalReport">Taarifa ya mwezi mtoto na mama baada ya kujifungua</option>
+                    <option value="ufuatiliaji_mtoto">Ripoti ya mwezi ya ufuatiliaji wa mtoto</option>
                 </select>
                 </div>
                 <div class="row col-md-9">
