@@ -66,7 +66,7 @@ Route::get('IVDactivities/print', 'ReportsController@IVDactivitiesPrint');
 
 Route::get('antenatal/print', 'ReportsController@antenatalPrint');
 
-Route::get('reports/postnatal', 'ReportsController@postanatal')->name('postnatalReport');
+Route::get('reports/postnatal', 'ReportsController@postnatal')->name('postnatalReport');
 
 Route::get('reports/IVD_activities', 'ReportsController@ivd_activities')->name('ivd');
 
