@@ -66,9 +66,18 @@ Route::get('IVDactivities/print', 'ReportsController@IVDactivitiesPrint');
 
 Route::get('antenatal/print', 'ReportsController@antenatalPrint');
 
+Route::get('reports/postnatal', 'ReportsController@postanatal')->name('postnatalReport');
+
+Route::get('reports/IVD_activities', 'ReportsController@ivd_activities')->name('ivd');
+
+Route::get('reports/ufuatiliaji_mtoto', 'ReportsController@ufuatiliaji_mtoto')->name('ufuatiliaji_mtoto');
+
+Route::get('reports/antenatal', 'ReportsController@antenatal')->name('antenatal');
+
 // end reports routes
 
 //posts
+
 
 Route::post('send/details', 'RegistrationFormController@send')->middleware('guest');
 
