@@ -41,10 +41,10 @@ class RegisterMaternalController extends Controller
     public function store(Request $request)
     {
         $this->validate(request(), [
-            'tarehe_ya_kuandikishwa' => 'required | before: tomorrow',
+            'tarehe_ya_kuandikishwa' => 'required|before: tomorrow',
             'namba_ya_usajili'=> 'required',
-            'jina_la_mama'=> 'required | string | max:255',
-            'tarehe_ya_kuzaliwa'=> 'required | before: tarehe_ya_kuandikishwa',
+            'jina_la_mama'=> 'required|string|max:255',
+            'tarehe_ya_kuzaliwa'=> 'required|before:tarehe_ya_kuandikishwa',
             'BP'=> 'required',
             'kujifungua_kwa_cs'=> 'required',
             'urefu'=> 'required',
