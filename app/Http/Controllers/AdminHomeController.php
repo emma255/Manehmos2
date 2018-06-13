@@ -91,7 +91,7 @@ class AdminHomeController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id); // Redirect to state list if updating state wasn't existed 
+        $user = User::find($id);
         
         if ($user == null) { 
         
