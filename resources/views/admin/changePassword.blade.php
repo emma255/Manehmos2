@@ -13,7 +13,7 @@
             <!-- form start -->
             {{--
             <form class="row" method="POST" action="/password/change"> --}}
-                <form class="row" method="POST" action="{{ route('Admin.update', ['id' => $user->id]) }}" onsubmit="return confirm('Are you sure?')">
+                <form class="row" method="POST" action="{{ route('Admin.update', ['id' => $user->id]) }}" onsubmit="return confirm('Are you sure you want to change password?')">
                     <input type="hidden" name="_method" value="PATCH"> @csrf
 
                     <div class="form-group row">
