@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use PDF;
+use App\Maelezo_view;
+use App\Alipojifungua_view;
 
 class ReportsController extends Controller
 {
@@ -13,9 +15,53 @@ class ReportsController extends Controller
 
     public function testcase()
     {
-        return view(request('reportType'), compact(request()));
+        $vals = request();
+
+        return redirect()->route(request()->reportType, ['month'=> request()->month, 'year'=>request()->year, 'uses'=>'ReportsController@postanatal']);
+    }
+
+
+
+    public function postanatal()
+    {
+        // $maelezo = Maelezo_view::whereyear('tarehe_ya_hudhurio', $year)->wheremonth('tarehe_ya_hudhurio', $month)->get();
+
+        return view('reports.postnatal');
 
     }
+
+
+    public function ivd_activities()
+    {
+        echo 'ivd activities';
+    }
+
+
+    public function ufuatiliaji_mtoto()
+    {
+        echo 'ufuatiliaji mtoto';
+    }
+
+
+    public function antenatal()
+    {
+        echo 'antenatal';
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // home
     public function index()
@@ -36,8 +82,8 @@ class ReportsController extends Controller
     {
         $values = request();
 
-        $pdf = PDF::loadview('templates.postnatal', compact('values'));
-        return $pdf->download('postnatalShow.pdf');
+        // $pdf = PDF::loadview('templates.postnatal', compact('values'));
+        // return $pdf->download('postnatalShow.pdf');
         
     }
 
