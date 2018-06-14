@@ -1,3 +1,17 @@
+
+
+SELECT E.namba  FROM eater E WHERE NOT EXISTS (SELECT F.food_id  FROM food F  WHERE NOT EXISTS(SELECT E2.food_no FROM eaters E2 WHERE E2.food_no = F.food_id AND E2.namba = E.namba));
+
+select S.sid, count(DISTINCT R.bid) as NumberOfBoats from Sailors S INNER JOIN Reserves R ON S.sid = R.sid  group by  S.sid;
+
+--VIEWS--
+mahudhurio_ya_awali
+postnatals
+
+
+
+
+
 create view maelezo
 as
         select register13s.tarehe_ya_hudhurio, postnatals.Jina_la_mama, register13s.Namba_ya_kadi, register13s.hudhurio, postnatals.tarehe_ya_kuzaliwa, 
@@ -51,33 +65,21 @@ CREATE VIEW mtoto_uambukizo AS
         postnatals ON postnatals.jina_la_mama = register_children.jina_la_mama;
 
 
+CREATE VIEW mothers as 
+     select id, namba_ya_kadi_RCH4 as namba from postnatals;
 
 
-SELECT COUNT(*) as total
-    FROM eaters
-    WHERE eaters.id IN (
-        SELECT eaters.id as hungry_people FROM eaters, food
-            WHERE food.food_id = eaters.food_id GROUP BY eaters.id HAVING COUNT(*) >= 3
-    );
+CREATE VIEW watoto as 
+     select id, namba_ya_mtoto as namba from register_children;
 
 
+CREATE TABLE mahudhurioAwali(id int(1) NOT NULL AUTO_INCREMENT, hudhurio varchar(10) not NULL, primary key(id));
+insert into mahudhurioAwali(hudhurio) value('Masaa 48');
+insert into mahudhurioAwali(hudhurio) value('Siku 3-7');
+insert into mahudhurioAwali(hudhurio) value('Siku 8-28');
+insert into mahudhurioAwali(hudhurio) value('Siku 29-42');
+
+$users = DB::table('eaters')->select(DB::raw('namba'))->groupBy('namba')->havingRaw('COUNT(DISTINCT food_no) > 1')->get();
 
 
-
-
-Carbon\Carbon::parse('october')->month
-date("F", mktime(0, 0, 0, request('month'), 10));
-
-App\Mtoto_view::where([['hudhurio', 'Ndani ya siku 3-7']])->join ->count()
--- protected $table = 'mtoto_uambukizo';
-
-
-
-
-
--- {
---         DB::statement('CREATE VIEW mtoto_uambukizo AS 
-        select infants.tarehe, register_children.namba_ya_mtoto, infants.maambukizi_kitovu, infants.uambukizo_mkali, infants.maambukizi_ngozini,
-        register_children.jinsia, postnatals.mahali_alipojifungulia as mahali_alipozaliwa, postnatals.hali_ya_mtoto from register_children INNER JOIN infants ON register_children.namba_ya_mtoto=infants.namba_ya_usajili INNER JOIN
-        postnatals ON postnatals.jina_la_mama = register_children.jina_la_mama;');
---     }
+{{count(DB::table('register13s')->select(DB::raw('Namba_ya_kadi'))->groupBy('Namba_ya_kadi')->havingRaw('COUNT(DISTINCT hudhurio)= 3')->get())}}

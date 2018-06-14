@@ -33,10 +33,12 @@ class ReportsController extends Controller
     {
         // $maelezo = Maelezo_view::whereyear('tarehe_ya_hudhurio', $year)->wheremonth('tarehe_ya_hudhurio', $month)->get();
         $file_name = 'postnatal_report_'.date(" F ", mktime(0, 0, 0, request('month'), 10)).'_'.request('year').'.pdf';
-        session()->flash('flash_message', 'Ripoti imeshaandaliwa!');
 
         $pdf = PDF::loadview('reports.postnatal');
-        return $pdf->download($file_name);
+        $pdf->save($file_name, '\storage\reports');
+        session()->flash('flash_message', 'Ripoti imeshaandaliwa!');
+        return redirect('homepage');
+
 
     }
 
@@ -49,13 +51,13 @@ class ReportsController extends Controller
 //print ufuatiliaji mtoto report
     public function ufuatiliaji_mtoto()
     {
-        echo 'ufuatiliaji mtoto';
+        return view('reports.ufuatiliaji_mtoto');
     }
 
 //print antenatal report
     public function antenatal()
     {
-        echo 'antenatal';
+        return view('reports.antenatal');
     }
 
 

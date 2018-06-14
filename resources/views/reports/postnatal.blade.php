@@ -108,7 +108,9 @@
             <tr>
                 <td>2</td>
                 <td>Waliomaliza mahudhurio yote</td>
-                <td></td>
+                <td>{{count(DB::table('register13s')->whereyear('tarehe_ya_hudhurio',request('year'))->select(DB::raw('Namba_ya_kadi'))->groupBy('Namba_ya_kadi')->havingRaw('COUNT(DISTINCT
+                    hudhurio)= 1')->get())}}
+                </td>
                 <td></td>
                 <td></td>
             </tr>
@@ -659,7 +661,6 @@
     <div>
         <label for="imepokelewa">Imepokelewa wilayani tarehe</label> ...../..../...........
     </div>
-    </form>
 </body>
 
 </html>
