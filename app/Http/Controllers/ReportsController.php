@@ -35,7 +35,7 @@ class ReportsController extends Controller
         $file_name = 'postnatal_report_'.date(" F ", mktime(0, 0, 0, request('month'), 10)).'_'.request('year').'.pdf';
 
         $pdf = PDF::loadview('reports.postnatal');
-        $pdf->save($file_name, '\storage\reports');
+        $pdf->save(storage_path('/reports/postnatal'.$file_name));
         session()->flash('flash_message', 'Ripoti imeshaandaliwa!');
         return redirect('homepage');
 
