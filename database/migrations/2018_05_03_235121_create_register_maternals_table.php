@@ -21,7 +21,7 @@ class CreateRegisterMaternalsTable extends Migration
             $table->string('jina_la_mama');
             $table->date('tarehe_ya_kuzaliwa');
             $table->string('BP');
-            $table->string('kujifungua_kwa_cs');
+            $table->date('lnmp');
             $table->integer('urefu');
             $table->string('jina_la_mume');
             $table->string('mtaa');
