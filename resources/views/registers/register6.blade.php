@@ -1,9 +1,7 @@
 @extends('layouts.main') 
-@section('content')
-<div class="container">
+@section('content') {{--
+<div class="container"> --}}
 	<div class="row">
-		<!-- 	<div class="col-md-2"></div>
- -->
 		<div class="col-sm-12 card">
 
 			<div class="card-header">
@@ -12,7 +10,7 @@
 
 			<div class="card-body">
 
-				<form action="/register6/store" method="post">
+				<form action="/register6/store" method="post" name="r6" id="r6">
 					{{csrf_field()}}
 
 					<div class="form-group">
@@ -26,36 +24,60 @@
 
 						<!-- start left division -->
 						<div class="col-md-12 row">
-							<div class="col-md-4">
-								<div class="col-md-12">
-									<div class="row">
-										<div class="col-md-12">
-											<label>Jina la mama</label>
-											<input type="text" name="jina_la_mama" class="form-control{{ $errors->has('jina_la_mama') ? ' is-invalid' : '' }}" name="jina_la_mama">											@if ($errors->has('jina_la_mama'))
-											<span class="invalid-feedback">
-												<strong>{{ $errors->first('jina_la_mama') }}</strong>
+							<div class="col-md-3">
+								<div class="card form-group">
+									<div class="col-md-12 card-body">
+										<div class="row">
+											<div class="col-md-6 form-group">
+												<label>Namba ya usajili</label>
+												<input type="text" name="namba_ya_usajili" class="form-control{{ $errors->has('namba_ya_usajili') ? ' is-invalid' : '' }}"
+												 name="namba_ya_usajili"> @if ($errors->has('namba_ya_usajili'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('namba_ya_usajili') }}</strong>
+												</span> @endif
+											</div>
+											<div class="col-md-6">
+												<label>Aina ya hudhurio</label>
+												<select name="hudhurio" class="form-control{{ $errors->has('hudhurio') ? ' is-invalid' : '' }}" name="hudhurio"> 
+														<option value="" hidden=""></option>
+														<option value="Hudhurio la kwanza">Hudhurio la awali</option>
+														<option value="Hudhurio la pili">Hudhurio la pili</option>
+														<option value="Hudhurio la tatu">Hudhurio la tatu</option>
+														<option value="Hudhurio la nne">Hudhurio la nne</option>
+														<option value="Mengineyo">Mengineyo</option>
+													</select>@if ($errors->has('hudhurio'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('hudhurio') }}</strong>
+												</span> @endif
+											</div>
+											<div class="col-md-12 form-group">
+												<div class="row">
+													<div class="col-md-6">
+														<label>Tarehe ya hudhurio</label>
+														<input type="date" name="tarehe_ya_hudhurio" class="form-control{{ $errors->has('tarehe_ya_hudhurio') ? ' is-invalid' : '' }}"
+														 name="tarehe_ya_hudhurio"> @if ($errors->has('tarehe_ya_hudhurio'))
+														<span class="invalid-feedback">
+												<strong>{{ $errors->first('tarehe_ya_hudhurio') }}</strong>
 											</span> @endif
+													</div>
+													<div class="col-md-6">
+														<label>Tarehe ya marudio</label>
+														<input type="date" name="tarehe_ya_marudio" class="form-control{{ $errors->has('tarehe_ya_marudio') ? ' is-invalid' : '' }}"
+														 name="tarehe_ya_marudio"> @if ($errors->has('tarehe_ya_marudio'))
+														<span class="invalid-feedback">
+												<strong>{{ $errors->first('tarehe_ya_marudio') }}</strong>
+											</span> @endif
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
-								<br>
 								<div class="col-md-12 card">
-									<div class="card-header">Tarehe ya chanjo</div>
+									<div class="card-header">Tarehe ya chanjo ya TT</div>
 									<div class="card-body">
 										<div class="row">
-											<div class="col-md-6">
-												<label>Ana kadi?</label>
-												<select name="ana_kadi" class="form-control{{ $errors->has('ana_kadi') ? ' is-invalid' : '' }}" name="ana_kadi"> 
-													<option value="" hidden=""></option>
-													<option value="ndio">Ndio</option>
-													<option value="hapana">Hapana</option>
-												</select>@if ($errors->has('ana_kadi'))
-												<span class="invalid-feedback">
-													<strong>{{ $errors->first('ana_kadi') }}</strong>
-												</span> @endif
-											</div>
-
-											<div class="col-md-6">
+											<div class="col-md-5">
 												<label>Aina ya TT</label>
 												<select name="TT" class="form-control{{ $errors->has('TT') ? ' is-invalid' : '' }}" name="TT"> 
 													<option value="" hidden=""></option>
@@ -69,12 +91,7 @@
 													<strong>{{ $errors->first('TT') }}</strong>
 												</span> @endif
 											</div>
-										</div>
-
-										<br>
-
-										<div class="row">
-											<div class="col-md-8">
+											<div class="col-md-7">
 												<label>Tarehe ya chanjo</label>
 												<input type="date" name="tarehe_ya_TT" class="form-control{{ $errors->has('tarehe_ya_TT') ? ' is-invalid' : '' }}" name="tarehe_ya_TT">												@if ($errors->has('tarehe_ya_TT'))
 												<span class="invalid-feedback">
@@ -83,10 +100,67 @@
 											</div>
 										</div>
 									</div>
+									<div class="card-footer"></div>
 								</div>
+							</div>
 
+							<div class="col-md-3">
+								<div class="col-md-12 card">
+									<div class="card-header">Malaria</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6">
+												<label>Matokeo mRDT au BS</label>
+												<select name="mrdt_o_bs" class="form-control{{ $errors->has('mrdt_o_bs') ? ' is-invalid' : '' }}" name="mrdt_o_bs"> 
+													<option value="" hidden=""></option>
+													<option value="Positive">Positive</option>
+													<option value="Negative">Negative</option>
+												</select>@if ($errors->has('mrdt_o_bs'))
+												<span class="invalid-feedback">
+												<strong>{{ $errors->first('mrdt_o_bs') }}</strong>
+											</span> @endif
+											</div>
+
+											<div class="col-md-6">
+												<label>Amepata LLIN</label>
+												<select name="llin" class="form-control{{ $errors->has('llin') ? ' is-invalid' : '' }}" name="llin">
+													<option value="" hidden=""></option>
+													<option value="Ndiyo">Ndiyo</option>
+													<option value="Hapana">Hapana</option>
+												</select>@if ($errors->has('llin'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('llin') }}</strong>
+												</span> @endif
+											</div>
+										</div>
+										<br>
+										<div class="row">
+											<div class="col-md-6">
+												<label>Aina ya IPT</label>
+												<select name="ipt" class="form-control{{ $errors->has('ipt') ? ' is-invalid' : '' }}" name="ipt"> 
+													<option value="" hidden=""></option>
+													<option value="IPT-1">IPT-1</option>
+													<option value="IPT-2">IPT-2</option>
+													<option value="IPT-3">IPT-3</option>
+													<option value="IPT-4">IPT-4</option>
+												</select>@if ($errors->has('ipt'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('ipt') }}</strong>
+												</span> @endif
+
+											</div>
+
+											<div class="col-md-6">
+												<label>Tarehe ya IPT</label>
+												<input type="date" name="tarehe_ya_ipt" class="form-control{{ $errors->has('tarehe_ya_ipt') ? ' is-invalid' : '' }}" name="tarehe_ya_ipt">												@if ($errors->has('tarehe_ya_ipt'))
+												<span class="invalid-feedback">
+													<strong>{{ $errors->first('tarehe_ya_ipt') }}</strong>
+												</span> @endif
+											</div>
+										</div>
+									</div>
+								</div>
 								<br>
-
 								<div class="col-md-12 card">
 
 									<div class="card-header">Vipimo/Taarifa muhimu</div>
@@ -94,8 +168,8 @@
 									<div class="card-body">
 
 										<div class="row">
-											<div class="col-md-6">
-												<label>Damu (HB) (g/dl)</label>
+											<div class="col-md-3">
+												<label>HB (g/dl)</label>
 												<input type="number" id="damu_HB" name="damu_HB" min="0" class="form-control{{ $errors->has('damu_HB') ? ' is-invalid' : '' }}"
 												 name="damu_HB"> @if ($errors->has('damu_HB'))
 												<span class="invalid-feedback">
@@ -103,18 +177,15 @@
 												</span> @endif
 											</div>
 
-											<div class="col-md-6">
+											<div class="col-md-4">
 												<label>BP (mmHg)</label>
-												<input type="text" name="BP" min="0" class="form-control{{ $errors->has('BP') ? ' is-invalid' : '' }}" name="BP">												@if ($errors->has('BP'))<span class="invalid-feedback">
+												<input type="text" name="BP" min="0" class="form-control{{ $errors->has('BP') ? ' is-invalid' : '' }}" name="BP">												@if ($errors->has('BP'))
+												<span class="invalid-feedback">
 													<strong>{{ $errors->first('BP') }}</strong>
 												</span> @endif
 											</div>
-										</div>
-
-										<br>
-
-										<div class="row">
-											<div class="col-md-8"><label>Sukari kwenye mkojo</label>
+											<div class="col-md-5">
+												<label>Mkojo una sukari</label>
 												<select name="sukari_kwenye_mkojo" class="form-control{{ $errors->has('sukari_kwenye_mkojo') ? ' is-invalid' : '' }}" name="sukari_kwenye_mkojo"> 
 													<option value="" hidden=""></option>
 													<option value="ndio">Ndio</option>
@@ -129,22 +200,7 @@
 
 								</div>
 							</div>
-
-							<div class="col-md-4">
-								<div class="col-md-12">
-									<div class="col-md-12">
-										<label>Namba ya usajili</label>
-										<input type="text" name="namba_ya_usajili" class="form-control{{ $errors->has('namba_ya_usajili') ? ' is-invalid' : '' }}"
-										 name="namba_ya_usajili"> @if ($errors->has('namba_ya_usajili'))
-										<span class="invalid-feedback">
-											<strong>{{ $errors->first('namba_ya_usajili') }}</strong>
-										</span> @endif
-									</div>
-
-								</div>
-
-								<br>
-
+							<div class="col-md-3">
 								<div class="col-md-12 card">
 
 									<div class="card-header">Vipimo vya magonjwa ya ngono</div>
@@ -285,7 +341,7 @@
 								</div>
 							</div>
 
-							<div class="col-md-4">
+							<div class="col-md-3">
 								<div class="col-md-12 card">
 									<div class="card-header">Mahudhurio ya Marudio</div>
 									<div class="card-body">
@@ -298,17 +354,6 @@
 												 name="hana_matatizo"> @if ($errors->has('hana_matatizo'))
 												<span class="invalid-feedback">
 													<strong>{{ $errors->first('hana_matatizo') }}</strong>
-												</span> @endif
-											</div>
-										</div>
-
-										<div class="row">
-											<div class="col-md-9"><label>Kuharibika mimba mfululizo</label></div>
-											<div class="col-md-3">
-												<input type="checkbox" value="ndio" name="kuharibika_mimba_mfululizo" class="form-control{{ $errors->has('kuharibika_mimba_mfululizo') ? ' is-invalid' : '' }}"
-												 name="kuharibika_mimba_mfululizo"> @if ($errors->has('kuharibika_mimba_mfululizo'))
-												<span class="invalid-feedback">
-													<strong>{{ $errors->first('kuharibika_mimba_mfululizo') }}</strong>
 												</span> @endif
 											</div>
 										</div>
@@ -376,33 +421,6 @@
 												</span> @endif
 											</div>
 										</div>
-										<div class="row">
-											<div class="col-md-9"><label>Mimba ya nne kuendelea</label></div>
-											<div class="col-md-3"><input type="checkbox" value="ndio" name="mimba_ya_nne+" class="form-control{{ $errors->has('mimba_ya_nne+') ? ' is-invalid' : '' }}"
-												 name="mimba_ya_nne+"> @if ($errors->has('mimba_ya_nne+'))
-												<span class="invalid-feedback">
-													<strong>{{ $errors->first('mimba_ya_nne+') }}</strong>
-												</span> @endif
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-9"><label>Kuzaa kwa operesheni</label></div>
-											<div class="col-md-3"><input type="checkbox" value="ndio" name="kuzaa_kwa_operesheni" class="form-control{{ $errors->has('kuzaa_kwa_operesheni') ? ' is-invalid' : '' }}"
-												 name="kuzaa_kwa_operesheni"> @if ($errors->has('kuzaa_kwa_operesheni'))
-												<span class="invalid-feedback">
-													<strong>{{ $errors->first('kuzaa_kwa_operesheni') }}</strong>
-												</span> @endif
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-9"><label>Vacuum extraction</label></div>
-											<div class="col-md-3"><input type="checkbox" value="ndio" name="vacuum_extraction" class="form-control{{ $errors->has('vacuum_extraction') ? ' is-invalid' : '' }}"
-												 name="vacuum_extraction"> @if ($errors->has('vacuum_extraction'))
-												<span class="invalid-feedback">
-													<strong>{{ $errors->first('vacuum_extraction') }}</strong>
-												</span> @endif
-											</div>
-										</div>
 									</div>
 								</div>
 
@@ -439,8 +457,6 @@
 								</div>
 							</div>
 
-
-
 						</div>
 
 						<!-- end first row -->
@@ -450,7 +466,11 @@
 						<!-- start second row -->
 
 						<div class="row col-md-12">
-							<div class="col-md-7">
+
+							<div class="col-md-1">
+								{{-- hascdjkabk --}}
+							</div>
+							<div class="col-md-5">
 								<div class="col-md-12 card">
 									<div class="card-header">Huduma ya PMTCT</div>
 									<div class="card-body row">
@@ -523,6 +543,28 @@
 												</select>@if ($errors->has('mke_amepima_VVU'))
 													<span class="invalid-feedback">
 													<strong>{{ $errors->first('mke_amepima_VVU') }}</strong>
+												</span> @endif
+												</td>
+											</tr>
+												<td>Aina ya kipimo</td>
+												<td>
+													<select name="mume_kipimo_aina" class="form-control{{ $errors->has('mume_kipimo_aina') ? ' is-invalid' : '' }}" name="mume_kipimo_aina"> 
+													<option value="" hidden=""></option>
+													<option value="Kipimo 1">Kipimo 1</option>
+													<option value="Kipimo 2">Kipimo 2</option>
+												</select>@if ($errors->has('mume_kipimo_aina'))
+													<span class="invalid-feedback">
+													<strong>{{ $errors->first('mume_kipimo_aina') }}</strong>
+												</span> @endif
+												</td>
+												<td>
+													<select name="mke_kipimo_aina" class="form-control{{ $errors->has('mke_kipimo_aina') ? ' is-invalid' : '' }}" name="mke_kipimo_aina"> 
+													<option value="" hidden=""></option>
+													<option value="Kipimo 1">Kipimo 1</option>
+													<option value="Kipimo 2">Kipimo 2</option>`
+												</select>@if ($errors->has('mke_kipimo_aina'))
+													<span class="invalid-feedback">
+													<strong>{{ $errors->first('mke_kipimo_aina') }}</strong>
 												</span> @endif
 												</td>
 											</tr>
@@ -599,134 +641,70 @@
 								</div>
 
 							</div>
-							<div class="col-md-5">
-								<div class="col-md-12 card">
-									<div class="card-header">Malaria</div>
+							<div class="col-md-4">
+
+								<div class="col-md-12 card form-group">
+
+									<div class="card-header">
+										<p align="center">Rufaa</p>
+									</div>
+
 									<div class="card-body">
-										<div class="row">
-											<div class="col-md-6">
-												<label>Matokeo mRDT au BS</label>
-												<select name="mrdt_o_bs" class="form-control{{ $errors->has('mrdt_o_bs') ? ' is-invalid' : '' }}" name="mrdt_o_bs"> 
-													<option value="" hidden=""></option>
-													<option value="Positive">Positive</option>
-													<option value="Negative">Negative</option>
-												</select>@if ($errors->has('mrdt_o_bs'))
+
+										<div class="col-md-12">
+
+											<div class="row col-md-12">
+												<div class="col-md-5"><label>Tarehe</label></div>
+												<div class="col-md-7">
+													<input type="date" id="tarehe_rufaa" name="tarehe_rufaa" class="form-group form-control{{ $errors->has('tarehe_rufaa') ? ' is-invalid' : '' }}"
+													 name="tarehe_rufaa">
+												</div>
+
+												@if ($errors->has('tarehe_rufaa'))
 												<span class="invalid-feedback">
-													<strong>{{ $errors->first('mrdt_o_bs') }}</strong>
+													<strong>{{ $errors->first('tarehe_rufaa') }}</strong>
 												</span> @endif
 											</div>
 
-											<div class="col-md-6">
-												<label>Amepata LLIN</label>
-												<select name="llin" class="form-control{{ $errors->has('llin') ? ' is-invalid' : '' }}" name="llin">
-													<option value="" hidden=""></option>
-													<option value="Ndiyo">Ndiyo</option>
-													<option value="Hapana">Hapana</option>
-												</select>@if ($errors->has('llin'))
-												<span class="invalid-feedback">
-													<strong>{{ $errors->first('llin') }}</strong>
-												</span> @endif
-											</div>
-										</div>
-										<br>
-										<div class="row">
-											<div class="col-md-6">
-												<label>Aina ya IPT</label>
-												<select name="ipt" class="form-control{{ $errors->has('ipt') ? ' is-invalid' : '' }}" name="ipt"> 
-													<option value="" hidden=""></option>
-													<option value="IPT-1">IPT-1</option>
-													<option value="IPT-2">IPT-2</option>
-													<option value="IPT-3">IPT-3</option>
-													<option value="IPT-4">IPT-4</option>
-												</select>@if ($errors->has('ipt'))
-												<span class="invalid-feedback">
-													<strong>{{ $errors->first('ipt') }}</strong>
-												</span> @endif
+											<div class="row col-md-12">
+												<div class="col-md-5"><label>Kituo alikopelekwa</label></div>
+												<div class="col-md-7">
+													<input type="text" id="rufaa_alikopelekwa" name="rufaa_alikopelekwa" class="form-group form-control{{ $errors->has('rufaa_alikopelekwa') ? ' is-invalid' : '' }}"
+													 name="rufaa_alikopelekwa">
+												</div>
 
-											</div>
-
-											<div class="col-md-6">
-												<label>Tarehe ya IPT</label>
-												<input type="date" name="tarehe_ya_ipt" class="form-control{{ $errors->has('tarehe_ya_ipt') ? ' is-invalid' : '' }}" name="tarehe_ya_ipt">												@if ($errors->has('tarehe_ya_ipt'))
+												@if ($errors->has('rufaa_alikopelekwa'))
 												<span class="invalid-feedback">
-											<strong>{{ $errors->first('tarehe_ya_ipt') }}</strong>
+											<strong>{{ $errors->first('rufaa_alikopelekwa') }}</strong>
 										</span> @endif
 											</div>
+
+											<div class="row col-md-12">
+												<div class="col-md-5"><label>Sababu ya rufaa</label></div>
+												<div class="col-md-7 form-group"><textarea type="text" id="sababu_ya_rufaa" name="sababu_ya_rufaa" rows="1" class="form-control{{ $errors->has('sababu_ya_rufaa') ? ' is-invalid' : '' }}"
+													 name="sababu_ya_rufaa"> </textarea></div>
+
+												@if ($errors->has('sababu_ya_rufaa'))
+												<span class="invalid-feedback">
+											<strong>{{ $errors->first('sababu_ya_rufaa') }}</strong>
+										</span> @endif
+											</div>
+
 										</div>
 									</div>
 								</div>
-
-								<br>
-
-								<div class="row col-md-12">
-									<label>Maoni</label>
-									<textarea name="maoni" placeholder="Andika maoni hapa" rows="5" minlength="4" class="form-control{{ $errors->has('maoni') ? ' is-invalid' : '' }}"
-									 name="maoni"></textarea>@if ($errors->has('maoni'))
-									<span class="invalid-feedback">
-																			<strong>{{ $errors->first('maoni') }}</strong>
-																		</span> @endif
+								<div class="co-md-12">
+									<div class="card">
+										<div class="card-header">Maoni</div>
+										<div class="card-body">
+											<textarea minlength="4" name="maoni" id="maoni" cols="30" rows="3" class="form-control" placeholder="Andika maoni hapa"></textarea>
+										</div>
+									</div>
 								</div>
-
 							</div>
-
 						</div>
 
 						<!-- end second row -->
-
-						<br>
-						<!-- start third row -->
-						<div class="col-md-12 card">
-
-							<div class="card-header">
-								<p align="center">Rufaa</p>
-							</div>
-
-							<div class="card-body">
-
-								<div class="row col-md-12">
-
-									<div class="col-md-3">
-										<label>Tarehe</label>
-										<input type="date" id="tarehe_rufaa" name="tarehe_rufaa" class="form-control{{ $errors->has('tarehe_rufaa') ? ' is-invalid' : '' }}"
-										 name="tarehe_rufaa"> @if ($errors->has('tarehe_rufaa'))
-										<span class="invalid-feedback">
-											<strong>{{ $errors->first('tarehe_rufaa') }}</strong>
-										</span> @endif
-									</div>
-
-									<div class="col-md-3">
-										<label>Kituo alikopelekwa</label>
-										<input type="text" id="rufaa_alikopelekwa" name="rufaa_alikopelekwa" class="form-control{{ $errors->has('rufaa_alikopelekwa') ? ' is-invalid' : '' }}"
-										 name="rufaa_alikopelekwa"> @if ($errors->has('rufaa_alikopelekwa'))
-										<span class="invalid-feedback">
-											<strong>{{ $errors->first('rufaa_alikopelekwa') }}</strong>
-										</span> @endif
-									</div>
-
-									<div class="col-md-3">
-										<label>Kituo alikotokea</label>
-										<input type="text" id="rufaa_alipotoka" name="rufaa_alipotoka" class="form-control{{ $errors->has('rufaa_alipotoka') ? ' is-invalid' : '' }}"
-										 name="rufaa_alipotoka"> @if ($errors->has('rufaa_alipotoka'))
-										<span class="invalid-feedback">
-											<strong>{{ $errors->first('rufaa_alipotoka') }}</strong>
-										</span> @endif
-									</div>
-
-									<div class="col-md-3">
-										<label>Sababu ya rufaa</label>
-										<textarea type="text" id="sababu_ya_rufaa" name="sababu_ya_rufaa" rows="1" class="form-control{{ $errors->has('sababu_ya_rufaa') ? ' is-invalid' : '' }}"
-										 name="sababu_ya_rufaa"> </textarea>@if ($errors->has('sababu_ya_rufaa'))
-										<span class="invalid-feedback">
-											<strong>{{ $errors->first('sababu_ya_rufaa') }}</strong>
-										</span> @endif
-									</div>
-
-								</div>
-							</div>
-						</div>
-
-						<!-- end third row -->
-
 						<br>
 
 						<!-- start button (fourth) row -->
