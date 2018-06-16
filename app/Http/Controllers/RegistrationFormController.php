@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Mail\SendDetails;
+use App\Mail\Registration;
 
 class RegistrationFormController extends Controller
 {
@@ -44,13 +44,13 @@ class RegistrationFormController extends Controller
             'name' => 'required|string|max:255',
             'worker_id' => 'required|string|max:255',
             'position' => 'required|string|max:21',
-            'email' => 'required|string|max:255', 
-            'center' => 'required|string|max:255', 
-            'district' => 'required|string|max:255', 
-            'phone_no'=> 'required|numeric', 
+            'email' => 'required|string|max:255',
+            'center' => 'required|string|max:255',
+            'district' => 'required|string|max:255',
+            'phone_no'=> 'required|numeric',
             'password' => 'required|string|min:6',
         ]);
-        \Mail::to('admin.register@mahehmos.co.tz')->send(new SendDetails($request));
+        \Mail::to('admin.register@mahehmos.co.tz')->send(new Registration($request));
 
         return redirect('/login');
     }
