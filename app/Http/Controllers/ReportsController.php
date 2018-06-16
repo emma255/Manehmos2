@@ -35,7 +35,7 @@ class ReportsController extends Controller
         $file_name = 'postnatal_report_'.date(" F ", mktime(0, 0, 0, request('month'), 10)).'_'.request('year').'.pdf';
 
         $pdf = PDF::loadview('reports.postnatal');
-        $pdf->save(storage_path('/reports/postnatal'.$file_name));
+        $pdf->save(storage_path('/reports/postnatal/'.$file_name));
         session()->flash('flash_message', 'Ripoti imeshaandaliwa!');
         return redirect('homepage');
 
@@ -57,7 +57,12 @@ class ReportsController extends Controller
 //print antenatal report
     public function antenatal()
     {
-        return view('reports.antenatal');
+        $file_name = 'antenatal_report_'.date(" F ", mktime(0, 0, 0, request('month'), 10)).'_'.request('year').'.pdf';
+
+        $pdf = PDF::loadview('reports.antenatal');
+        $pdf->save(storage_path('/reports/antenatal/'.$file_name));
+        session()->flash('flash_message', 'Ripoti imeshaandaliwa!');
+        return redirect('homepage');
     }
 
 
