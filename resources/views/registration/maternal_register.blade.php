@@ -1,4 +1,4 @@
-@extends('layouts.main') 
+@extends('layouts.main')
 @section('content')
 <div class="container">
 	<div class="row">
@@ -60,7 +60,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<label for="BP">Shinikizo la damu (BP)</label>
-										<select required name="BP" class="form-control{{ $errors->has('BP') ? ' is-invalid' : '' }}" name="BP"> 
+										<select required name="BP" class="form-control{{ $errors->has('BP') ? ' is-invalid' : '' }}" name="BP">
 								<option value="" hidden=""></option>
 								<option value="Ndio">Ndio</option>
 								<option value="Hapana">Hapana</option>
@@ -71,15 +71,10 @@
 									</div>
 
 									<div class="col-md-6">
-										<label>Kujifungua kwa CS</label>
-										<select required name="kujifungua_kwa_cs" class="form-control{{ $errors->has('kujifungua_kwa_cs') ? ' is-invalid' : '' }}"
-										 name="kujifungua_kwa_cs"> 
-								<option value="" hidden=""></option>
-								<option value="Ndio">Ndio</option>
-								<option value="Hapana">Hapana</option>
-							</select>@if ($errors->has('kujifungua_kwa_cs'))
+										<label>Tarehe ya LNMP</label>
+										<input type="date" required name="lnmp" class="form-control{{ $errors->has('lnmp') ? ' is-invalid' : '' }}" name="lnmp">@if ($errors->has('lnmp'))
 										<span class="invalid-feedback">
-											<strong>{{ $errors->first('kujifungua_kwa_cs') }}</strong>
+											<strong>{{ $errors->first('lnmp') }}</strong>
 										</span> @endif
 									</div>
 								</div>
@@ -187,7 +182,7 @@
 											<div class="col-md-3">Kifo cha mtoto katika wiki moja</div>
 											<div class="col-md-3">
 												<select required name="kifo_cha_mtoto_wiki_1" class="form-control{{ $errors->has('kifo_cha_mtoto_wiki_1') ? ' is-invalid' : '' }}"
-												 name="kifo_cha_mtoto_wiki_1"> 
+												 name="kifo_cha_mtoto_wiki_1">
 												<option value="" hidden=""></option>
 												<option value="Ndio">Ndio</option>
 												<option value="Hapana">Hapana</option>
