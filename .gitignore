@@ -13,3 +13,4 @@ yarn-error.log
 .env
 public/*.pdf
 storage/
+resources/views/progressRecords/childChart.blade (copy).php
