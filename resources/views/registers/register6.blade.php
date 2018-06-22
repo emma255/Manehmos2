@@ -639,9 +639,8 @@
 										</table>
 									</div>
 								</div>
-
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-5">
 
 								<div class="col-md-12 card form-group">
 
@@ -706,21 +705,15 @@
 
 						<!-- end second row -->
 						<br>
-
 						<!-- start button (fourth) row -->
-
 						<div class="row col-md-12">
 							<div class="col-md-5"></div>
 							<div class="col-md-2"><input type="submit" class="form-control btn-primary" name="save6" value="Hifadhi" </div>
 								<div class="col-md-5"></div>
 							</div>
-
 							<!-- end button row -->
-
 				</form>
-
 				</div>
-
 				</div>
 
 			</div>
