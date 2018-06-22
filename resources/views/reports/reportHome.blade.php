@@ -2,18 +2,18 @@
 @section('content')
 <div class="container col-xs-offset-3">
     <div class="card col-sm-8">
-        <div class="card-header">Create Reports</div>
+        <div class="card-header">Tengeneza ripoti</div>
         <div class="card-body">
             <!-- select -->
             <form action="/report/request" method="post">
                 {{csrf_field()}}
                 <div class="form-group col-md-9">
-                    <label>Select report</label>
+                    <label>Chagua aina ya ripoti ripoti</label>
                     <select class="form-control" name="reportType">
                     <option value="antenatal">Taarifa ya mwezi toka kliniki (ANC)</option>
-                    <option value="ivd">Tanzania monthly health facility report on IVD activities</option>
+                    {{-- <option value="ivd">Tanzania monthly health facility report on IVD activities</option> --}}
                     <option value="postnatalReport">Taarifa ya mwezi mtoto na mama baada ya kujifungua</option>
-                    <option value="ufuatiliaji_mtoto">Ripoti ya mwezi ya ufuatiliaji wa mtoto</option>
+                    {{-- <option value="ufuatiliaji_mtoto">Ripoti ya mwezi ya ufuatiliaji wa mtoto</option> --}}
                 </select>
                 </div>
                 <div class="row col-md-9">
@@ -48,23 +48,3 @@
     </div>
 </div>
 @endsection
- {{--
-<ul type='none'>
-    <li>
-        <i class="fa fa-file-pdf"></i>
-        <a href="/antenatal">Taarifa ya mwezi toka kliniki (ANC)</a>
-    </li>
-
-    <li>
-        <i class="fa fa-file-pdf"></i>
-        <a href="/IVDactivities">Tanzania monthly health facility report on IVD activities</a>
-    </li>
-    <li>
-        <i class="fa fa-file-pdf">
-                    </i><a href="/postnatal/report"> Taarifa ya mwezi mtoto na mama baada ya kujifungua</a>
-    </li>
-    <li>
-        <i class="fa fa-file-pdf"> </i>
-        <a href="/mtoto"> Ripoti ya mwezi ya ufuatiliaji wa mtoto</a>
-    </li>
-</ul> --}}
