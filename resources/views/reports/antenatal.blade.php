@@ -148,7 +148,7 @@
         <tr>
             <td>3 a</td>
             <td>Mimba zaidi ya 4</td>
-            <td style="background: black"></td>
+            <td style="background: gray"></td>
             <td>{{$mimba = App\RegisterMaternal::whereyear('tarehe_ya_kuandikishwa', request('year'))->wheremonth('tarehe_ya_kuandikishwa', request('month'))->where('mimba_ngapi', '>', '3')->count()}}</td>
             <td>{{$mimba}}</td>
         </tr>
@@ -156,13 +156,13 @@
             <td>3 b</td>
             <td>Umri chini ya miaka 20</td>
             <td>{{$chini = App\Vidokezo_hatari::whereyear('tarehe_ya_hudhurio', request('year'))->wheremonth('tarehe_ya_hudhurio', request('month'))->where('umri', '<','7305 ')->count()}}</td>
-            <td style="background: black"></td>
+            <td style="background: gray"></td>
             <td>{{$chini}}</td>
         </tr>
         <tr>
             <td>3 c</td>
             <td>Umri zaidi ya miaka 35 kwa mimba ya kwanza</td>
-            <td style="background: black"></td>
+            <td style="background: gray"></td>
             <td>{{$zaidi = App\Vidokezo_hatari::whereyear('tarehe_ya_hudhurio', request('year'))->wheremonth('tarehe_ya_hudhurio', request('month'))->where([['mimba_ngapi', '1'], ['umri', '>','12779 ']])->count() }}</td>
             <td>{{$zaidi}} </td>
         </tr>
