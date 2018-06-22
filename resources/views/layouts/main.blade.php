@@ -45,7 +45,7 @@
                             <a class="dropdown-item" href="{{ url('postnatal') }}">{{ __('POSTNATAL') }} <p>Baada ya kujifungua</p></a>
                             <a class="dropdown-item" href="{{ url('infant') }}">{{ __('INFANT') }} <p>Ufuatiliaji mtoto mchanga  siku 0-42</p></a>
                             <a class="dropdown-item" href="{{ url('register6') }}">{{ __('MTUHA NAMBA 6') }} <p>Wajawazito</p></a>
-                            <a class="dropdown-item" href="{{ url('register7') }}">{{ __('MTUHA NAMBA 7') }} <p>Watoto</p></a>
+                            <a class="dropdown-item" href="{{ url('register7') }}">{{ __('CHANJO') }} <p>Watoto</p></a>
                             <a class="dropdown-item" href="{{ url('register13') }}">{{ __('MTUHA NAMBA 13') }} <p>Mama na mtoto baada ya kujifungua</p></a>
                           </div>
                         </div>
