@@ -6,7 +6,7 @@
 		<div class="col-md card">
 
 			<div class="card-header">
-				<p>Taarifa Binafsi za mtuha namba 7</p>
+				<p>Taarifa Binafsi za chanjo kwa mtoto</p>
 			</div>
 
 			<div class="card-body">
