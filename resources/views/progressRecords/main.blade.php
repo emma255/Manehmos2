@@ -1,41 +1,43 @@
-@include('admin.head') @yield('content')
+<!DOCTYPE html>
+<html>
 
-<body class="hold-transition skin-blue sidebar-mini">
-    <div class="wrapper">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Progress Chart | Manehmos</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('dist/css/AdminLTE.min.css') }}">
+
+   @yield('content')
+
+<body class="hold-transition bg-danger">
+    <div class="">
 
         <!-- Main Header -->
         <header class="main-header">
-            <!-- Header Navbar -->
-            <div class="manehmos">
-                <h3>MATERNAL AND NEWBORN HEALTH MONITORING SYSTEM (Manehmos)</h3>
-            </div>
-
             <nav class="navbar" role="navigation">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                </a>
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="/imgs/emma.jpg" class="user-image" alt="User Image">
-                <span class="hidden-xs">{{Auth::user()->name}}</span>
-              </a>
+                                <span class="hidden-xs">{{Auth::user()->name}}</span>
+                            </a>
                             <ul class="dropdown-menu">
                                 <!-- Menu Body -->
                                 <li class="user-body">
 
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                  </a>
+                                            document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
-                                    </form>
+                                    </  >
                                 </li>
                             </ul>
                         </li>
@@ -43,66 +45,12 @@
                 </div>
             </nav>
         </header>
-        <!-- Left side column. contains the logo and sidebar -->
-        <aside class="main-sidebar">
-
-            <!-- sidebar: style can be found in sidebar.less -->
-            <section class="sidebar">
-                <!-- Sidebar Menu -->
-                <ul class="sidebar-menu" data-widget="tree">
-                    <li class="header">Patients</li>
-                    <li>
-                        <form action="#" method="get" class="sidebar-form">
-                            <div class="input-group">
-                                <input type="text" name="q" class="form-control" placeholder="Registration number">
-                                <span class="input-group-btn">
-                                    <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                        </form>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-link"></i>
-                            <span>Choose Patient</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li>
-                                <a href="/maternal/progress">Maternal</a>
-                            </li>
-                            <li>
-                                <a href="/child/progress">Child</a>
-                            </li>
-                            <li>
-                                <a href="#">Mother</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- /.sidebar-menu -->
-            </section>
-            <!-- /.sidebar -->
-        </aside>
-
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>
-                    Page Header 📎
-                    <small>Optional description</small>
-                </h1>
-            </section>
-
+        <div class="content">
             <!-- Main content -->
-            <section class="content container-fluid">
+            <section class="content container-fluid align-content-center">
 
-                <div id="chart_div" style="width: 100%; height: 100%;"></div>
+                <div id="chart_div" style="width: 1380px; height: 600px;"></div>
 
                 <!--------------------------
         | Your Page Content Here |
@@ -114,14 +62,11 @@
         <!-- /.content-wrapper -->
 
         <!-- Main Footer -->
-        <footer class="main-footer">
+        <footer class="footer">
             <!-- To the right -->
-            <div class="pull-right hidden-xs">
-                Anything you want
-            </div>
+            <div class="pull-right hidden-xs">            
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2016
-                <a href="#">Company</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 2018 Manehmos.</strong></div>
         </footer>
         <!-- Add the sidebar's background. This div must be placed
   immediately after the control sidebar -->
