@@ -65,20 +65,14 @@ class AdminHomeController extends Controller
      */
     public function show($id)
     {
-
         if (User::find($id) == null){
-                                    session()->flash('flash_message', 'Failed!!');
-
-            echo 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
+        session()->flash('flash_message', 'Failed!!');
+        echo 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
         }
         else{
-
-        User::where('id', $id) ->update(
-        ['status' => 'active',]
-        );
+        User::where('id', $id) ->update(['status' => 'active',]);
     }
-            session()->flash('flash_message', 'User activated successfully!!');
-
+        session()->flash('flash_message', 'User activated successfully!!');
         return redirect()->back();
     }  
 
@@ -114,7 +108,7 @@ class AdminHomeController extends Controller
     public function update($id)
     {
         if (User::find($id) == null){
-                                    session()->flash('flash_message', 'Failed!!');
+            session()->flash('flash_message', 'Failed!!');
 
             echo 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
         }
@@ -144,13 +138,13 @@ class AdminHomeController extends Controller
     public function destroy($id)
     {
         if (User::find($id) == null){
-                        session()->flash('flash_message', 'Failed!!');
+            session()->flash('flash_message', 'Failed!!');
 
             echo 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
         }
         else{
 
-        User::where('id', $id) ->update(
+        User::where('id', $id)->update(
         ['status' => 'Deactivated',]
         );
     }
@@ -158,20 +152,4 @@ class AdminHomeController extends Controller
 
         return redirect()->back();
     }
-
-
-    // public function activate($id)
-    // {
-    //     if (User::find($id) == null){
-    //         echo 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
-    //     }
-    //     else{
-
-    //     User::where('id', $id) ->update(
-    //     ['status' => 'activate',]
-    //     );
-    // }
-
-    //     return redirect()->back();
-    // }
 }
