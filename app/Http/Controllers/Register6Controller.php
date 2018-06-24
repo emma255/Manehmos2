@@ -47,7 +47,7 @@ class Register6Controller extends Controller
             'mume_ametibiwa' => 'required',
             'matokeo_stds_mke' => 'required',
             'mke_ametibiwa' => 'required',
-            'damu_HB' => 'required',
+            'damu_HB' => 'required|numeric',
             'BP' => 'required',
             'sukari_kwenye_mkojo' => 'required',
             'kaswende_mume' => 'required',
@@ -90,6 +90,7 @@ class Register6Controller extends Controller
             'hudhurio' => 'required',
             'mume_kipimo_aina' => 'required',
             'mke_kipimo_aina' => 'required',
+            'uzito' => 'required|numeric',
 
         ]);
 
@@ -97,6 +98,7 @@ class Register6Controller extends Controller
             'mume_kipimo_aina',
             'mke_kipimo_aina',
             'hudhurio',
+            'uzito',
             'tarehe_ya_marudio',
             'tarehe_ya_hudhurio',
             'namba_ya_usajili',
