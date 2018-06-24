@@ -43,11 +43,11 @@ Route::get('admin/home', 'AdminHomeController@index')->middleware('auth');
 
 Route::get('task/create', 'TasksController@create')->middleware('auth');
 
-Route::get('progress', 'ProgressController@index')->middleware('auth')->middleware('doctor');
+Route::get('progress', 'ProgressController@index2')->middleware('auth')->middleware(['doctor']);
 
-Route::get('maternal/progress', 'ProgressController@showMaternal')->middleware('auth');
+Route::get('progress2', 'ProgressController@index1')->middleware('auth')->middleware(['clinician']);
 
-Route::get('child/progress', 'ProgressController@showChild')->middleware('auth');
+Route::get('request/progress', 'ProgressController@showChart')->middleware('auth');
 
 Route::get('registrationForm', 'RegistrationFormController@create')->middleware('guest');
 
