@@ -50,6 +50,7 @@ class CreateRegister6sTable extends Migration
             $table->string('damu_ukeni')->default('hapana');
             $table->string('mlalo_mbaya_wa_mtoto')->default('hapana');
             $table->string('hudhurio');
+            $table->integer('uzito');
             $table->date('tarehe_ya_hudhurio');
             $table->date('tarehe_ya_marudio');
             $table->string('albendazole_mebendazole');
