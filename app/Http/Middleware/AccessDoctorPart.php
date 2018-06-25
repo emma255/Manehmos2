@@ -22,6 +22,6 @@ class AccessDoctorPart
 
             return $next($request);
         }
-        abort(404, 'not authorized');
+        abort(403, 'You have no permission to get this resource');
     }
 }
