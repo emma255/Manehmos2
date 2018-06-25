@@ -25,7 +25,7 @@
                         </div>
 
                         <a class="navbar nav-link" href="{{ url('/progress2') }}">
-                            {{ __('TAFUTA REKODI') }}
+                            {{ __('Maendeleo') }}
                         </a>
 
                         <div class="dropdown show">
@@ -48,11 +48,11 @@
                         </a>
 
 
-
+<!--
                         <a class="navbar nav-link" href="{{ url('homepage') }}">
                             {{ __('MSAADA') }}
                         </a>
-
+ -->
                     </ul>
 
                     <!-- Right Side Of Navbar -->
