@@ -17,21 +17,21 @@ class CreatePostnatalsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->date('tarehe_ya_kuandikishwa');
-            $table->string('namba_ya_kadi_RCH4');
-            $table->string('jina_la_mama');
-            $table->string('mtaa');
-            $table->string('lishe_ya_mtoto');
+            $table->string('namba_ya_kadi_RCH4',10);
+            $table->string('jina_la_mama',30);
+            $table->string('mtaa',30);
+            $table->string('lishe_ya_mtoto',3);
             $table->date('tarehe_ya_kuzaliwa');
-            $table->integer('para');
+            $table->tinyInteger('para');
             $table->date('tarehe_ya_kujifungua');
-            $table->string('kada_ya_aliyemzalisha');
-            $table->string('mahali_alipojifungulia');
-            $table->string('hali_ya_mama');
-            $table->string('hali_ya_mtoto');
-            $table->string('unyonyeshaji_ndani_ya_saa_1');
-            $table->string('Hali_ya_VVU_kwenye_kadi');
-            $table->string('amepima_postnatal', '6');
-            $table->string('kipimo_vvu_wakati_wa_postnatal');
+            $table->string('kada_ya_aliyemzalisha',20);
+            $table->string('mahali_alipojifungulia',9);
+            $table->string('hali_ya_mama',9);
+            $table->string('hali_ya_mtoto',9);
+            $table->string('unyonyeshaji_ndani_ya_saa_1',6);
+            $table->string('Hali_ya_VVU_kwenye_kadi',8);
+            $table->string('amepima_postnatal',6);
+            $table->string('kipimo_vvu_wakati_wa_postnatal',8);
         });
     }
 

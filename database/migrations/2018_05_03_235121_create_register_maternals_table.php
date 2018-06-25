@@ -17,20 +17,20 @@ class CreateRegisterMaternalsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->date('tarehe_ya_kuandikishwa');
-            $table->string('namba_ya_usajili');
-            $table->string('jina_la_mama');
+            $table->string('namba_ya_usajili','10');
+            $table->string('jina_la_mama','30');
             $table->date('tarehe_ya_kuzaliwa');
-            $table->string('BP');
+            $table->string('BP','6');
             $table->date('lnmp');
             $table->integer('urefu');
-            $table->string('jina_la_mume');
-            $table->string('mtaa');
-            $table->string('jina_la_mwenyekiti');
+            $table->string('jina_la_mume','30');
+            $table->string('mtaa','30');
+            $table->string('jina_la_mwenyekiti','30');
             $table->integer('mimba_ngapi');
             $table->integer('amezaa_mara_ngapi');
             $table->integer('watoto_walio_hai');
             $table->integer('mimba_zilizoharibika');
-            $table->string('kifo_cha_mtoto_wiki_1');
+            $table->string('kifo_cha_mtoto_wiki_1','6');
             $table->integer('umri_mtoto_wa_mwisho');
         });
     }

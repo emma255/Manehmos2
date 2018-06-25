@@ -59,6 +59,15 @@ class RegisterMaternalController extends Controller
             'umri_mtoto_wa_mwisho'=> 'required',
         ]);
 
+        $test = RegisterMaternal::where('namba_ya_usajili',request('namba_ya_usajili'))->first();
+
+        if($test = null){
+            $error_txt = 'Hamna taarifa zilizohifadhiwa za '.request('namba');
+
+            return view('error-view')->with('error_txt',$error_txt);
+        }
+
+        else{
         RegisterMaternal::create(request([
             'tarehe_ya_kuandikishwa',
             'namba_ya_usajili',
@@ -83,7 +92,7 @@ class RegisterMaternalController extends Controller
 
         return view('registers.register6');
     }
-
+    }
     /**
      * Display the specified resource.
      *
