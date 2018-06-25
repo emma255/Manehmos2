@@ -10,6 +10,7 @@
                 <div class="form-group col-md-9">
                     <label>Chagua aina ya ripoti ripoti</label>
                     <select class="form-control" name="reportType">
+                    <option></option>
                     <option value="antenatal">Taarifa ya mwezi toka kliniki (ANC)</option>
                     {{-- <option value="ivd">Tanzania monthly health facility report on IVD activities</option> --}}
                     <option value="postnatalReport">Taarifa ya mwezi mtoto na mama baada ya kujifungua</option>
@@ -20,6 +21,7 @@
                     <div class="col-md-4">
                         <label for="month">Mwezi</label>
                         <select class="form-control" name="month" required>
+                        <option></option>
                         <option value="1">January</option>
                         <option value="2">February</option>
                         <option value="3">March</option>
