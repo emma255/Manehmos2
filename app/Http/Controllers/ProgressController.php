@@ -46,7 +46,9 @@ class ProgressController extends Controller
             $test = Infant::where('namba_ya_usajili',request('namba'))->first();
 
             if($test == null){
-                echo 'Hamna taarifa zilizohifadhiwa za '.request('namba');
+                $error_txt = 'Hamna taarifa zilizohifadhiwa za '.request('namba');
+
+                return view('error-view')->with('error_txt',$error_txt);
             }
             else{
 
@@ -71,7 +73,9 @@ class ProgressController extends Controller
             $test = Register6::where('namba_ya_usajili',request('namba'))->first();
 
             if($test == null){
-                echo 'Hamna taarifa zilizohifadhiwa za '.request('namba');
+                $error_txt = 'Hamna taarifa zilizohifadhiwa za '.request('namba');
+
+                return view('error-view')->with('error_txt',$error_txt);
             }
             else{
                 $name = RegisterMaternal::where('namba_ya_usajili',request('namba'))->pluck('jina_la_mama');
@@ -91,7 +95,10 @@ class ProgressController extends Controller
         }
 
         else{
-            echo 'Hakuna rekodi ya maendeleo ya mteja aina ya '.request('type');
+            
+            $error_txt = 'Hakuna rekodi ya maendeleo ya mteja aina ya '.request('type');
+
+            return view('error-view')->with('error_txt',$error_txt);
         }
 
     }
