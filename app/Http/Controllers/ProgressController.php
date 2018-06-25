@@ -64,7 +64,7 @@ class ProgressController extends Controller
 
                 $result[++$key] = [$months++, (int)$value->uzito/1000];
             }
-            return view('progressRecords.chart',['Weight'=>json_encode($result), 'name'=>$name, 'vmin'=>0, 'vmax'=>20, 'hmin'=>0, 'hmax'=>60]);
+            return view('progressRecords.chart',['Weight'=>json_encode($result), 'name'=>$name, 'vmin'=>0, 'vmax'=>20, 'hmin'=>0, 'hmax'=>64]);
             }               
         }
 
