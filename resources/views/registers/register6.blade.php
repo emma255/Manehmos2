@@ -212,7 +212,7 @@
 
 							<div class="col-md-4">
 								<div class="col-md-12 card">
-									<div class="card-header">Mahudhurio ya Marudio</div>
+									<div class="card-header">Dalili za Hatari</div>
 									<div class="card-body">
 
 										<div class="row">
