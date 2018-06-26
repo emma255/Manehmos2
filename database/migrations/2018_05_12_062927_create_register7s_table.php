@@ -23,7 +23,7 @@ class CreateRegister7sTable extends Migration
             $table->string('amepata_vitamin_A',6)->nullable();
             $table->string('mebendazole_albendazole_umri',8)->nullable();
             $table->string('amepata_mebendazole_albendazole',6)->nullable();
-            $table->string('PENTA',6)->nullable();
+            $table->string('PENTA',7)->nullable();
             $table->date('penta_tarehe')->nullable();
             $table->string('Polio',7)->nullable();
             $table->date('Polio_tarehe')->nullable();

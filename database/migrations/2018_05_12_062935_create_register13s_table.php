@@ -23,7 +23,7 @@ class CreateRegister13sTable extends Migration
             $table->string('hudhurio',10);
             $table->date('tarehe_ya_hudhurio');
             $table->string('mama_BP',7);
-            $table->float('mama_HB',2);
+            $table->float('mama_HB');
             $table->string('matiti',19);
             $table->string('tumbo_la_uzazi',17);
             $table->string('lochia',25);
