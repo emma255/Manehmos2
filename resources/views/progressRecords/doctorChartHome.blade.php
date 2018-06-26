@@ -1,4 +1,4 @@
-@extends('layouts.main') 
+@extends('layouts.app') 
 @section('content')
 <div class="container">
     <div class="col-md-7 card">
@@ -25,7 +25,7 @@
                             <div class="input-group form-group">
                                 <input type="search" placeholder="namba" class="form-control{{ $errors->has('namba') ? ' is-invalid' : '' }}" name="namba">
                                 <span class="input-group-btn">
-                                    <button type="submit" name="search" class="btn form-control"><i class="fa fa-search" style="font-size:15px"></i>
+                                    <button type="submit" name="search" class="btn form-control"><i style="font-size:20px">🔎</i>
                                     </button>
                                 </span> @if ($errors->has('namba'))
                                 <span class="invalid-feedback">
