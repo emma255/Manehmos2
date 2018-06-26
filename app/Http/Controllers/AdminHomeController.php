@@ -67,7 +67,9 @@ class AdminHomeController extends Controller
     {
         if (User::find($id) == null){
         session()->flash('flash_message', 'Failed!!');
-        echo 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
+        $error_txt = 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
+        return view('error-view')->with('error_txt',$error_txt);
+
         }
         else{
         User::where('id', $id) ->update(['status' => 'active',]);
@@ -110,15 +112,14 @@ class AdminHomeController extends Controller
         if (User::find($id) == null){
             session()->flash('flash_message', 'Failed!!');
 
-            echo 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
+            $error_txt = 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
+            return view('error-view')->with('error_txt',$error_txt);
         }
         else{
 
         $this->validate(request(), [
             'password' => 'required|string|min:6|confirmed',
         ]);
-
-            // echo Hash::make(request()->password);
 
         User::where('id', $id) ->update(
         ['password'=>Hash::make(request()->password),]
@@ -140,7 +141,8 @@ class AdminHomeController extends Controller
         if (User::find($id) == null){
             session()->flash('flash_message', 'Failed!!');
 
-            echo 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
+            $error_txt = 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
+            return view('error-view')->with('error_txt',$error_txt);
         }
         else{
 
