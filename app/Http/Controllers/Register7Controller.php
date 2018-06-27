@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Register7;
+use App\RegisterChild;
 use Illuminate\Http\Request;
 
 class Register7Controller extends Controller
@@ -42,6 +43,7 @@ class Register7Controller extends Controller
     {
         $this->validate(request(), [
             'namba_ya_usajili' =>'required',
+            'tarehe' =>'required',
             'vitamin_A_umri' =>'required',
             'amepata_vitamin_A' =>'required',
             'mebendazole_albendazole_umri' =>'required',
@@ -58,26 +60,43 @@ class Register7Controller extends Controller
             'Surua_tarehe' =>'before:tomorrow|required_with:Surua',
         ]);
 
-        Register7::create(request([
-            'namba_ya_usajili',
-            'vitamin_A_umri',
-            'amepata_vitamin_A',
-            'mebendazole_albendazole_umri',
-            'amepata_mebendazole_albendazole',
-            'PENTA',
-            'penta_tarehe',
-            'Polio',
-            'Polio_tarehe',
-            'PCV13',
-            'PCV13_tarehe',
-            'Rota',
-            'Rota_tarehe',
-            'Surua',
-            'Surua_tarehe',
-        ]));
-            session()->flash('flash_message', 'Taarifa za mtuha namba 7 zimeshahifadhiwa!');
+        $test1 = RegisterChild::where('namba_ya_mtoto',request('namba_ya_usajili'))->first();
+        $test3 = Register7::where([['tarehe',request('tarehe')],['tarehe',request('tarehe')]])->first();
 
-            return view('home');
+
+        if($test1 != null){
+            if($test3 == null){
+                        
+                Register7::create(request([
+                    'namba_ya_usajili',
+                    'tarehe',
+                    'vitamin_A_umri',
+                    'amepata_vitamin_A',
+                    'mebendazole_albendazole_umri',
+                    'amepata_mebendazole_albendazole',
+                    'PENTA',
+                    'penta_tarehe',
+                    'Polio',
+                    'Polio_tarehe',
+                    'PCV13',
+                    'PCV13_tarehe',
+                    'Rota',
+                    'Rota_tarehe',
+                    'Surua',
+                    'Surua_tarehe',
+                ]));
+                    session()->flash('flash_message', 'Taarifa za mtuha namba 7 zimeshahifadhiwa!');
+
+                    return view('home');
+            }
+
+            else {
+                return view('error-view')->with('error_txt','Tahadhali, taarifa za chanjo za mtoto zilishahifadhiwa');
+            }
+        }
+        else {
+            return view('error-view')->with('error_txt','Tafadhali, msajili kwanza mtoto ndipo uweze kujaza taarifa zake za chanjo');
+        }
     }
 
     /**

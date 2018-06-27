@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Infant;
+use App\RegisterChild;
 use Illuminate\Http\Request;
 
 class InfantController extends Controller
@@ -62,30 +63,56 @@ class InfantController extends Controller
 
         ]);
 
-        Infant::create(request([
-            'jina_la_mtoto',
-            'namba_ya_usajili',
-            'hudhurio',
-            'tarehe',
-            'joto',
-            'uzito',
-            'hb',
-            'lishe',
-            'kmc',
-            'maambukizi_kitovu',
-            'uambukizo_mkali',
-            'maambukizi_machoni',
-            'maambukizi_mdomoni',
-            'maambukizi_ngozini',
-            'tarehe_BCG',
-            'tarehe_OPVO',
-            'matatizo_mengine',
-            'tarehe_ya_kurudi',
-        ]));
-        
-        session()->flash('flash_message', 'Taarifa za mtoto zimeshahifadhiwa');
+        $test1 = RegisterChild::where('namba_ya_mtoto',request('namba_ya_usajili'))->first();
 
-        return view('home');
+        $test2= RegisterChild::where('jina_la_mtoto',request('jina_la_mtoto'))->first();
+
+        $test3= Infant::where('tarehe',request('tarehe'))->first();
+
+        // $getNumber= RegisterChild::where('jina_la_mtoto',request('jina_la_mtoto'))->pluck('namba_ya_usajili');
+
+        // if ($test1 or $test2 != null) {
+        if ($test1 and $test2 != null) {
+           
+            if($test3 == null){
+            Infant::create(request([
+                'jina_la_mtoto',
+                'namba_ya_usajili',
+                'hudhurio',
+                'tarehe',
+                'joto',
+                'uzito',
+                'hb',
+                'lishe',
+                'kmc',
+                'maambukizi_kitovu',
+                'uambukizo_mkali',
+                'maambukizi_machoni',
+                'maambukizi_mdomoni',
+                'maambukizi_ngozini',
+                'tarehe_BCG',
+                'tarehe_OPVO',
+                'matatizo_mengine',
+                'tarehe_ya_kurudi',
+            ]));
+            
+            session()->flash('flash_message', 'Taarifa za mtoto zimeshahifadhiwa');
+
+            return view('home');
+        }
+        else{
+            return view('error-view')->with('error_txt','badilisha tarehe ya hudhurio, kwa sababu imejirudia');
+        }
+            
+        } else {
+
+            $error_txt = "Msajili kwanza ".request('jina_la_mtoto')." ndipo uhifadhi taarifa zake za kliniki";
+
+            return view('error-view')->with('error_txt',$error_txt);
+        }
+        
+
+        
     }
 
     /**

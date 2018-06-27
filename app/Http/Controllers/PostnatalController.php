@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Postnatal;
+use App\RegisterMaternal;
 use Illuminate\Http\Request;
 
 class PostnatalController extends Controller
@@ -61,27 +62,44 @@ class PostnatalController extends Controller
 
         ]);
 
-        Postnatal::create(request([
-            'tarehe_ya_kuandikishwa',
-            'namba_ya_kadi_RCH4',
-            'jina_la_mama',
-            'mtaa',
-            'tarehe_ya_kuzaliwa',
-            'para',
-            'tarehe_ya_kujifungua',
-            'kada_ya_aliyemzalisha',
-            'mahali_alipojifungulia',
-            'hali_ya_mama',
-            'hali_ya_mtoto',
-            'unyonyeshaji_ndani_ya_saa_1',
-            'Hali_ya_VVU_kwenye_kadi',
-            'kipimo_vvu_wakati_wa_postnatal',
-            'amepima_postnatal',
-            'lishe_ya_mtoto',
-        ]));
-        session()->flash('flash_message', 'rekodi ya uzazi imeshahifadhiwa');
+        $test1 = RegisterMaternal::where('namba_ya_usajili',request('namba_ya_kadi_RCH4'))->first();
+        $test2 = RegisterMaternal::where('jina_la_mama',request('jina_la_mama'))->first();
+        $test3 = Postnatal::where([['namba_ya_kadi_RCH4',request('namba_ya_kadi_RCH4')],['tarehe_ya_kuandikishwa',request('tarehe_ya_kuandikishwa')]])->first();
 
-        return view('registers.register13');
+
+        if($test1 and $test2 != null){
+            if($test3 == null){
+
+                Postnatal::create(request([
+                    'tarehe_ya_kuandikishwa',
+                    'namba_ya_kadi_RCH4',
+                    'jina_la_mama',
+                    'mtaa',
+                    'tarehe_ya_kuzaliwa',
+                    'para',
+                    'tarehe_ya_kujifungua',
+                    'kada_ya_aliyemzalisha',
+                    'mahali_alipojifungulia',
+                    'hali_ya_mama',
+                    'hali_ya_mtoto',
+                    'unyonyeshaji_ndani_ya_saa_1',
+                    'Hali_ya_VVU_kwenye_kadi',
+                    'kipimo_vvu_wakati_wa_postnatal',
+                    'amepima_postnatal',
+                    'lishe_ya_mtoto',
+                ]));
+                session()->flash('flash_message', 'rekodi ya uzazi imeshahifadhiwa');
+        
+                return view('registers.register13');
+            }
+
+            else {
+                return view('error-view')->with('error_txt','Tahadhali, taarifa za uzazi za mama zilishahifadhiwa');
+            }
+        }
+        else {
+            return view('error-view')->with('error_txt','Tafadhali, msajili kwanza mama ndipo uweze kujaza taarifa zake za uzazi');
+        }
     }
 
     /**

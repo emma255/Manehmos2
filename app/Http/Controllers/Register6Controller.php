@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Register6;
+use App\RegisterMaternal;
 use Illuminate\Http\Request;
 
 class Register6Controller extends Controller
@@ -94,62 +95,80 @@ class Register6Controller extends Controller
 
         ]);
 
-        Register6::create(request([
-            'mume_kipimo_aina',
-            'mke_kipimo_aina',
-            'hudhurio',
-            'uzito',
-            'tarehe_ya_marudio',
-            'tarehe_ya_hudhurio',
-            'namba_ya_usajili',
-            'matokeo_stds_mume',
-            'mume_ametibiwa',
-            'matokeo_stds_mke',
-            'mke_ametibiwa',
-            'damu_HB',
-            'BP',
-            'sukari_kwenye_mkojo',
-            'kaswende_mume',
-            'mume_ametibiwa_kaswende',
-            'kaswende_mke',
-            'mke_ametibiwa_kaswende',
-            'mume_tayari_ana_VVU',
-            'mume_tarehe_ya_unasihi',
-            'mume_amepima_VVU',
-            'mume_tarehe_ya_kipimo',
-            'mume_kipimo1_VVU',
-            'mume_unasihi_baada_ya_kipimo_1',
-            'mke_tayari_ana_VVU',
-            'mke_tarehe_ya_unasihi',
-            'mke_amepima_VVU',
-            'mke_tarehe_ya_kipimo',
-            'mke_kipimo1_VVU',
-            'mke_unasihi_baada_ya_kipimo_1',
-            'hana_matatizo',
-            'Anaemia',
-            'Protenuria',
-            'high_BP',
-            'kutoongezeka_uzito',
-            'damu_ukeni',
-            'mlalo_mbaya_wa_mtoto',
-            'albendazole_mebendazole',
-            'vidonge_vya_I_FA',
-            'mrdt_o_bs',
-            'llin',
-            'ipt',
-            'tarehe_ya_ipt',
-            'maoni',
-            'tarehe_rufaa',
-            'rufaa_alikopelekwa',
-            'sababu_ya_rufaa',
-            'ana_kadi',
-            'TT',
-            'tarehe_ya_TT',
-        ]));
 
-         session()->flash('flash_message', 'Taarifa za mtuha namba 6 zimeshahifadhiwa!');
+        $test1 = RegisterMaternal::where('namba_ya_usajili',request('namba_ya_usajili'))->first();
+        $test3 = Register6::where([['namba_ya_usajili',request('namba_ya_usajili')],['tarehe_ya_hudhurio',request('tarehe_ya_hudhurio')]])->first();
 
-         return view('home');
+
+        if($test1 != null){
+            if($test3 == null){
+
+                Register6::create(request([
+                    'mume_kipimo_aina',
+                    'mke_kipimo_aina',
+                    'hudhurio',
+                    'uzito',
+                    'tarehe_ya_marudio',
+                    'tarehe_ya_hudhurio',
+                    'namba_ya_usajili',
+                    'matokeo_stds_mume',
+                    'mume_ametibiwa',
+                    'matokeo_stds_mke',
+                    'mke_ametibiwa',
+                    'damu_HB',
+                    'BP',
+                    'sukari_kwenye_mkojo',
+                    'kaswende_mume',
+                    'mume_ametibiwa_kaswende',
+                    'kaswende_mke',
+                    'mke_ametibiwa_kaswende',
+                    'mume_tayari_ana_VVU',
+                    'mume_tarehe_ya_unasihi',
+                    'mume_amepima_VVU',
+                    'mume_tarehe_ya_kipimo',
+                    'mume_kipimo1_VVU',
+                    'mume_unasihi_baada_ya_kipimo_1',
+                    'mke_tayari_ana_VVU',
+                    'mke_tarehe_ya_unasihi',
+                    'mke_amepima_VVU',
+                    'mke_tarehe_ya_kipimo',
+                    'mke_kipimo1_VVU',
+                    'mke_unasihi_baada_ya_kipimo_1',
+                    'hana_matatizo',
+                    'Anaemia',
+                    'Protenuria',
+                    'high_BP',
+                    'kutoongezeka_uzito',
+                    'damu_ukeni',
+                    'mlalo_mbaya_wa_mtoto',
+                    'albendazole_mebendazole',
+                    'vidonge_vya_I_FA',
+                    'mrdt_o_bs',
+                    'llin',
+                    'ipt',
+                    'tarehe_ya_ipt',
+                    'maoni',
+                    'tarehe_rufaa',
+                    'rufaa_alikopelekwa',
+                    'sababu_ya_rufaa',
+                    'ana_kadi',
+                    'TT',
+                    'tarehe_ya_TT',
+                ]));
+
+                session()->flash('flash_message', 'Taarifa za mtuha namba 6 zimeshahifadhiwa!');
+
+                return view('home');
+            }
+            else {
+                return view('error-view')->with('error_txt','Tahadhali, taarifa za marudio za mama zilishahifadhiwa');
+
+            }
+        }
+
+        else {
+            return view('error-view')->with('error_txt','Tafadhali, msajili kwanza mama ndipo uweze kujaza taarifa zake za maendeleo baada ya ujauzito');
+        }
     }
 
     /**
