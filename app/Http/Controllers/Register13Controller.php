@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\RegisterMaternal;
 use App\Register13;
 use Illuminate\Http\Request;
 
@@ -66,35 +67,52 @@ class Register13Controller extends Controller
             'rufaa_sababu_o_maoni' => 'required',
         ]);
 
-        Register13::create(request([
-            'Namba_ya_kadi',
-            'Jina_la_mama',
-            'hudhurio',
-            'tarehe_ya_hudhurio',
-            'mama_BP',
-            'mama_HB',
-            'matiti',
-            'tumbo_la_uzazi',
-            'lochia',
-            'hali_ya_msamba',
-            'fistula',
-            'akili_timamu',
-            'aina_ya_dawa_nyongeza',
-            'idadi_ya_dawa_nyongeza',
-            'idadi_ya_dawa_vitaminA',
-            'chanjo_ya_TT',
-            'family_plan_usahuri_umetolewa',
-            'family_plan_amepatiwa_kielelezo',
-            'amepatiwa_family_plan_wakati_wa_ppc',
-            'rufaa_kupata_family_plan',
-            'rufaa_alikopelekwa',
-            'rufaa_alikotoka',
-            'rufaa_sababu_o_maoni',
-        ]));
+        $test1 = RegisterMaternal::where('namba_ya_usajili',request('Namba_ya_kadi'))->first();
+        $test2 = RegisterMaternal::where('jina_la_mama',request('Jina_la_mama'))->first();
+        $test3 = Register13::where([['Namba_ya_kadi',request('Namba_ya_kadi')],['tarehe_ya_hudhurio',request('tarehe_ya_hudhurio')]])->first();
+
+
+        if($test1 and $test2 != null){
+            if($test3 == null){
+
+                Register13::create(request([
+                    'Namba_ya_kadi',
+                    'Jina_la_mama',
+                    'hudhurio',
+                    'tarehe_ya_hudhurio',
+                    'mama_BP',
+                    'mama_HB',
+                    'matiti',
+                    'tumbo_la_uzazi',
+                    'lochia',
+                    'hali_ya_msamba',
+                    'fistula',
+                    'akili_timamu',
+                    'aina_ya_dawa_nyongeza',
+                    'idadi_ya_dawa_nyongeza',
+                    'idadi_ya_dawa_vitaminA',
+                    'chanjo_ya_TT',
+                    'family_plan_usahuri_umetolewa',
+                    'family_plan_amepatiwa_kielelezo',
+                    'amepatiwa_family_plan_wakati_wa_ppc',
+                    'rufaa_kupata_family_plan',
+                    'rufaa_alikopelekwa',
+                    'rufaa_alikotoka',
+                    'rufaa_sababu_o_maoni',
+                ]));
 
             session()->flash('flash_message', 'Taarifa za mtuha namba 13 zimeshahifadhiwa!');
 
             return view('home');
+        }
+
+        else {
+            return view('error-view')->with('error_txt','Tahadhari, taarifa za marudio za mama zilishahifadhiwa');
+        }
+    }
+    else {
+        return view('error-view')->with('error_txt','Tafadhali, msajili kwanza mama ndipo uweze kujaza taarifa zake za maendeleo baada ya kujifungua');
+    }
     }
 
     /**
