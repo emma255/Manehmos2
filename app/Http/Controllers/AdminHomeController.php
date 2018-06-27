@@ -28,11 +28,20 @@ class AdminHomeController extends Controller
 
     public function users()
     {
+        $test  = User::where('position','!=','System Administrator')->first();
+        if($test != null){
+
         $details = User::where('position', '!=', 'System Administrator')->get();
 
         // $doctors = User::where('position', 'Doctor')->get();
         // $clinicians = User::where('position', 'Clinical Attendant')->get();
-        return view('admin.showUsers', compact('details'));
+        return view('admin.showUsers', compact('details'));            
+        }
+
+        else {
+            $error_txt = 'No doctors and nurses registered';
+            return view('error-view')->with('error_txt',$error_txt);
+        }
 
     }
 
