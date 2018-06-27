@@ -7,7 +7,7 @@
         <div class="col-md card">
 
             <div class="card-header">
-                <p>Ufuatiliaji wa mtoto mchanga siku 0-42</p>
+                <p>Ufuatiliaji wa mtoto aliyezaliwa</p>
             </div>
 
             <div class="card-body">
