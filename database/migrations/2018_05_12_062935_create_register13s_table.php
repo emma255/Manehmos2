@@ -15,11 +15,9 @@ class CreateRegister13sTable extends Migration
     {
         Schema::create('register13s', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->string('Namba_ya_kadi',10);
             $table->string('Jina_la_mama',30);
-            // $table->foreign('Namba_ya_kadi')->references('namba_ya_kadi_RCH4')->on('postnatals');
-            // $table->foreign('Jina_la_mama')->references('jina_la_mama')->on('postnatals');
+            $table->foreign('Namba_ya_kadi')->references('namba_ya_usajili')->on('register_maternals')->onDelete('cascade');
             $table->string('hudhurio',10);
             $table->date('tarehe_ya_hudhurio');
             $table->string('mama_BP',7);
@@ -41,6 +39,7 @@ class CreateRegister13sTable extends Migration
             $table->string('rufaa_alikopelekwa',25);
             $table->string('rufaa_alikotoka',25);
             $table->string('rufaa_sababu_o_maoni',25);
+            $table->timestamps();
         });
     }
 

@@ -15,10 +15,8 @@ class CreateRegister6sTable extends Migration
     {
         Schema::create('register6s', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->string('namba_ya_usajili',10);
-            // $table->foreign('jina_la_mama')->references('jina_la_mama')->on('register_maternals');
-            // $table->foreign('namba_ya_usajili')->references('namba_ya_usajili')->on('register_maternals');
+            $table->foreign('namba_ya_usajili',10)->references('namba_ya_usajili')->on('register_maternals')->onDelete('cascade');
             $table->string('matokeo_stds_mume',8);
             $table->string('mume_ametibiwa',6);
             $table->string('matokeo_stds_mke',8);
@@ -67,6 +65,7 @@ class CreateRegister6sTable extends Migration
             $table->string('sababu_ya_rufaa');
             $table->string('TT');
             $table->string('tarehe_ya_TT');
+            $table->timestamps();
         });
     }
 

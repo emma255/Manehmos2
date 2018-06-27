@@ -15,10 +15,10 @@ class CreatePostnatalsTable extends Migration
     {
         Schema::create('postnatals', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->date('tarehe_ya_kuandikishwa');
             $table->string('namba_ya_kadi_RCH4',10);
-            $table->string('jina_la_mama',30);
+            $table->foreign('namba_ya_kadi_RCH4')->references('namba_ya_usajili')->on('register_maternals')->onDelete('cascade');
+            $table->string('jina_la_mama',30)->references('jina_la_mama')->on('register_maternals')->onDelete('cascade');
             $table->string('mtaa',30);
             $table->string('lishe_ya_mtoto',3);
             $table->date('tarehe_ya_kuzaliwa');
@@ -32,6 +32,7 @@ class CreatePostnatalsTable extends Migration
             $table->string('Hali_ya_VVU_kwenye_kadi',8);
             $table->string('amepima_postnatal',6);
             $table->string('kipimo_vvu_wakati_wa_postnatal',8);
+            $table->timestamps();
         });
     }
 

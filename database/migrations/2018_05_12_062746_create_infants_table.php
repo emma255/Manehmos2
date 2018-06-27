@@ -15,11 +15,9 @@ class CreateInfantsTable extends Migration
     {
         Schema::create('infants', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->string('jina_la_mtoto',30);
             $table->string('namba_ya_usajili',10);
-            // $table->foreign('mtoto')->references('jina_la_mtoto')->on('register_children');
-            // $table->foreign('namba')->references('namba_ya_mtoto')->on('register_children');
+            $table->foreign('namba_ya_usajili')->references('namba_ya_mtoto')->on('register_children')->onDelete('cascade');
             $table->string('hudhurio',17);
             $table->date('tarehe');
             $table->float('joto',4);
@@ -36,6 +34,7 @@ class CreateInfantsTable extends Migration
             $table->date('tarehe_OPVO')->nullable();
             $table->string('matatizo_mengine',60);
             $table->date('tarehe_ya_kurudi');
+            $table->timestamps();
         });
     }
 
