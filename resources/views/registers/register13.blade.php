@@ -116,7 +116,7 @@
 						                    <option value="Chuchu zimechanika">Chuchu zimechanika</option>
 						                    <option value="Mastitis">Yana uambukizo</option>
 						                    <option value="Yana uambukizo">Jipu</option>
-						                    <option value="Normal">Limenywea vizuri</option>
+						                    <option value="Normal">Yamenywea vizuri</option>
 						                </select>@if ($errors->has('matiti'))
 											<span class="invalid-feedback">
 												<strong>{{ $errors->first('matiti') }}</strong>
