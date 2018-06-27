@@ -19,8 +19,8 @@
 						<div class="row col-md-12">
 							<div class="col-md-2"></div>
 							<div class="col-md-4">
-								<div class="row col-md-12 form-group">
-									<div class="col-md-6">
+								<div class="row form-group">
+									<div class="col-md-5">
 										<label>Namba ya mtoto</label>
 									</div>
 									<div class="col-md-6">
@@ -28,6 +28,18 @@
 										 name="namba_ya_usajili"> @if ($errors->has('namba_ya_usajili'))
 										<span class="invalid-feedback">
 											<strong>{{ $errors->first('namba_ya_usajili') }}</strong>
+										</span> @endif
+									</div>
+								</div>
+								<div class="row form-group">
+									<div class="col-md-5">
+										<label>Tarehe</label>
+									</div>
+									<div class="col-md-6">
+										<input type="date" name="tarehe" class="form-control{{ $errors->has('tarehe') ? ' is-invalid' : '' }}">
+										@if ($errors->has('tarehe'))
+										<span class="invalid-feedback">
+											<strong>{{ $errors->first('tarehe') }}</strong>
 										</span> @endif
 									</div>
 								</div>
