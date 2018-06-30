@@ -84,7 +84,7 @@ class ProgressController extends Controller
                 ->orderBy("tarehe_ya_hudhurio")->groupBy(DB::raw("(tarehe_ya_hudhurio)"))->get();
 
                 // $months = 0;
-                $result[] = ['Hudhurio','Uzito'];
+                $result[] = ['Mwezi','Uzito'];
 
                 foreach ($Weight as $key => $value) {
 
