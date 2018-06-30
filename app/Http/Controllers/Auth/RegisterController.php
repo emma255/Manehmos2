@@ -68,15 +68,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'worker_id' => $data['worker_id'],
-            'position' => $data['position'],
-            'phone_no' => $data['phone_no'],
-            'email' => $data['email'],
-            'center' => $data['center'],
-            'district' => $data['district'],
-            'password' => Hash::make($data['password']),
-        ]);
+
+        // $test = User::where('worker_id', $data['worker_id'])->first();
+
+        // if($test == null){
+                
+            return User::create([
+                'name' => $data['name'],
+                'worker_id' => $data['worker_id'],
+                'position' => $data['position'],
+                'phone_no' => $data['phone_no'],
+                'email' => $data['email'],
+                'center' => $data['center'],
+                'district' => $data['district'],
+                'password' => Hash::make($data['password']),
+            ]);
+        //}
+        // else {
+        //     return view('error-view')->with('error_txt','Warning! User already exists');
+        // }
     }
 }
