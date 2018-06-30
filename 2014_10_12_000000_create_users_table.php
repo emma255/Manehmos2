@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('worker_id', 10);
             $table->string('position', 20);
             $table->string('phone_no', 10);
-            $table->string('email',20);
+            $table->string('email');
             $table->string('center',15);
             $table->string('district',15);
             $table->string('password');
