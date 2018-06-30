@@ -12,9 +12,7 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-          <table class="table table-bordered table-hover table-striped">
-
-
+          <table class="table table-bordered table-responsive table-hover table-striped">
             <thead>
               <tr>
                 <th>Name</th>
@@ -26,9 +24,7 @@
               </tr>
             </thead>
             @foreach ($details as $detail)
-
             <tbody>
-
               <tr>
                 <td>{{$detail->name}}</td>
                 <td>{{$detail->position}}</td>
@@ -49,9 +45,6 @@
 
                   </td>
                   @endif
-
-
-
                 </form>
               </tr>
             </tbody>
@@ -67,8 +60,6 @@
                 <th></th>
               </tr>
             </tfoot>
-
-
           </table>
         </div>
         <!-- /.box-body -->
