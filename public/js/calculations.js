@@ -4,5 +4,5 @@ function miscariage(){
     var delivcount = document.getElementsByName("amezaa_mara_ngapi")[0].value;
             var miscariage = pregcount - delivcount;
 
-    document.forms[0].mimba_zilizoharibika.value  = miscariage;
+            document.getElementById("mimba_zilizoharibika").value = miscariage;
 }
