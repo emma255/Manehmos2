@@ -1,11 +1,12 @@
 @include('layouts.head')
-<body>
-    <div class="" align="center">
-        <div class="p-3 mb-8 bg-secondary text-white"><h3>MATERNAL AND NEWBORN HEALTH MONITORING SYSTEM (Manehmos)</h3></div>
-        <nav class="navbar navbar-expand navbar-light text-white bg-info col-sm>
 
-                <div class="navbar navbar-collapse p-3 mb-2 bg-light" align="center">
-                    <div class="col-md-3"><p>{{Auth::user()->center}}</p></div>
+<body>
+    <div>
+        <div class="p-1 mb-8 bg-secondary text-white"><h3 class="offset-2">MATERNAL AND NEWBORN HEALTH MONITORING SYSTEM (Manehmos)</h3></div>
+        <nav class="navbar navbar-expand navbar-light text-white bg-info col-sm">
+
+                <div class="navbar navbar-collapse bg-blue">
+                    <div class="col-md-3"><p style="font-size: 10pt">{{Auth::user()->center}}</p></div>
                     <ul class="navbar-nav mr-auto col-sm">
 
                         <a class="navbar nav-link" href="{{ url('homepage') }}">
@@ -25,7 +26,7 @@
                         </div>
 
                         <a class="navbar nav-link" href="{{ url('/progress2') }}">
-                            {{ __('Maendeleo') }}
+                            {{ __('MAENDELEO') }}
                         </a>
 
                         <div class="dropdown show">
@@ -48,26 +49,23 @@
                         </a>
 
 
-<!--
-                        <a class="navbar nav-link" href="{{ url('homepage') }}">
+                                        <!--<a class="navbar nav-link" href="{{ url('homepage') }}">
                             {{ __('MSAADA') }}
-                        </a>
- -->
+                        </a> -->
                     </ul>
 
                     <!-- Right Side Of Navbar -->
 
-                                <div class="">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }} as {{Auth::user()->name}}
-                                    </a>
+                <div>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }} as {{Auth::user()->name}}
+                    </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </div>
             </div>
         </nav>
@@ -88,5 +86,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/calculations.js') }}"></script>
 </body>
 </html>

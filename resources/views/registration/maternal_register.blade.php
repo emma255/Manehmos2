@@ -158,8 +158,8 @@
 
 											<div class="col-md-3"><label>Mimba zilizoharibika</label></div>
 
-											<div class="col-md-3"><input required type="number" min="0" name="mimba_zilizoharibika" class="form-control{{ $errors->has('mimba_zilizoharibika') ? ' is-invalid' : '' }}"
-												 onkeydown="miscariage()"> @if ($errors->has('mimba_zilizoharibika'))
+											<div class="col-md-3"><input required type="number" min="0" name="mimba_zilizoharibika" value="" id="mimba_zilizoharibika" class="form-control{{ $errors->has('mimba_zilizoharibika') ? ' is-invalid' : '' }}"
+												 onclick="miscariage()"> @if ($errors->has('mimba_zilizoharibika'))
 												<span class="invalid-feedback">
 													<strong>{{ $errors->first('mimba_zilizoharibika') }}</strong>
 												</span> @endif</div>

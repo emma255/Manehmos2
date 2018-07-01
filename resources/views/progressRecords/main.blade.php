@@ -37,7 +37,7 @@
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
-                                    </  >
+                                    </form>
                                 </li>
                             </ul>
                         </li>
@@ -52,9 +52,7 @@
 
                 <div id="chart_div" style="width: 1380px; height: 600px;"></div>
 
-                <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
+                <!--| Your Page Content Here |-->
 
             </section>
             <!-- /.content -->
