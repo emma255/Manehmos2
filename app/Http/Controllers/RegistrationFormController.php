@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Mail\Registration;
 
 class RegistrationFormController extends Controller
@@ -50,8 +51,19 @@ class RegistrationFormController extends Controller
             'phone_no'=> 'required|numeric',
             'password' => 'required|string|min:6',
         ]);
-        \Mail::to('admin.register@mahehmos.co.tz')->send(new Registration($request));
 
-        return redirect('/login');
+        $to = User::where([['position','System Administrator'], ['center',request('center')],['status','active']])->first();
+
+        if($to != null){
+
+            \Mail::to($to->email)->send(new Registration($request));
+
+            return redirect('/login');
+        }
+
+        else{
+            return view('error-view')->with('error_txt','The clinic you entered is not yet using Manehmos, go back');
+        }
+
     }
 }
