@@ -17,7 +17,7 @@
               <tr>
                 <th>Name</th>
                 <th>Position</th>
-                <th>Phone number</th>
+                <th>Phone #</th>
                 <th>Email</th>
                 <th>Status</th>
                 <th></th>
@@ -55,7 +55,7 @@
               <tr>
                 <th>Name</th>
                 <th>Position</th>
-                <th>Pnone number</th>
+                <th>Pnone #</th>
                 <th>Email</th>
                 <th></th>
               </tr>
