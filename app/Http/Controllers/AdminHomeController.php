@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Tasks;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminHomeController extends Controller
 {
@@ -31,7 +32,7 @@ class AdminHomeController extends Controller
         $test  = User::where('position','!=','System Administrator')->first();
         if($test != null){
 
-        $details = User::where('position', '!=', 'System Administrator')->get();
+        $details = User::where([['position', '!=', 'System Administrator'],['center',Auth::user()->center]])->get();
 
         // $doctors = User::where('position', 'Doctor')->get();
         // $clinicians = User::where('position', 'Clinical Attendant')->get();
