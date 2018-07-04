@@ -41,7 +41,7 @@ class LoginController extends Controller
         }
         else{
             Auth::logout();
-            return redirect('/')->with('flash_message','You are not a valid user of Manehmos');
+            return view('error-view')->with('error_txt','You are not a valid user of Manehmos');
         }
 
     }
