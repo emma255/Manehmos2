@@ -56,8 +56,15 @@ class RegistrationFormController extends Controller
 
         if($to != null){
 
-            \Mail::to($to->email)->send(new Registration($request));
+            try{
+                \Mail::to($to->email)->send(new Registration($request));
+            }
 
+            catch(\Exception $e){
+
+                return view('error-view')
+                ->with('error_txt','Failed to submit your request, make sure you have active internet connection and try again');
+            }
             return redirect('/login');
         }
 
