@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use App\Tasks;
 use App\User;
+use App\Mail\resetPassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -119,6 +120,8 @@ class AdminHomeController extends Controller
      */
     public function update($id)
     {
+        $to = User::where('id',$id)->first();
+
         if (User::find($id) == null){
             session()->flash('flash_message', 'Failed!!');
 
@@ -128,15 +131,37 @@ class AdminHomeController extends Controller
         else{
 
         $this->validate(request(), [
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'confirmed',
         ]);
 
-        User::where('id', $id) ->update(
-        ['password'=>Hash::make(request()->password),]
-        );
-            session()->flash('flash_message', 'Password changed successfully!!');
+        $password = request()->password;
+
+        if(strlen($password) > 6){
+
+            User::where('id', $id) ->update(
+            ['password'=>Hash::make($password),]
+            );
+
+            try{
+                \Mail::to($to->email)->send(new resetPassword($password));
+            }
+
+            catch(\Exception $e){
+
+                return view('error-view')
+                ->with('error_txt','Failed to submit your request, 
+                password changed but message did not sent. Try o send it manually.');
+            }
+
+        session()->flash('flash_message', 'Password changed successfully and message is sent to user!!');
 
         return redirect('/showUsers');
+    }
+
+    else {
+        return view('error-view')
+        ->with('error_txt','The password can not be less than 6 characters, try another password');
+        }
     }
     }
 
