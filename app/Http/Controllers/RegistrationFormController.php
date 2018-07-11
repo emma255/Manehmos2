@@ -63,7 +63,9 @@ class RegistrationFormController extends Controller
             catch(\Exception $e){
 
                 return view('error-view')
-                ->with('error_txt','Failed to submit your request, make sure you have active internet connection and try again');
+                ->with('error_txt','Failed to submit your request,
+                 make sure you have active internet connection or try again later,
+                 if problem continues contact your system administrator for Manehmos');
             }
             return redirect('/login');
         }
