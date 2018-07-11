@@ -51,6 +51,8 @@ Route::get('request/progress', 'ProgressController@showChart')->middleware('auth
 
 Route::get('registrationForm', 'RegistrationFormController@create')->middleware('guest');
 
+Route::get('user/profile', 'AdminHomeController@userProfile')->middleware('auth');
+
 // start reports routes
 Route::get('pdf', 'PDFController@index');
 

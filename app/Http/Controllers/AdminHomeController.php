@@ -37,7 +37,7 @@ class AdminHomeController extends Controller
 
         // $doctors = User::where('position', 'Doctor')->get();
         // $clinicians = User::where('position', 'Clinical Attendant')->get();
-        return view('admin.showUsers', compact('details'));            
+        return view('admin.showUsers', compact('details'));
         }
 
         else {
@@ -52,8 +52,26 @@ class AdminHomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function userProfile()
     {
+        $name = request()->name;
+
+        if ($name != null) {
+
+            $details = User::where([['name',$name],['position', '!=', 'System Administrator'],['center',Auth::user()->center]])->first();
+
+            if($details == null){
+                return view('error-view')->with('error_txt',$name.' does not exist in Manehmos');
+            }
+            else{
+
+            return view('admin.userProfile')->with('profile',$details);
+            
+            }
+        } else {
+            return view('error-view')->with('error_txt','User can not be null, Enter the whole name of the user first');
+        }
+        
 
     }
 
