@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 11, 2018 at 08:09 PM
+-- Generation Time: Jul 12, 2018 at 05:00 PM
 -- Server version: 5.7.22-0ubuntu18.04.1
--- PHP Version: 7.2.7-0ubuntu0.18.04.1
+-- PHP Version: 7.2.7-0ubuntu0.18.04.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `manehmos2`
+-- Database: `manehmos`
 --
 
 -- --------------------------------------------------------
@@ -107,6 +107,7 @@ CREATE TABLE `infants` (
   `jina_la_mtoto` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `namba_ya_usajili` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `hudhurio` varchar(17) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `aina` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tarehe` date NOT NULL,
   `joto` double(4,2) NOT NULL,
   `uzito` smallint(5) UNSIGNED NOT NULL,
@@ -156,6 +157,7 @@ CREATE TABLE `maelezo` (
 `tarehe_ya_hudhurio` date
 ,`Jina_la_mama` varchar(30)
 ,`Namba_ya_kadi` varchar(10)
+,`aina` varchar(9)
 ,`hudhurio` varchar(10)
 ,`tarehe_ya_kuzaliwa` date
 ,`umri` int(7)
@@ -217,6 +219,7 @@ CREATE TABLE `mtoto` (
 ,`jina_la_mtoto` varchar(30)
 ,`namba_ya_mtoto` varchar(10)
 ,`jinsia` varchar(8)
+,`aina` varchar(5)
 ,`hudhurio` varchar(17)
 );
 
@@ -424,6 +427,7 @@ CREATE TABLE `register13s` (
   `Namba_ya_kadi` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Jina_la_mama` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `hudhurio` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `aina` varchar(9) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tarehe_ya_hudhurio` date NOT NULL,
   `mama_BP` varchar(7) COLLATE utf8mb4_unicode_ci NOT NULL,
   `mama_HB` double(8,2) NOT NULL,
@@ -532,12 +536,13 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'active'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `worker_id`, `position`, `phone_no`, `email`, `center`, `district`, `password`, `remember_token`, `created_at`, `updated_at`, `status`) VALUES
-(1, 'Manehmos Super Administrator', 'MANEHMOS2', 'System Administrator', '0000000000', 'manehmos2@gmail.com', 'sawala dispensary', 'Mufindi', '$2y$10$$2y$10$w.fyb1wNI3allMpmLo/oveS/l4AhTpOfyM5x6jEwa8TP6e.jWmgTi', 'BCbZa7FB7rul7wMcRSJG7rGqtTUakRC1UPCmR80jKRs1tlLHTwCiIV36HuLC', '2018-05-14 04:05:58', '2018-07-11 08:49:36', 'active');
+(1, 'Manehmos Super Administrator', 'MANEHMOS2', 'System Administrator', '0000000000', 'manehmos2@gmail.com', 'sawala dispensary', 'Mufindi', '$2y$10$w.fyb1wNI3allMpmLo/oveS/l4AhTpOfyM5x6jEwa8TP6e.jWmgTi', 'BCbZa7FB7rul7wMcRSJG7rGqtTUakRC1UPCmR80jKRs1tlLHTwCiIV36HuLC', '2018-05-14 04:05:58', '2018-07-11 08:49:36', 'active');
 -- --------------------------------------------------------
 
 --
@@ -610,7 +615,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`emma`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `maelezo`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`emma`@`localhost` SQL SECURITY DEFINER VIEW `maelezo`  AS  select `register13s`.`tarehe_ya_hudhurio` AS `tarehe_ya_hudhurio`,`postnatals`.`jina_la_mama` AS `Jina_la_mama`,`register13s`.`Namba_ya_kadi` AS `Namba_ya_kadi`,`register13s`.`hudhurio` AS `hudhurio`,`postnatals`.`tarehe_ya_kuzaliwa` AS `tarehe_ya_kuzaliwa`,(to_days(`postnatals`.`tarehe_ya_kujifungua`) - to_days(`postnatals`.`tarehe_ya_kuzaliwa`)) AS `umri`,`register13s`.`mama_HB` AS `mama_HB`,`register13s`.`hali_ya_msamba` AS `hali_ya_msamba`,`register13s`.`fistula` AS `fistula`,`register13s`.`akili_timamu` AS `akili_timamu`,`register13s`.`idadi_ya_dawa_vitaminA` AS `idadi_ya_dawa_vitaminA` from (`postnatals` join `register13s` on((`register13s`.`Namba_ya_kadi` = `postnatals`.`namba_ya_kadi_RCH4`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`emma`@`localhost` SQL SECURITY DEFINER VIEW `maelezo`  AS  select `register13s`.`tarehe_ya_hudhurio` AS `tarehe_ya_hudhurio`,`postnatals`.`jina_la_mama` AS `Jina_la_mama`,`register13s`.`Namba_ya_kadi` AS `Namba_ya_kadi`,`register13s`.`aina` AS `aina`,`register13s`.`hudhurio` AS `hudhurio`,`postnatals`.`tarehe_ya_kuzaliwa` AS `tarehe_ya_kuzaliwa`,(to_days(`postnatals`.`tarehe_ya_kujifungua`) - to_days(`postnatals`.`tarehe_ya_kuzaliwa`)) AS `umri`,`register13s`.`mama_HB` AS `mama_HB`,`register13s`.`hali_ya_msamba` AS `hali_ya_msamba`,`register13s`.`fistula` AS `fistula`,`register13s`.`akili_timamu` AS `akili_timamu`,`register13s`.`idadi_ya_dawa_vitaminA` AS `idadi_ya_dawa_vitaminA` from (`postnatals` join `register13s` on((`register13s`.`Namba_ya_kadi` = `postnatals`.`namba_ya_kadi_RCH4`))) ;
 
 -- --------------------------------------------------------
 
@@ -619,7 +624,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`emma`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `mtoto`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`emma`@`localhost` SQL SECURITY DEFINER VIEW `mtoto`  AS  select `infants`.`tarehe` AS `tarehe`,`register_children`.`jina_la_mtoto` AS `jina_la_mtoto`,`register_children`.`namba_ya_mtoto` AS `namba_ya_mtoto`,`register_children`.`jinsia` AS `jinsia`,`infants`.`hudhurio` AS `hudhurio` from (`register_children` join `infants` on((`register_children`.`namba_ya_mtoto` = `infants`.`namba_ya_usajili`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`emma`@`localhost` SQL SECURITY DEFINER VIEW `mtoto`  AS  select `infants`.`tarehe` AS `tarehe`,`register_children`.`jina_la_mtoto` AS `jina_la_mtoto`,`register_children`.`namba_ya_mtoto` AS `namba_ya_mtoto`,`register_children`.`jinsia` AS `jinsia`,`infants`.`aina` AS `aina`,`infants`.`hudhurio` AS `hudhurio` from (`register_children` join `infants` on((`register_children`.`namba_ya_mtoto` = `infants`.`namba_ya_usajili`))) ;
 
 -- --------------------------------------------------------
 

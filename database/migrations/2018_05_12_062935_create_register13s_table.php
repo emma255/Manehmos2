@@ -19,6 +19,7 @@ class CreateRegister13sTable extends Migration
             $table->string('Jina_la_mama',30);
             $table->foreign('Namba_ya_kadi')->references('namba_ya_usajili')->on('register_maternals')->onDelete('cascade');
             $table->string('hudhurio',10);
+            $table->string('aina',9);
             $table->date('tarehe_ya_hudhurio');
             $table->string('mama_BP',7);
             $table->float('mama_HB');
