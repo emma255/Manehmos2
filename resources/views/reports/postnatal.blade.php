@@ -108,14 +108,29 @@
             <tr>
                 <td>2</td>
                 <td>Waliomaliza mahudhurio yote</td>
-                <td>{{count(DB::table('register13s')
+                <td>{{$a1 = count(DB::table('maelezo')
+                        ->where('aina','awali')
+                        ->where('umri', '<', '7305')
                         ->whereyear('tarehe_ya_hudhurio',request('year'))
+                        ->wheremonth('tarehe_ya_hudhurio', request('month'))
                         ->select(DB::raw('Namba_ya_kadi'))
                         ->groupBy('Namba_ya_kadi')
-                        ->havingRaw('COUNT(DISTINCT hudhurio) = 1')->get())}}
+                        ->havingRaw('COUNT(DISTINCT hudhurio) = 4')->get()
+                        )
+                        }}
                 </td>
-                <td></td>
-                <td></td>
+                <td>{{$a2 = count(DB::table('maelezo')
+                    ->where('aina','awali')
+                    ->where('umri', '>=', '7305')
+                    ->whereyear('tarehe_ya_hudhurio',request('year'))
+                    ->wheremonth('tarehe_ya_hudhurio', request('month'))
+                    ->select(DB::raw('Namba_ya_kadi'))
+                    ->groupBy('Namba_ya_kadi')
+                    ->havingRaw('COUNT(DISTINCT hudhurio) = 4')->get()
+                    )
+                    }}
+                    </td>
+                <td>{{$a1 + $a2}}</td>
             </tr>
             <tr>
                 <td>3</td>
@@ -410,8 +425,27 @@
             <tr>
                 <td>11 c</td>
                 <td>Waliomaliza mahudhurio yote (saa 48, siku 3-7, siku 8-28, siku 29)</td>
-                <td></td>
-                <td></td>
+                <td>{{$t1 = count(DB::table('mtoto')
+                    ->where('aina','awali')
+                    ->where('jinsia', 'Mvulana')
+                    ->whereyear('tarehe',request('year'))
+                    ->wheremonth('tarehe', request('month'))
+                    ->select(DB::raw('namba_ya_mtoto'))
+                    ->groupBy('namba_ya_mtoto')
+                    ->havingRaw('COUNT(DISTINCT hudhurio) = 4')->get()
+                    )
+                    }}
+                    </td>
+                <td>{{$t2 = count(DB::table('mtoto')
+                    ->where('aina','awali')
+                    ->where('jinsia', 'Msichana')
+                    ->whereyear('tarehe',request('year'))
+                    ->wheremonth('tarehe', request('month'))
+                    ->select(DB::raw('namba_ya_mtoto'))
+                    ->groupBy('namba_ya_mtoto')
+                    ->havingRaw('COUNT(DISTINCT hudhurio) = 4')->get()
+                    )
+                    }}</td>
                 <td></td>
             </tr>
 

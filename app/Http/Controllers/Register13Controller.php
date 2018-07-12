@@ -75,31 +75,51 @@ class Register13Controller extends Controller
         if($test1 and $test2 != null){
             if($test3 == null){
 
-                Register13::create(request([
-                    'Namba_ya_kadi',
-                    'Jina_la_mama',
-                    'hudhurio',
-                    'tarehe_ya_hudhurio',
-                    'mama_BP',
-                    'mama_HB',
-                    'matiti',
-                    'tumbo_la_uzazi',
-                    'lochia',
-                    'hali_ya_msamba',
-                    'fistula',
-                    'akili_timamu',
-                    'aina_ya_dawa_nyongeza',
-                    'idadi_ya_dawa_nyongeza',
-                    'idadi_ya_dawa_vitaminA',
-                    'chanjo_ya_TT',
-                    'family_plan_usahuri_umetolewa',
-                    'family_plan_amepatiwa_kielelezo',
-                    'amepatiwa_family_plan_wakati_wa_ppc',
-                    'rufaa_kupata_family_plan',
-                    'rufaa_alikopelekwa',
-                    'rufaa_alikotoka',
-                    'rufaa_sababu_o_maoni',
-                ]));
+                $aina;
+                if (request()->hudhurio != 'mengineyo') {
+                    $aina = 'awali';
+                } else {
+                    $aina = 'mengineyo';
+                }
+                
+                $state;
+                if (request('family_plan_usahuri_umetolewa')
+                     or request('family_plan_amepatiwa_kielelezo') 
+                     or request('amepatiwa_family_plan_wakati_wa_ppc')
+                     or request('rufaa_kupata_family_plan')
+                     == null) {
+                    $state = 'hapana';
+                } else {
+                    $state = 'ndio';
+                }
+                
+                // Register13::create(request([
+                Register13::create([
+                    'Namba_ya_kadi'=>request()->Namba_ya_kadi,
+                    'Jina_la_mama'=>request()->Jina_la_mama,
+                    'hudhurio'=>request()->hudhurio,
+                    'tarehe_ya_hudhurio'=>request()->tarehe_ya_hudhurio,
+                    'mama_BP'=>request()->mama_BP,
+                    'mama_HB'=>request()->mama_HB,
+                    'matiti'=>request()->matiti,
+                    'tumbo_la_uzazi'=>request()->tumbo_la_uzazi,
+                    'lochia'=>request()->lochia,
+                    'hali_ya_msamba'=>request()->hali_ya_msamba,
+                    'fistula'=>request()->fistula,
+                    'akili_timamu'=>request()->akili_timamu,
+                    'aina_ya_dawa_nyongeza'=>request()->aina_ya_dawa_nyongeza,
+                    'idadi_ya_dawa_nyongeza'=>request()->idadi_ya_dawa_nyongeza,
+                    'idadi_ya_dawa_vitaminA'=>request()->idadi_ya_dawa_vitaminA,
+                    'chanjo_ya_TT'=>request()->chanjo_ya_TT,
+                    'family_plan_usahuri_umetolewa'=>$state,
+                    'family_plan_amepatiwa_kielelezo'=>$state,
+                    'amepatiwa_family_plan_wakati_wa_ppc'=>$state,
+                    'rufaa_kupata_family_plan'=>$state,
+                    'rufaa_alikopelekwa'=>request()->rufaa_alikopelekwa,
+                    'rufaa_alikotoka'=>request()->rufaa_alikotoka,
+                    'rufaa_sababu_o_maoni'=>request()->rufaa_sababu_o_maoni,
+                    'aina'=>$aina,
+                ]);
 
             session()->flash('flash_message', 'Taarifa za mtuha namba 13 zimeshahifadhiwa!');
 

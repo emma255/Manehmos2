@@ -45,7 +45,7 @@ class InfantController extends Controller
             'jina_la_mtoto' => 'required',
             'namba_ya_usajili' => 'required',
             'hudhurio' => 'required',
-            'tarehe' => 'required',
+            'tarehe' => 'required|before:tomorrow',
             'joto' => 'required',
             'uzito' => 'required',
             'hb' => 'required',
@@ -56,10 +56,10 @@ class InfantController extends Controller
             'maambukizi_machoni' => 'required',
             'maambukizi_mdomoni' => 'required',
             'maambukizi_ngozini' => 'required',
-            'tarehe_BCG' => 'required',
-            'tarehe_OPVO' => 'required',
+            'tarehe_BCG' => 'required|before:tomorrow',
+            'tarehe_OPVO' => 'required|before:tomorrow',
             'matatizo_mengine' => 'required',
-            'tarehe_ya_kurudi' => 'required',
+            'tarehe_ya_kurudi' => 'required|after:tarehe',
 
         ]);
 
@@ -67,34 +67,42 @@ class InfantController extends Controller
 
         $test2= RegisterChild::where('jina_la_mtoto',request('jina_la_mtoto'))->first();
 
-        $test3= Infant::where('tarehe',request('tarehe'))->first();
+        $test3= Infant::where([['tarehe',request('tarehe')],['namba_ya_usajili',request('namba_ya_usajili')]])->first();
 
         // $getNumber= RegisterChild::where('jina_la_mtoto',request('jina_la_mtoto'))->pluck('namba_ya_usajili');
 
         // if ($test1 or $test2 != null) {
         if ($test1 and $test2 != null) {
-           
+
+            $aina;
+            if (request()->hudhurio != 'hudhurio la mwezi') {
+                $aina = 'awali';
+            } else {
+                $aina = 'mwezi';
+            }
+            
             if($test3 == null){
-            Infant::create(request([
-                'jina_la_mtoto',
-                'namba_ya_usajili',
-                'hudhurio',
-                'tarehe',
-                'joto',
-                'uzito',
-                'hb',
-                'lishe',
-                'kmc',
-                'maambukizi_kitovu',
-                'uambukizo_mkali',
-                'maambukizi_machoni',
-                'maambukizi_mdomoni',
-                'maambukizi_ngozini',
-                'tarehe_BCG',
-                'tarehe_OPVO',
-                'matatizo_mengine',
-                'tarehe_ya_kurudi',
-            ]));
+            Infant::create([
+                'jina_la_mtoto'=>request()->jina_la_mtoto,
+                'namba_ya_usajili'=>request()->namba_ya_usajili,
+                'hudhurio'=>request()->hudhurio,
+                'tarehe'=>request()->tarehe,
+                'joto'=>request()->joto,
+                'uzito'=>request()->uzito,
+                'hb'=>request()->hb,
+                'lishe'=>request()->lishe,
+                'kmc'=>request()->kmc,
+                'maambukizi_kitovu'=>request()->maambukizi_kitovu,
+                'uambukizo_mkali'=>request()->uambukizo_mkali,
+                'maambukizi_machoni'=>request()->maambukizi_machoni,
+                'maambukizi_mdomoni'=>request()->maambukizi_mdomoni,
+                'maambukizi_ngozini'=>request()->maambukizi_ngozini,
+                'tarehe_BCG'=>request()->tarehe_BCG,
+                'tarehe_OPVO'=>request()->tarehe_OPVO,
+                'matatizo_mengine'=>request()->matatizo_mengine,
+                'tarehe_ya_kurudi'=>request()->tarehe_ya_kurudi,
+                'aina'=>$aina,
+            ]);
             
             session()->flash('flash_message', 'Taarifa za mtoto zimeshahifadhiwa');
 

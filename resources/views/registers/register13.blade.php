@@ -379,7 +379,7 @@
 										<label>Sababu ya rufaa / Maoni</label>
 									</div>
 									<div class="col-sm-9">
-										<textarea name="rufaa_sababu_o_maoni" minlength="4" rows="3" placeholder="Andika maoni au sababu hapa" required class="form-control{{ $errors->has('rufaa_sababu_o_maoni') ? ' is-invalid' : '' }}"></textarea>
+										<textarea name="rufaa_sababu_o_maoni" minlength="4" rows="2" placeholder="Andika maoni au sababu hapa" required class="form-control{{ $errors->has('rufaa_sababu_o_maoni') ? ' is-invalid' : '' }}"></textarea>
 										@if ($errors->has('rufaa_sababu_o_maoni'))
 										<span class="invalid-feedback">
 											<strong>{{ $errors->first('rufaa_sababu_o_maoni') }}</strong>

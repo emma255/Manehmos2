@@ -19,6 +19,7 @@ class CreateInfantsTable extends Migration
             $table->string('namba_ya_usajili',10);
             $table->foreign('namba_ya_usajili')->references('namba_ya_mtoto')->on('register_children')->onDelete('cascade');
             $table->string('hudhurio',17);
+            $table->string('aina',5);
             $table->date('tarehe');
             $table->float('joto',4);
             $table->unsignedSmallInteger('uzito');
