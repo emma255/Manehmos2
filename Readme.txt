@@ -13,10 +13,13 @@ STEP ONE (creating the system databases.)
 
 3. Import the sql in the file named manehmos.sql found in the Manehmos2 directory
 
-    when successfull imported, the admin password with name is Manehmos Super Administrator and the password is ROwHikbeftyawW8.
+    when successfull imported, the admin password with name is Manehmos Super Administrator and the password is ROwHikbeftyawW8
 
 4. Open the terminal under change directory up to ...../Manehmos2/
 
 5. In terminal, write php artisan serve to serve Manehmos.
 
 6. Go to browser and type http://127.0.0.1:8000/
+
+in order to access the modules for the clinical attendant, then create a user with the position Clinical attendant
+and for modules of doctor or health expert set the position of the user as Doctor
