@@ -5,6 +5,8 @@ Testing Manehmos in the local server.
 
 make sure you have XAMP or WAMP server and composer installed in your system.
 
+NB: Copy both folders Manehmos2 and temp in the same parent directory in your local server folder.
+
 STEP ONE (creating the system databases.)
 
 1. Create a database named manehmos
