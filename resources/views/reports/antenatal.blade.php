@@ -439,29 +439,29 @@
             <td></td>
             <td></td>
         </tr>
-        <tr>
+        {{-- <tr>
             <td>6</td>
             <td>Waliopewa Iron/Folic (I,F,FA) vidonge vya kutosha mpaka hudhurio linalofuata</td>
             <td></td>
             <td></td>
             <td></td>
-        </tr>
+        </tr> --}}
         <tr>
-            <td>7</td>
+            <td>6</td>
             <td>Waliopewa dawa za minyoo (Albendazole/Mebendazole)</td>
             <td>{{$mebea = App\Antenatal_malaria::whereyear('tarehe_ya_hudhurio', request('year'))->wheremonth('tarehe_ya_hudhurio', request('month'))->where([['albendazole_mebendazole','Ndio'],['umri', '<','7305 ']])->count() }}</td>
             <td>{{$mebeb = App\Antenatal_malaria::whereyear('tarehe_ya_hudhurio', request('year'))->wheremonth('tarehe_ya_hudhurio', request('month'))->where([['albendazole_mebendazole','Ndio'],['umri', '>=','7305 ']])->count() }}</td>
             <td>{{$mebea + $mebeb}} </td>
         </tr>
         <tr>
-            <td>8</td>
+            <td>7</td>
             <td>Waliopewa rufaa wakati wa ujauzito</td>
             <td>{{$ipt3a = App\Antenatal_malaria::whereyear('tarehe_ya_hudhurio', request('year'))->wheremonth('tarehe_ya_hudhurio', request('month'))->where([['rufaa_alikopelekwa','!=','-'],['umri', '<','7305 ']])->count() }}</td>
             <td>{{$ipt3b = App\Antenatal_malaria::whereyear('tarehe_ya_hudhurio', request('year'))->wheremonth('tarehe_ya_hudhurio', request('month'))->where([['rufaa_alikopelekwa','!=','-'],['umri', '>=','7305 ']])->count() }}</td>
             <td>{{$ipt3a + $ipt3b}} </td>
         </tr>
         <tr>
-            <td>9</td>
+            <td>8</td>
             <td>Waliopewa rufaa kwenda CTC</td>
             <td>{{$ctca = App\Antenatal_malaria::whereyear('tarehe_ya_hudhurio', request('year'))->wheremonth('tarehe_ya_hudhurio', request('month'))->where([['rufaa_alikopelekwa','!=','-'],['sababu_ya_rufaa','ctc'],['umri', '<','7305 ']])->count() }}</td>
             <td>{{$ctcb = App\Antenatal_malaria::whereyear('tarehe_ya_hudhurio', request('year'))->wheremonth('tarehe_ya_hudhurio', request('month'))->where([['rufaa_alikopelekwa','!=','-'],['sababu_ya_rufaa','ctc'],['umri', '>=','7305 ']])->count() }}</td>

@@ -108,8 +108,11 @@
             <tr>
                 <td>2</td>
                 <td>Waliomaliza mahudhurio yote</td>
-                <td>{{count(DB::table('register13s')->whereyear('tarehe_ya_hudhurio',request('year'))->select(DB::raw('Namba_ya_kadi'))->groupBy('Namba_ya_kadi')->havingRaw('COUNT(DISTINCT
-                    hudhurio)= 1')->get())}}
+                <td>{{count(DB::table('register13s')
+                        ->whereyear('tarehe_ya_hudhurio',request('year'))
+                        ->select(DB::raw('Namba_ya_kadi'))
+                        ->groupBy('Namba_ya_kadi')
+                        ->havingRaw('COUNT(DISTINCT hudhurio) = 1')->get())}}
                 </td>
                 <td></td>
                 <td></td>
@@ -561,13 +564,13 @@
                     <?= $ngoz20 + $ngozover ?>
                 </td>
             </tr>
-            <tr>
+            {{-- <tr>
                 <td>13 d</td>
                 <td>Idadi ya watoto wenye jaundice (ngozi njano)</td>
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr>
+            </tr> --}}
             <tr>
                 <td>14</td>
                 <td>Vifo vya watoto waliozaliwa nyumbani (perinatal); neonatal</td>
@@ -581,22 +584,22 @@
                     <?= $ngoz20 + $ngozover ?>
                 </td>
             </tr>
-            <tr>
+            {{-- <tr>
                 <td>15</td>
                 <td>Waliopewa dawa ya ARV</td>
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr>
+            </tr> --}}
 
             <tr>
-                <td>16</td>
+                <td>15</td>
                 <td>
                     <b>ULISHAJI WA MTOTO</b>
                 </td>
             </tr>
             <tr>
-                <td>16 a</td>
+                <td>15 a</td>
                 <td>Watoto wachanga wanaonyonya maziwa ya mama pekee (EBF)</td>
                 <td>
                     <?= $cebf20 = App\Mtoto_lishe::whereyear('tarehe', request('year'))->wheremonth('tarehe', request('month'))->where([['lishe', 'EBF'], ['jinsia', 'Mvulana']])->count();?>
@@ -609,7 +612,7 @@
                 </td>
             </tr>
             <tr>
-                <td>16 b</td>
+                <td>15 b</td>
                 <td>Watoto wachanga wanaonyonyeshwa maziwa mbadala (RF)</td>
                 <td>
                     <?= $crf20 = App\Mtoto_lishe::whereyear('tarehe', request('year'))->wheremonth('tarehe', request('month'))->where([['lishe', 'RF'], ['jinsia', 'Mvulana']])->count();?>
@@ -622,7 +625,7 @@
                 </td>
             </tr>
             <tr>
-                <td>16 c</td>
+                <td>15 c</td>
                 <td>Watoto wachanga wanaonyonyeshwa maziwa ya mama na
                     <br> kupatiwa chakula kingine (MF)</td>
                 <td>
