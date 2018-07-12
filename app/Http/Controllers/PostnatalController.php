@@ -43,13 +43,13 @@ class PostnatalController extends Controller
     {
 
         $this->validate(request(), [
-            'tarehe_ya_kuandikishwa' => 'required | before:tomorrow',
+            'tarehe_ya_kuandikishwa' => 'required|before:tomorrow',
             'namba_ya_kadi_RCH4' => 'required',
             'jina_la_mama' => 'required',
             'mtaa' => 'required',
-            'tarehe_ya_kuzaliwa' => 'required |before:tarehe_ya_kuandikishwa',
+            'tarehe_ya_kuzaliwa' => 'required|before:tarehe_ya_kuandikishwa',
             'para' => 'required',
-            'tarehe_ya_kujifungua' => 'required |after:tarehe_ya_kuzaliwa',
+            'tarehe_ya_kujifungua' => 'required|after:tarehe_ya_kuzaliwa',
             'kada_ya_aliyemzalisha' => 'required',
             'mahali_alipojifungulia' => 'required',
             'hali_ya_mama' => 'required',
