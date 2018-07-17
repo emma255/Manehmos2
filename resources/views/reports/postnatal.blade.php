@@ -446,7 +446,7 @@
                     ->havingRaw('COUNT(DISTINCT hudhurio) = 4')->get()
                     )
                     }}</td>
-                <td></td>
+                <td>{{$t1 + $t2}}</td>
             </tr>
 
         </tbody>

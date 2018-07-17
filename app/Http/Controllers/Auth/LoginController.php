@@ -27,24 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = '/';
-    protected function authenticated(Request $request, $user)
-    {
-        if ($user->position == 'Doctor') {
-            return redirect('/progress');
-        }
-         elseif ($user->position == 'Clinical Attendant') {
-            return redirect('/');
-        }
-        elseif ($user->position == 'System Administrator') {
-            return redirect('admin/home');
-        }
-        else{
-            Auth::logout();
-            return view('error-view')->with('error_txt','You are not a valid user of Manehmos');
-        }
-
-    }
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.

@@ -1,4 +1,4 @@
-@extends('layouts.main') 
+@extends('layouts.main')
 @section('content')
 <div class="container">
 	<div class="row">
@@ -8,7 +8,7 @@
 					<p>Taarifa Binafsi za mama mjamzito</p>
 				</div>
 				<div class="card-body">
-					<form action="/maternal/store" method="post" name="regmaternal">
+					<form action="{{ asset('/maternal/store')}}" method="post" name="regmaternal">
 
 						{{csrf_field()}}
 

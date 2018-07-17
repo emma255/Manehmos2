@@ -1,4 +1,4 @@
-@extends('layouts.main') 
+@extends('layouts.main')
 @section('content')
 
 <div class="container">
@@ -11,7 +11,7 @@
 
 			<div class="card-body">
 
-				<form action="/register7/store" method="post">
+				<form action="{{ asset('/register7/store')}}" method="post">
 					{{csrf_field()}}
 
 					<div class="form-group">
@@ -68,7 +68,7 @@
 											</div>
 											<div class="col-md-6">
 												<label for="amepata_vitaminA">Amepata</label>
-												<select name="amepata_vitamin_A" id="amepata_vitaminA" class="form-control{{ $errors->has('amepata_vitamin_A') ? ' is-invalid' : '' }}"> 
+												<select name="amepata_vitamin_A" id="amepata_vitaminA" class="form-control{{ $errors->has('amepata_vitamin_A') ? ' is-invalid' : '' }}">
 													<option value="" hidden=""></option>
 													<option value="ndio">Ndio</option>
 													<option value="hapana">Hapana</option>
@@ -89,7 +89,7 @@
 										<div class="row">
 											<div class="col-md-6">
 												<label for="child_age">Umri wa mtoto</label>
-												<select name="mebendazole_albendazole_umri" id="age_mebendazole" class="form-control{{ $errors->has('mebendazole_albendazole_umri') ? ' is-invalid' : '' }}"> 
+												<select name="mebendazole_albendazole_umri" id="age_mebendazole" class="form-control{{ $errors->has('mebendazole_albendazole_umri') ? ' is-invalid' : '' }}">
 													<option value="" hidden=""></option>
 													<option value="Miezi 15">Miezi 15</option>
 													<option value="Miezi 21">Miezi 21</option>
@@ -106,7 +106,7 @@
 											</div>
 											<div class="col-md-6">
 												<label for="amepata_mebendazole">Amepata dawa</label>
-												<select name="amepata_mebendazole_albendazole" id="amepata_mebendazole" class="form-control{{ $errors->has('amepata_mebendazole_albendazole') ? ' is-invalid' : '' }}"> 
+												<select name="amepata_mebendazole_albendazole" id="amepata_mebendazole" class="form-control{{ $errors->has('amepata_mebendazole_albendazole') ? ' is-invalid' : '' }}">
 													<option value="" hidden=""></option>
 													<option value="Ndio">Ndio</option>
 													<option value="Hapana">Hapana</option>
@@ -121,7 +121,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<label>Chanjo ya Surua</label>
-										<select name="Surua" class="form-control{{ $errors->has('Surua') ? ' is-invalid' : '' }}"> 
+										<select name="Surua" class="form-control{{ $errors->has('Surua') ? ' is-invalid' : '' }}">
 											<option value="" hidden=""></option>
 											<option value="Surua 1">Surua 1</option>
 											<option value="Surua 2">Surua 2</option>
@@ -148,7 +148,7 @@
 										<div class="row col-md-12 card-body">
 											<div class="col-md-6">
 												<label>Chanjo ya PENTA</label>
-												<select name="PENTA" class="form-control{{ $errors->has('PENTA') ? ' is-invalid' : '' }}"> 
+												<select name="PENTA" class="form-control{{ $errors->has('PENTA') ? ' is-invalid' : '' }}">
 													<option value="" hidden=""></option>
 													<option value="PENTA 1">PENTA 1</option>
 													<option value="PENTA 2">PENTA 2</option>
@@ -223,7 +223,7 @@
 										<div class="row col-md-12 card-body">
 											<div class="col-md-6">
 												<label>Chanjo ya Rota</label>
-												<select name="Rota" class="form-control{{ $errors->has('Rota') ? ' is-invalid' : '' }}"> 
+												<select name="Rota" class="form-control{{ $errors->has('Rota') ? ' is-invalid' : '' }}">
 													<option value="" hidden=""></option>
 													<option value="Rota 1">Rota 1</option>
 													<option value="Rota 2">Rota 2</option>
