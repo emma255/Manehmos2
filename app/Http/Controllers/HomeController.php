@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -11,7 +12,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('clinician');
+        $this->middleware('auth');
     }
 
     /**
@@ -20,10 +21,26 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {        
         session()->flash('flash_message', 'Umefanikiwa kuingia kwenye manehmos. karibu!!');
 
-        return view('home');
+        if (Auth::user()->position == 'Doctor') {
+
+            return redirect('/progress');
+        }
+         elseif (Auth::user()->position == 'Clinical Attendant') {
+
+            return view('home');
+        }
+        elseif (Auth::user()->position == 'System Administrator') {
+
+            return redirect('admin/home');
+        }
+        else{
+
+            Auth::logout();
+            return view('error-view')->with('error_txt','You are not a valid user of Manehmos');
+        }
     }
     //home
     public function home()
