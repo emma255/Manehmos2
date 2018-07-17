@@ -1,4 +1,4 @@
-@extends('layouts.main') 
+@extends('layouts.main')
 @section('content')
 <div class="container">
 	<div class="row">
@@ -9,7 +9,7 @@
 				</div>
 
 				<div class="card-body">
-					<form action="/child/store" method="post">
+					<form action="{{ asset('/child/store')}}" method="post">
 
 						{{csrf_field()}}
 
@@ -73,7 +73,7 @@
 								<div class="row">
 									<div class="col-md-4">
 										<label>Jinsia</label>
-										<select required name="jinsia" class="form-control{{ $errors->has('jinsia') ? ' is-invalid' : '' }}"> 
+										<select required name="jinsia" class="form-control{{ $errors->has('jinsia') ? ' is-invalid' : '' }}">
 											<option value="" hidden=""></option>
 											<option value="Msichana">Msichana</option>
 											<option value="Mvulana">Mvulana</option>

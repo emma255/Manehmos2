@@ -1,4 +1,4 @@
-@extends('layouts.main') 
+@extends('layouts.main')
 @section('content')
 <div class="row">
 	<div class="col-sm-12 card">
@@ -9,7 +9,7 @@
 
 		<div class="card-body">
 
-			<form action="/register6/store" method="post" name="r6" id="r6">
+			<form action="{{ asset('/register6/store')}}" method="post" name="r6" id="r6">
 				{{csrf_field()}}
 
 				<div class="form-group">
@@ -36,7 +36,7 @@
 										</div>
 										<div class="col-md-5">
 											<label>Aina ya hudhurio</label>
-											<select required name="hudhurio" class="form-control{{ $errors->has('hudhurio') ? ' is-invalid' : '' }}"> 
+											<select required name="hudhurio" class="form-control{{ $errors->has('hudhurio') ? ' is-invalid' : '' }}">
 														<option value="" hidden=""></option>
 														<option value="Hudhurio la kwanza">Hudhurio la awali</option>
 														<option value="Hudhurio la pili">Hudhurio la pili</option>
@@ -82,7 +82,7 @@
 									<div class="row">
 										<div class="col-md-5">
 											<label>Aina ya TT</label>
-											<select required name="TT" class="form-control{{ $errors->has('TT') ? ' is-invalid' : '' }}"> 
+											<select required name="TT" class="form-control{{ $errors->has('TT') ? ' is-invalid' : '' }}">
 													<option value="" hidden=""></option>
 													<option value="TT1">TT1</option>
 													<option value="TT2">TT2</option>
@@ -114,7 +114,7 @@
 									<div class="row">
 										<div class="col-md-6">
 											<label>Matokeo mRDT au BS</label>
-											<select required name="mrdt_o_bs" class="form-control{{ $errors->has('mrdt_o_bs') ? ' is-invalid' : '' }}"> 
+											<select required name="mrdt_o_bs" class="form-control{{ $errors->has('mrdt_o_bs') ? ' is-invalid' : '' }}">
 													<option value="" hidden=""></option>
 													<option value="Positive">Positive</option>
 													<option value="Negative">Negative</option>
@@ -140,7 +140,7 @@
 									<div class="row">
 										<div class="col-md-6">
 											<label>Aina ya IPT</label>
-											<select required name="ipt" class="form-control{{ $errors->has('ipt') ? ' is-invalid' : '' }}"> 
+											<select required name="ipt" class="form-control{{ $errors->has('ipt') ? ' is-invalid' : '' }}">
 													<option value="" hidden=""></option>
 													<option value="IPT-1">IPT-1</option>
 													<option value="IPT-2">IPT-2</option>
@@ -296,7 +296,7 @@
 
 										<div class="col-md-6">
 											<label>Albendazole/Mebendazole</label>
-											<select required name="albendazole_mebendazole" class="form-control{{ $errors->has('albendazole_mebendazole') ? ' is-invalid' : '' }}"> 
+											<select required name="albendazole_mebendazole" class="form-control{{ $errors->has('albendazole_mebendazole') ? ' is-invalid' : '' }}">
 													<option value="" hidden=""></option>
 													<option value="Ndiyo">Ndiyo</option>
 													<option value="Hapana">Hapana</option>
@@ -374,7 +374,7 @@
 										<tr>
 											<td>Amepima VVU</td>
 											<td>
-												<select required name="mume_amepima_VVU" class="form-control{{ $errors->has('mume_amepima_VVU') ? ' is-invalid' : '' }}"> 
+												<select required name="mume_amepima_VVU" class="form-control{{ $errors->has('mume_amepima_VVU') ? ' is-invalid' : '' }}">
 													<option value="" hidden=""></option>
 													<option value="Ndio">Ndio</option>
 													<option value="Hapana">Hapana</option>
@@ -384,7 +384,7 @@
 												</span> @endif
 											</td>
 											<td>
-												<select required name="mke_amepima_VVU" class="form-control{{ $errors->has('mke_amepima_VVU') ? ' is-invalid' : '' }}"> 
+												<select required name="mke_amepima_VVU" class="form-control{{ $errors->has('mke_amepima_VVU') ? ' is-invalid' : '' }}">
 													<option value="" hidden=""></option>
 													<option value="Ndio">Ndio</option>
 													<option value="Hapana">Hapana</option>`
@@ -397,7 +397,7 @@
 										<tr>
 											<td>Aina ya kipimo</td>
 											<td>
-												<select required name="mume_kipimo_aina" class="form-control{{ $errors->has('mume_kipimo_aina') ? ' is-invalid' : '' }}"> 
+												<select required name="mume_kipimo_aina" class="form-control{{ $errors->has('mume_kipimo_aina') ? ' is-invalid' : '' }}">
 													<option value="" hidden=""></option>
 													<option value="Kipimo 1">Kipimo 1</option>
 													<option value="Kipimo 2">Kipimo 2</option>
@@ -407,7 +407,7 @@
 												</span> @endif
 											</td>
 											<td>
-												<select required name="mke_kipimo_aina" class="form-control{{ $errors->has('mke_kipimo_aina') ? ' is-invalid' : '' }}"> 
+												<select required name="mke_kipimo_aina" class="form-control{{ $errors->has('mke_kipimo_aina') ? ' is-invalid' : '' }}">
 													<option value="" hidden=""></option>
 													<option value="Kipimo 1">Kipimo 1</option>
 													<option value="Kipimo 2">Kipimo 2</option>`
@@ -437,7 +437,7 @@
 										<tr>
 											<td>Matokeo ya kipimo</td>
 											<td>
-												<select required name="mume_kipimo1_VVU" class="form-control{{ $errors->has('mume_kipimo1_VVU') ? ' is-invalid' : '' }}"> 
+												<select required name="mume_kipimo1_VVU" class="form-control{{ $errors->has('mume_kipimo1_VVU') ? ' is-invalid' : '' }}">
 													<option value="" hidden=""></option>
 													<option value="Positive">Positive</option>
 													<option value="Negative">Negative</option>
@@ -461,7 +461,7 @@
 										<tr>
 											<td>Unasihi baada ya kupima</td>
 											<td>
-												<select required name="mume_unasihi_baada_ya_kipimo_1" class="form-control{{ $errors->has('mume_unasihi_baada_ya_kipimo_1') ? ' is-invalid' : '' }}"> 
+												<select required name="mume_unasihi_baada_ya_kipimo_1" class="form-control{{ $errors->has('mume_unasihi_baada_ya_kipimo_1') ? ' is-invalid' : '' }}">
 														<option value="" hidden=""></option>
 														<option value="Ndio">Ndio</option>
 														<option value="Hapana">Hapana</option>
@@ -471,7 +471,7 @@
 														</span> @endif
 											</td>
 											<td>
-												<select required name="mke_unasihi_baada_ya_kipimo_1" class="form-control{{ $errors->has('mke_unasihi_baada_ya_kipimo_1') ? ' is-invalid' : '' }}"> 
+												<select required name="mke_unasihi_baada_ya_kipimo_1" class="form-control{{ $errors->has('mke_unasihi_baada_ya_kipimo_1') ? ' is-invalid' : '' }}">
 														<option value="" hidden=""></option>
 														<option value="Ndio">Ndio</option>
 														<option value="Hapana">Hapana</option>
@@ -511,7 +511,7 @@
 
 											<div class="col-md-5">
 												<label>Ametibiwa</label>
-												<select required name="mume_ametibiwa" class="form-control{{ $errors->has('mume_ametibiwa') ? ' is-invalid' : '' }}"> 
+												<select required name="mume_ametibiwa" class="form-control{{ $errors->has('mume_ametibiwa') ? ' is-invalid' : '' }}">
 														<option value="" hidden=""></option>
 														<option value="ndio">Ndio</option>
 														<option value="hapana">Hapana</option>
@@ -529,7 +529,7 @@
 
 											<div class="col-md-5">
 												<label>Matokeo</label>
-												<select required name="matokeo_stds_mke" class="form-control{{ $errors->has('matokeo_stds_mke') ? ' is-invalid' : '' }}"> 
+												<select required name="matokeo_stds_mke" class="form-control{{ $errors->has('matokeo_stds_mke') ? ' is-invalid' : '' }}">
 														<option value="" hidden=""></option>
 														<option value="Positive">Positive</option>
 														<option value="Negative">Negative</option>
@@ -541,7 +541,7 @@
 
 											<div class="col-md-5">
 												<label>Ametibiwa</label>
-												<select required name="mke_ametibiwa" class="form-control{{ $errors->has('mke_ametibiwa') ? ' is-invalid' : '' }}"> 
+												<select required name="mke_ametibiwa" class="form-control{{ $errors->has('mke_ametibiwa') ? ' is-invalid' : '' }}">
 														<option value="" hidden=""></option>
 														<option value="ndio">Ndio</option>
 														<option value="hapana">Hapana</option>
@@ -568,7 +568,7 @@
 
 											<div class="col-md-5">
 												<label>Matokeo</label>
-												<select required name="kaswende_mume" class="form-control{{ $errors->has('kaswende_mume') ? ' is-invalid' : '' }}"> 
+												<select required name="kaswende_mume" class="form-control{{ $errors->has('kaswende_mume') ? ' is-invalid' : '' }}">
 														<option value="" hidden=""></option>
 														<option value="Positive">Positive</option>
 														<option value="Negative">Negative</option>
@@ -598,7 +598,7 @@
 
 											<div class="col-md-5">
 												<label>Matokeo</label>
-												<select required name="kaswende_mke" class="form-control{{ $errors->has('kaswende_mke') ? ' is-invalid' : '' }}"> 
+												<select required name="kaswende_mke" class="form-control{{ $errors->has('kaswende_mke') ? ' is-invalid' : '' }}">
 														<option value="" hidden=""></option>
 														<option value="Positive">Positive</option>
 														<option value="Negative">Negative</option>
@@ -610,7 +610,7 @@
 
 											<div class="col-md-5">
 												<label>Ametibiwa</label>
-												<select required name="mke_ametibiwa_kaswende" class="form-control{{ $errors->has('mke_ametibiwa_kaswende') ? ' is-invalid' : '' }}"> 
+												<select required name="mke_ametibiwa_kaswende" class="form-control{{ $errors->has('mke_ametibiwa_kaswende') ? ' is-invalid' : '' }}">
 														<option value="" hidden=""></option>
 														<option value="ndio">Ndio</option>
 														<option value="hapana">Hapana</option>

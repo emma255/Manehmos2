@@ -1,4 +1,4 @@
-@extends('layouts.main') 
+@extends('layouts.main')
 @section('content')
 <div class="container">
     <div class="row">
@@ -12,7 +12,7 @@
 
             <div class="card-body">
 
-                <form action="/infant/store" method="post">
+                <form action="{{ asset('/infant/store')}}" method="post">
                     {{csrf_field()}}
 
                     <div class="form-group">
@@ -103,7 +103,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label for="kmc">Huduma ya kangaroo (KMC)</label>
-                                                <select required name="kmc" class="form-control{{ $errors->has('kmc') ? ' is-invalid' : '' }}"> 
+                                                <select required name="kmc" class="form-control{{ $errors->has('kmc') ? ' is-invalid' : '' }}">
                                                     <option value="" hidden=""></option>
                                                     <option value="Ndio">Ndio</option>
                                                     <option value="Hapana">Hapana</option>
@@ -125,7 +125,7 @@
                                             </div>
                                             <div class="col-md-9">
                                                 <label for="lishe">Lishe ya mtoto</label>
-                                                <select required name="lishe" class="form-control{{ $errors->has('lishe') ? ' is-invalid' : '' }}"> 
+                                                <select required name="lishe" class="form-control{{ $errors->has('lishe') ? ' is-invalid' : '' }}">
                                                     <option value="" hidden=""></option>
                                                     <option value="EBF">Maziwa ya mama pekee (EBF)</option>
                                                     <option value="RF">Maziwa mbadala (RF)</option>
@@ -188,7 +188,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label>Uambukizi mdomoni</label>
-                                                <select required name="maambukizi_mdomoni" class="form-control{{ $errors->has('maambukizi_mdomoni') ? ' is-invalid' : '' }}"> 
+                                                <select required name="maambukizi_mdomoni" class="form-control{{ $errors->has('maambukizi_mdomoni') ? ' is-invalid' : '' }}">
                                                     <option value="" hidden=""></option>
                                                     <option value="Ndio">Ndio</option>
                                                     <option value="Hapana">Hapana</option>
@@ -201,7 +201,7 @@
                                         <div class="row form-group">
                                             <div class="col-md-6">
                                                 <label for="maambukizi_kitovu">Maambukizi kitovuni</label>
-                                                <select required name="maambukizi_kitovu" class="form-control{{ $errors->has('maambukizi_kitovu') ? ' is-invalid' : '' }}"> 
+                                                <select required name="maambukizi_kitovu" class="form-control{{ $errors->has('maambukizi_kitovu') ? ' is-invalid' : '' }}">
                                                     <option value="" hidden=""></option>
                                                     <option value="Ndio">Ndio</option>
                                                     <option value="Hapana">Hapana</option>

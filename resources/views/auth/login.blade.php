@@ -7,7 +7,7 @@
                 <br>The Manehmos holds all the information relating to Maternal ans Newborn health on clinic issues.
                 <br>
                 <br>If you are not yet registered please click
-                <a href="/registrationForm">{{ __('here') }}</a> to register.
+                <a href="{{ asset('/registrationForm')}}">{{ __('here') }}</a> to register.
             </p>
             <div class="card">
                 <div class="card-header">{{ __('Manehmos Login') }}</div>

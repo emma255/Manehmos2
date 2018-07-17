@@ -1,4 +1,4 @@
-@extends('admin.main') 
+@extends('admin.main')
 @section('content')
 
 
@@ -12,7 +12,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" action="/task/store" method="POST">
+            <form class="form-horizontal" action="{{ asset('/task/store')}}" method="POST">
                 {{csrf_field()}}
                 <div class="box-body">
                     <div class="form-group">

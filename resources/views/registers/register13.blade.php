@@ -1,4 +1,4 @@
-@extends('layouts.main') 
+@extends('layouts.main')
 @section('content')
 <div class="container">
 	<div class="row">
@@ -12,7 +12,7 @@
 
 			<div class="card-body">
 
-				<form action="/register13/store" method="post">
+				<form action="{{ asset('/register13/store')}}" method="post">
 					{{csrf_field()}}
 
 					<div class="form-group">
@@ -47,7 +47,7 @@
 								<div class="row">
 									<div class="col-sm-6">
 										<label>Hudhurio</label>
-										<select name="hudhurio" class="form-control{{ $errors->has('hudhurio') ? ' is-invalid' : '' }}"> 
+										<select name="hudhurio" class="form-control{{ $errors->has('hudhurio') ? ' is-invalid' : '' }}">
 											<option value="" hidden=""></option>
 											<option value="Masaa 48">Masaa 48</option>
 											<option value="Siku 3-7">Siku 3-7</option>
@@ -113,7 +113,7 @@
 									<div class="col-sm-6">
 										<div>
 											<label>Matiti</label>
-											<select name="matiti" class="form-control{{ $errors->has('matiti') ? ' is-invalid' : '' }}"> 
+											<select name="matiti" class="form-control{{ $errors->has('matiti') ? ' is-invalid' : '' }}">
 						                    <option value="" hidden=""></option>
 						                    <option value="Chuchu zimechanika">Chuchu zimechanika</option>
 						                    <option value="Mastitis">Yana uambukizo</option>
@@ -133,7 +133,7 @@
 
 										<div>
 											<label>Tumbo la uzazi</label>
-											<select name="tumbo_la_uzazi" class="form-control{{ $errors->has('tumbo_la_uzazi') ? ' is-invalid' : '' }}"> 
+											<select name="tumbo_la_uzazi" class="form-control{{ $errors->has('tumbo_la_uzazi') ? ' is-invalid' : '' }}">
 						                    <option value="" hidden=""></option>
 						                    <option value="Kawaida">Kawaida</option>
 						                    <option value="Maumivu">Maumivu</option>
@@ -170,7 +170,7 @@
 									<div class="col-sm-6">
 										<div>
 											<label>Hali ya msamba</label>
-											<select name="hali_ya_msamba" class="form-control{{ $errors->has('hali_ya_msamba') ? ' is-invalid' : '' }}"> 
+											<select name="hali_ya_msamba" class="form-control{{ $errors->has('hali_ya_msamba') ? ' is-invalid' : '' }}">
 												<option value="" hidden=""></option>
 												<option value="Mshono umeunga">Mshono umeunga</option>
 												<option value="Mshono umeachia">Mshono umeachia</option>
@@ -185,7 +185,7 @@
 
 										<div>
 											<label>Fistula</label>
-											<select name="fistula" class="form-control{{ $errors->has('fistula') ? ' is-invalid' : '' }}"> 
+											<select name="fistula" class="form-control{{ $errors->has('fistula') ? ' is-invalid' : '' }}">
 						                    <option value="" hidden=""></option>
 						                    <option value="Ndio">Ndio</option>
 						                    <option value="Hapana">Hapana</option>
@@ -280,7 +280,7 @@
 								<div class="row">
 									<div class="col-sm-4">
 										<label>Chanjo ya TT</label>
-										<select name="chanjo_ya_TT" class="form-control{{ $errors->has('chanjo_ya_TT') ? ' is-invalid' : '' }}"> 
+										<select name="chanjo_ya_TT" class="form-control{{ $errors->has('chanjo_ya_TT') ? ' is-invalid' : '' }}">
 											<option value="" hidden=""></option>
 											<option value="Masaa 48">Masaa 48</option>
 											<option value="Siku 3-7">Siku 3-7</option>

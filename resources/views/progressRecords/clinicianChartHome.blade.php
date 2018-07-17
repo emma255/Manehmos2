@@ -1,18 +1,18 @@
-@extends('layouts.main') 
+@extends('layouts.main')
 @section('content')
 <div class="container">
     <div class="col-md-7 card">
         <div class="card-header form-group">Angalia maendeleo ya ukuaji</div>
         <div class="card-body form-group">
             <br>
-            <form action="/request/progress" method="get">
+            <form action="{{ asset('/request/progress')}}" method="get">
                 <div class="input-group">
                     <div class="col-md-12 row form-group">
                         <div class="col-md-3 form-group">
                             <label for="chart_for">Maendeleo ya </label>
                         </div>
                         <div class="col-md-4 form-group">
-                            <select name="type" id="type" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}"> 
+                            <select name="type" id="type" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}">
                                 <option></option>
                                 <option value="mtoto">Mtoto</option>
                                 <option value="mjamzito">Mjamzito</option>

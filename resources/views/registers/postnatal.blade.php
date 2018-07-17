@@ -1,4 +1,4 @@
-@extends('layouts.main') 
+@extends('layouts.main')
 @section('content')
 <div class="container">
     <div class="row">
@@ -10,7 +10,7 @@
 
             <div class="card-body">
 
-                <form action="/postnatal/store" method="post">
+                <form action="{{ asset('/postnatal/store')}}" method="post">
                     {{csrf_field()}}
 
                     <div class="form-group">
@@ -84,7 +84,7 @@
                                     </div>
                                     <div class="col-md-5">
                                         <label for="lishe">Lishe ya mtoto</label>
-                                        <select required name="lishe_ya_mtoto" class="form-control{{ $errors->has('lishe_ya_mtoto') ? ' is-invalid' : '' }}"> 
+                                        <select required name="lishe_ya_mtoto" class="form-control{{ $errors->has('lishe_ya_mtoto') ? ' is-invalid' : '' }}">
                                             <option value="" hidden=""></option>
                                             <option value="EBF">Maziwa ya mama (EBF)</option>
                                             <option value="RF">Maziwa mbadala (RF)</option>
@@ -109,7 +109,7 @@
 
                                     <div class="col-md-5">
                                         <label>Kada ya aliyemzalisha</label>
-                                        <select required name="kada_ya_aliyemzalisha" class="form-control{{ $errors->has('kada_ya_aliyemzalisha') ? ' is-invalid' : '' }}"> 
+                                        <select required name="kada_ya_aliyemzalisha" class="form-control{{ $errors->has('kada_ya_aliyemzalisha') ? ' is-invalid' : '' }}">
                                             <option value="" hidden=""></option>
                                             <option value="Mhudumu wa afya">Mhudumu wa afya</option>
                                             <option value="Mkunga wa jadi (TBA)">Mkunga wa jadi (TBA)</option>
@@ -121,7 +121,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <label>Amepima VVU</label>
-                                        <select required name="amepima_postnatal" class="form-control{{ $errors->has('amepima_postnatal') ? ' is-invalid' : '' }}"> 
+                                        <select required name="amepima_postnatal" class="form-control{{ $errors->has('amepima_postnatal') ? ' is-invalid' : '' }}">
                                             <option hidden></option>
                                             <option value="Ndio">Ndio</option>
                                             <option value="Hapana">Hapana</option>
@@ -172,7 +172,7 @@
                                 <div class="row">
                                     <div class="col-md-5">
                                         <label>Hali ya mtoto</label>
-                                        <select required name="hali_ya_mtoto" class="form-control{{ $errors->has('hali_ya_mtoto') ? ' is-invalid' : '' }}"> 
+                                        <select required name="hali_ya_mtoto" class="form-control{{ $errors->has('hali_ya_mtoto') ? ' is-invalid' : '' }}">
                                             <option value="" hidden=""></option>
                                             <option value="Hai">Hai</option>
                                             <option value="Amefariki">Amefariki</option>
@@ -202,7 +202,7 @@
                                         <div class="row">
                                             <div class="col-md-7"><label>Hali ya VVU kama inavyoonekana kwenye kadi</label></div>
                                             <div class="col-md-5">
-                                                <select required name="Hali_ya_VVU_kwenye_kadi" class="form-control{{ $errors->has('Hali_ya_VVU_kwenye_kadi') ? ' is-invalid' : '' }}"> 
+                                                <select required name="Hali_ya_VVU_kwenye_kadi" class="form-control{{ $errors->has('Hali_ya_VVU_kwenye_kadi') ? ' is-invalid' : '' }}">
                                                 <option value="" hidden=""></option>
                                                 <option value="Positive">Positive</option>
                                                 <option value="Negative">Negative</option>
@@ -217,7 +217,7 @@
                                         <div class="row">
                                             <div class="col-md-7"><label>Kipimo cha VVU wakati wa postnatal</label></div>
                                             <div class="col-md-5">
-                                                <select required name="kipimo_vvu_wakati_wa_postnatal" class="form-control{{ $errors->has('kipimo_vvu_wakati_wa_postnatal') ? ' is-invalid' : '' }}"> 
+                                                <select required name="kipimo_vvu_wakati_wa_postnatal" class="form-control{{ $errors->has('kipimo_vvu_wakati_wa_postnatal') ? ' is-invalid' : '' }}">
                                                 <option value="" hidden=""></option>
                                                 <option value="Positive">Positive</option>
                                                 <option value="Negative">Negative</option>

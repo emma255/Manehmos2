@@ -1,11 +1,11 @@
-@extends('layouts.main') 
+@extends('layouts.main')
 @section('content')
 <div class="container col-xs-offset-3">
     <div class="card col-sm-8">
         <div class="card-header">Tengeneza ripoti</div>
         <div class="card-body">
             <!-- select -->
-            <form action="/report/request" method="post">
+            <form action="{{ asset('/report/request')}}" method="post">
                 {{csrf_field()}}
                 <div class="form-group col-md-9">
                     <label>Chagua aina ya ripoti ripoti</label>
