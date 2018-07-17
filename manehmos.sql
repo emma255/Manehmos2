@@ -524,7 +524,7 @@ CREATE TABLE `tasks` (
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `worker_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `worker_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `position` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone_no` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -534,7 +534,7 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'active'
+  `status` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'active'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
