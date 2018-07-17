@@ -42,8 +42,6 @@
         <div class="col-sm-6">
           <!-- Progress bars -->
           <div class="clearfix">
-            <span class="pull-left">Task #1</span>
-            <small class="pull-right">90%</small>
           </div>
           <div class="progress xs">
             <div class="progress-bar progress-bar-green" style="width: 90%;"></div>

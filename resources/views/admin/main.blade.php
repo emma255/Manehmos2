@@ -7,7 +7,7 @@
   <div class="hold-transition skin-blue sidebar-mini col-md-12">
     <header class="main-header">
       <!-- Logo -->
-      <a href="/admin/home" class="logo">
+      <a href="{{ asset('admin/home')}}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini">
           <b>A</b>LT</span>
@@ -19,7 +19,7 @@
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
         <!-- Sidebar toggle button-->
-        <a href="/admin/home" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <a href="{{ asset('admin/home')}}" class="sidebar-toggle" data-toggle="push-menu" role="button">
           <span class="sr-only">Toggle navigation</span>
         </a>
         <div class="navbar-custom-menu">
@@ -45,13 +45,8 @@
                       <a href="#">
                         <h3>
                           {{$task->task_name}}
-                          <small class="pull-right">20%</small>
+                          <small class="pull-right"></small>
                         </h3>
-                        <div class="progress xs">
-                          <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                            <span class="sr-only">20% Complete</span>
-                          </div>
-                        </div>
                       </a>
                     </li>
 
@@ -60,14 +55,14 @@
                   </ul>
                 </li>
                 <li class="footer">
-                  <a href="/showTasks">View all tasks</a>
+                  <a href="{{ asset('/showTasks')}}">View all tasks</a>
                 </li>
               </ul>
             </li>
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="/imgs/emma.png" class="user-image" alt="User Image">
+                <img src="{{ asset('/imgs/emma.png')}}" class="user-image" alt="User Image">
                 <span class="hidden-xs">{{Auth::user()->name}}</span>
               </a>
               <ul class="dropdown-menu">
@@ -96,16 +91,16 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
           <div class="pull-left image">
-            <img src="/imgs/emma.png" class="img-circle" alt="User Image">
+            <img src="{{ asset('/imgs/emma.png')}}" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
             <p>{{Auth::user()->name}}</p>
-            <a href="/admin/home">
+            <a href="{{ asset('admin/home')}}">
               <i class="fa fa-circle text-success"></i> Online</a>
           </div>
         </div>
         <!-- search form -->
-        <form action="/user/profile" method="get" class="sidebar-form">
+        <form action="{{ asset('/user/profile')}}" method="get" class="sidebar-form">
           <div class="input-group">
             <input type="text" name="name" class="form-control" placeholder="Search user...">
             <span class="input-group-btn">
@@ -135,7 +130,7 @@
                   <i class="fa fa-user-plus"></i> Create account</a>
               </li>
               <li>
-                <a href="/showUsers">
+                <a href="{{ asset('/showUsers')}}">
                   <i class="fa fa-user-md"></i> View accounts</a>
               </li>
             </ul>
@@ -153,11 +148,11 @@
             </a>
             <ul class="treeview-menu">
               <li>
-                <a href="/task/create">
+                <a href="{{ asset('/task/create')}}">
                   <i class="fa fa-circle-o"></i> Add tasks</a>
               </li>
               <li>
-                <a href="/showTasks">
+                <a href="{{ asset('/showTasks')}}">
                   <i class="fa fa-circle-o"></i> View tasks</a>
               </li>
             </ul>
