@@ -86,7 +86,7 @@
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <label for="uzito">Uzito (Gram)</label>
-                                                <input required type="number" name="uzito" id="uzito" min="0" class="form-control{{ $errors->has('uzito') ? ' is-invalid' : '' }}">
+                                                <input required type="text" name="uzito" id="uzito" min="0" class="form-control{{ $errors->has('uzito') ? ' is-invalid' : '' }}">
                                                 @if ($errors->has('uzito'))
                                                 <span class="invalid-feedback">
                                                     <strong>{{ $errors->first('uzito') }}</strong>
@@ -95,7 +95,7 @@
 
                                             <div class="col-md-3">
                                                 <label>Joto (&deg;C)</label>
-                                                <input required type="number" name="joto" min="0" class="form-control{{ $errors->has('joto') ? ' is-invalid' : '' }}">
+                                                <input required type="text" name="joto" min="0" class="form-control{{ $errors->has('joto') ? ' is-invalid' : '' }}">
                                                 @if($errors->has('joto'))
                                                 <span class="invalid-feedback">
                                                     <strong>{{ $errors->first('joto') }}</strong>
@@ -117,7 +117,7 @@
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <label for="hb">HB (g/dl)</label>
-                                                <input required type="number" name="hb" id="hb" class="form-control{{ $errors->has('hb') ? ' is-invalid' : '' }}">
+                                                <input required type="text" name="hb" id="hb" class="form-control{{ $errors->has('hb') ? ' is-invalid' : '' }}">
                                                 @if ($errors->has('hb'))
                                                 <span class="invalid-feedback">
 											<strong>{{ $errors->first('hb') }}</strong>
