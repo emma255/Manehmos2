@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Tasks;
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 class TasksController extends Controller
@@ -52,8 +52,8 @@ class TasksController extends Controller
         Tasks::create(request([
             'task_name', 'participant', 'comments', 'start_date', 'end_date',
         ]));
-        
-            session()->flash('flash_message', 'Task added successfully!!');
+
+        session()->flash('flash_message', 'Task added successfully!!');
 
         return redirect('admin/home');
     }
@@ -61,7 +61,7 @@ class TasksController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Tasks  $tasks
+     * @param  \App\Models\Task  $tasks
      * @return \Illuminate\Http\Response
      */
     public function show(Tasks $tasks)
@@ -73,7 +73,7 @@ class TasksController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Tasks  $tasks
+     * @param  \App\Models\Task  $tasks
      * @return \Illuminate\Http\Response
      */
     public function edit(Tasks $tasks)
@@ -85,7 +85,7 @@ class TasksController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Tasks  $tasks
+     * @param  \App\Models\Task  $tasks
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Tasks $tasks)
@@ -96,7 +96,7 @@ class TasksController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Tasks  $tasks
+     * @param  \App\Models\Task  $tasks
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -104,7 +104,7 @@ class TasksController extends Controller
 
         Tasks::where('id', $id)->delete();
 
-            session()->flash('flash_message', 'Task deleted successfully!!');
+        session()->flash('flash_message', 'Task deleted successfully!!');
 
         return redirect()->back();
     }

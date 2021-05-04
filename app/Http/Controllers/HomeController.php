@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -18,28 +19,25 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Renderable
      */
     public function index()
-    {        
+    {
         session()->flash('flash_message', 'Umefanikiwa kuingia kwenye manehmos. karibu!!');
 
         if (Auth::user()->position == 'Doctor') {
 
             return redirect('/progress');
-        }
-         elseif (Auth::user()->position == 'Clinical Attendant') {
+        } elseif (Auth::user()->position == 'Clinical Attendant') {
 
             return view('home');
-        }
-        elseif (Auth::user()->position == 'System Administrator') {
+        } elseif (Auth::user()->position == 'System Administrator') {
 
             return redirect('admin/home');
-        }
-        else{
+        } else {
 
             Auth::logout();
-            return view('error-view')->with('error_txt','You are not a valid user of Manehmos');
+            return view('error-view')->with('error_txt', 'You are not a valid user of Manehmos');
         }
     }
     //home

@@ -19,13 +19,13 @@ class CreateUsersTable extends Migration
             $table->string('worker_id', 255);
             $table->string('position', 20);
             $table->string('phone_no', 10);
-            $table->string('email');
-            $table->string('center',20);
-            $table->string('district',15);
+            $table->string('email')->unique();
+            $table->string('center', 20);
+            $table->string('district', 15);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->string('status',11)->default('active');
+            $table->string('status', 11)->default('active');
         });
     }
 

@@ -1,7 +1,0 @@
- git add 
- 
-  git add 
-     
- git commit -m "add admin home panel"
-
-git push -u origin master

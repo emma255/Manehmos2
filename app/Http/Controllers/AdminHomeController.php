@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Hash;
-use App\Tasks;
-use App\User;
+use App\Models\Tasks;
+use App\Models\User;
 use App\Mail\resetPassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -30,21 +30,18 @@ class AdminHomeController extends Controller
 
     public function users()
     {
-        $test  = User::where('position','!=','System Administrator')->first();
-        if($test != null){
+        $test  = User::where('position', '!=', 'System Administrator')->first();
+        if ($test != null) {
 
-        $details = User::where([['position', '!=', 'System Administrator'],['center',Auth::user()->center]])->get();
+            $details = User::where([['position', '!=', 'System Administrator'], ['center', Auth::user()->center]])->get();
 
-        // $doctors = User::where('position', 'Doctor')->get();
-        // $clinicians = User::where('position', 'Clinical Attendant')->get();
-        return view('admin.showUsers', compact('details'));
-        }
-
-        else {
+            // $doctors = User::where('position', 'Doctor')->get();
+            // $clinicians = User::where('position', 'Clinical Attendant')->get();
+            return view('admin.showUsers', compact('details'));
+        } else {
             $error_txt = 'No doctors and nurses registered';
-            return view('error-view')->with('error_txt',$error_txt);
+            return view('error-view')->with('error_txt', $error_txt);
         }
-
     }
 
     /**
@@ -58,21 +55,17 @@ class AdminHomeController extends Controller
 
         if ($name != null) {
 
-            $details = User::where([['name',$name],['position', '!=', 'System Administrator'],['center',Auth::user()->center]])->first();
+            $details = User::where([['name', $name], ['position', '!=', 'System Administrator'], ['center', Auth::user()->center]])->first();
 
-            if($details == null){
-                return view('error-view')->with('error_txt',$name.' does not exist in Manehmos');
-            }
-            else{
+            if ($details == null) {
+                return view('error-view')->with('error_txt', $name . ' does not exist in Manehmos');
+            } else {
 
-            return view('admin.userProfile')->with('profile',$details);
-            
+                return view('admin.userProfile')->with('profile', $details);
             }
         } else {
-            return view('error-view')->with('error_txt','User can not be null, Enter the whole name of the user first');
+            return view('error-view')->with('error_txt', 'User can not be null, Enter the whole name of the user first');
         }
-        
-
     }
 
     /**
@@ -94,18 +87,16 @@ class AdminHomeController extends Controller
      */
     public function show($id)
     {
-        if (User::find($id) == null){
-        session()->flash('flash_message', 'Failed!!');
-        $error_txt = 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
-        return view('error-view')->with('error_txt',$error_txt);
-
+        if (User::find($id) == null) {
+            session()->flash('flash_message', 'Failed!!');
+            $error_txt = 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
+            return view('error-view')->with('error_txt', $error_txt);
+        } else {
+            User::where('id', $id)->update(['status' => 'active',]);
         }
-        else{
-        User::where('id', $id) ->update(['status' => 'active',]);
-    }
         session()->flash('flash_message', 'User activated successfully!!');
         return redirect()->back();
-    }  
+    }
 
 
     /**
@@ -117,16 +108,15 @@ class AdminHomeController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        
-        if ($user == null) { 
-        
-        session()->flash('flash_message', 'User not found, no password changed!!');
 
-        return redirect()->intended('showUsers');
+        if ($user == null) {
 
+            session()->flash('flash_message', 'User not found, no password changed!!');
+
+            return redirect()->intended('showUsers');
         }
 
-        return view('admin.changePassword', ['user'=> $user]);
+        return view('admin.changePassword', ['user' => $user]);
     }
 
     /**
@@ -138,49 +128,44 @@ class AdminHomeController extends Controller
      */
     public function update($id)
     {
-        $to = User::where('id',$id)->first();
+        $to = User::where('id', $id)->first();
 
-        if (User::find($id) == null){
+        if (User::find($id) == null) {
             session()->flash('flash_message', 'Failed!!');
 
             $error_txt = 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
-            return view('error-view')->with('error_txt',$error_txt);
-        }
-        else{
+            return view('error-view')->with('error_txt', $error_txt);
+        } else {
 
-        $this->validate(request(), [
-            'password' => 'confirmed',
-        ]);
+            $this->validate(request(), [
+                'password' => 'confirmed',
+            ]);
 
-        $password = request()->password;
+            $password = request()->password;
 
-        if(strlen($password) > 6){
+            if (strlen($password) > 6) {
 
-            User::where('id', $id) ->update(
-            ['password'=>Hash::make($password),]
-            );
+                User::where('id', $id)->update(
+                    ['password' => Hash::make($password),]
+                );
 
-            try{
-                \Mail::to($to->email)->send(new resetPassword($password));
-            }
+                try {
+                    \Mail::to($to->email)->send(new resetPassword($password));
+                } catch (\Exception $e) {
 
-            catch(\Exception $e){
-
-                return view('error-view')
-                ->with('error_txt','Failed to submit your request, 
+                    return view('error-view')
+                        ->with('error_txt', 'Failed to submit your request,
                 password changed but message did not sent. Try o send it manually.');
+                }
+
+                session()->flash('flash_message', 'Password changed successfully and message is sent to user!!');
+
+                return redirect('/showUsers');
+            } else {
+                return view('error-view')
+                    ->with('error_txt', 'The password can not be less than 6 characters, try another password');
             }
-
-        session()->flash('flash_message', 'Password changed successfully and message is sent to user!!');
-
-        return redirect('/showUsers');
-    }
-
-    else {
-        return view('error-view')
-        ->with('error_txt','The password can not be less than 6 characters, try another password');
         }
-    }
     }
 
     /**
@@ -191,19 +176,18 @@ class AdminHomeController extends Controller
      */
     public function destroy($id)
     {
-        if (User::find($id) == null){
+        if (User::find($id) == null) {
             session()->flash('flash_message', 'Failed!!');
 
             $error_txt = 'user does not exist no updates taken place, go back to <a href="/showUsers"> users page</a>';
-            return view('error-view')->with('error_txt',$error_txt);
-        }
-        else{
+            return view('error-view')->with('error_txt', $error_txt);
+        } else {
 
-        User::where('id', $id)->update(
-        ['status' => 'Deactivated',]
-        );
-    }
-            session()->flash('flash_message', 'User deactivated successfully!!');
+            User::where('id', $id)->update(
+                ['status' => 'Deactivated',]
+            );
+        }
+        session()->flash('flash_message', 'User deactivated successfully!!');
 
         return redirect()->back();
     }
