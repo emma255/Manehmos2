@@ -17,14 +17,15 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('email') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}"
-                                    required autofocus> @if ($errors->has('name'))
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autofocus>
+                                @error('email')
                                 <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('name') }}</strong>
-                                </span> @endif
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -32,11 +33,12 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"
-                                    required> @if ($errors->has('password'))
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required>
+                                @error('password')
                                 <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span> @endif
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -57,7 +59,7 @@
                                 </button>
 
                                 {{-- <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
+                                {{ __('Forgot Your Password?') }}
                                 </a> --}}
                             </div>
                         </div>
