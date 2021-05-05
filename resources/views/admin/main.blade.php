@@ -1,7 +1,7 @@
 @include('admin.head')
 
 <body class="">
-    <div class="col-md-12 row bg-black" align="center">
+    <div class="col-md-12 text-center bg-black">
         <h3>MATERNAL AND NEWBORN HEALTH MONITORING SYSTEM (Manehmos)</h3>
     </div>
     <div class="hold-transition skin-blue sidebar-mini col-md-12">
@@ -23,7 +23,7 @@
                     <span class="sr-only">Toggle navigation</span>
                 </a>
                 <div class="navbar-custom-menu">
-                    <l class="nav navbar-nav">
+                    <ul class="nav navbar-nav">
                         <!-- Tasks: style can be found in dropdown.less -->
                         <li class="dropdown tasks-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -80,7 +80,7 @@
                                 </li>
                             </ul>
                         </li>
-                        </ul>
+                    </ul>
                 </div>
             </nav>
         </header>
@@ -116,7 +116,7 @@
                     <li class="header">MAIN NAVIGATION</li>
 
                     <!-- accounts -->
-                    <li class="treeview">
+                    <li class="treeview{{Request::is('accounts/*')?' active menu-open':''}}">
                         <a href="#">
                             <i class="fa fa-user-o"></i>
                             <span>Accounts</span>
@@ -125,13 +125,13 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li>
-                                <a href="{{ route('register') }}">
-                                    <i class="fa fa-user-plus"></i> Create account</a>
+                            <li class="{{Request::is('accounts/users/create')?' active':''}}">
+                                <a href="{{ route('users.create') }}">
+                                    <i class="fa fa-user-plus"></i> Create account
+                                </a>
                             </li>
-                            <li>
-                                <a href="{{ asset('/showUsers')}}">
-                                    <i class="fa fa-user-md"></i> View accounts</a>
+                            <li class="{{Request::is('accounts/users/list')?' active':''}}">
+                                <a href="{{ route('users.list')}}"><i class="fa fa-user-md"></i> View accounts</a>
                             </li>
                         </ul>
                     </li>
@@ -190,23 +190,14 @@
     <script src="{{ asset('bower_components/raphael/raphael.min.js') }}"></script>
     <script src="{{ asset('bower_components/morris.js/morris.min.js') }}"></script>
 
-    <!-- Sparkline -->
-    <script src="{{ asset('bower_components/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
-
-    <!-- jvectormap -->
-    <script src="{{ asset('plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
-    <script src="{{ asset('plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
-
-    <!-- jQuery Knob Chart -->
-    <script src="{{ asset('bower_components/jquery-knob/dist/jquery.knob.min.js') }}"></script>
-
     <!-- daterangepicker -->
     <script src="{{ asset('bower_components/moment/min/moment.min.js') }}"></script>
     <script src="{{ asset('bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
 
-
     <!-- datepicker -->
     <script src="{{ asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+    <!-- toastr -->
+    <script src="{{ asset('plugins/toastr/toastr.min.js') }}"></script>
 
     <!-- Bootstrap WYSIHTML5 -->
     <script src="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
@@ -219,12 +210,20 @@
 
     <!-- AdminLTE App -->
     <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
+    <script type="text/javascript">
+        $('#calendar').datepicker();
 
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
+        $(function() {
+            if ("<?php echo(Session::has('success')) ?>") {
+                toastr.success("{{ Session::get('success') }}", "Success")
+            } else if ("<?php echo(Session::has('warning')) ?>") {
+                toastr.warning("{{ Session::get('warning') }}", "Warning")
+            } else if ("<?php echo(Session::has('error')) ?>") {
+                toastr.error("{{ Session::get('error') }}", "Error")
+            }
+        })
 
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{ asset('dist/js/demo.js') }}"></script>
+    </script>
 </body>
 
 </html>

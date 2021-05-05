@@ -5,48 +5,55 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('homepage', 'HomeController@home')->middleware('clinician');
-Route::resource('Admin', 'AdminHomeController');
+Route::get('homepage', 'HomeController@index')->name('home');
 Route::resource('AdminTasks', 'TasksController');
-Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
-Route::get('child/register', 'RegisterChildController@create')->middleware('auth');
-Route::get('maternal/register', 'RegisterMaternalController@create')->middleware('auth');
-Route::get('showUsers', 'AdminHomeController@users')->middleware('auth');
-Route::get('showTasks', 'TasksController@show')->middleware('auth');
-Route::get('postnatal', 'PostnatalController@create')->middleware('auth');
-Route::get('infant', 'InfantController@create')->middleware('auth');
-Route::get('register6', 'Register6Controller@create')->middleware('auth');
-Route::get('register7', 'Register7Controller@create')->middleware('auth');
-Route::get('register13', 'Register13Controller@create')->middleware('auth');
-Route::get('admin/home', 'AdminHomeController@index')->middleware('auth');
-Route::get('task/create', 'TasksController@create')->middleware('auth');
-Route::get('progress', 'ProgressController@index2')->middleware('auth')->middleware(['doctor']);
-Route::get('progress2', 'ProgressController@index1')->middleware('auth')->middleware(['clinician']);
-Route::get('request/progress', 'ProgressController@showChart')->middleware('auth');
 Route::get('registrationForm', 'RegistrationFormController@create')->middleware('guest');
-Route::get('user/profile', 'AdminHomeController@userProfile')->middleware('auth');
-// start reports routes
-Route::get('pdf', 'PDFController@index')->middleware('auth');
-Route::get('pdf/export', 'PDFController@export')->middleware('auth');
-Route::post('report/request', 'ReportsController@testcase')->middleware('auth');
-Route::get('reportHome', 'ReportsController@index')->middleware('auth');
-Route::get('mtoto/print', 'ReportsController@mtotoPrint')->middleware('auth');
-Route::get('IVDactivities/print', 'ReportsController@IVDactivitiesPrint')->middleware('auth');
-Route::get('antenatal/print', 'ReportsController@antenatalPrint')->middleware('auth');
-Route::get('reports/postnatal', 'ReportsController@postnatal')->name('postnatalReport')->middleware('auth');
-Route::get('reports/IVD_activities', 'ReportsController@ivd_activities')->name('ivd')->middleware('auth');
-Route::get('reports/ufuatiliaji_mtoto', 'ReportsController@ufuatiliaji_mtoto')->name('ufuatiliaji_mtoto')->middleware('auth');
-Route::get('reports/antenatal', 'ReportsController@antenatal')->name('antenatal')->middleware('auth');
-// end reports routes
-
-//posts
 Route::post('send/details', 'RegistrationFormController@send')->middleware('guest');
-Route::post('maternal/store', 'RegisterMaternalController@store')->middleware('auth');
-Route::post('postnatal/store', 'PostnatalController@store')->middleware('auth');
-Route::post('infant/store', 'InfantController@store')->middleware('auth');
-Route::post('register6/store', 'Register6Controller@store')->middleware('auth');
-Route::post('register7/store', 'Register7Controller@store')->middleware('auth');
-Route::post('register13/store', 'Register13Controller@store')->middleware('auth');
-Route::post('child/store', 'RegisterChildController@store')->middleware('auth');
-Route::post('task/store', 'TasksController@store')->middleware('auth');
-Route::post('postnatal/print', 'ReportsController@postnatalPrint')->middleware('auth');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('accounts/users/list', 'UsersController@index')->name('users.list');
+    Route::get('accounts/users/create', 'UsersController@create')->name('users.create');
+    Route::post('accounts/users/store', 'UsersController@store')->name('users.store');
+    Route::get('accounts/users/edit/{user}', 'UsersController@edit')->name('users.edit');
+    Route::post('accounts/users/update/{user}', 'UsersController@update')->name('users.update');
+    Route::post('accounts/users/delete/{user}', 'UsersController@destroy')->name('users.delete');
+    Route::get('child/register', 'RegisterChildController@create');
+    Route::get('maternal/register', 'RegisterMaternalController@create');
+    Route::get('tasks/show', 'TasksController@show');
+    Route::get('postnatal', 'PostnatalController@create');
+    Route::get('infant', 'InfantController@create');
+    Route::get('register6', 'Register6Controller@create');
+    Route::get('register7', 'Register7Controller@create');
+    Route::get('register13', 'Register13Controller@create');
+    Route::get('admin/home', 'AdminHomeController@index');
+    Route::get('task/create', 'TasksController@create');
+    Route::get('request/progress', 'ProgressController@showChart');
+    Route::get('user/profile', 'AdminHomeController@userProfile');
+    // start reports routes
+    Route::get('pdf', 'PDFController@index');
+    Route::get('pdf/export', 'PDFController@export');
+    Route::post('report/request', 'ReportsController@testcase');
+    Route::get('reportHome', 'ReportsController@index');
+    Route::get('mtoto/print', 'ReportsController@mtotoPrint');
+    Route::get('IVDactivities/print', 'ReportsController@IVDactivitiesPrint');
+    Route::get('antenatal/print', 'ReportsController@antenatalPrint');
+    Route::get('reports/postnatal', 'ReportsController@postnatal')->name('postnatalReport');
+    Route::get('reports/IVD_activities', 'ReportsController@ivd_activities')->name('ivd');
+    Route::get('reports/ufuatiliaji_mtoto', 'ReportsController@ufuatiliaji_mtoto')->name('ufuatiliaji_mtoto');
+    Route::get('reports/antenatal', 'ReportsController@antenatal')->name('antenatal');
+    // end reports routes
+
+    //posts
+    Route::post('maternal/store', 'RegisterMaternalController@store');
+    Route::post('postnatal/store', 'PostnatalController@store');
+    Route::post('infant/store', 'InfantController@store');
+    Route::post('register6/store', 'Register6Controller@store');
+    Route::post('register7/store', 'Register7Controller@store');
+    Route::post('register13/store', 'Register13Controller@store');
+    Route::post('child/store', 'RegisterChildController@store');
+    Route::post('task/store', 'TasksController@store');
+    Route::post('postnatal/print', 'ReportsController@postnatalPrint');
+    Route::get('progress', 'ProgressController@index2')->middleware(['doctor']);
+    Route::get('progress2', 'ProgressController@index1')->middleware(['clinician']);
+});

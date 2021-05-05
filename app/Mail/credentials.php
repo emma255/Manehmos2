@@ -16,11 +16,10 @@ class credentials extends Mailable
      *
      * @return void
      */
-     public $request;
+    public $request;
 
     public function __construct($request)
     {
-        //
         $this->request = $request;
     }
     /**

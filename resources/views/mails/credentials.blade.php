@@ -4,16 +4,16 @@
 
 
 
-- Username yako ni {{$request->name}}
+- Username yako ni {{$request->email}}
 
 - password ni {{$request->password}}
 
- @component('mail::button', ['url' => 'http://127.0.0.1:8000/login'])
+@component('mail::button', ['url' => 'http://127.0.0.1:8000/login'])
 
- Login to Manehmos
+Login to Manehmos
 
-  @endcomponent
+@endcomponent
 
-  Thanks,
+Thanks,
 
 <br> {{ config('app.name') }} @endcomponent

@@ -23,13 +23,13 @@ class ReportsController extends Controller
     public function testcase()
     {
         $vals = request();
-        return redirect()->route(request()->reportType, ['month'=> request()->month, 'year'=>request()->year, 'uses'=>'ReportsController@postanatal']);
+        return redirect()->route(request()->reportType, ['month' => request()->month, 'year' => request()->year, 'uses' => 'ReportsController@postanatal']);
     }
 
-// print the postnatal report
+    // print the postnatal report
     public function postnatal()
     {
-        $file_name = 'postnatal_report_'.date(" F ", mktime(0, 0, 0, request('month'), 10)).'_'.request('year').'.pdf';
+        $file_name = 'postnatal_report_' . date(" F ", mktime(0, 0, 0, request('month'), 10)) . '_' . request('year') . '.pdf';
         $pdf = PDF::loadview('reports.postnatal');
         // $pdf->save(storage_path('/reports/postnatal/'.$file_name));
         $pdf->download($file_name);
@@ -37,22 +37,22 @@ class ReportsController extends Controller
         return redirect('homepage');
     }
 
-//print the ivd activities report
+    //print the ivd activities report
     public function ivd_activities()
     {
         return view('reports.IVD_activities');
     }
 
-//print ufuatiliaji mtoto report
+    //print ufuatiliaji mtoto report
     public function ufuatiliaji_mtoto()
     {
         return view('reports.ufuatiliaji_mtoto');
     }
 
-//print antenatal report
+    //print antenatal report
     public function antenatal()
     {
-        $file_name = 'antenatal_report_'.date(" F ", mktime(0, 0, 0, request('month'), 10)).'_'.request('year').'.pdf';
+        $file_name = 'antenatal_report_' . date(" F ", mktime(0, 0, 0, request('month'), 10)) . '_' . request('year') . '.pdf';
         $pdf = PDF::loadview('reports.antenatal');
         // $pdf->save(storage_path('/reports/antenatal/'.$file_name));
         $pdf->download($file_name);
