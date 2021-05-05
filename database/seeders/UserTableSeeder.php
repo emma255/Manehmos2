@@ -28,7 +28,7 @@ class UserTableSeeder extends Seeder
                 'center' => 'sawala dispensary',
                 'district' => 'Mufindi',
                 'password' => bcrypt('aemmanuel199@gmail.com'),
-                'remember_token' => 'BCbZa7FB7rul7wMcRSJG7rGqtTUakRC1UPCmR80jKRs1tlLHTwCiIV36HuLC',
+                'remember_token' => Str::random(20),
             ]
         );
 
