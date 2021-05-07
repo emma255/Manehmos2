@@ -6,21 +6,30 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('homepage', 'HomeController@index')->name('home');
-Route::resource('AdminTasks', 'TasksController');
 Route::get('registrationForm', 'RegistrationFormController@create')->middleware('guest');
 Route::post('send/details', 'RegistrationFormController@send')->middleware('guest');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
+    #User accounts
     Route::get('accounts/users/list', 'UsersController@index')->name('users.list');
     Route::get('accounts/users/create', 'UsersController@create')->name('users.create');
     Route::post('accounts/users/store', 'UsersController@store')->name('users.store');
     Route::get('accounts/users/edit/{user}', 'UsersController@edit')->name('users.edit');
     Route::post('accounts/users/update/{user}', 'UsersController@update')->name('users.update');
     Route::post('accounts/users/delete/{user}', 'UsersController@destroy')->name('users.delete');
-    Route::get('child/register', 'RegisterChildController@create');
+    # Tasks
+    Route::get('tasks/list', 'TasksController@index')->name('tasks.list');
+    Route::get('tasks/create', 'TasksController@create')->name('tasks.create');
+    Route::post('tasks/store', 'TasksController@store')->name('tasks.store');
+    Route::get('tasks/edit', 'TasksController@edit')->name('tasks.edit');
+    Route::post('tasks/update', 'TasksController@update')->name('tasks.update');
+    Route::get('tasks/show', 'TasksController@show')->name('tasks.show');
+    Route::post('tasks/delete', 'TasksController@destroy')->name('tasks.delete');
+    #
+    Route::post('child/delete', 'RegisterChildController@delete');
+    Route::get('child/show', 'RegisterChildController@create');
     Route::get('maternal/register', 'RegisterMaternalController@create');
-    Route::get('tasks/show', 'TasksController@show');
     Route::get('postnatal', 'PostnatalController@create');
     Route::get('infant', 'InfantController@create');
     Route::get('register6', 'Register6Controller@create');

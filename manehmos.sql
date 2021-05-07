@@ -506,7 +506,7 @@ CREATE TABLE `register_maternals` (
 
 CREATE TABLE `tasks` (
   `id` int(10) UNSIGNED NOT NULL,
-  `task_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `participant` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `comments` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `start_date` date NOT NULL,

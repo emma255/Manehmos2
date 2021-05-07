@@ -15,7 +15,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('js/manehmos.js') }}" rel="javascript">
-    <link href="{{ asset('bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('bower_components/Ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('plugins/Ionicons/css/ionicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('imgs/icon5.png') }}" rel="shortcut icon" type="image/x-icon">
 </head>

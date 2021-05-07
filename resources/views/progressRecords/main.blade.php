@@ -2,16 +2,16 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Progress Chart | Manehmos</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('dist/css/AdminLTE.min.css') }}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Progress Chart | Manehmos</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/AdminLTE.min.css') }}">
 
-   @yield('content')
+    @yield('content')
 
 <body class="hold-transition bg-danger">
     <div class="">
@@ -62,9 +62,9 @@
         <!-- Main Footer -->
         <footer class="footer">
             <!-- To the right -->
-            <div class="pull-right hidden-xs">            
-            <!-- Default to the left -->
-            <strong>Copyright &copy; 2018 Manehmos.</strong></div>
+            <div class="pull-right hidden-xs">
+                <!-- Default to the left -->
+                <strong>Copyright &copy; 2018 Manehmos.</strong></div>
         </footer>
         <!-- Add the sidebar's background. This div must be placed
   immediately after the control sidebar -->
@@ -75,9 +75,9 @@
     <!-- REQUIRED JS SCRIPTS -->
 
     <!-- jQuery 3 -->
-    <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('plugins/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap 3.3.7 -->
-    <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
     <!-- Optionally, you can add Slimscroll and FastClick plugins.

@@ -23,8 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        session()->flash('success', 'Umefanikiwa kuingia kwenye manehmos. karibu!!');
-
         if (Auth::user()->position == 'Doctor') {
             return redirect('/progress');
         } elseif (Auth::user()->position == 'Clinical Attendant') {

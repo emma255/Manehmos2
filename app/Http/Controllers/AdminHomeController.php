@@ -18,6 +18,6 @@ class AdminHomeController extends Controller
 
     public function index()
     {
-        return view('admin.adminHome', ['tasks' => Tasks::take(3)->get()]);
+        return view('admin.home', ['tasks' => Tasks::take(3)->get()]);
     }
 }
