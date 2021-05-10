@@ -1,10 +1,9 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
+<div class="row">
     <div class="col-md-7 card">
         <div class="card-header form-group">Angalia maendeleo ya ukuaji</div>
         <div class="card-body form-group">
-            <br>
             <form action="{{ asset('/request/progress')}}" method="get">
                 <div class="input-group">
                     <div class="col-md-12 row form-group">
@@ -18,8 +17,8 @@
                                 <option value="mjamzito">Mjamzito</option>
                             </select> @if ($errors->has('type'))
                             <span class="invalid-feedback">
-                                   <strong>{{ $errors->first('type') }}</strong>
-                               </span> @endif
+                                <strong>{{ $errors->first('type') }}</strong>
+                            </span> @endif
                         </div>
                         <div class="col-md-5 form-group">
                             <div class="input-group form-group">
@@ -29,8 +28,8 @@
                                     </button>
                                 </span> @if ($errors->has('namba'))
                                 <span class="invalid-feedback">
-                                   <strong>{{ $errors->first('namba') }}</strong>
-                               </span> @endif
+                                    <strong>{{ $errors->first('namba') }}</strong>
+                                </span> @endif
                             </div>
                         </div>
                     </div>

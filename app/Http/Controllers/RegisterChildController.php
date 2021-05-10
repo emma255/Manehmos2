@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\RegisterChild;
-use App\RegisterMaternal;
+use App\Models\RegisterMaternal;
 use Illuminate\Http\Request;
 
 class RegisterChildController extends Controller
@@ -52,9 +52,9 @@ class RegisterChildController extends Controller
             'mahali_anapoishi_mtoto' => 'required',
         ]);
 
-        $test1 = RegisterChild::where('namba_ya_mtoto',request('namba_ya_mtoto'))->first();
+        $test1 = RegisterChild::where('namba_ya_mtoto', request('namba_ya_mtoto'))->first();
 
-        $test2 = RegisterMaternal::where('namba_ya_usajili',request('jina_la_mama'))->first();
+        $test2 = RegisterMaternal::where('namba_ya_usajili', request('jina_la_mama'))->first();
 
         if ($test1 == null) {
             if ($test2 != null) {
@@ -73,20 +73,15 @@ class RegisterChildController extends Controller
                 session()->flash('flash_message', 'Taarifa za usajili za mtoto zimeshahifadhiwa!');
 
                 return view('registers.infant_progress');
-
             } else {
 
                 return view('error-view')
-                ->with('error_txt','Hakuna taarifa za mama zinazoendana na taarifa za mtoto. Hakikisha namba ya mama ni sahihi');
+                    ->with('error_txt', 'Hakuna taarifa za mama zinazoendana na taarifa za mtoto. Hakikisha namba ya mama ni sahihi');
             }
-            
         } else {
 
-            return view('error-view')->with('error_txt','Tahadhari, mtoto alishasajiliwa');
+            return view('error-view')->with('error_txt', 'Tahadhari, mtoto alishasajiliwa');
         }
-        
-
-
     }
 
     /**

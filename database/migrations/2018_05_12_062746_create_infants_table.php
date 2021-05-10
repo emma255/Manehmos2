@@ -15,25 +15,23 @@ class CreateInfantsTable extends Migration
     {
         Schema::create('infants', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('jina_la_mtoto',30);
-            $table->string('namba_ya_usajili',10);
-            $table->foreign('namba_ya_usajili')->references('namba_ya_mtoto')->on('register_children')->onDelete('cascade');
-            $table->string('hudhurio',17);
-            $table->string('aina',5);
+            $table->foreignId('namba_ya_usajili')->constrained('register_children')->onDelete('cascade');
+            $table->string('hudhurio', 17);
+            $table->string('aina', 5);
             $table->date('tarehe');
-            $table->float('joto',4);
+            $table->float('joto', 4);
             $table->unsignedSmallInteger('uzito');
-            $table->float('hb',4);
-            $table->string('maambukizi_machoni',6);
-            $table->string('maambukizi_mdomoni',6);
-            $table->string('maambukizi_kitovu',6);
-            $table->string('lishe',3);
-            $table->string('uambukizo_mkali',6);
-            $table->string('kmc',6);
-            $table->string('maambukizi_ngozini',6);
+            $table->float('hb', 4);
+            $table->string('maambukizi_machoni', 6);
+            $table->string('maambukizi_mdomoni', 6);
+            $table->string('maambukizi_kitovu', 6);
+            $table->string('lishe', 3);
+            $table->string('uambukizo_mkali', 6);
+            $table->string('kmc', 6);
+            $table->string('maambukizi_ngozini', 6);
             $table->date('tarehe_BCG')->nullable();
             $table->date('tarehe_OPVO')->nullable();
-            $table->string('matatizo_mengine',60);
+            $table->string('matatizo_mengine', 60);
             $table->date('tarehe_ya_kurudi');
             $table->timestamps();
         });

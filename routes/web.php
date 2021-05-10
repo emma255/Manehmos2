@@ -29,10 +29,13 @@ Route::group(['middleware' => ['auth']], function () {
     #
     Route::post('child/delete', 'RegisterChildController@delete');
     Route::get('child/show', 'RegisterChildController@create');
-    Route::get('maternal/register', 'RegisterMaternalController@create');
+    Route::get('maternals', 'RegisterMaternalController@index')->name('maternals');
+    Route::get('maternal/register', 'RegisterMaternalController@create')->name('maternal.add');
+    Route::post('maternal/store', 'RegisterMaternalController@store')->name('maternal.store');
     Route::get('postnatal', 'PostnatalController@create');
     Route::get('infant', 'InfantController@create');
-    Route::get('register6', 'Register6Controller@create');
+    Route::get('register6/{maternal?}', 'Register6Controller@create')->name('register6');
+    Route::post('register6/store/{maternal?}', 'Register6Controller@store')->name('register6.store');
     Route::get('register7', 'Register7Controller@create');
     Route::get('register13', 'Register13Controller@create');
     Route::get('admin/home', 'AdminHomeController@index');
@@ -54,10 +57,8 @@ Route::group(['middleware' => ['auth']], function () {
     // end reports routes
 
     //posts
-    Route::post('maternal/store', 'RegisterMaternalController@store');
     Route::post('postnatal/store', 'PostnatalController@store');
     Route::post('infant/store', 'InfantController@store');
-    Route::post('register6/store', 'Register6Controller@store');
     Route::post('register7/store', 'Register7Controller@store');
     Route::post('register13/store', 'Register13Controller@store');
     Route::post('child/store', 'RegisterChildController@store');

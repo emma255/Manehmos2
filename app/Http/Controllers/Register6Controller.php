@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Register6;
-use App\RegisterMaternal;
+use App\Models\Register6;
+use App\Models\RegisterMaternal;
 use Illuminate\Http\Request;
 
 class Register6Controller extends Controller
@@ -28,9 +28,9 @@ class Register6Controller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(RegisterMaternal $maternal)
     {
-        return view('registers.register6');
+        return view('registers.register6', ['maternal' => $maternal]);
     }
 
     /**
@@ -39,11 +39,9 @@ class Register6Controller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(RegisterMaternal $maternal)
     {
-
         $this->validate(request(), [
-            'namba_ya_usajili' => 'required',
             'matokeo_stds_mume' => 'required',
             'mume_ametibiwa' => 'required',
             'matokeo_stds_mke' => 'required',
@@ -92,89 +90,32 @@ class Register6Controller extends Controller
             'mume_kipimo_aina' => 'required',
             'mke_kipimo_aina' => 'required',
             'uzito' => 'required|numeric',
-
         ]);
 
-
-        $test1 = RegisterMaternal::where('namba_ya_usajili',request('namba_ya_usajili'))->first();
-        $test3 = Register6::where([['namba_ya_usajili',request('namba_ya_usajili')],['tarehe_ya_hudhurio',request('tarehe_ya_hudhurio')]])->first();
-
-
-        if($test1 != null){
-            if($test3 == null){
-
-                Register6::create(request([
-                    'mume_kipimo_aina',
-                    'mke_kipimo_aina',
-                    'hudhurio',
-                    'uzito',
-                    'tarehe_ya_marudio',
-                    'tarehe_ya_hudhurio',
-                    'namba_ya_usajili',
-                    'matokeo_stds_mume',
-                    'mume_ametibiwa',
-                    'matokeo_stds_mke',
-                    'mke_ametibiwa',
-                    'damu_HB',
-                    'BP',
-                    'sukari_kwenye_mkojo',
-                    'kaswende_mume',
-                    'mume_ametibiwa_kaswende',
-                    'kaswende_mke',
-                    'mke_ametibiwa_kaswende',
-                    'mume_tayari_ana_VVU',
-                    'mume_tarehe_ya_unasihi',
-                    'mume_amepima_VVU',
-                    'mume_tarehe_ya_kipimo',
-                    'mume_kipimo1_VVU',
-                    'mume_unasihi_baada_ya_kipimo_1',
-                    'mke_tayari_ana_VVU',
-                    'mke_tarehe_ya_unasihi',
-                    'mke_amepima_VVU',
-                    'mke_tarehe_ya_kipimo',
-                    'mke_kipimo1_VVU',
-                    'mke_unasihi_baada_ya_kipimo_1',
-                    'hana_matatizo',
-                    'Anaemia',
-                    'Protenuria',
-                    'high_BP',
-                    'kutoongezeka_uzito',
-                    'damu_ukeni',
-                    'mlalo_mbaya_wa_mtoto',
-                    'albendazole_mebendazole',
-                    'vidonge_vya_I_FA',
-                    'mrdt_o_bs',
-                    'llin',
-                    'ipt',
-                    'tarehe_ya_ipt',
-                    'maoni',
-                    'tarehe_rufaa',
-                    'rufaa_alikopelekwa',
-                    'sababu_ya_rufaa',
-                    'ana_kadi',
-                    'TT',
-                    'tarehe_ya_TT',
-                ]));
-
-                session()->flash('flash_message', 'Taarifa za mtuha namba 6 zimeshahifadhiwa!');
-
-                return view('home');
-            }
-            else {
-                return view('error-view')->with('error_txt','Tahadhali, taarifa za marudio za mama zilishahifadhiwa');
-
-            }
+        if (!$maternal) {
+            session()->flash('error', 'Tafadhali, msajili kwanza mama ndipo uweze kujaza taarifa zake za maendeleo baada ya ujauzito');
+            return back();
         }
 
-        else {
-            return view('error-view')->with('error_txt','Tafadhali, msajili kwanza mama ndipo uweze kujaza taarifa zake za maendeleo baada ya ujauzito');
+        if (count($maternal->attendings->where('tarehe_ya_hudhurio', request('tarehe_ya_hudhurio')))) {
+            return session()->flash('error', 'Tahadhali, taarifa za rudio hili la mama zilishahifadhiwa');
         }
+
+        $register6 = $maternal->attendings()->create(request()->toArray());
+
+        if (!$register6) {
+            session()->flash('error', 'Imeshindwa kuhifadhi taarifa, tafadhali jaribu tena.');
+            return back();
+        }
+
+        session()->flash('success', 'Taarifa za mtuha namba 6 zimeshahifadhiwa!');
+        return redirect()->route('home');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\register6  $register6
+     * @param  \App\Models\Register6  $register6
      * @return \Illuminate\Http\Response
      */
     public function show(register6 $register6)
@@ -185,7 +126,7 @@ class Register6Controller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\register6  $register6
+     * @param  \App\Models\Register6  $register6
      * @return \Illuminate\Http\Response
      */
     public function edit(register6 $register6)
@@ -197,7 +138,7 @@ class Register6Controller extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\register6  $register6
+     * @param  \App\Models\Register6  $register6
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, register6 $register6)
@@ -208,7 +149,7 @@ class Register6Controller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\register6  $register6
+     * @param  \App\Models\Register6  $register6
      * @return \Illuminate\Http\Response
      */
     public function destroy(register6 $register6)

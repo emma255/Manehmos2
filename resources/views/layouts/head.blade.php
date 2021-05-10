@@ -13,9 +13,9 @@
     <title>{{ config('app.name', 'Manehmos') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('js/manehmos.js') }}" rel="javascript">
     <link href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('plugins/Ionicons/css/ionicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('imgs/icon5.png') }}" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="{{ asset('plugins/toastr/toastr.min.css') }}">
 </head>

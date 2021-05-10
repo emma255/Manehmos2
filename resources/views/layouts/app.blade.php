@@ -13,6 +13,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('plugins/toastr/toastr.min.css') }}">
 </head>
 
 <body>
@@ -22,8 +23,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Manehmos') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -41,16 +41,15 @@
                         <li><a class="nav-link" href="{{ asset('/registrationForm')}}">{{ __('Register') }}</a></li>
                         @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                    {{ __('Logout') }}
+                                </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
@@ -68,16 +67,31 @@
             @if(Session::has('flash_message'))
 
             <div class="alert alert-success text-capitalize text-center">
-                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>
-            {{ Session::get('flash_message') }}</div>
-
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>
+                {{ Session::get('flash_message') }}</div>
             @endif
-            @yield('content')
+            <div class="container"> @yield('content')
+            </div>
         </main>
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <!-- toastr -->
+    <script src="{{ asset('plugins/toastr/toastr.min.js') }}"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            if ("<?php echo(Session::has('success')) ?>") {
+                toastr.success("{{ Session::get('success') }}", "Success")
+            } else if ("<?php echo(Session::has('warning')) ?>") {
+                toastr.warning("{{ Session::get('warning') }}", "Warning")
+            } else if ("<?php echo(Session::has('error')) ?>") {
+                toastr.error("{{ Session::get('error') }}", "Error")
+            }
+        })
+
+    </script>
 </body>
 
 </html>
