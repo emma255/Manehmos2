@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\RegisterChild;
+use App\Models\RegisterChild;
 use App\Models\RegisterMaternal;
 use Illuminate\Http\Request;
 
@@ -20,7 +20,7 @@ class RegisterChildController extends Controller
 
     public function index()
     {
-        //
+        return view('children.infants', ['infants' => RegisterChild::all()]);
     }
 
     /**
@@ -30,7 +30,7 @@ class RegisterChildController extends Controller
      */
     public function create()
     {
-        return view('registration.child_register');
+        return view('children.add');
     }
 
     /**
@@ -52,36 +52,24 @@ class RegisterChildController extends Controller
             'mahali_anapoishi_mtoto' => 'required',
         ]);
 
-        $test1 = RegisterChild::where('namba_ya_mtoto', request('namba_ya_mtoto'))->first();
-
-        $test2 = RegisterMaternal::where('namba_ya_usajili', request('jina_la_mama'))->first();
-
-        if ($test1 == null) {
-            if ($test2 != null) {
-
-                RegisterChild::create(request([
-                    'tarehe_ya_kuandikishwa',
-                    'namba_ya_usajili_RITA',
-                    'jina_la_mtoto',
-                    'namba_ya_mtoto',
-                    'jinsia',
-                    'namba_ya_HEID',
-                    'jina_la_mama',
-                    'mahali_anapoishi_mtoto',
-                ]));
-
-                session()->flash('flash_message', 'Taarifa za usajili za mtoto zimeshahifadhiwa!');
-
-                return view('registers.infant_progress');
-            } else {
-
-                return view('error-view')
-                    ->with('error_txt', 'Hakuna taarifa za mama zinazoendana na taarifa za mtoto. Hakikisha namba ya mama ni sahihi');
-            }
+        if (RegisterChild::where('namba_ya_mtoto', request('namba_ya_mtoto'))->first()) {
+            session()->flash('error', 'Tahadhari, mtoto alishasajiliwa');
         } else {
+            $maternal = RegisterMaternal::where('namba_ya_usajili', request('maternal_id'))->first();
 
-            return view('error-view')->with('error_txt', 'Tahadhari, mtoto alishasajiliwa');
+            if (!$maternal) {
+                session()->flash('error', 'Hakuna taarifa za mama zinazoendana na taarifa za mtoto. Hakikisha namba ya mama ni sahihi');
+            } else {
+                $child = $maternal->children()->create(request()->toArray());
+                if ($child) {
+                    session()->flash('success', 'Taarifa za usajili za mtoto zimeshahifadhiwa!');
+                    return redirect()->route();
+                } else {
+                    session()->flash('error', 'Taarifa za usajili za mtoto hazijahifadhiwa, jaribu tena!');
+                }
+            }
         }
+        return back();
     }
 
     /**

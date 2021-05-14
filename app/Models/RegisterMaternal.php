@@ -12,4 +12,9 @@ class RegisterMaternal extends Model
     {
         return $this->hasMany(Register6::class, 'maternal_id');
     }
+
+    public function children()
+    {
+        return $this->hasMany(RegisterChild::class, 'maternal_id');
+    }
 }

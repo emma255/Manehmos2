@@ -24,7 +24,7 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="{{ route('maternal.add') }}">{{ __('MAMA') }}</a>
                         <!-- <a class="dropdown-item" href="{{ url('husband/register') }}">{{ __('BABA') }}</a> -->
-                        <a class="dropdown-item" href="{{ url('child/register') }}">{{ __('MTOTO') }}</a>
+                        <a class="dropdown-item" href="{{ route('child.add') }}">{{ __('MTOTO') }}</a>
                     </div>
                 </div>
 
@@ -41,7 +41,7 @@
                         <a class="dropdown-item" href="{{ url('postnatal') }}">{{ __('POSTNATAL') }}
                             <p>Baada ya kujifungua</p>
                         </a>
-                        <a class="dropdown-item" href="{{ url('infant') }}">{{ __('INFANT') }}
+                        <a class="dropdown-item" href="{{ route('infants') }}">{{ __('INFANT') }}
                             <p>Ufuatiliaji mtoto mchanga siku 0-42</p>
                         </a>
                         <a class="dropdown-item" href="{{ route('maternals') }}">{{ __('MTUHA NAMBA 6') }}

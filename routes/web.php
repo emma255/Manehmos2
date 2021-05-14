@@ -27,13 +27,18 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('tasks/show', 'TasksController@show')->name('tasks.show');
     Route::post('tasks/delete', 'TasksController@destroy')->name('tasks.delete');
     #
-    Route::post('child/delete', 'RegisterChildController@delete');
-    Route::get('child/show', 'RegisterChildController@create');
     Route::get('maternals', 'RegisterMaternalController@index')->name('maternals');
     Route::get('maternal/register', 'RegisterMaternalController@create')->name('maternal.add');
     Route::post('maternal/store', 'RegisterMaternalController@store')->name('maternal.store');
+
+    Route::post('child/delete', 'RegisterChildController@delete');
+    Route::get('child/register', 'RegisterChildController@create')->name('child.add');
+    Route::post('child/store', 'RegisterChildController@store')->name('child.store');
+    Route::get('child/infants', 'RegisterChildController@index')->name('infants');
+    Route::get('child/infant', 'InfantController@create')->name('infant.add');
+
+
     Route::get('postnatal', 'PostnatalController@create');
-    Route::get('infant', 'InfantController@create');
     Route::get('register6/{maternal?}', 'Register6Controller@create')->name('register6');
     Route::post('register6/store/{maternal?}', 'Register6Controller@store')->name('register6.store');
     Route::get('register7', 'Register7Controller@create');
@@ -61,7 +66,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('infant/store', 'InfantController@store');
     Route::post('register7/store', 'Register7Controller@store');
     Route::post('register13/store', 'Register13Controller@store');
-    Route::post('child/store', 'RegisterChildController@store');
     Route::post('task/store', 'TasksController@store');
     Route::post('postnatal/print', 'ReportsController@postnatalPrint');
     Route::get('progress', 'ProgressController@index2')->middleware(['doctor']);

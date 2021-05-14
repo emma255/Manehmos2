@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Infant;
-use App\RegisterChild;
+use App\Models\RegisterChild;
 use Illuminate\Http\Request;
 
 class InfantController extends Controller
@@ -53,7 +53,7 @@ class InfantController extends Controller
             'kmc' => 'required',
             'maambukizi_kitovu' => 'required',
             'uambukizo_mkali' => 'required',
-            'maambukizi_machoni' => 'required',
+            'maambukizi_machonimaambukizi_machoni' => 'required',
             'maambukizi_mdomoni' => 'required',
             'maambukizi_ngozini' => 'required',
             'tarehe_BCG' => 'required|before:tomorrow',
