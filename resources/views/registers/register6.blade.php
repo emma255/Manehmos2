@@ -80,9 +80,9 @@
                                             <option value="" hidden=""></option>
                                             <option value="TT1">TT1</option>
                                             <option value="TT2">TT2</option>
-                                            <option value="TT2">TT3</option>
-                                            <option value="TT2">TT4</option>
-                                            <option value="TT2">TT5</option>
+                                            <option value="TT3">TT3</option>
+                                            <option value="TT4">TT4</option>
+                                            <option value="TT5">TT5</option>
                                         </select>
                                         @if ($errors->has('TT'))
                                         <span class="invalid-feedback">

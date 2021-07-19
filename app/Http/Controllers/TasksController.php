@@ -50,7 +50,7 @@ class TasksController extends Controller
             'end_date' => 'required |after:start_date',
         ]);
 
-        $task = Tasks::create(request(['name', 'participant', 'comments', 'start_date', 'end_date',]));
+        $task = Tasks::create(request(['name', 'participant', 'comments', 'start_date', 'end_date']));
 
         if (!$task) {
             session()->flash('error', 'Task not added. Refresh and try again.');
