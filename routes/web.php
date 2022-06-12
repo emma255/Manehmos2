@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('child/infants', 'RegisterChildController@index')->name('infants');
     Route::get('child/infant', 'InfantController@create')->name('infant.add');
 
+
     Route::get('postnatal', 'PostnatalController@create');
     Route::get('register6/{maternal?}', 'Register6Controller@create')->name('register6');
     Route::post('register6/store/{maternal?}', 'Register6Controller@store')->name('register6.store');

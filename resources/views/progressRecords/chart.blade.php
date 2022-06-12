@@ -1,10 +1,10 @@
-@extends('progressRecords.main')
+@extends('progressRecords.main') 
 @section('content') {{-- load AJAX api --}}
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
   var Weight = <?php echo $Weight; ?>;
 
-var name = "{{ $name }}";
+var name = <?php echo $name; ?>;
 
 var vmin = <?php echo $vmin; ?>;
 var vmax = <?php echo $vmax; ?>;
